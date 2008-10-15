@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -128,8 +128,7 @@ Basics
 \begin_layout Standard
 This chapter serves as an introduction to a few basic elements that will
  be needed troughout the course.
- After briefly introducing certain sets of numbers, we will start by looking
- at basic functions like 
+ We begin by reviewing basic families of functions like 
 \emph on
 linear
 \emph default
@@ -163,403 +162,8 @@ name "trigonometric functions"
 
 \end_inset
 
-, and some of their properties.
- The second part of this chapter deals with elementary calculus on those
- types of functions.
-\end_layout
-
-\begin_layout Section
-Numbers 
-\end_layout
-
-\begin_layout Standard
-Clearly, numbers are an essential part of mathematics.
- In this section we will briefly introduce all sets of numbers that we will
- need in this course.
- The 
-\emph on
-complex numbers
-\begin_inset LatexCommand index
-name "complex number"
-
-\end_inset
-
-
-\emph default
- will be treated in more detail later in the course.
-\end_layout
-
-\begin_layout Standard
-The most basics set of numbers are the 
-\emph on
-
-\begin_inset LatexCommand index
-name "natural numbers"
-
-\end_inset
-
-natural numbers 
-\begin_inset Formula $1,2,3,...$
-\end_inset
-
-
-\emph default
-which are denoted by the symbol 
-\begin_inset Formula $\mathbb{N}$
-\end_inset
-
-.
- When the zero is included, we write 
-\begin_inset Formula $\mathbb{N}_{0}$
-\end_inset
-
-.
- The natural extension of 
-\begin_inset Formula $\mathbb{N}$
-\end_inset
-
- is the set of 
-\emph on
-
-\begin_inset LatexCommand index
-name "integers"
-
-\end_inset
-
-integers
-\emph default
- 
-\begin_inset Formula $....,-2,-1,0,1,2,...$
-\end_inset
-
- denoted by 
-\begin_inset Formula $\mathbb{Z}$
-\end_inset
-
-.
- In 
-\begin_inset Formula $\mathbb{Z}$
-\end_inset
-
- we can already do more than in 
-\begin_inset Formula $\mathbb{N}$
-\end_inset
-
-.
- For example, any element 
-\begin_inset Formula $z\in\mathbb{Z}$
-\end_inset
-
- has an 
-\emph on
-additive inverse,
-\emph default
- i.e.
- a number 
-\begin_inset Formula $-z\in\mathbb{Z}$
-\end_inset
-
-, such that 
-\begin_inset Formula $-z+z=0$
-\end_inset
-
-.
- However, almost no element of 
-\begin_inset Formula $\mathbb{Z}$
-\end_inset
-
- has a 
-\emph on
-multiplicative inverse,
-\emph default
- i.e.
- a number 
-\begin_inset Formula $\tilde{z}$
-\end_inset
-
- such that 
-\begin_inset Formula $\tilde{z}\cdot z=1$
-\end_inset
-
-.
- The set of number which has this property is the set of 
-\emph on
-
-\begin_inset LatexCommand index
-name "rational numbers"
-
-\end_inset
-
-rational numbers
-\emph default
- 
-\begin_inset Formula $\mathbb{Q}$
-\end_inset
-
-.
- Obviously the multiplicative inverse of an element 
-\begin_inset Formula $q\in\mathbb{Q}$
-\end_inset
-
- is 
-\begin_inset Formula $\tilde{q}=\frac{1}{q}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-However, already ancient greek philosophers knew that there are numbers
- that cannot be expressed as a fraction of two integers.
- An example thereof is the length 
-\begin_inset Formula $\sqrt{2}$
-\end_inset
-
- of 
-\emph on
-hypotenuse
-\emph default
- (the longest side of a right triangle) of a triangle with the length of
- the other sides equal to one
-\begin_inset Foot
-status collapsed
-
-\begin_layout Standard
-A mnemonic to remember its value is to remember its inverse 
-\begin_inset Formula $\frac{1}{\sqrt{2}}\approx0.7071$
-\end_inset
-
- which is the telefone area code of T
-\begin_inset ERT
-status open
-
-\begin_layout Standard
-
-
-\backslash
-"u
-\end_layout
-
-\end_inset
-
-bingen.
-\end_layout
-
-\end_inset
-
-.
- Another example is the number 
-\begin_inset Formula $\pi$
-\end_inset
-
-.
- Those numbers are called 
-\emph on
-
-\begin_inset LatexCommand index
-name "irrational numbers"
-
-\end_inset
-
-irrational numbers.
-
-\emph default
- If we include them in the set of rational numbers, we get the set of 
-\emph on
-
-\begin_inset LatexCommand index
-name "real numbers"
-
-\end_inset
-
-real numbers
-\emph default
- 
-\begin_inset Formula $\mathbb{R}$
-\end_inset
-
-.
- Most of our calculations will be done with real numbers.
- 
-\end_layout
-
-\begin_layout Standard
-Unfortunately, in some cases 
-\begin_inset Formula $\mathbb{R}$
-\end_inset
-
- is not enough.
- For example, if we want to solve the equation 
-\begin_inset Formula $x^{2}=-1$
-\end_inset
-
- for 
-\begin_inset Formula $x$
-\end_inset
-
-, we cannot do it in 
-\begin_inset Formula $\mathbb{R}$
-\end_inset
-
-.
- The set of numbers that includes this solution is the set of 
-\emph on
-complex numbers
-\emph default
- 
-\begin_inset Formula $\mathbb{C}$
-\end_inset
-
-.
- Each complex number consists of two elements, a real part and an imaginary
- part.
- The real part is just a real number 
-\begin_inset Formula $a\in\mathbb{R}$
-\end_inset
-
-.
- The imaginary part is a multiple of a number which is called the 
-\emph on
-imaginary unit.
-
-\emph default
- The imaginary unit, denoted by ''
-\begin_inset Formula $i$
-\end_inset
-
-'', is the solution of 
-\begin_inset Formula $x^{2}=-1$
-\end_inset
-
-, i.e.
- 
-\begin_inset Formula $i^{2}=-1$
-\end_inset
-
-.
- Every complex number 
-\begin_inset Formula $c$
-\end_inset
-
- is then written as 
-\begin_inset Formula $c=a+b\cdot i$
-\end_inset
-
-.
- The ''
-\begin_inset Formula $+$
-\end_inset
-
-'' is not the plus in the usual sense, since it is not possible to add real
- and imaginary numbers.
- It is mainly just a another way of indicating a pair of different things
- and one could as well write 
-\begin_inset Formula $c=(a,ib)$
-\end_inset
-
-.
- However, the plus notation is used in almost all cases and therefore we
- will use it as well.
- As abstract as they may seem, complex numbers are actually very useful
- in a variety of situations.
- We will discuss them in more detail towards the end of the course.
-\end_layout
-
-\begin_layout Standard
-In some cases, single numbers are not enough.
- For example, we want to describe a point in space by its coordinates 
-\begin_inset Formula $x$
-\end_inset
-
-,
-\begin_inset Formula $y$
-\end_inset
-
- and 
-\begin_inset Formula $z$
-\end_inset
-
-.
- In such cases, is is useful to work with 
-\emph on
-ordered sets
-\emph default
- of the form 
-\begin_inset Formula $\mathbf{x}=(x_{1,}x_{2},\ldots,x_{n})$
-\end_inset
-
- .
- Such ordered sets are referred to as 
-\emph on
-tupels
-\emph default
- or 
-\emph on
-vectors.
-
-\emph default
- The sets of 
-\begin_inset Formula $\mathbb{R}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbb{C}$
-\end_inset
-
- can be used to build 
-\emph on
-
-\begin_inset LatexCommand index
-name "vector space"
-
-\end_inset
-
-vector spaces.
-
-\emph default
- The set of 
-\begin_inset Formula $n$
-\end_inset
-
--tuples of numbers from 
-\begin_inset Formula $\mathbb{R}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbb{C}$
-\end_inset
-
- are denoted with 
-\begin_inset Formula $\mathbb{R}^{n}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbb{C}^{n}$
-\end_inset
-
-, respectively.
- 
-\begin_inset Formula $\mathbb{R}^{n}$
-\end_inset
-
-is simply the space consisting of all 
-\begin_inset Formula $n$
-\end_inset
-
--tupels of form 
-\begin_inset Formula $\mathbf{x}=(x_{1,}x_{2},\ldots,x_{n})$
-\end_inset
-
-, where each 
-\begin_inset Formula $x_{k},$
-\end_inset
-
- 
-\begin_inset Formula $1\leq k\leq n$
-\end_inset
-
- is a real number.
- 
+, as well as some of their properties.
+ Afterwards we will look at some elementary calculus on those types of functions.
 \end_layout
 
 \begin_layout Section
@@ -597,24 +201,72 @@ outputs
 \begin_inset Formula $x.$
 \end_inset
 
-Thus, functions can be used as mathematical models of processes in which
+ Thus, functions can be used as mathematical models of processes in which
  one quantity is transformed into another in a deterministic way.
  Even when the process of transformation is not deterministic, usually an
  underlying deterministic process corrupted by random noise can be used.
  In the example above, the firing rate of the neuron could be 
-\begin_inset Formula $f(x)+\mathcal{N},$
+\begin_inset Formula $f(x)+\varrho,$
 \end_inset
 
  where 
-\begin_inset Formula $\mathcal{N}$
+\begin_inset Formula $\varrho$
 \end_inset
 
  is a noise-term.
-\end_layout
+ In contrast to a deterministic function, 
+\begin_inset Formula $f(x)+\varrho$
+\end_inset
+
+ denotes a whole set of values for a given 
+\begin_inset Formula $x$
+\end_inset
+
+ since the random term 
+\begin_inset Formula $\varrho$
+\end_inset
+
+ can take different values for each trial.
+ Therefore, 
+\begin_inset Formula $f(x)+\varrho$
+\end_inset
+
+ is not a function in the strict sense.
+ The reason is that, functions
+\begin_inset ERT
+status open
 
 \begin_layout Standard
-In general, functions are rules how to assign elements of one set to unique
- elements of another set.
+
+---
+\end_layout
+
+\end_inset
+
+by definition
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+---
+\end_layout
+
+\end_inset
+
+are rules how to assign elements 
+\begin_inset Formula $x$
+\end_inset
+
+ of one set to 
+\emph on
+unique
+\emph default
+ elements 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ of another set.
  Only if the target elements are unique, the assignment rule is called 
 \emph on
 function
@@ -720,15 +372,15 @@ name "range"
 \end_inset
 
 .
- The rule 
-\begin_inset Formula $r$
-\end_inset
-
- can be 
+ 
 \end_layout
 
 \begin_layout Standard
-anything that can be done with elements of 
+The rule 
+\begin_inset Formula $r$
+\end_inset
+
+ can be anything that can be done with elements of 
 \begin_inset Formula $A$
 \end_inset
 
@@ -758,9 +410,8 @@ Note, that the simple arrow ''
 
 \begin_layout Standard
 In most cases, the inputs and outputs of function will be numbers, but this
- does not necessarily have to be the case.
- I.e.
- , the elements of the domain 
+ does not necessarily have to be the case (i.e.
+ the elements of the domain 
 \begin_inset Formula $A$
 \end_inset
 
@@ -768,7 +419,7 @@ In most cases, the inputs and outputs of function will be numbers, but this
 \begin_inset Formula $B$
 \end_inset
 
- do not need to be numbers.
+ do not need to be numbers).
  
 \end_layout
 
@@ -776,8 +427,14 @@ In most cases, the inputs and outputs of function will be numbers, but this
 Although, in principle, there are infinitely many functions on the real
  numbers, knowing only a few of them is usually enough to get along well
  in most natural sciences.
- In this section we will review the most important ones and present their
- most important properties.
+ The reason is that most complex functions are built by adding, multiplying,
+ or composing simpler ones.
+ It is important that you get comfortable with those simper functions since
+ they are your toolbox to understand and build more complex functions.
+ Once you have and intuition how those simple functions behave, it is often
+ not too difficult to get a feeling for a more complicated one.
+ In this section we will review the most important simple functions and
+ present their most important properties.
  
 \end_layout
 
@@ -786,9 +443,8 @@ Polynomials and Powers
 \end_layout
 
 \begin_layout Standard
-Polynomials are are very common functions.
- The two kinds of polynomials probably everyone of you knows is the parabola
- 
+Polynomials is a very common class of functions.
+ The two most widely known kinds of polynomials are the parabola 
 \begin_inset Formula $f(x)=x^{2}$
 \end_inset
 
@@ -864,14 +520,8 @@ Taylor-Expansion
 \end_layout
 
 \begin_layout Standard
-At this point we introduce the notation for sums over several elements (see
- also Appendix 
-\begin_inset LatexCommand ref
-reference "sec:Notation-and-Symbols"
-
-\end_inset
-
-): Instead of indicating the entire sum by three dots ''
+This is a good point to introduce the notation for sums over several elements:
+ Instead of indicating the entire sum by three dots ``
 \begin_inset Formula $...$
 \end_inset
 
@@ -909,16 +559,23 @@ While polynomials have exponents
 \begin_inset Formula $k\in\mathbb{N}_{0}$
 \end_inset
 
-, exponents can in principle be in 
+ (where 
+\begin_inset Formula $\mathbb{N}_{0}$
+\end_inset
+
+ denotes the set of natural number including 
+\begin_inset Formula $0$
+\end_inset
+
+), exponents can in principle be in 
 \begin_inset Formula $\mathbb{R}$
 \end_inset
 
  as well.
  There are two most important cases: when the exponent is negative and when
- it is a rational number.
- A negative exponent of a number is merely are shortcut for its mutiplicative
- inverse.
- This means that 
+ it is a rational number (i.e.
+ a number that can be written as a fraction).
+ A negative exponent of a number is merely a shortcut for 
 \begin_inset Formula $x^{-a}=\frac{1}{x^{a}}$
 \end_inset
 
@@ -930,7 +587,7 @@ While polynomials have exponents
 \begin_inset Formula $\sqrt{x}$
 \end_inset
 
- can equivalently be written as 
+ is equivalently written as 
 \begin_inset Formula $x^{\frac{1}{2}}$
 \end_inset
 
@@ -951,12 +608,13 @@ th root of
 \end_layout
 
 \begin_layout Standard
-We conlude this section by stating a few calculation rules for powers for
+We conclude this section by stating a few calculation rules for powers for
  
 \begin_inset Formula $x,a\in\mathbb{R}$
 \end_inset
 
-:
+.
+ You should know all of them by heart and be able to use them effortlessly.
 \end_layout
 
 \begin_layout Standard
@@ -1052,8 +710,10 @@ name "sub:LinearFunctions"
 \end_layout
 
 \begin_layout Standard
-Linear functions are the easiest functions one can imagine.
- Their key property is that the function value of a sum 
+Linear functions are among the simplest functions one can imagine.
+ You can imagine a linear function as a line (plane, or hyperplane) through
+ the origin.
+ Algebraically, their key property is that the function value of a sum 
 \begin_inset Formula $x+y$
 \end_inset
 
@@ -1061,7 +721,7 @@ Linear functions are the easiest functions one can imagine.
 \begin_inset Formula $x,y$
 \end_inset
 
- from equals the sum of the function values 
+ equals the sum of their function values 
 \begin_inset Formula $f(x)+f(y)$
 \end_inset
 
@@ -1102,9 +762,9 @@ name "function, linear"
 linear
 \emph default
  if it fulfills the following two properties:
-\begin_inset Formula \begin{eqnarray*}
- & f(x+y)=f(x)+f(y) & \mbox{ for all }x,y\in\mathbb{R}\\
- & f(a\cdot x)=a\cdot f(x) & \mbox{ for all }a,x\in\mathbb{R}.\end{eqnarray*}
+\begin_inset Formula \begin{eqnarray}
+ & f(x+y)=f(x)+f(y) & \mbox{ for all }x,y\in\mathbb{R}\label{eq:def_linear_1}\\
+ & f(a\cdot x)=a\cdot f(x) & \mbox{ for all }a,x\in\mathbb{R}.\label{eq:def_linear_2}\end{eqnarray}
 
 \end_inset
 
@@ -1125,14 +785,13 @@ These properties have remarkable consequences.
 \begin_inset Formula $(x,f(x))$
 \end_inset
 
- does us not tell anything about the value of the function at other locations
+ does not tell anything about the value of the function at other locations
  
 \begin_inset Formula $y\not=x$
 \end_inset
 
 , a single such pair is enough to know the value of a linear function at
- any location.
- Assume we are given the pair 
+ any location: Assume we are given the input-output pair 
 \begin_inset Formula $(x,f(x))$
 \end_inset
 
@@ -1153,22 +812,34 @@ These properties have remarkable consequences.
 \begin_inset Formula $a$
 \end_inset
 
- such that 
+ that scales 
+\begin_inset Formula $x$
+\end_inset
+
+ into 
+\begin_inset Formula $y$
+\end_inset
+
+, i.e.
+ 
 \begin_inset Formula $y=a\cdot x$
 \end_inset
 
 .
- However, this scalar is easy to find.
- It is simply 
+ Clearly, this scalar is easy is given by 
 \begin_inset Formula $a=\frac{y}{x}$
 \end_inset
 
 .
- Once we know this scalar, we can calculate 
+ Once we know 
+\begin_inset Formula $a$
+\end_inset
+
+, we can compute 
 \begin_inset Formula $f(y)$
 \end_inset
 
-:
+ via
 \end_layout
 
 \begin_layout Standard
@@ -1181,16 +852,12 @@ f(y) & = & f(a\cdot x)\\
 
 \end_layout
 
-\begin_layout Standard
-Stimulus response, neuron
-\end_layout
-
 \begin_layout Paragraph
 Example (Mathematical Modelling of Receptive Fields)
 \end_layout
 
 \begin_layout Standard
-For some neurons, it is often assumed that its response, i.e.
+For some neurons, it is often assumed that their responses, i.e.
  the spike rate 
 \begin_inset Formula $r(x)$
 \end_inset
@@ -1261,18 +928,18 @@ r\left(\frac{1}{2}I_{1}+\frac{1}{2}I_{2}\right) & = & r\left(\frac{1}{2}I_{1}\ri
 
 This property does not only hold for two input stimuli.
  It holds for an arbitrary number of stimuli.
- If the receptive field 
-\begin_inset Formula $g$
+ If the rate function 
+\begin_inset Formula $r$
 \end_inset
 
- realized by our neuron is linear, then the mean response to 
+ realized of our neuron is linear, then response to the mean of 
 \begin_inset Formula $n$
 \end_inset
 
- images is just the response to the mean of those images.
+ images is just the mean response to the single images.
  
 \begin_inset Formula \begin{eqnarray*}
-g\left(\frac{1}{n}\sum_{k=1}^{n}I_{k}\right) & = & \frac{1}{n}\sum_{k=1}^{n}g\left(I_{k}\right)\\
+r\left(\frac{1}{n}\sum_{k=1}^{n}I_{k}\right) & = & \frac{1}{n}\sum_{k=1}^{n}r\left(I_{k}\right)\\
  & = & \frac{1}{n}\sum_{k=1}^{n}\nu_{k}\end{eqnarray*}
 
 \end_inset
@@ -1313,8 +980,7 @@ Large ?}}
 Of course, real neurons are not truly linear.
  If a neuron was indeed linear, for inputs, this would lead to some very
  unrealistic conclusions.
- Name two.
- 
+ Name two of them! 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1324,7 +990,8 @@ Answer:
 \begin_layout Standard
 For some stimuli, the spike rate would be negative.
  Also, for stimuli with very high input, the spike-rate would be arbitrarily
- large.
+ large, i.e.
+ the neuron's rate would not saturate.
 \end_layout
 
 \begin_layout Standard
@@ -1345,8 +1012,7 @@ Trigonometric functions are functions of an angle
 \end_inset
 
 .
- The most common trigonometric functions, which will also be the ones that
- we will discuss here, are 
+ The most common trigonometric functions are 
 \begin_inset Formula $\sin(\vartheta)$
 \end_inset
 
@@ -1367,11 +1033,7 @@ Trigonometric functions are functions of an angle
 \end_layout
 
 \begin_layout Standard
-There are two natural ways to think about 
-\begin_inset Formula $\sin(\vartheta)$
-\end_inset
-
- and 
+In general, there are two natural ways to think about 
 \family roman
 \series medium
 \shape up
@@ -1380,12 +1042,8 @@ There are two natural ways to think about
 \bar no
 \noun off
 \color none
-
-\begin_inset Formula $\cos(\vartheta)$
-\end_inset
-
-: to think about them as geometrical quantities or to think about them as
- periodic signals.
+trigonometric functions: the geometrical view quantities and the periodic
+ signal view.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1468,14 +1126,13 @@ and the
 \begin_inset Formula $y-$
 \end_inset
 
-coordinate.
- See Figure 
+coordinate (see Figure 
 \begin_inset LatexCommand ref
 reference "fig:GeoView-SinCos"
 
 \end_inset
 
- .
+).
 \end_layout
 
 \begin_layout Standard
@@ -1882,7 +1539,8 @@ name "path integration"
  denotes the ability of moving organisms (such as ants) to remember the
  direction and length of the vector to its home while moving in the environment.
  We will now just look at a special case of updating the home vector in
- world coordinates.
+ world coordinates, i.e.
+ a global fixed coordinate system.
  This means that the home base is assigned the coordinates 
 \begin_inset Formula $(0,0)$
 \end_inset
@@ -2456,6 +2114,10 @@ Since
 \begin_inset Formula $p=(x,y)=r\cdot(\cos(\vartheta),\sin(\vartheta))$
 \end_inset
 
+ for an appropriate value of 
+\begin_inset Formula $r$
+\end_inset
+
 , we have that 
 \begin_inset Formula \begin{eqnarray*}
 \frac{y}{x} & =\frac{r\cdot\sin(\vartheta)}{r\cdot\cos(\vartheta)}= & \tan(\vartheta).\end{eqnarray*}
@@ -2474,8 +2136,8 @@ Since
 
 \end_inset
 
-Other useful properties that can be seen very easily from the geometric
- view, are the symmetry properties of 
+Other useful properties that can also be read off from the geometric view.
+ Among them are the symmetry properties of 
 \begin_inset Formula $\sin(\vartheta)$
 \end_inset
 
@@ -2517,7 +2179,7 @@ name "sub:periodic_signal_view"
 \end_layout
 
 \begin_layout Standard
-This way of thinking about 
+The periodic signal view of thinking about 
 \begin_inset Formula $\sin(\vartheta)$
 \end_inset
 
@@ -2525,7 +2187,8 @@ This way of thinking about
 \begin_inset Formula $\cos(\vartheta)$
 \end_inset
 
- is especially useful when dealing with periodic signals.
+ is especially useful when dealing with signals such as e.g.
+ membrane potentials of neurons or stripes of natural images.
  It is also closely related to techniques such as Fourier- or Spectral Analysis,
  which are indispensable tools for the analysis of neurophysiological signals.
  In order to get from the geometric to the periodic signal view, just imagine
@@ -2586,24 +2249,24 @@ reference "fig:SineCosine"
  The faster the point is moving along the circle the more cycles we can
  get in one fixed time interval.
  This is expressed by the frequency 
-\begin_inset Formula $\lambda$
+\begin_inset Formula $\omega$
 \end_inset
 
  of the sine or cosine, respectively.
  It tells us how many cycles our point does in one unit time interval.
  We can therefore equivalently write 
-\begin_inset Formula $x(t)=\cos(\lambda\cdot t)$
+\begin_inset Formula $x(t)=\cos(\omega\cdot t)$
 \end_inset
 
  and 
-\begin_inset Formula $y(t)=\sin(\lambda\cdot t)$
+\begin_inset Formula $y(t)=\sin(\omega\cdot t)$
 \end_inset
 
 .
- From know on we will drop the dependence on time.
+ From now on we will drop the dependence on time.
  The frequency then tells us how many cycles of our point fit in the interval
  
-\begin_inset Formula $[0,1]$
+\begin_inset Formula $[0,2\pi]$
 \end_inset
 
 .
@@ -2646,19 +2309,19 @@ name "fig:SineCosine"
 \end_inset
 
 
-\begin_inset Formula $\cos(t)$
+\begin_inset Formula $\cos(\omega t)$
 \end_inset
 
- (left plot) and 
-\begin_inset Formula $\sin(t)$
+ (left) and 
+\begin_inset Formula $\sin(\omega t)$
 \end_inset
 
- (right plot) in the interval of 
+ (right) in the interval of 
 \begin_inset Formula $t\in[-2\pi,2\pi]$
 \end_inset
 
  with a frequency of 
-\begin_inset Formula $\lambda=\frac{1}{2\cdot\pi}$
+\begin_inset Formula $\omega=1$
 \end_inset
 
 .
@@ -2788,8 +2451,7 @@ is the gray value of pixel
 \begin_inset Formula $x$
 \end_inset
 
-) those gratings are simply sine or cosine functions over a certain area
- of 
+) those gratings are simply sine or cosine functions over 
 \begin_inset Formula $\mathbb{R}^{2}$
 \end_inset
 
@@ -2816,39 +2478,10 @@ For a vertical grating, we know that the graylevel value along the vertical
 \end_inset
 
 , we can produce a vertical grating by 
-\begin_inset Formula $I(x,y)=\sin\left(\frac{\lambda}{2\pi}x\right)$
+\begin_inset Formula $I(x,y)=\sin\left(\omega x\right)$
 \end_inset
 
 .
- The frequency 
-\begin_inset Formula $\lambda$
-\end_inset
-
- must be divided by 
-\begin_inset Formula $2\pi$
-\end_inset
-
- in order to ensure that we have exactly 
-\begin_inset Formula $\lambda$
-\end_inset
-
- cycles of the sine once 
-\begin_inset Formula $x$
-\end_inset
-
- reached 
-\begin_inset Formula $2\pi$
-\end_inset
-
-, meaning that our point on the circle finished 
-\begin_inset Formula $\lambda$
-\end_inset
-
- laps at time 
-\begin_inset Formula $t=1$
-\end_inset
-
- in the geometric view.
  Instead of using the sine we could as well have used the cosine function.
  A horizontal grating can be generated in exactly the same way by replacing
  
@@ -2860,7 +2493,59 @@ For a vertical grating, we know that the graylevel value along the vertical
 \end_inset
 
  inside the sine function.
- 
+ Here is the matlab code to produce a horizontal grating of frequency 
+\begin_inset Formula $\omega=2$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> [X,Y] = meshgrid([-2*pi:0.01:2*pi]); % get the sample points 
+\end_layout
+
+\begin_layout Standard
+
+>> omega = 2; % set the frequency 
+\end_layout
+
+\begin_layout Standard
+
+>> imagesc(sin(omega*X)) % display grating
+\end_layout
+
+\begin_layout Standard
+
+>> colormap(gray)  % set colormap to gray values
+\end_layout
+
+\begin_layout Standard
+
+>> axis off % switch off the axes
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2873,12 +2558,76 @@ At the moment all our gratings have a fixed constrast, since
 \end_inset
 
 .
- However, we can vary the constrast by varying the amplitude of our sine.
+ However, we can vary the constrast by varying the amplitude of the sine.
  This is done by premultiplying an appropriate scaling factor 
-\begin_inset Formula $I(x,y)=A\cdot\sin\left(\frac{\lambda}{2\pi}x\right)$
+\begin_inset Formula $I(x,y)=A\cdot\sin\left(\omega x\right)$
 \end_inset
 
 .
+ In order to build that into the matlab code above, you must specify the
+ maximum and the minimum gray value when calling the function 
+\family typewriter
+imagesc
+\family default
+, since it automatically scales the gray values otherwise
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> [X,Y] = meshgrid([-2*pi:0.01:2*pi]); % get the sample points 
+\end_layout
+
+\begin_layout Standard
+
+>> omega = 2; % set the frequency 
+\end_layout
+
+\begin_layout Standard
+
+>> A = 3; % set the contrast
+\end_layout
+
+\begin_layout Standard
+
+>> maxA = 10; % set maximal contrast
+\end_layout
+
+\begin_layout Standard
+
+>> imagesc(A*sin(omega*X),[-maxA,maxA]) % display grating
+\end_layout
+
+\begin_layout Standard
+
+>> colormap(gray)  % set colormap to gray values
+\end_layout
+
+\begin_layout Standard
+
+>> axis off % switch off the axes
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2899,7 +2648,7 @@ Up to now we saw how to control the frequency and the amplitude of sine
 
 -axis.
  Let us look at a sine function with a certain frequency 
-\begin_inset Formula $\sin(\lambda t)$
+\begin_inset Formula $\sin(\omega t)$
 \end_inset
 
 .
@@ -2908,7 +2657,7 @@ Up to now we saw how to control the frequency and the amplitude of sine
 \end_inset
 
  also 
-\begin_inset Formula $\sin(\lambda t)=0$
+\begin_inset Formula $\sin(\omega t)=0$
 \end_inset
 
 .
@@ -2974,7 +2723,7 @@ phase
 
 : It is
 \begin_inset Formula \begin{eqnarray*}
-A\cdot\sin(\lambda t-\phi) & \mbox{ and } & A\cdot\cos(\lambda t-\phi).\end{eqnarray*}
+A\cdot\sin(\omega t-\phi) & \mbox{ and } & A\cdot\cos(\omega t-\phi).\end{eqnarray*}
 
 \end_inset
 
@@ -3092,6 +2841,80 @@ Write down the the corresponding expressions for
 
 \end_layout
 
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+
+\series bold
+Important Rules for Trigonometric Functions
+\end_layout
+
+\begin_layout Standard
+The following rules apply to any 
+\begin_inset Formula $x,y,\vartheta\in\mathbb{R}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+Pythagoras' Theorem: 
+\begin_inset Formula $\cos(\vartheta)^{2}+\sin(\vartheta)^{2}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Symmetry Properties: 
+\begin_inset Formula \begin{eqnarray*}
+\cos(-\vartheta) & = & \cos(\vartheta)\\
+\sin(-\vartheta) & = & -\sin(\vartheta)\\
+\tan(-\vartheta) & = & -\tan(\vartheta)\\
+\mbox{cotan}(-\vartheta) & = & -\mbox{cotan}(\vartheta)\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Addition Theorems
+\begin_inset Formula \begin{eqnarray*}
+\cos(x+y) & = & \cos(x)\cos(y)-\sin(x)\sin(y)\\
+\sin(x+y) & = & \sin(x)\cos(y)+\cos(x)\sin(y)\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 The 
 \begin_inset Formula $e$
@@ -3105,8 +2928,7 @@ The Exponential Function
 \end_layout
 
 \begin_layout Standard
-The function that you will have to deal with most, is probably the exponential
- or 
+The exponential or 
 \begin_inset Formula $e$
 \end_inset
 
@@ -3114,8 +2936,9 @@ The function that you will have to deal with most, is probably the exponential
 \begin_inset Formula $f(x)=e^{x}=\exp(x)$
 \end_inset
 
-.
- The number denoted by ''
+ is one of the most frequently occuring and important function in the everyday
+ life of a natural scientist.
+ The number denoted by ``
 \begin_inset Formula $e$
 \end_inset
 
@@ -3192,19 +3015,23 @@ Gaussian Distribution
 
 .
  In many experiments that involve noisy measurements, the noise is assumed
- to be Gaussian with mean zero.
+ to be Gaussian with mean 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+.
  One possible justification for this assumption is that sums of random quantitie
-s with other probability distributions tend to be Gaussian if the number
- of this quantities increases.
+s with other probability distributions tend to be Gaussian if the total
+ number of this quantities increases.
  Since we think of the noise in an experiment as the superposition of many
  other processes that we are not interested in, the assumption that there
  are a large number of them which are linearly superimposed motivates the
  Gaussian noise assumption.
 \newline
-Besides, the Gaussian distribution is used so
- often because it has a lot of properties that make it possible to calculate
- analytical solutions of the respective statistical problems.
- You will probably hear more about Gaussians in your statistics lecture.
+Apart from that, the Gaussian distribution is
+ frequently used because it has a lot of properties that make it possible
+ to calculate analytical solutions of the respective statistical problems.
+ 
 \end_layout
 
 \begin_layout Enumerate
