@@ -1,0 +1,3984 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{1}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Essential Functions
+\end_layout
+
+\begin_layout Standard
+A function is a rule that relates to sets of quantities, the 
+\emph on
+inputs
+\emph default
+ and the 
+\emph on
+outputs
+\emph default
+.
+ Each input 
+\begin_inset Formula $x$
+\end_inset
+
+ is deterministially related to an output 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ For example, 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ might temperature on day 
+\begin_inset Formula $x,$
+\end_inset
+
+ or the firing rate of a neuron in response to a stimulus 
+\begin_inset Formula $x.$
+\end_inset
+
+ Thus, functions can be used as mathematical models of processes in which
+ one quantity is transformed into another in a deterministic way.
+ Even when the process of transformation is not deterministic, usually an
+ underlying deterministic process corrupted by random noise can be used.
+ In the example above, the firing rate of the neuron could be 
+\begin_inset Formula $f(x)+\varrho,$
+\end_inset
+
+ where 
+\begin_inset Formula $\varrho$
+\end_inset
+
+ is a noise-term.
+ In contrast to a deterministic function, 
+\begin_inset Formula $f(x)+\varrho$
+\end_inset
+
+ denotes a whole set of values for a given 
+\begin_inset Formula $x$
+\end_inset
+
+ since the random term 
+\begin_inset Formula $\varrho$
+\end_inset
+
+ can take different values for each trial.
+ Therefore, 
+\begin_inset Formula $f(x)+\varrho$
+\end_inset
+
+ is not a function in the strict sense.
+ The reason is that, functions
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+---
+\end_layout
+
+\end_inset
+
+by definition
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+---
+\end_layout
+
+\end_inset
+
+are rules how to assign elements 
+\begin_inset Formula $x$
+\end_inset
+
+ of one set to 
+\emph on
+unique
+\emph default
+ elements 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ of another set.
+ Only if the target elements are unique, the assignment rule is called 
+\emph on
+function
+\emph default
+.
+ When defining a function, we have to specify the two 
+\emph on
+sets
+\emph default
+ between the function is mapping and the 
+\emph on
+rule
+\emph default
+ that transforms an element of the target set to an element of the input
+ set.
+ For example, if we want to define a function 
+\begin_inset Formula $f$
+\end_inset
+
+ that is transforming elements of a set 
+\begin_inset Formula $A$
+\end_inset
+
+ into elements of a set 
+\begin_inset Formula $B$
+\end_inset
+
+ according to the rule 
+\begin_inset Formula $r$
+\end_inset
+
+, we would write this as 
+\begin_inset Formula \begin{eqnarray*}
+f: & A\,\rightarrow\, B\\
+ & a\mapsto r(a).\end{eqnarray*}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $a$
+\end_inset
+
+ is an element of 
+\begin_inset Formula $A$
+\end_inset
+
+ (written 
+\begin_inset Formula $a\in A$
+\end_inset
+
+) and 
+\begin_inset Formula $r(b)$
+\end_inset
+
+ is an element of 
+\begin_inset Formula $B$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $r(b)\in B$
+\end_inset
+
+).
+ The set 
+\begin_inset Formula $A$
+\end_inset
+
+ is usually called 
+\emph on
+
+\begin_inset LatexCommand index
+name "domain"
+
+\end_inset
+
+domain
+\emph default
+ 
+\emph on
+of 
+\begin_inset Formula $f$
+\end_inset
+
+
+\emph default
+ while 
+\begin_inset Formula $B$
+\end_inset
+
+ is called 
+\emph on
+the co-domain 
+\begin_inset LatexCommand index
+name "range"
+
+\end_inset
+
+ of
+\emph default
+ 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The rule 
+\begin_inset Formula $r$
+\end_inset
+
+ can be anything that can be done with elements of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ For example, if the function 
+\begin_inset Formula $f$
+\end_inset
+
+ simply doubles any real number, we would write 
+\begin_inset Formula \begin{eqnarray*}
+f: & \mathbb{R}\rightarrow\mathbb{R}\\
+ & x\mapsto2\cdot x & \, x\in\mathbb{R}.\end{eqnarray*}
+
+\end_inset
+
+Note, that the simple arrow ''
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+'' is used for the sets and the arrow ''
+\begin_inset Formula $\mapsto$
+\end_inset
+
+'' for the assigment rule.
+ 
+\end_layout
+
+\begin_layout Standard
+In most cases, the inputs and outputs of function will be numbers, but this
+ does not necessarily have to be the case (i.e.
+ the elements of the domain 
+\begin_inset Formula $A$
+\end_inset
+
+ and the co-domain 
+\begin_inset Formula $B$
+\end_inset
+
+ do not need to be numbers).
+ 
+\end_layout
+
+\begin_layout Standard
+Although, in principle, there are infinitely many functions on the real
+ numbers, knowing only a few of them is usually enough to get along well
+ in most natural sciences.
+ The reason is that most complex functions are built by adding, multiplying,
+ or composing simpler ones.
+ It is important that you get comfortable with those simper functions since
+ they are your toolbox to understand and build more complex functions.
+ Once you have and intuition how those simple functions behave, it is often
+ not too difficult to get a feeling for a more complicated one.
+ In this section we will review the most important simple functions and
+ present their most important properties.
+ 
+\end_layout
+
+\begin_layout Subsection
+Polynomials and Powers
+\end_layout
+
+\begin_layout Standard
+Polynomials is a very common class of functions.
+ The two most widely known kinds of polynomials are the parabola 
+\begin_inset Formula $f(x)=x^{2}$
+\end_inset
+
+ and the more general quadratic function 
+\begin_inset Formula $f(x)=ax^{2}+bx+c$
+\end_inset
+
+.
+ In general, polynomials consist of a sum of positive integer powers 
+\begin_inset Formula $k$
+\end_inset
+
+ of 
+\begin_inset Formula $x$
+\end_inset
+
+ with coefficients 
+\begin_inset Formula $a_{k}$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+f(x) & = & a_{n}x^{n}+...+a_{1}x+a_{0}.\end{eqnarray*}
+
+\end_inset
+
+The single terms in the sum are called 
+\emph on
+
+\begin_inset LatexCommand index
+name "monomial"
+
+\end_inset
+
+monomials.
+
+\emph default
+ The 
+\emph on
+
+\begin_inset LatexCommand index
+name "degree"
+
+\end_inset
+
+degree
+\emph default
+ of the polynomial is the largest exponent of its monomials.
+ The polynomial above has a degree of 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Polynomials have nice properties like e.g.
+ the 
+\emph on
+derivatives
+\emph default
+ and 
+\emph on
+anti-derivatives
+\emph default
+ of polynomials are easy to calculate and yield polynomials again.
+ One frequent use of polynomials is to approximate any function at a certain
+ location.
+ This approximation is called 
+\emph on
+Taylor-Expansion
+\emph default
+.
+ We will discuss the Taylor-Expansion and many properties of polynomials
+ in later chapters.
+\end_layout
+
+\begin_layout Standard
+This is a good point to introduce the notation for sums over several elements:
+ Instead of indicating the entire sum by three dots ``
+\begin_inset Formula $...$
+\end_inset
+
+'' we use the greek uppercase letter sigma 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ (like 
+\bar under
+s
+\bar default
+um) to indicate a sum over all terms directly after the sigma.
+ These terms are usually indexed and the range of the index is written below
+ and above the 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $x^{0}=1$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in\mathbb{R}$
+\end_inset
+
+ we write the polynomial from above as
+\begin_inset Formula \begin{eqnarray*}
+f(x) & = & a_{n}x^{n}+...+a_{1}x+a_{0}\\
+ & = & \sum_{k=0}^{n}a_{k}x^{k}.\end{eqnarray*}
+
+\end_inset
+
+While polynomials have exponents 
+\begin_inset Formula $k\in\mathbb{N}_{0}$
+\end_inset
+
+ (where 
+\begin_inset Formula $\mathbb{N}_{0}$
+\end_inset
+
+ denotes the set of natural number including 
+\begin_inset Formula $0$
+\end_inset
+
+), exponents can in principle be in 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ as well.
+ There are two most important cases: when the exponent is negative and when
+ it is a rational number (i.e.
+ a number that can be written as a fraction).
+ A negative exponent of a number is merely a shortcut for 
+\begin_inset Formula $x^{-a}=\frac{1}{x^{a}}$
+\end_inset
+
+.
+ In many cases, for example when calculating derivatives, the notation with
+ negative exponent is useful.
+ A fraction in the exponent is another way of writing roots.
+ For example the square root 
+\begin_inset Formula $\sqrt{x}$
+\end_inset
+
+ is equivalently written as 
+\begin_inset Formula $x^{\frac{1}{2}}$
+\end_inset
+
+.
+ In general, the 
+\begin_inset Formula $n$
+\end_inset
+
+th root of 
+\begin_inset Formula $x$
+\end_inset
+
+ can be written as 
+\begin_inset Formula $^{n}\!\!\!\sqrt{x}=x^{\frac{1}{n}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We conclude this section by stating a few calculation rules for powers for
+ 
+\begin_inset Formula $x,a\in\mathbb{R}$
+\end_inset
+
+.
+ You should know all of them by heart and be able to use them effortlessly.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+
+\series bold
+Calculation Rules for Powers
+\end_layout
+
+\begin_layout Standard
+The following rules apply to any 
+\begin_inset Formula $x,a\in\mathbb{R}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x^{0}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x^{a}\cdot x^{b}=x^{a+b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{x^{a}}{x^{b}}=x^{a}\cdot x^{-b}=x^{a-b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(x^{a})^{b}=x^{a\cdot b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{1}{x^{a}}=x^{-a}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $^{a}\!\!\!\sqrt{x}=x^{\frac{1}{a}}$
+\end_inset
+
+ for 
+\begin_inset Formula $x\ge0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Linear Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "sub:LinearFunctions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Linear functions are among the simplest functions one can imagine.
+ You can imagine a linear function as a line (plane, or hyperplane) through
+ the origin.
+ Algebraically, their key property is that the function value of a sum 
+\begin_inset Formula $x+y$
+\end_inset
+
+ of elements 
+\begin_inset Formula $x,y$
+\end_inset
+
+ equals the sum of their function values 
+\begin_inset Formula $f(x)+f(y)$
+\end_inset
+
+.The same is true for multiples of input elements, i.e.
+ the function value of some multiple 
+\begin_inset Formula $a\cdot x$
+\end_inset
+
+ of an element 
+\begin_inset Formula $x$
+\end_inset
+
+ from the domain is the multiple of the function value 
+\begin_inset Formula $a\cdot f(x)$
+\end_inset
+
+.
+ If any function fulfills these two properties, it is linear by definition.
+\end_layout
+
+\begin_layout Paragraph
+Definition (Linear Function)
+\end_layout
+
+\begin_layout Standard
+A function 
+\begin_inset Formula $f:\mathbb{R}\rightarrow\mathbb{R}$
+\end_inset
+
+ is said to be 
+\emph on
+
+\begin_inset LatexCommand index
+name "function, linear"
+
+\end_inset
+
+linear
+\emph default
+ if it fulfills the following two properties:
+\begin_inset Formula \begin{eqnarray}
+ & f(x+y)=f(x)+f(y) & \mbox{ for all }x,y\in\mathbb{R}\label{eq:def_linear_1}\\
+ & f(a\cdot x)=a\cdot f(x) & \mbox{ for all }a,x\in\mathbb{R}.\label{eq:def_linear_2}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These properties have remarkable consequences.
+ While for general functions, a single input-output pair of values 
+\begin_inset Formula $(x,f(x))$
+\end_inset
+
+ does not tell anything about the value of the function at other locations
+ 
+\begin_inset Formula $y\not=x$
+\end_inset
+
+, a single such pair is enough to know the value of a linear function at
+ any location: Assume we are given the input-output pair 
+\begin_inset Formula $(x,f(x))$
+\end_inset
+
+ and we know that 
+\begin_inset Formula $f$
+\end_inset
+
+ is linear.
+ In order to calucate the value of 
+\begin_inset Formula $f$
+\end_inset
+
+ at another location 
+\begin_inset Formula $y$
+\end_inset
+
+, we search for a scalar 
+\begin_inset Formula $a$
+\end_inset
+
+ that scales 
+\begin_inset Formula $x$
+\end_inset
+
+ into 
+\begin_inset Formula $y$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $y=a\cdot x$
+\end_inset
+
+.
+ Clearly, this scalar is easy is given by 
+\begin_inset Formula $a=\frac{y}{x}$
+\end_inset
+
+.
+ Once we know 
+\begin_inset Formula $a$
+\end_inset
+
+, we can compute 
+\begin_inset Formula $f(y)$
+\end_inset
+
+ via
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+f(y) & = & f(a\cdot x)\\
+ & = & a\cdot f(x).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Example (Mathematical Modelling of Receptive Fields)
+\end_layout
+
+\begin_layout Standard
+For some neurons, it is often assumed that their responses, i.e.
+ the spike rate 
+\begin_inset Formula $r(x)$
+\end_inset
+
+, depends linearly on the stimulus 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Assume our cell responds to a visual image 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+ with a spike rate of 
+\begin_inset Formula $r_{1}=20$
+\end_inset
+
+ spikes per second and to another image 
+\begin_inset Formula $I_{2}$
+\end_inset
+
+ with 
+\begin_inset Formula $r_{2}=60$
+\end_inset
+
+ spikes per second.
+ What spike rate would we expect to the mean of 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $I_{2}$
+\end_inset
+
+, if our neuron was truely linear in the stimuli? The answer is easy to
+ calculate.
+ Let 
+\begin_inset Formula $r:\mathcal{I}\rightarrow\mathbb{R}$
+\end_inset
+
+ denote the function from images (denoted by 
+\begin_inset Formula $\mathcal{I}$
+\end_inset
+
+) to spike rate.
+ We already know 
+\begin_inset Formula $r(I_{1})=r_{1}=20\frac{sp}{s}$
+\end_inset
+
+ and 
+\begin_inset Formula $r(I_{2})=\nu_{2}=60\frac{sp}{s}$
+\end_inset
+
+.
+ Then the response to the mean of the two images is 
+\begin_inset Formula \begin{eqnarray*}
+r\left(\frac{1}{2}I_{1}+\frac{1}{2}I_{2}\right) & = & r\left(\frac{1}{2}I_{1}\right)+r\left(\frac{1}{2}I_{2}\right)\\
+ & = & \frac{1}{2}r(I_{1})+\frac{1}{2}r(I_{2})\\
+ & = & \frac{1}{2}r_{1}+\frac{1}{2}r_{2}\\
+ & = & 10\frac{sp}{s}+30\frac{sp}{s}\\
+ & = & 40\frac{sp}{s}\end{eqnarray*}
+
+\end_inset
+
+This property does not only hold for two input stimuli.
+ It holds for an arbitrary number of stimuli.
+ If the rate function 
+\begin_inset Formula $r$
+\end_inset
+
+ realized of our neuron is linear, then response to the mean of 
+\begin_inset Formula $n$
+\end_inset
+
+ images is just the mean response to the single images.
+ 
+\begin_inset Formula \begin{eqnarray*}
+r\left(\frac{1}{n}\sum_{k=1}^{n}I_{k}\right) & = & \frac{1}{n}\sum_{k=1}^{n}r\left(I_{k}\right)\\
+ & = & \frac{1}{n}\sum_{k=1}^{n}\nu_{k}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Question:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+fbox{
+\backslash
+bf{
+\backslash
+Large ?}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Of course, real neurons are not truly linear.
+ If a neuron was indeed linear, for inputs, this would lead to some very
+ unrealistic conclusions.
+ Name two of them! 
+\end_layout
+
+\begin_layout Subsubsection*
+Answer:
+\end_layout
+
+\begin_layout Standard
+For some stimuli, the spike rate would be negative.
+ Also, for stimuli with very high input, the spike-rate would be arbitrarily
+ large, i.e.
+ the neuron's rate would not saturate.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Trigonometric Functions
+\end_layout
+
+\begin_layout Standard
+Trigonometric functions are functions of an angle 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+.
+ The most common trigonometric functions are 
+\begin_inset Formula $\sin(\vartheta)$
+\end_inset
+
+, 
+\begin_inset Formula $\cos(\vartheta)$
+\end_inset
+
+, 
+\begin_inset Formula $\tan(\vartheta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mbox{cotan}(\vartheta)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In general, there are two natural ways to think about 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+trigonometric functions: the geometrical view quantities and the periodic
+ signal view.
+\end_layout
+
+\begin_layout Subsubsection
+The geometric view
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+In the geometric view, 
+\begin_inset Formula $\cos(\vartheta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\sin(\vartheta)$
+\end_inset
+
+ represent the 
+\begin_inset Formula $x$
+\end_inset
+
+-coordinate and the 
+\begin_inset Formula $y$
+\end_inset
+
+-coordinate of a point on the intersection between a circle with radius
+ one centered at the origin, and a line through the origin that encloses
+ an angle of 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+ with the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+ In this view,
+\family default
+\series default
+\shape default
+\emph default
+\bar default
+ 
+\size default
+\noun default
+
+\begin_inset Formula $\tan(\vartheta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mbox{cotan}(\vartheta)$
+\end_inset
+
+ have a natural interpretation as well, namely the length of the line, touching
+ the circle, between the upper leg of the angle and the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis or the 
+\begin_inset Formula $y$
+\end_inset
+
+-axis, respectively.
+ Alternatively, 
+\begin_inset Formula $\tan(\theta)$
+\end_inset
+
+ is the ratio between the 
+\begin_inset Formula $x-$
+\end_inset
+
+and the 
+\begin_inset Formula $y-$
+\end_inset
+
+coordinate (see Figure 
+\begin_inset LatexCommand ref
+reference "fig:GeoView-SinCos"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+setlength{
+\backslash
+unitlength}{0.04cm}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+begin{picture}(200,200)
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+thicklines  
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(100,100){
+\backslash
+circle{100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(100,100){
+\backslash
+vector(1,0){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(100,100){
+\backslash
+vector(0,1){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(100,100){
+\backslash
+line(2,3){60}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(115,108){
+\backslash
+makebox(0,0){$
+\backslash
+vartheta$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(200,105){
+\backslash
+makebox(0,0){$x$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(105,200){
+\backslash
+makebox(0,0){$y$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(128.5,100){
+\backslash
+line(0,1){41}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(114,97){
+\backslash
+makebox(0,0){$
+\backslash
+underbrace{
+\backslash
+hspace{1.1cm}}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(114,90){
+\backslash
+makebox(0,0){$
+\backslash
+cos(
+\backslash
+vartheta)$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(128,101){
+\backslash
+rotatebox{90}{$
+\backslash
+underbrace{
+\backslash
+hspace{1.6cm}}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(134,103){
+\backslash
+rotatebox{90}{$
+\backslash
+sin(
+\backslash
+vartheta)$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(150,100){
+\backslash
+line(0,1){75}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(150,101){
+\backslash
+rotatebox{90}{$
+\backslash
+underbrace{
+\backslash
+hspace{2.95cm}}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(158,125){
+\backslash
+rotatebox{90}{$
+\backslash
+tan(
+\backslash
+vartheta)$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(100,150){
+\backslash
+line(1,0){34}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(117,153){
+\backslash
+makebox(0,0){$
+\backslash
+overbrace{
+\backslash
+hspace{1.3cm}}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(118,160){
+\backslash
+makebox(0,0){cotan$(
+\backslash
+vartheta)$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(75,93.5){
+\backslash
+makebox(0,0){$
+\backslash
+underbrace{
+\backslash
+hspace{2.0cm}}_{r=1}$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{picture}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+vspace{-2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:GeoView-SinCos"
+
+\end_inset
+
+Geometrical view of 
+\begin_inset Formula $\sin(\vartheta)$
+\end_inset
+
+, 
+\begin_inset Formula $\cos(\vartheta)$
+\end_inset
+
+, 
+\begin_inset Formula $\tan(\vartheta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mbox{cotan}(\vartheta)$
+\end_inset
+
+.
+ For a given angle 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+, 
+\begin_inset Formula $(\cos(\vartheta),\sin(\vartheta))$
+\end_inset
+
+ are the coordinates of the point on the intersection between a circle of
+ radius 
+\begin_inset Formula $r=1$
+\end_inset
+
+ and the upper leg of the angle.
+ 
+\begin_inset Formula $\tan(\vartheta)$
+\end_inset
+
+ is the length of the line between the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis and the upper leg of the angle, that ''touches'' the unit circle (therefor
+e the name 
+\emph on
+tangens
+\emph default
+ from 
+\emph on
+lat.
+ tangere = to touch
+\emph default
+).
+ cotan
+\begin_inset Formula $(\vartheta)$
+\end_inset
+
+ is defined analogoulsy for the line touching the circle from above.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Example (Path Integration)
+\end_layout
+
+\begin_layout Standard
+The term 
+\emph on
+path integration
+\emph default
+
+\begin_inset LatexCommand index
+name "path integration"
+
+\end_inset
+
+ denotes the ability of moving organisms (such as ants) to remember the
+ direction and length of the vector to its home while moving in the environment.
+ We will now just look at a special case of updating the home vector in
+ world coordinates, i.e.
+ a global fixed coordinate system.
+ This means that the home base is assigned the coordinates 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ and the moving organism stores its position according to a global coordinate
+ frame.
+ 
+\end_layout
+
+\begin_layout Standard
+Imagine you are an ant living in a completely flat world.
+ For the sake of simplicity we further imagine that you have a compass and
+ you know the length of your steps, so that you can measure the angles you
+ turn and the distance you walked.
+ Now imagine that you already explored your environment for a while and
+ that you are now standing at position 
+\begin_inset Formula $(x_{t},y_{t})$
+\end_inset
+
+ looking along the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+ If you know turn by an angle of 
+\begin_inset Formula $\vartheta_{t}$
+\end_inset
+
+ and move into the new direction by a distance of 
+\begin_inset Formula $r_{t}$
+\end_inset
+
+, what is your new position 
+\begin_inset Formula $(x_{t+1},y_{t+1})$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+setlength{
+\backslash
+unitlength}{0.04cm}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+begin{picture}(150,150)
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+thicklines  
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(1,0){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(0,1){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(1,0){50}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(80,42){
+\backslash
+makebox(0,0){$(x_t,y_t)$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(150,120){
+\backslash
+makebox(0,0){$(x_{t+1},y_{t+1})$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(100,50){
+\backslash
+vector(2,3){40}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(50,50){
+\backslash
+vector(3,2){90}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(115,58){
+\backslash
+makebox(0,0){$
+\backslash
+vartheta_t$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(120,47){
+\backslash
+makebox(0,0){$
+\backslash
+underbrace{
+\backslash
+hspace{1.5cm}}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(120,40){
+\backslash
+makebox(0,0){$r_t 
+\backslash
+cos(
+\backslash
+vartheta_t)$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(140,51){
+\backslash
+rotatebox{90}{$
+\backslash
+underbrace{
+\backslash
+hspace{2.38cm}}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(145,65){
+\backslash
+rotatebox{90}{$r_t 
+\backslash
+sin(
+\backslash
+vartheta_t)$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(95,51){
+\backslash
+rotatebox{56.5}{$
+\backslash
+overbrace{
+\backslash
+hspace{2.8cm}}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(105,80){
+\backslash
+rotatebox{56.5}{$r_t$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(150,45){
+\backslash
+makebox(0,0){$x$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(55,150){
+\backslash
+makebox(0,0){$y$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{picture}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+vspace{-1cm}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Looking again at figure 
+\begin_inset LatexCommand ref
+reference "fig:GeoView-SinCos"
+
+\end_inset
+
+ and the figure above shows that the new direction in which you are walking
+ is 
+\begin_inset Formula $(\cos(\vartheta_{t}),\sin(\vartheta_{t}))$
+\end_inset
+
+.
+ Since you are walking along that direction for a distance of 
+\begin_inset Formula $r_{t}$
+\end_inset
+
+, the total displacement is 
+\begin_inset Formula $r\cdot(\cos(\vartheta_{t}),\sin(\vartheta_{t}))$
+\end_inset
+
+.
+ If we add this displacement to the old position, we get the new position
+ 
+\begin_inset Formula \begin{eqnarray*}
+(x_{t+1},y_{t+1}) & = & (x_{t},y_{t})+r_{t}\cdot(\cos(\vartheta_{t}),\sin(\vartheta_{t}))\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Due to the geometrical property of 
+\begin_inset Formula $\sin(\vartheta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos(\vartheta)$
+\end_inset
+
+ we can derive a very useful equality by employing Pythagoras theorem.
+\end_layout
+
+\begin_layout Paragraph
+Theorem (Pythagoras)
+\end_layout
+
+\begin_layout Standard
+For a right angle triangle with side lengths 
+\begin_inset Formula $a,b$
+\end_inset
+
+ and 
+\begin_inset Formula $c$
+\end_inset
+
+, where 
+\begin_inset Formula $c$
+\end_inset
+
+ is the length of the longest leg, while the legs with length 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ enclose an angle of 
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+ (or 
+\begin_inset Formula $\frac{\pi}{2}$
+\end_inset
+
+ in radians), the following equality holds:
+\begin_inset Formula \begin{eqnarray*}
+a^{2}+b^{2} & = & c^{2}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the case of 
+\begin_inset Formula $\sin(\vartheta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos(\vartheta)$
+\end_inset
+
+, we know the value of 
+\begin_inset Formula $c$
+\end_inset
+
+ for any given 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+.
+ It is simply 
+\begin_inset Formula $c=1$
+\end_inset
+
+, since the point 
+\begin_inset Formula $p=(\cos(\vartheta),\sin(\vartheta))$
+\end_inset
+
+ lies on the circle of radius 
+\begin_inset Formula $r=1$
+\end_inset
+
+.
+ Therefore, we know that 
+\begin_inset Formula \begin{eqnarray*}
+\cos(\vartheta)^{2}+\sin(\vartheta)^{2} & = & 1\end{eqnarray*}
+
+\end_inset
+
+ for all angles 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+There is another useful equality that we can read of figure 
+\begin_inset LatexCommand ref
+reference "fig:GeoView-SinCos"
+
+\end_inset
+
+.
+ Assume we want to know the scaling factor 
+\begin_inset Formula $s$
+\end_inset
+
+ that transforms 
+\begin_inset Formula $\sin(\vartheta)$
+\end_inset
+
+ into 
+\begin_inset Formula $\tan(\vartheta)$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\sin(\vartheta)\cdot s=\tan(\vartheta)$
+\end_inset
+
+.
+ From looking at figure 
+\begin_inset LatexCommand ref
+reference "fig:GeoView-SinCos"
+
+\end_inset
+
+ we know that it is the same scaling factor that scales 
+\begin_inset Formula $\cos(\vartheta)$
+\end_inset
+
+ into 
+\begin_inset Formula $1$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\cos(\vartheta)\cdot s=1$
+\end_inset
+
+.
+ In this case, 
+\begin_inset Formula $s$
+\end_inset
+
+ is easy to calculate: It is simply 
+\begin_inset Formula $s=\frac{1}{\cos(\vartheta)}$
+\end_inset
+
+.
+ Therefore we have found a formula how to calculate 
+\begin_inset Formula $\tan(\vartheta)$
+\end_inset
+
+ from 
+\begin_inset Formula $\sin(\vartheta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos(\vartheta)$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\tan(\vartheta) & = & \frac{\sin(\vartheta)}{\cos(\vartheta)}.\end{eqnarray*}
+
+\end_inset
+
+In an analogous manner we can also derive the equality 
+\begin_inset Formula \begin{eqnarray*}
+\mbox{cotan}(\vartheta) & = & \frac{\cos(\vartheta)}{\sin(\vartheta)}.\end{eqnarray*}
+
+\end_inset
+
+Since 
+\begin_inset Formula $\tan(\vartheta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mbox{cotan}(\vartheta)$
+\end_inset
+
+ can be written in terms of a quotient, the radius of the circle does not
+ even have to be one.
+ Assume we want to know the tangens between the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis and the leg 
+\begin_inset Formula $(0,p)$
+\end_inset
+
+ for a point 
+\begin_inset Formula $p=(x,y)$
+\end_inset
+
+ that lies on a circle with radius 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ Since we can write 
+\begin_inset Formula $p$
+\end_inset
+
+ equivalently as 
+\begin_inset Formula $p=(x,y)=r\cdot(\cos(\vartheta),\sin(\vartheta))$
+\end_inset
+
+ for an appropriate value of 
+\begin_inset Formula $r$
+\end_inset
+
+, we have that 
+\begin_inset Formula \begin{eqnarray*}
+\frac{y}{x} & =\frac{r\cdot\sin(\vartheta)}{r\cdot\cos(\vartheta)}= & \tan(\vartheta).\end{eqnarray*}
+
+\end_inset
+
+ Therefore, 
+\begin_inset Formula $\tan(\vartheta)$
+\end_inset
+
+ is simply the quotient of the opposite leg and the adjacent leg of a right
+ angle triangle.
+ Similarily we can get 
+\begin_inset Formula \begin{eqnarray*}
+\frac{x}{y} & =\frac{r\cdot\cos(\vartheta)}{r\cdot\sin(\vartheta)}= & \mbox{cotan}(\vartheta).\end{eqnarray*}
+
+\end_inset
+
+Other useful properties that can also be read off from the geometric view.
+ Among them are the symmetry properties of 
+\begin_inset Formula $\sin(\vartheta)$
+\end_inset
+
+, 
+\begin_inset Formula $\cos(\vartheta)$
+\end_inset
+
+, 
+\begin_inset Formula $\tan(\vartheta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mbox{cotan}(\vartheta)$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\cos(-\vartheta) & = & \cos(\vartheta)\\
+\sin(-\vartheta) & = & -\sin(\vartheta)\\
+\tan(-\vartheta) & = & -\tan(\vartheta)\\
+\mbox{cotan}(-\vartheta) & = & -\mbox{cotan}(\vartheta)\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The Periodic Signal View
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "sub:periodic_signal_view"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The periodic signal view of thinking about 
+\begin_inset Formula $\sin(\vartheta)$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos(\vartheta)$
+\end_inset
+
+ is especially useful when dealing with signals such as e.g.
+ membrane potentials of neurons or stripes of natural images.
+ It is also closely related to techniques such as Fourier- or Spectral Analysis,
+ which are indispensable tools for the analysis of neurophysiological signals.
+ In order to get from the geometric to the periodic signal view, just imagine
+ a point on the unit circle that is moving with constant speed counterclockwise
+ along the circle.
+ If we plot the time 
+\begin_inset Formula $t$
+\end_inset
+
+ against the point's 
+\begin_inset Formula $x$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-coordinate
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+ 
+\begin_inset Formula $x(t)=\cos(\vartheta(t))$
+\end_inset
+
+, we get a strongly periodic function.
+ Same applies to the 
+\begin_inset Formula $y$
+\end_inset
+
+-coordinate 
+\begin_inset Formula $y(t)=\sin(\vartheta(t))$
+\end_inset
+
+.
+ Figure 
+\begin_inset LatexCommand ref
+reference "fig:SineCosine"
+
+\end_inset
+
+ shows the graphs of the two functions.
+ For the moment we wrote 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+ as a function of time in order to be able to say that the point is moving
+ with constant speed.
+ The faster the point is moving along the circle the more cycles we can
+ get in one fixed time interval.
+ This is expressed by the frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+ of the sine or cosine, respectively.
+ It tells us how many cycles our point does in one unit time interval.
+ We can therefore equivalently write 
+\begin_inset Formula $x(t)=\cos(\omega\cdot t)$
+\end_inset
+
+ and 
+\begin_inset Formula $y(t)=\sin(\omega\cdot t)$
+\end_inset
+
+.
+ From now on we will drop the dependence on time.
+ The frequency then tells us how many cycles of our point fit in the interval
+ 
+\begin_inset Formula $[0,2\pi]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/cos.eps
+	lyxscale 10
+	width 5cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/sin.eps
+	lyxscale 10
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:SineCosine"
+
+\end_inset
+
+
+\begin_inset Formula $\cos(\omega t)$
+\end_inset
+
+ (left) and 
+\begin_inset Formula $\sin(\omega t)$
+\end_inset
+
+ (right) in the interval of 
+\begin_inset Formula $t\in[-2\pi,2\pi]$
+\end_inset
+
+ with a frequency of 
+\begin_inset Formula $\omega=1$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Example (Sine and Cosine Gratings) 
+\end_layout
+
+\begin_layout Standard
+Assume that you want measure the orientation selectivity a V1-cell you are
+ recording from with an electrode.
+ A simple experiment would be to present gratings with different orientations
+ and varying amount of bars in one unit interval, i.e.
+ different spatial frequency.
+ The most common way of producing such patterns is to use 
+\emph on
+
+\begin_inset LatexCommand index
+name "sine grating"
+
+\end_inset
+
+sine
+\emph default
+ and 
+\emph on
+cosine
+\emph default
+
+\begin_inset LatexCommand index
+name "cosine grating"
+
+\end_inset
+
+ 
+\emph on
+gratings
+\emph default
+.
+ Figure 
+\begin_inset LatexCommand ref
+reference "fig:SineGrating"
+
+\end_inset
+
+ shows such a grating.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/VertSinGrating.eps
+	lyxscale 10
+	width 11cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:SineGrating"
+
+\end_inset
+
+Example of a vertical sine grating with a spatial frequency of approx.
+ 
+\begin_inset Formula $8$
+\end_inset
+
+Hz along the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+ The graylevel value at each position 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ is given by 
+\begin_inset Formula $I(x,y)=\sin(50\cdot x)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since an image can be seen as a function,that assigns a graylevel value
+ to each pixel 
+\begin_inset Formula $(f(x)$
+\end_inset
+
+is the gray value of pixel 
+\begin_inset Formula $x$
+\end_inset
+
+) those gratings are simply sine or cosine functions over 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+.
+ In order to get to the graylevel values at the different pixels, the function
+ is discretized, i.e.
+ is only evaluated at certains locations that correspond to the pixels.
+ At the moment we shall only look at how to produce vertical or horizontal
+ gratings.
+ We will see how to produce gratings of arbitrary orientation later.
+ 
+\end_layout
+
+\begin_layout Standard
+For a vertical grating, we know that the graylevel value along the vertical
+ axis must be constant.
+ If 
+\begin_inset Formula $I(x,y)$
+\end_inset
+
+ denotes the function that represents the image, i.e.
+ the functions that assigns a graylevel value to a position 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+, we can produce a vertical grating by 
+\begin_inset Formula $I(x,y)=\sin\left(\omega x\right)$
+\end_inset
+
+.
+ Instead of using the sine we could as well have used the cosine function.
+ A horizontal grating can be generated in exactly the same way by replacing
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ by 
+\begin_inset Formula $y$
+\end_inset
+
+ inside the sine function.
+ Here is the matlab code to produce a horizontal grating of frequency 
+\begin_inset Formula $\omega=2$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> [X,Y] = meshgrid([-2*pi:0.01:2*pi]); % get the sample points 
+\end_layout
+
+\begin_layout Standard
+
+>> omega = 2; % set the frequency 
+\end_layout
+
+\begin_layout Standard
+
+>> imagesc(sin(omega*X)) % display grating
+\end_layout
+
+\begin_layout Standard
+
+>> colormap(gray)  % set colormap to gray values
+\end_layout
+
+\begin_layout Standard
+
+>> axis off % switch off the axes
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At the moment all our gratings have a fixed constrast, since 
+\begin_inset Formula $-1\le\sin(x),\cos(x)\le1$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in\mathbb{R}$
+\end_inset
+
+.
+ However, we can vary the constrast by varying the amplitude of the sine.
+ This is done by premultiplying an appropriate scaling factor 
+\begin_inset Formula $I(x,y)=A\cdot\sin\left(\omega x\right)$
+\end_inset
+
+.
+ In order to build that into the matlab code above, you must specify the
+ maximum and the minimum gray value when calling the function 
+\family typewriter
+imagesc
+\family default
+, since it automatically scales the gray values otherwise
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> [X,Y] = meshgrid([-2*pi:0.01:2*pi]); % get the sample points 
+\end_layout
+
+\begin_layout Standard
+
+>> omega = 2; % set the frequency 
+\end_layout
+
+\begin_layout Standard
+
+>> A = 3; % set the contrast
+\end_layout
+
+\begin_layout Standard
+
+>> maxA = 10; % set maximal contrast
+\end_layout
+
+\begin_layout Standard
+
+>> imagesc(A*sin(omega*X),[-maxA,maxA]) % display grating
+\end_layout
+
+\begin_layout Standard
+
+>> colormap(gray)  % set colormap to gray values
+\end_layout
+
+\begin_layout Standard
+
+>> axis off % switch off the axes
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Up to now we saw how to control the frequency and the amplitude of sine
+ and cosine functions.
+ In order to complete this subsection we will also see how to shift the
+ sine and the cosine functions along the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+ Let us look at a sine function with a certain frequency 
+\begin_inset Formula $\sin(\omega t)$
+\end_inset
+
+.
+ At 
+\begin_inset Formula $t=0$
+\end_inset
+
+ also 
+\begin_inset Formula $\sin(\omega t)=0$
+\end_inset
+
+.
+ If we want to shift the sine function along the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis by an offset of 
+\begin_inset Formula $\phi$
+\end_inset
+
+, we must ensure that the shifted version is zero at 
+\begin_inset Formula $t=\phi$
+\end_inset
+
+ and not at 
+\begin_inset Formula $t=0$
+\end_inset
+
+.
+ However, this will be the case, if we subtract 
+\begin_inset Formula $\phi$
+\end_inset
+
+ from the argument of the sine.
+ Therefore, a sine that is shifted by an offset of 
+\begin_inset Formula $\phi$
+\end_inset
+
+ along the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis is given by 
+\begin_inset Formula $\sin(\lambda t-\phi)$
+\end_inset
+
+.
+ Cosine functions are shifted in exactly the same way.
+ This offset 
+\begin_inset Formula $\phi$
+\end_inset
+
+ is called 
+\emph on
+
+\begin_inset LatexCommand index
+name "phase"
+
+\end_inset
+
+phase
+\emph default
+ of the signal.
+ Now we are able to write down the general form of a sine or cosine signal
+ with a given amplitude 
+\begin_inset Formula $A$
+\end_inset
+
+ and phase 
+\begin_inset Formula $\phi$
+\end_inset
+
+: It is
+\begin_inset Formula \begin{eqnarray*}
+A\cdot\sin(\omega t-\phi) & \mbox{ and } & A\cdot\cos(\omega t-\phi).\end{eqnarray*}
+
+\end_inset
+
+Before finishing this section about trigonometric functions we just want
+ to mention two equalities that are useful when calculating with sine and
+ cosine.
+ These equalities are called the 
+\emph on
+Addition Theorems
+\emph default
+
+\begin_inset LatexCommand index
+name "addition theorems"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Theorem (Addition Theorems)
+\end_layout
+
+\begin_layout Standard
+The following equalities hold for all 
+\begin_inset Formula $x,y\in\mathbb{R}$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\cos(x+y) & = & \cos(x)\cos(y)-\sin(x)\sin(y)\\
+\sin(x+y) & = & \sin(x)\cos(y)+\cos(x)\sin(y)\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the symmetry properties of 
+\begin_inset Formula $\sin(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos(x)$
+\end_inset
+
+ one can also derive similar expressions for 
+\begin_inset Formula $\cos(x-y)$
+\end_inset
+
+ and 
+\begin_inset Formula $\sin(x-y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Exercise
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+fbox{
+\backslash
+bf{
+\backslash
+Large 
+\backslash
+sf E}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Write down the the corresponding expressions for 
+\begin_inset Formula $\cos(x-y)$
+\end_inset
+
+ and 
+\begin_inset Formula $\sin(x-y)$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+
+\series bold
+Important Rules for Trigonometric Functions
+\end_layout
+
+\begin_layout Standard
+The following rules apply to any 
+\begin_inset Formula $x,y,\vartheta\in\mathbb{R}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+Pythagoras' Theorem: 
+\begin_inset Formula $\cos(\vartheta)^{2}+\sin(\vartheta)^{2}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Symmetry Properties: 
+\begin_inset Formula \begin{eqnarray*}
+\cos(-\vartheta) & = & \cos(\vartheta)\\
+\sin(-\vartheta) & = & -\sin(\vartheta)\\
+\tan(-\vartheta) & = & -\tan(\vartheta)\\
+\mbox{cotan}(-\vartheta) & = & -\mbox{cotan}(\vartheta)\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Addition Theorems
+\begin_inset Formula \begin{eqnarray*}
+\cos(x+y) & = & \cos(x)\cos(y)-\sin(x)\sin(y)\\
+\sin(x+y) & = & \sin(x)\cos(y)+\cos(x)\sin(y)\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The 
+\begin_inset Formula $e$
+\end_inset
+
+-function and the Logarithm
+\end_layout
+
+\begin_layout Subsubsection
+The Exponential Function
+\end_layout
+
+\begin_layout Standard
+The exponential or 
+\begin_inset Formula $e$
+\end_inset
+
+-function 
+\begin_inset Formula $f(x)=e^{x}=\exp(x)$
+\end_inset
+
+ is one of the most frequently occuring and important function in the everyday
+ life of a natural scientist.
+ The number denoted by ``
+\begin_inset Formula $e$
+\end_inset
+
+'' is an irrational number called 
+\emph on
+
+\begin_inset LatexCommand index
+name "Euler's number"
+
+\end_inset
+
+Euler's number
+\emph default
+.
+ Its first digits are 
+\begin_inset Formula $e\approx2.7183$
+\end_inset
+
+.
+ You should remember the approximate value of its inverse 
+\begin_inset Formula $\frac{1}{e}\approx0.37$
+\end_inset
+
+ because it is used to define time constants of neural signal transduction.
+ 
+\end_layout
+
+\begin_layout Standard
+The exponential function appears in many probability distribution in statistics,
+ in solution of differential equations and will appear in many mathematical
+ model of neural processes.
+ The exponential function has some very nice properties.
+ One of them is that it is its own derivative 
+\begin_inset Formula $f'(x)=\left(e^{x}\right)'=e^{x}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The following examples show three cases, in which the exponential function
+ naturally occurs.
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Enumerate
+One central probability density in statistics is the 
+\emph on
+
+\begin_inset LatexCommand index
+name "normal distribution"
+
+\end_inset
+
+Normal
+\emph default
+ or 
+\emph on
+
+\begin_inset LatexCommand index
+name "Gaussian Distribution"
+
+\end_inset
+
+Gaussian Distribution
+\emph default
+ 
+\begin_inset Formula $\mathcal{N}(\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}$
+\end_inset
+
+.
+ In many experiments that involve noisy measurements, the noise is assumed
+ to be Gaussian with mean 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+.
+ One possible justification for this assumption is that sums of random quantitie
+s with other probability distributions tend to be Gaussian if the total
+ number of this quantities increases.
+ Since we think of the noise in an experiment as the superposition of many
+ other processes that we are not interested in, the assumption that there
+ are a large number of them which are linearly superimposed motivates the
+ Gaussian noise assumption.
+\newline
+Apart from that, the Gaussian distribution is
+ frequently used because it has a lot of properties that make it possible
+ to calculate analytical solutions of the respective statistical problems.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The potential change 
+\begin_inset Formula $\Delta V_{m}(t)$
+\end_inset
+
+ over time at a passive neuron membran after applying a rectangular current
+ pulse can be described by the following equation 
+\begin_inset Formula \begin{eqnarray*}
+\Delta V_{m}(t) & = & I_{m}R\left(1-e^{-\frac{t}{\tau}}\right).\end{eqnarray*}
+
+\end_inset
+
+ 
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/passMemPot.eps
+	width 12cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:MembPotentialChange"
+
+\end_inset
+
+Potential change 
+\begin_inset Formula $\Delta V_{m}(t)$
+\end_inset
+
+ (solid line) over time at a passive neuron membran after applying a rectangluar
+ current pulse (dashed line) [Figure from 
+\begin_inset LatexCommand cite
+key "KandelSchwartz1985"
+
+\end_inset
+
+].
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\newline
+Figure 
+\begin_inset LatexCommand ref
+reference "fig:MembPotentialChange"
+
+\end_inset
+
+ shows the time course of the potential.
+ Here 
+\begin_inset Formula $I_{m}$
+\end_inset
+
+ is the current, that has been injected, 
+\begin_inset Formula $R$
+\end_inset
+
+ is the membrane resistance and 
+\begin_inset Formula $\tau$
+\end_inset
+
+ is the 
+\emph on
+time constant
+\emph default
+ of the membrane.
+ It tells us how fast the membrane potential follows the rectangular pulse.
+ The greater 
+\begin_inset Formula $\tau$
+\end_inset
+
+ is, the longer it takes until 
+\begin_inset Formula $\Delta V_{m}(t)=I_{m}R$
+\end_inset
+
+, where 
+\begin_inset Formula $I_{m}R$
+\end_inset
+
+ is the potential change induced by injecting the current 
+\begin_inset Formula $I_{m}$
+\end_inset
+
+.
+ In some sense 
+\begin_inset Formula $\tau$
+\end_inset
+
+ defines a time scale for that membrane.
+ 
+\begin_inset Formula $\tau$
+\end_inset
+
+ is the time needed until the potential change reaches 
+\begin_inset Formula $0.63\cdot I_{m}R=(1-0.37){\cdot I}_{m}R=(1-\frac{1}{e})I_{m}R$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $63\%$
+\end_inset
+
+ of the potential change induced by the rectangluar pulse.
+ One can show that 
+\begin_inset Formula $\tau=RC$
+\end_inset
+
+, where 
+\begin_inset Formula $C$
+\end_inset
+
+ is the membrane capacitance, i.e.
+ its ability to buffer charge.
+\end_layout
+
+\begin_layout Enumerate
+A simple stochastical model for spike generation by a neuron is the 
+\emph on
+
+\begin_inset LatexCommand index
+name "Poisson Process"
+
+\end_inset
+
+Poisson Process.
+
+\emph default
+ In this model, time is divided into a large number of bins.
+ In each bin a spike occurs with probability 
+\begin_inset Formula $p$
+\end_inset
+
+ independent of whether a spike occured in the bin before or not.
+ If 
+\begin_inset Formula $p$
+\end_inset
+
+ is sufficiently small and the average spiking rate is 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, the probability of observing exactly 
+\begin_inset Formula $k$
+\end_inset
+
+ spikes in a time window of length 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ is given by the distribution of the Poisson Process with rate 
+\begin_inset Formula $\lambda$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+P(k,\Delta t) & = & \frac{e^{-\lambda\Delta t}(\lambda\Delta t)^{k}}{k!}.\end{eqnarray*}
+
+\end_inset
+
+The symbol expression ''
+\begin_inset Formula $k!$
+\end_inset
+
+'' denotes the 
+\emph on
+
+\begin_inset LatexCommand index
+name "faculty"
+
+\end_inset
+
+factorial function
+\emph default
+ 
+\begin_inset Formula $k!=k\cdot(k-1)\cdot...\cdot2\cdot1$
+\end_inset
+
+.
+ We can use a notation similar to the 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ for sums to denote a product of several componens: The uppercase greek
+ letter 
+\begin_inset Formula $\Pi$
+\end_inset
+
+ (for 
+\bar under
+p
+\bar default
+roduct) denotes a product of all elements following it.
+ The indices are written in the same way as for sums (see also Appendix
+ 
+\begin_inset LatexCommand ref
+reference "sec:Notation-and-Symbols"
+
+\end_inset
+
+).
+ Therefore, we can write the factorial function as 
+\begin_inset Formula $k!=\prod_{n=1}^{k}n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+If a spike train is generated by a 
+\emph on
+Poisson Process,
+\emph default
+ then the distribution of the 
+\emph on
+inter-spike-intervals (ISIs)
+\emph default
+ is an 
+\emph on
+exponential distribution.
+
+\emph default
+ That is, if we observe a spike at time 
+\emph on
+
+\begin_inset Formula $0,$
+\end_inset
+
+
+\emph default
+ then the probability (density) of observing the next spike at time 
+\begin_inset Formula $s$
+\end_inset
+
+ is given by 
+\begin_inset Formula $p(s)=\mu e^{-\mu s}$
+\end_inset
+
+, for 
+\begin_inset Formula $\mu=1/\lambda$
+\end_inset
+
+ in the example above.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Logarithms
+\end_layout
+
+\begin_layout Standard
+Logarithms and their derivatives often occur in statistics.
+ Estimating the parameters of a statistical model is often done via maximum
+ likelihood estimation.
+ This involves taking the derivate of the log of the likelihood function.
+ 
+\end_layout
+
+\begin_layout Standard
+Here we introduce logarithms.
+ More advanced examples will be discussed in later chapters.
+ For now, we start with a small example:
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+In this example, we look again at the time course of the membrane potential
+ after the application of a rectangular current pulse 
+\begin_inset Formula $\Delta V_{m}(t)=I_{m}R\left(1-e^{-\frac{t}{\tau}}\right)$
+\end_inset
+
+.
+ Assume that we want to measure the time constant of a certain membran.
+ For this purpose we excited the membran with a rectangular current pulse
+ and measured 
+\begin_inset Formula $\Delta V_{m}(t)$
+\end_inset
+
+ at several points 
+\begin_inset Formula $t_{k},\, k=1,...,n$
+\end_inset
+
+ in time.
+ Now we want to solve 
+\begin_inset Formula $\Delta V_{m}(t)=I_{m}R\left(1-e^{-\frac{t}{\tau}}\right)$
+\end_inset
+
+ for 
+\begin_inset Formula $\tau$
+\end_inset
+
+ at each time step 
+\begin_inset Formula $t_{k}$
+\end_inset
+
+ and get 
+\begin_inset Formula $n$
+\end_inset
+
+ values 
+\begin_inset Formula $\tau_{k}$
+\end_inset
+
+ that we average to get your final estimation 
+\begin_inset Formula $\hat{\tau}=\frac{1}{n}\sum_{k=1}^{n}\tau_{k}$
+\end_inset
+
+ of the membrane's time constant.
+ How do we solve for 
+\begin_inset Formula $\tau_{k}$
+\end_inset
+
+? The first step is easy: You rearrange the the terms to get 
+\begin_inset Formula \begin{eqnarray*}
+\Delta V_{m}(t)=I_{m}R\left(1-e^{-\frac{t}{\tau_{k}}}\right) & \Leftrightarrow & I_{m}R-\Delta V_{m}(t_{k})==I_{m}R\cdot e^{-\frac{t_{k}}{\tau_{k}}}\\
+ & \Leftrightarrow & \frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}=e^{-\frac{t_{k}}{\tau_{k}}}.\end{eqnarray*}
+
+\end_inset
+
+Now we somehow have to extract 
+\begin_inset Formula $-\frac{t_{k}}{\tau_{k}}$
+\end_inset
+
+ from the exponent.
+ This means that you are searching for a number 
+\begin_inset Formula $a$
+\end_inset
+
+, such that 
+\begin_inset Formula $e^{a}=\frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}$
+\end_inset
+
+.
+ This is exactly the definition of the 
+\emph on
+
+\begin_inset LatexCommand index
+name "natural logarithm"
+
+\end_inset
+
+natural logarithm
+\emph default
+ 
+\begin_inset Formula $\ln(x)$
+\end_inset
+
+: It is the number that you have to put in the exponent of 
+\begin_inset Formula $e$
+\end_inset
+
+ in order to obtain 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Now you can solve for 
+\begin_inset Formula $\tau$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}=e^{-\frac{t_{k}}{\tau_{k}}} & \Leftrightarrow & \ln\left(\frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}\right)=-\frac{t_{k}}{\tau_{k}}\\
+ & \Leftrightarrow & -\frac{\ln\left(\frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}\right)}{t_{k}}=\frac{1}{\tau_{k}}\\
+ & \Leftrightarrow & -\frac{t_{k}}{\ln\left(\frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}\right)}=\tau_{k}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We just saw that the natural logarithm is the function that cancels the
+ exponential function, i.e.
+ 
+\begin_inset Formula $\ln(e^{x})=e^{\ln(x)}=x$
+\end_inset
+
+.
+ In general, a function 
+\begin_inset Formula $g$
+\end_inset
+
+ that cancels another function 
+\begin_inset Formula $f$
+\end_inset
+
+ is called 
+\emph on
+inverse function
+\emph default
+
+\begin_inset LatexCommand index
+name "inverse function"
+
+\end_inset
+
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+ and is denoted by 
+\begin_inset Formula $g=f^{-1}$
+\end_inset
+
+.
+ Not all functions have inverses.
+ Some of them only have an inverse on a restricted range.
+ We will discuss inverse function in more detail in the chapter about analysis.
+\end_layout
+
+\begin_layout Standard
+So far we have seen how to solve 
+\begin_inset Formula $e^{x}$
+\end_inset
+
+ for 
+\begin_inset Formula $x$
+\end_inset
+
+ by using the natural logarithm.
+ What if we want to solve an equation like 
+\begin_inset Formula $2^{x}$
+\end_inset
+
+ for 
+\begin_inset Formula $x$
+\end_inset
+
+? Here we cannot use the natural logarithm since 
+\begin_inset Formula $\ln(x)$
+\end_inset
+
+ is only the inverse function of 
+\begin_inset Formula $e$
+\end_inset
+
+, not 
+\begin_inset Formula $2$
+\end_inset
+
+.
+ Here we must use a logarithm that fits to 
+\begin_inset Formula $2$
+\end_inset
+
+.
+ This logarithm is denoted by 
+\begin_inset Formula $\log(x)$
+\end_inset
+
+ and has the property that 
+\begin_inset Formula $2^{\log(x)}=\log(2^{x})=x$
+\end_inset
+
+.
+ In general there is a logarithm for any number 
+\begin_inset Formula $b$
+\end_inset
+
+ that is the inverse of the function 
+\begin_inset Formula $f(x)=b^{x}$
+\end_inset
+
+.
+ The number 
+\begin_inset Formula $b$
+\end_inset
+
+ is called 
+\emph on
+
+\begin_inset LatexCommand index
+name "base"
+
+\end_inset
+
+base
+\emph default
+ of the logarithm.
+ If the base is not 
+\begin_inset Formula $b=2$
+\end_inset
+
+ or 
+\begin_inset Formula $b=e$
+\end_inset
+
+, we indicate the base in the subscript of 
+\begin_inset Formula $\log_{b}(x)$
+\end_inset
+
+.
+ However, the only frequently used logarithms are 
+\begin_inset Formula $\log(x)=\log_{2}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\ln(x)=\log_{e}(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Remark
+\end_layout
+
+\begin_layout Standard
+It happens quite often that the base of of the logarithm is not specified,
+ 
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+fbox{
+\backslash
+bf{
+\backslash
+Large !}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+either because it does not matter or it is clear from the context.
+ In this case, the notation 
+\begin_inset Formula $\log(x)$
+\end_inset
+
+ is usually used.
+ Usually this means that the base is 
+\begin_inset Formula $e$
+\end_inset
+
+ (e.g.
+ Physics), sometimes it means that the base is 
+\begin_inset Formula $2$
+\end_inset
+
+ (e.g.
+ in Information Theory) and sometimes it is used for base 
+\begin_inset Formula $10$
+\end_inset
+
+ (e.g.
+ Economics).
+ In the remaining part of the script we simply use 
+\begin_inset Formula $\log(x)$
+\end_inset
+
+ to denote any logarithm.
+ The base should always be clear from the context or it does not matter.
+ If we want to emphasize a certain base we will write it in the subscript
+ or use the explicit notation 
+\begin_inset Formula $\ln(x)=\log_{e}(x)$
+\end_inset
+
+ or 
+\begin_inset Formula $\lg(x)=\log_{10}(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is a neat trick how to calculate logarithms of arbitrary bases by
+ using logarithms of another base:
+\begin_inset Formula \begin{eqnarray*}
+\log_{b}(x) & = & \frac{\ln(x)}{\ln(b)}=\frac{\log(x)}{\log(b)}.\end{eqnarray*}
+
+\end_inset
+
+Until now we skipped an important detail of logarithms.
+ When only dealing with real numbers, the logarithm is only defined on the
+ strictly positive part of 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+ We denote this set by 
+\begin_inset Formula $\mathbb{R}^{+}$
+\end_inset
+
+.
+ The reason for this restriction is easy to see.
+ If we remember that 
+\begin_inset Formula $\log_{b}x$
+\end_inset
+
+ is the number that has to be put in the exponent of 
+\begin_inset Formula $b$
+\end_inset
+
+ in order to obtain 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $x$
+\end_inset
+
+ is negative, there can generally be no such real number since 
+\begin_inset Formula $b^{x}$
+\end_inset
+
+ is positive.
+ (The concept of logarithm can be extended to negative and imaginary numbers,
+ but does lead to some complications, so we will not cover it here.)
+\end_layout
+
+\begin_layout Standard
+We conclude this section with a few calculation rules.
+ Most of them follow directly from the calculation rules of powers or the
+ definition of the logarithm.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+
+\series bold
+Calculation Rules for Logarithms
+\end_layout
+
+\begin_layout Standard
+The following rules apply to any logarithm:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\log_{b}(b^{x})=x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\log_{b}(x\cdot y)=\log_{b}(x)+\log_{b}(y)$
+\end_inset
+
+ for 
+\begin_inset Formula $x,y\in\mathbb{R}^{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\log_{b}\left(\frac{x}{y}\right)=\log_{b}(x)-\log_{b}(y)$
+\end_inset
+
+ for 
+\begin_inset Formula $x,y\in\mathbb{R}^{+}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\log_{b}(x)=\frac{\ln(x)}{\ln(b)}=\frac{\log(x)}{\log(b)}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ for 
+\begin_inset Formula $x,b\in\mathbb{R}^{+}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lines (Affine Functions)
+\end_layout
+
+\begin_layout Standard
+Most people think about lines when they think about linear functions.
+ However, lines are not generally linear functions.
+ Only the lines that include the origin are strictly speaking linear functions.
+ Lines versions of linear functions that are shifted along the 
+\begin_inset Formula $y$
+\end_inset
+
+-axis.
+ The general equation for a line is 
+\begin_inset Formula \begin{eqnarray*}
+f(x) & = & mx+t,\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $m$
+\end_inset
+
+ is called the 
+\emph on
+
+\begin_inset LatexCommand index
+name "slope"
+
+\end_inset
+
+slope
+\emph default
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ It is the first derivative or, equivalently, the amount about 
+\begin_inset Formula $f$
+\end_inset
+
+ changes if we increase 
+\begin_inset Formula $x$
+\end_inset
+
+ by one, i.e.
+ 
+\begin_inset Formula $m=f(x+1)-f(x)$
+\end_inset
+
+.
+ The value of 
+\begin_inset Formula $t$
+\end_inset
+
+ determines the 
+\begin_inset Formula $y$
+\end_inset
+
+ coordinate of the point where 
+\begin_inset Formula $f$
+\end_inset
+
+ cuts through the 
+\begin_inset Formula $y$
+\end_inset
+
+-axis.
+ This can easily been seen by evaluating 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x=0$
+\end_inset
+
+.
+ Obviously, the function value 
+\begin_inset Formula $f(0)=t$
+\end_inset
+
+ must be the location on the 
+\begin_inset Formula $y$
+\end_inset
+
+-axis where 
+\begin_inset Formula $f$
+\end_inset
+
+ hits it.
+ 
+\end_layout
+
+\begin_layout Standard
+From the general form of lines we can also see why they are not strictly
+ linear if 
+\begin_inset Formula $t\not=0$
+\end_inset
+
+.
+ If they were linear, 
+\begin_inset Formula $f(x+y)=f(x)+f(y)$
+\end_inset
+
+ would have to hold for all 
+\begin_inset Formula $x,y\in\mathbb{R}$
+\end_inset
+
+.
+ However, it is easy to check that this is not the case:
+\begin_inset Formula \begin{eqnarray*}
+f(x)+f(y) & = & mx+t+my+t\\
+ & = & m(x+y)+2t\\
+ & \not= & m(x+y)+t\\
+ & = & f(x+y).\end{eqnarray*}
+
+\end_inset
+
+Therefore, lines with 
+\begin_inset Formula $t\not=0$
+\end_inset
+
+ are not linear.
+ But we can always make them linear by subtracting 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ This yields a line with the same slope 
+\begin_inset Formula $m$
+\end_inset
+
+, which is shifted along the 
+\begin_inset Formula $y$
+\end_inset
+
+-axis such that it cuts through 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+, which make it a truely linear function.
+ 
+\end_layout
+
+\begin_layout Standard
+Functions of the form 
+\begin_inset Formula $f(x)=mx+t$
+\end_inset
+
+ are also called 
+\emph on
+
+\begin_inset LatexCommand index
+name "affine functions"
+
+\end_inset
+
+affine functions
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection
+Piecewise Defined Functions
+\end_layout
+
+\begin_layout Standard
+Sometimes, it is convenient to define a function by using two or more other
+ functions.
+ This is useful if we want to change the behaviour of the function on certain
+ parts of the domain.
+ Achieving a certain behaviour with a single expression might be difficult.
+ It is then usually easier to use an several expressions, one for each part
+ of the domain.
+ These functions are called 
+\emph on
+piecewise defined functions
+\emph default
+
+\begin_inset LatexCommand index
+name "piecewise defined functions"
+
+\end_inset
+
+.
+ We just mention a few important examples here.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Examples
+\end_layout
+
+\begin_layout Enumerate
+The Heaviside function is defined as:
+\begin_inset Formula \[
+f(x)=\left\{ \begin{array}{cc}
+0 & x\leq0\\
+1 & x>0\end{array}.\right.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The absolute value is given by 
+\begin_inset Formula \[
+f(x)=\left\{ \begin{array}{cc}
+-x & x\leq0\\
+x & x>0\end{array}\right.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The maximum-function is defined as
+\begin_inset Formula \[
+f(x,y)=\left\{ \begin{array}{cc}
+y & x\leq y\\
+x & x>y\end{array}\right.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Piecewise defined functions can for example be used to define a more realisic
+ model of neurons.
+\end_layout
+
+\begin_layout Subsubsection*
+Example: Neurons that are linear over some range.
+\end_layout
+
+\begin_layout Standard
+Earlier, we saw that neurons are linear for some stimuli 
+\begin_inset Formula $x,$
+\end_inset
+
+ but clearly not for all: Firstly, the firing rate of a neuron can not be
+ negative, and secondly, there is a maximal firing rate that can not be
+ exceeded.
+ Let us suppose that a neuron responds to a one-dimensional stimulus 
+\begin_inset Formula $x$
+\end_inset
+
+ with firing rate 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+f(x)=\left\{ \begin{array}{cc}
+0 & x<0\\
+x & 0\leq x\leq f_{max}\\
+f_{max} & x>f_{max}\end{array}\right.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Piecewise functions are just like any other function.
+ Within each interval, the functions can be differentiated and integrate
+ like other functions.
+ Nevertheless, there is some care needed at the points at which the intervals
+ meet.
+ In particular, it is often (but not always) the case that piecewise functions
+ are not continuous of differentiable at these points.
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand bibtex
+options "plain"
+bibfiles "fabee"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

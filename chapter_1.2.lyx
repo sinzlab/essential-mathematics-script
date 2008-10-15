@@ -1,0 +1,3523 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{1}
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Basic Calculus
+\end_layout
+
+\begin_layout Standard
+In this section we will cover basic rules for calculating derivatives and
+ simple integrals.
+ Along with introducing the different rules we will also introduce the derivativ
+es of all the functions covered in the section before.
+ In order to keep the equations simple, we will from now on leave out the
+ brackets for functions like 
+\begin_inset Formula $\sin$
+\end_inset
+
+, 
+\begin_inset Formula $\cos$
+\end_inset
+
+, 
+\begin_inset Formula $\log$
+\end_inset
+
+, ...
+ as long as the argument of the function is clear from the context.
+ 
+\end_layout
+
+\begin_layout Subsection
+Derivatives
+\end_layout
+
+\begin_layout Standard
+The derivative 
+\begin_inset Formula $f'(x_{0})=\frac{df}{dx}(x_{0})$
+\end_inset
+
+ of a function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ has a very intuitive meaning: It measures the rate of change of a function
+ at a certain location 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ This means 
+\begin_inset Formula $f'(x_{0})$
+\end_inset
+
+ is an approximation of how the function value of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ changes when going from 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ to 
+\begin_inset Formula $x_{0}+1$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is a linear function, the approximation will be exact, that mean 
+\begin_inset Formula $f$
+\end_inset
+
+ will change exatly by 
+\begin_inset Formula $f'(x_{0})$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is not linear we will make some error.
+ However, we still can use 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ to construct the best linear approximation of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ But let us start with an example of the exact case.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Standard
+Note that the tangent at the graph of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ involves an offset which makes the tangent an affine and not necessarily
+ a linear function.
+ There is some ambiguity here.
+ Often, people say 
+\begin_inset Quotes eld
+\end_inset
+
+linear function
+\begin_inset Quotes erd
+\end_inset
+
+ when the mean 
+\begin_inset Quotes eld
+\end_inset
+
+function of a line
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+Consider the linear function 
+\begin_inset Formula $f(x)=3x$
+\end_inset
+
+.
+ According to what we just heard, the derivative 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ is the rate of change of 
+\begin_inset Formula $f$
+\end_inset
+
+, i.e.
+ the change in the function value of 
+\begin_inset Formula $f$
+\end_inset
+
+ divided by the change in the value of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Let us take two arbitrary points 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ in order to calculate this quotient:
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & \frac{f(x_{1})-f(x_{0})}{x_{1}-x_{0}}\\
+ & = & \frac{3x_{1}-3x_{0}}{x_{1}-x_{0}}\\
+ & = & \frac{3(x_{1}-x_{0})}{(x_{1}-x_{0})}\\
+ & = & 3.\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+setlength{
+\backslash
+unitlength}{0.04cm}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+begin{picture}(200,200)
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(70,63){
+\backslash
+makebox(0,0){$
+\backslash
+underbrace{
+\backslash
+hspace{1cm}}_{x_1-x_0}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(82,69){
+\backslash
+rotatebox{90}{$
+\backslash
+underbrace{
+\backslash
+hspace{3cm}}_{f(x_1)-f(x_0)}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(57,69){
+\backslash
+line(1,0){25}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(82,69){
+\backslash
+line(0,1){78}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+thicklines  
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(1,0){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(0,1){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(34,0){
+\backslash
+line(1,3){50}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(150,55){
+\backslash
+makebox(0,0){$x$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(55,150){
+\backslash
+makebox(0,0){$y$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(57,35){
+\backslash
+makebox(0,0){$f(x)$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{picture}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:DerivativeLinearFunc"
+
+\end_inset
+
+Geometrical picture for calculating derivatives of linear functions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As we just showed in this example, the rate of change 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ is everywhere the same for linear functions.
+ A linear function 
+\begin_inset Formula $f(x)=c\cdot x$
+\end_inset
+
+ will exactly change by 
+\begin_inset Formula $f'(x)=c$
+\end_inset
+
+ when making a step of size one along the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Standard
+There is lot of technical stuff coming in the next section, like limits,
+ definitions of differentiability and continuity etc.
+ While it is very good to have it in the script, we should be very careful
+ not to load the lectures with it too much.
+ We should really cover calculus (except integration) in two lectures, so
+ it is much more important that people can simply do the calculations, and
+ not necessarily understand the theory behind it.
+ I know this is sad, but at the end of the day, we have to cover all of
+ mathematics in 10 lectures....
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This example shows that the best linear approximation of a linear function
+ at any point is the linear function itself and the rate of change is the
+ factor 
+\begin_inset Formula $c$
+\end_inset
+
+ of the input variable, called 
+\emph on
+
+\begin_inset LatexCommand index
+name "the slope"
+
+\end_inset
+
+the slope
+\emph default
+.
+ The situation changes when we consider arbitrary functions 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ In that case the value of the quotient 
+\begin_inset Formula $\frac{f(x_{1})-f(x_{0})}{x_{1}-x_{0}}$
+\end_inset
+
+ will depend on the choices of 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ But since we are interested in the best linear approximation of the function
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ 
+\emph on
+at the point
+\emph default
+ 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, we fix 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ and choose 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ just to be a infinitesimal step away from 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ Mathematically this is expressed in terms of a limit.
+ We do not go into the details of limits here, but merely demonstrate, how
+ the derivative of a function 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is defined.
+ The rate of change with a infinitesimal close point 
+\begin_inset Formula $x_{1}=x_{0}+h$
+\end_inset
+
+ can be written as
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & \lim_{h\rightarrow0}\frac{f(\overbrace{x_{0}+h}^{=x_{1}})-f(x_{0})}{\underbrace{h}_{=x_{1}-x_{0}}}.\end{eqnarray*}
+
+\end_inset
+
+The ''
+\begin_inset Formula $\lim$
+\end_inset
+
+'' expresses that we let 
+\begin_inset Formula $h$
+\end_inset
+
+ come infinitesimal close to zero and therefore 
+\begin_inset Formula $x_{1}=x_{0}+h$
+\end_inset
+
+ infinitesimal close to 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ The expression 
+\begin_inset Formula $\lim_{h\rightarrow0}\frac{f(x_{0}+h)-f(x_{0})}{h}$
+\end_inset
+
+ is called 
+\emph on
+
+\begin_inset LatexCommand index
+name "differential quotient"
+
+\end_inset
+
+differential quotient
+\emph default
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Figure 
+\begin_inset LatexCommand ref
+reference "fig:DerivativeArbrFunc"
+
+\end_inset
+
+ depicts the process of building the limit of the differential quotient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+setlength{
+\backslash
+unitlength}{0.04cm}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+begin{picture}(200,200)
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(70,63){
+\backslash
+makebox(0,0){$
+\backslash
+underbrace{
+\backslash
+hspace{1cm}}_{x_1-x_0}$}}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(82,69){
+\backslash
+rotatebox{90}{$
+\backslash
+underbrace{
+\backslash
+hspace{3cm}}_{f(x_1)-f(x_0)}$}}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(57,69){
+\backslash
+line(1,0){25}}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(82,69){
+\backslash
+line(0,1){78}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(65,62){
+\backslash
+line(4,6){90}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(108,184){
+\backslash
+makebox(0,0){$
+\backslash
+overbrace{
+\backslash
+hspace{2.6cm}}^{h_1}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(61,78){
+\backslash
+rotatebox{90}{$
+\backslash
+overbrace{
+\backslash
+hspace{4cm}}^{f(x_0+h_1)-f(x_0)}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(75,76){
+\backslash
+line(0,1){102}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(142,178){
+\backslash
+line(-1,0){67}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(65,63){
+\backslash
+line(3,4){90}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(102,70){
+\backslash
+makebox(0,0){$
+\backslash
+underbrace{
+\backslash
+hspace{2.15cm}}_{h_2}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(129,76.5){
+\backslash
+rotatebox{90}{$
+\backslash
+underbrace{
+\backslash
+hspace{2.85cm}}_{f(x_0+h_2)-f(x_0)}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(129,148){
+\backslash
+line(0,-1){72}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(75,76){
+\backslash
+line(1,0){54}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+thicklines  
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(77,40){
+\backslash
+makebox(0,0){$x_0$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(77,48){
+\backslash
+line(0,1){4}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(1,0){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(0,1){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+bezier(0,50)(100,50)(150,200) % function
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(150,55){
+\backslash
+makebox(0,0){$x$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(55,150){
+\backslash
+makebox(0,0){$y$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(57,35){
+\backslash
+makebox(0,0){$f(x)$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{picture}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:DerivativeArbrFunc"
+
+\end_inset
+
+Geometrical picture of the differential quotient for arbitrary functions.
+ As 
+\begin_inset Formula $h$
+\end_inset
+
+ becomes smaller, slope of the line through 
+\begin_inset Formula $(x_{0},f(x_{0}))$
+\end_inset
+
+ and 
+\begin_inset Formula $(x_{0}+h,f(x_{0}+h))$
+\end_inset
+
+ converges to the derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is clear from the geometric picture that not every function has a derivative
+ at any point 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ If the function makes a step at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ such that there is a gap between the function value at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ and the function value at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ plus or minus an infinitesimal 
+\begin_inset Formula $h$
+\end_inset
+
+, then the value of the differential quotient at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ depends on the direction from which 
+\begin_inset Formula $x_{0}+h$
+\end_inset
+
+ approaches 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ and the derivative would not be unique.
+ Therefore, functions are only differentiable at points where the function
+ does not make such a step.
+ This property is expressed in the concept of 
+\emph on
+
+\begin_inset LatexCommand index
+name "continuity"
+
+\end_inset
+
+continuity
+\emph default
+.
+\end_layout
+
+\begin_layout Paragraph
+Definition (Continous Function)
+\end_layout
+
+\begin_layout Standard
+A function 
+\begin_inset Formula $f$
+\end_inset
+
+ is said to be 
+\emph on
+
+\begin_inset LatexCommand index
+name "continous"
+
+\end_inset
+
+continous
+\emph default
+ 
+\emph on
+at a point
+\emph default
+ 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula \begin{eqnarray*}
+\lim_{h\rightarrow0}f(x_{0}+h)=\lim_{h\rightarrow0}f(x_{0}-h) & = & f(x_{0}),\end{eqnarray*}
+
+\end_inset
+
+i.e.
+ if getting infinitesimal close to 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ (no matter from which side) implies getting infinitesimal close to 
+\begin_inset Formula $f(x_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A function 
+\begin_inset Formula $f$
+\end_inset
+
+ is said to be 
+\emph on
+continous
+\emph default
+, if it is continous in every point of its domain.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If a function is continous, we can calculate the value of the differential
+ quotient 
+\begin_inset Formula $\lim_{h\rightarrow0}\frac{f(x_{0}+h)-f(x_{0})}{h}$
+\end_inset
+
+.
+ If we can find a linear function that with its slope equal to the value
+ of the differential quotient, no matter if 
+\begin_inset Formula $h$
+\end_inset
+
+ approaches zero from the left (
+\begin_inset Formula $h<0$
+\end_inset
+
+) or from the right 
+\begin_inset Formula $h>0$
+\end_inset
+
+, the function is called 
+\emph on
+
+\begin_inset LatexCommand index
+name "differentiable function"
+
+\end_inset
+
+differentiable.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Definition (Differentiable Function)
+\end_layout
+
+\begin_layout Standard
+A function 
+\begin_inset Formula $f$
+\end_inset
+
+ is said to be 
+\emph on
+
+\begin_inset LatexCommand index
+name "differentiable"
+
+\end_inset
+
+differentiable
+\emph default
+ 
+\emph on
+at a point
+\emph default
+ 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ if there exists a linear function 
+\begin_inset Formula $L(x)$
+\end_inset
+
+ such that 
+\begin_inset Formula \begin{eqnarray*}
+L(x_{0})-\lim_{h\rightarrow0}\frac{f(x_{0}+h)-f(x_{0})}{h} & = & 0,\end{eqnarray*}
+
+\end_inset
+
+no matter from which side 
+\begin_inset Formula $h$
+\end_inset
+
+ approaches zero.
+ 
+\end_layout
+
+\begin_layout Standard
+A function 
+\begin_inset Formula $f$
+\end_inset
+
+ is said to be 
+\emph on
+differentiable
+\emph default
+, if it is differentiable in every point of its domain.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fortunately, we do not need to go through the tedious process of calculating
+ the value of the differential quotient every time.
+ There exist calculation rules for a large class of functions how to calculate
+ 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+.
+ We start with the simplest rule for calculating the derivatives of powers.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $f(x)=ax^{b}$
+\end_inset
+
+, then the derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+ is given by 
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & abx^{b-1}.\end{eqnarray*}
+
+\end_inset
+
+As we can see, the rule is fairly easy: We just premultiply the exponent
+ 
+\begin_inset Formula $b$
+\end_inset
+
+, subtract 
+\begin_inset Formula $1$
+\end_inset
+
+ from the exponent of 
+\begin_inset Formula $x$
+\end_inset
+
+ and leave the factor 
+\begin_inset Formula $a$
+\end_inset
+
+ untouched.
+ Before looking at a small example, we just introduce another rule: The
+ derivative of a sum equals the derivatives of the single terms:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+f(x)=g_{1}(x)+g_{2}(x)\Rightarrow f'(x)=g_{1}'(x)+g_{2}'(x)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Or in general:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+f(x)=\sum_{k=1}^{n}g_{k}(x) & \Rightarrow & f'(x)=\left(\sum_{k=1}^{n}g_{k}(x)\right)'=\sum_{k=1}^{n}g'_{k}(x).\end{eqnarray*}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $g_{k}$
+\end_inset
+
+ are arbitrary differentiable functions.
+ Let us now apply these rules to a simple polynomial.
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+Assume that 
+\begin_inset Formula $f(x)=\frac{1}{2}x^{2}+5x+10$
+\end_inset
+
+.
+ In order to be able to apply the rule, we must rewrite the constant 
+\begin_inset Formula $10$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $x^{0}=1$
+\end_inset
+
+ we can write 
+\begin_inset Formula $10=10x^{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $f$
+\end_inset
+
+ becomes 
+\begin_inset Formula $f(x)=\frac{1}{2}x^{2}+5x+10x^{0}$
+\end_inset
+
+.
+ Now we can apply our rules step by step:
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & \left(\frac{1}{2}x^{2}+5x+10x^{0}\right)'\\
+ & = & \left(\frac{1}{2}x^{2}\right)'+(5x)'+(10x^{0})'\\
+ & = & x+5.\end{eqnarray*}
+
+\end_inset
+
+As we can see, the last term vanishes since premultiplying 
+\begin_inset Formula $0$
+\end_inset
+
+ cancels the whole term.
+ Since we can write any constant 
+\begin_inset Formula $b$
+\end_inset
+
+ that does not depend on 
+\begin_inset Formula $x$
+\end_inset
+
+ as 
+\begin_inset Formula $b=bx^{0}$
+\end_inset
+
+, constants vanish when calculating the derivative.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can generalize our example to arbitrary polynomials: 
+\begin_inset Formula \begin{eqnarray*}
+f(x)=\sum_{k=0}^{n}a_{k}x^{k} & \Rightarrow & f'(x)=\sum_{k=1}^{n}a_{k}kx^{k-1}.\end{eqnarray*}
+
+\end_inset
+
+Note, that the index 
+\begin_inset Formula $k$
+\end_inset
+
+ of 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ starts at one instead of zero.
+ This is because the last term 
+\begin_inset Formula $a_{0}x^{0}=a_{0}$
+\end_inset
+
+ vanishes when differentiating.
+ 
+\end_layout
+
+\begin_layout Standard
+We can also use this rule to calculate the derivative of roots and ratios.
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be 
+\begin_inset Formula $f(x)=\sqrt{x}$
+\end_inset
+
+.
+ Since we can write 
+\begin_inset Formula $f$
+\end_inset
+
+ as 
+\begin_inset Formula $f(x)=x^{\frac{1}{2}}$
+\end_inset
+
+, the derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+ is given by 
+\begin_inset Formula $f'(x)=\frac{1}{2}x^{-\frac{1}{2}}=\frac{1}{2\sqrt{x}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be 
+\begin_inset Formula $f(x)=\frac{1}{x^{a}}$
+\end_inset
+
+.
+ Since we can write 
+\begin_inset Formula $f$
+\end_inset
+
+ as 
+\begin_inset Formula $f(x)=x^{-a}$
+\end_inset
+
+, the derivative is given by 
+\begin_inset Formula $f'(x)=-ax^{-a-1}=-\frac{a}{x^{a+1}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As those examples show, we can already calculate the derivative of a fair
+ amount of functions.
+ However, so far we cannot differentiate functions that are compositions
+ of other functions.
+ For example, we cannot get 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ for function 
+\begin_inset Formula $f(x)=\sqrt{\frac{1}{2}x^{2}+5x+10}$
+\end_inset
+
+ with our current set of rules, since 
+\begin_inset Formula $f(x)=g_{2}(g_{1}(x))$
+\end_inset
+
+ is the composition of 
+\begin_inset Formula $g_{2}(y)=\sqrt{y}$
+\end_inset
+
+ and 
+\begin_inset Formula ${y=g}_{1}(x)=\frac{1}{2}x^{2}+5x+10$
+\end_inset
+
+.
+ Therefore, we introduce a new rule, called 
+\emph on
+
+\begin_inset LatexCommand index
+name "chain rule"
+
+\end_inset
+
+chain rule:
+\emph default
+ Let 
+\emph on
+
+\begin_inset Formula $f$
+\end_inset
+
+
+\emph default
+ be 
+\emph on
+
+\begin_inset Formula $f(x)=g_{2}(g_{1}(x))$
+\end_inset
+
+
+\emph default
+, then the derivative 
+\emph on
+
+\begin_inset Formula $f'(x)$
+\end_inset
+
+
+\emph default
+ is given by 
+\emph on
+
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & g_{2}'(g_{1}(x))\cdot g_{1}'(x).\end{eqnarray*}
+
+\end_inset
+
+
+\emph default
+According to this rule we first differentiate 
+\emph on
+
+\begin_inset Formula $g_{2}(y)$
+\end_inset
+
+
+\emph default
+ while treating 
+\begin_inset Formula $y=g_{1}(x)$
+\end_inset
+
+ as a variable on its own.
+ After that, we multiply the result with the derivative 
+\begin_inset Formula $g_{1}'(x)$
+\end_inset
+
+ of 
+\begin_inset Formula $g_{1}$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $g_{1}$
+\end_inset
+
+.
+ Let us illustrate this rule by differentiating 
+\begin_inset Formula $f(x)=\sqrt{\frac{1}{2}x^{2}+5x+10}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be 
+\begin_inset Formula $f(x)=\sqrt{\frac{1}{2}x^{2}+5x+10}$
+\end_inset
+
+.
+ As already mentioned before, 
+\begin_inset Formula $f$
+\end_inset
+
+ is the composition of 
+\begin_inset Formula $g_{2}(y)=\sqrt{y}$
+\end_inset
+
+ and 
+\begin_inset Formula ${y=g}_{1}(x)=\frac{1}{2}x^{2}+5x+10$
+\end_inset
+
+.
+ We already calculated the derivative of those functions:
+\begin_inset Formula \begin{eqnarray*}
+g_{2}'(y) & = & \frac{1}{2\sqrt{y}}\\
+g_{1}(x) & = & x+5.\end{eqnarray*}
+
+\end_inset
+
+Applying the chain rule therefore yields
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & g_{2}'(g_{1}(x))\cdot g_{1}'(x)\\
+ & = & \frac{1}{2\sqrt{\frac{1}{2}x^{2}+5x+10}}\cdot g_{1}'(x)\\
+ & = & \frac{1}{2\sqrt{\frac{1}{2}x^{2}+5x+10}}\cdot(x+5).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, there is only one rule left: the rule for differenting products 
+\begin_inset Formula $f(x)=g_{1}(x)\cdot g_{2}(x)$
+\end_inset
+
+ of two functions.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is the product of two functions 
+\begin_inset Formula $g_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{2}$
+\end_inset
+
+, the derivative is given by 
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & g_{1}'(x)\cdot g_{2}(x)+g_{1}(x)\cdot g_{2}'(x).\end{eqnarray*}
+
+\end_inset
+
+This rule is called 
+\emph on
+
+\begin_inset LatexCommand index
+name "product rule"
+
+\end_inset
+
+product rule
+\emph default
+.
+ It says, that we first differentiate 
+\begin_inset Formula $g_{1}(x)$
+\end_inset
+
+ and multiply the result with 
+\begin_inset Formula $g_{2}(x)$
+\end_inset
+
+, then do it the other way round and sum the results in the end.
+ Again, an example will illustrate this rule.
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be 
+\begin_inset Formula $f(x)=(x+1)(\frac{1}{2}x^{2}+5)$
+\end_inset
+
+.
+ Apparently, 
+\begin_inset Formula $f$
+\end_inset
+
+ is the product of 
+\begin_inset Formula $g_{1}(x)=(x+1)$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{2}(x)=(\frac{1}{2}x^{2}+5)$
+\end_inset
+
+.
+ It is easy to calculate their derivatives:
+\begin_inset Formula \begin{eqnarray*}
+g_{1}'(x) & = & 1\\
+g_{2}'(x) & = & x.\end{eqnarray*}
+
+\end_inset
+
+Therefore, by applying the product rule we get the derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & (x+1)'\cdot\left(\frac{1}{2}x^{2}+5\right)+(x+1)\cdot\left(\frac{1}{2}x^{2}+5\right)'\\
+ & = & \frac{1}{2}x^{2}+5+(x+1)x\\
+ & = & \frac{3}{2}x^{2}+x+5.\end{eqnarray*}
+
+\end_inset
+
+In this particular case, we can check the rule by multiplying out 
+\begin_inset Formula $f(x)=(x+1)(\frac{1}{2}x^{2}+5)=\frac{1}{2}x^{3}+\frac{1}{2}x^{2}+5x+5.$
+\end_inset
+
+ Using the rule for polynomials, yields:
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & \left(\frac{1}{2}x^{3}+\frac{1}{2}x^{2}+5x+5\right)'\\
+ & = & \frac{3}{2}x^{2}+x+5,\end{eqnarray*}
+
+\end_inset
+
+which is the same results as the one from the product rule.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In most cases, a fourth rule for differentiating quotients of functions
+ is specified.
+ However, we can derive the 
+\emph on
+quotient rule
+\begin_inset LatexCommand index
+name "quotient rule"
+
+\end_inset
+
+
+\emph default
+ from the rules we already know.
+ Before stating the general quotient rule, we look at a small example.
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be 
+\begin_inset Formula $f(x)=\frac{(x+1)}{(\frac{1}{2}x^{2}+5)}$
+\end_inset
+
+.
+ For calculating the derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+ we reformulate it first into 
+\begin_inset Formula $f(x)=(x+1)(\frac{1}{2}x^{2}+5)^{-1}$
+\end_inset
+
+.
+ Now we can apply the product rule and the chain rule to differentiate 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Let us look at the calculation step by step:
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & \stackrel{\mbox{ProductRule}}{=} & (x+1)'\left(\frac{1}{2}x^{2}+5\right)^{-1}+(x+1)\left(\left(\frac{1}{2}x^{2}+5\right)^{-1}\right)'\\
+ & \stackrel{\mbox{Chain Rule}}{=} & (x+1)'\left(\frac{1}{2}x^{2}+5\right)^{-1}-(x+1)\left(\frac{1}{2}x^{2}+5\right)^{-2}\left(\frac{1}{2}x^{2}+5\right)'\\
+ & = & \frac{(x+1)'}{\left(\frac{1}{2}x^{2}+5\right)}-\frac{(x+1)\left(\frac{1}{2}x^{2}+5\right)'}{\left(\frac{1}{2}x^{2}+5\right)^{2}}\\
+ & = & \frac{(x+1)'(\frac{1}{2}x^{2}+5)-(x+1)\left(\frac{1}{2}x^{2}+5\right)'}{\left(\frac{1}{2}x^{2}+5\right)^{2}}\\
+ & = & \frac{-\frac{1}{2}x^{2}-x+5}{\left(\frac{1}{2}x^{2}+5\right)^{2}}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In general, it might be easier to calculate all the derivatives first.
+ In this example, however, the derivatives were only resolved at the end
+ to show an important aspect: When looking at the fourth line of the calculation
+, we see that it consists exclusively of terms that already appeared in
+ the product.
+ We can generalize this, to get the quotient rule: Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be a quotient of two functions 
+\begin_inset Formula $f(x)=\frac{g_{1}(x)}{g_{2}(x)}.$
+\end_inset
+
+ By rewritting 
+\begin_inset Formula $f(x)=g_{1}(x)\cdot g_{2}(x)^{-1}$
+\end_inset
+
+ and applying the product rule, the chain rule and the rule for powers,
+ we arrive at 
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & \frac{g_{1}'(x)g_{2}(x)-g_{1}(x)g_{2}'(x)}{g_{2}(x)^{2}}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The rules above are basically all we need to calculate derivatives of most
+ common functions.
+ Let us just summarize them
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+
+\series bold
+Differentiation Rules
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Summation Rule:
+\bar default
+ Let 
+\begin_inset Formula $f(x)=\sum_{k=1}^{n}g_{k}(x)$
+\end_inset
+
+ a sum of arbitrary differentiable functions.
+ Then 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ is given by:
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & \sum_{k=1}^{n}g_{k}'(x).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Power Rule:
+\bar default
+ Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be 
+\begin_inset Formula $f(x)=ax^{b}$
+\end_inset
+
+, then 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ is give by:
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & abx^{b-1}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Chain Rule:
+\bar default
+ Let 
+\begin_inset Formula $f(x)=g_{2}(g_{1}(x))$
+\end_inset
+
+ be a composition of arbitrary differentiable functions.
+ Then 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ is given by:
+\emph on
+
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & g_{2}'(g_{1}(x))\cdot g_{1}'(x).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Product Rule:
+\bar default
+ Let 
+\begin_inset Formula $f(x)=g_{1}(x)g_{2}(x)$
+\end_inset
+
+ be a product of arbitrary differentiable functions.
+ Then 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ is given by:
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & g_{1}'(x)\cdot g_{2}(x)+g_{1}(x)\cdot g_{2}'(x).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Quotient Rule:
+\bar default
+ Let 
+\begin_inset Formula $f(x)=\frac{g_{1}(x)}{g_{2}(x)}$
+\end_inset
+
+ be a quotient of two arbitrary diffferentiable functions.
+ Then 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ is given by:
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & \frac{g_{1}'(x)g_{2}(x)-g_{1}(x)g_{2}'(x)}{g_{2}(x)^{2}}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+
+\series medium
+We conclude this section by stating derivatives of all functions of the
+ previous section.
+ Some of those derivatives can not be calculated with the rules that we
+ just listed.
+ However, remember and the differentiation rules can be used for calculating
+ the derivatives of more complex functions built from the ones of the previous
+ section.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+
+\series bold
+Derivatives of important functions
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=ax\Rightarrow f'(x)=a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=x^{a}\Rightarrow f'(x)=ax^{a-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=\sin(x)\Rightarrow f'(x)=\cos(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=\cos(x)\Rightarrow f'(x)=-\sin(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=e^{x}\Rightarrow f'(x)=e^{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=\ln(x)\Rightarrow f'(x)=\frac{1}{x}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Example
+\end_layout
+
+\begin_layout Standard
+Let us calculate the derivative of a little bit more advanced case: 
+\begin_inset Formula $f(x)=|x|=\mbox{abs}(x)$
+\end_inset
+
+.
+ Figure 
+\begin_inset LatexCommand ref
+reference "fig:abs"
+
+\end_inset
+
+ show the graph of the function.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/abs.eps
+	width 10cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:abs"
+
+\end_inset
+
+Graph of the function 
+\begin_inset Formula $f(x)=|x|$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can either use the definition of 
+\begin_inset Formula $|x|$
+\end_inset
+
+as a piecewise defined function, or use the fact that 
+\begin_inset Formula $f(x)=\sqrt{x^{2}}.$
+\end_inset
+
+ In both cases the derivative is 
+\begin_inset Formula $f'(x)=-1$
+\end_inset
+
+ for 
+\begin_inset Formula $x<0$
+\end_inset
+
+ and 
+\begin_inset Formula $f'(x)=1$
+\end_inset
+
+ for 
+\begin_inset Formula $x>0$
+\end_inset
+
+.
+ But what happens at 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+.
+ If we use the piecewise definition 
+\begin_inset Formula \[
+|x|=\left\{ \begin{array}{cc}
+-x & x\leq0\\
+x & x>0\end{array}\right.,\]
+
+\end_inset
+
+then the value of the differential quotient 
+\begin_inset Formula $\lim_{h\rightarrow0}\frac{|x_{0}+h|-|x_{0}|}{h}$
+\end_inset
+
+ is 
+\begin_inset Formula $-1$
+\end_inset
+
+ if we approach 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+ from the left (i.e.
+ 
+\begin_inset Formula $h<0$
+\end_inset
+
+) and 
+\begin_inset Formula $1$
+\end_inset
+
+ if we approach 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+ from the right (i.e.
+ 
+\begin_inset Formula $h>0$
+\end_inset
+
+).
+ Since there cannot be a linear function which has the slope 
+\begin_inset Formula $-1$
+\end_inset
+
+ and 
+\begin_inset Formula $1$
+\end_inset
+
+ at the same time, the derivative is not defined at 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+.
+ A similar thing happens when we use 
+\begin_inset Formula $|x|=\sqrt{x^{2}}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\left(\sqrt{x^{2}}\right)'=\frac{x}{\sqrt{x^{2}}}$
+\end_inset
+
+ we cannot choose 
+\begin_inset Formula $x$
+\end_inset
+
+ to be zero since this would make the denominator zero and the fraction
+ would not be defined.
+ Therefore the derivative of 
+\begin_inset Formula $f(x)=|x|$
+\end_inset
+
+ is given by
+\begin_inset Formula \[
+f(x)=\left\{ \begin{array}{cc}
+-1 & x<0\\
+\mbox{undefined} & x=0\\
+1 & x>0\end{array}\right..\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+If you do use this example in lectures, I would just hands and pointing
+ to show that the derivative is not defined at zero.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Higher-Order Derivatives
+\end_layout
+
+\begin_layout Standard
+The term 
+\emph on
+higher-order derivatives
+\emph default
+
+\begin_inset LatexCommand index
+name "higher-order derivatives"
+
+\end_inset
+
+ comprises the result of iterated differentiation.
+ Since we can treat 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ as a function on its own, there is really nothing new here.
+ If 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ is differentiable, then 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ twice differentiable.
+ This can be extended to higher-orders: The third order derivative which
+ is written 
+\begin_inset Formula $f'''(x)$
+\end_inset
+
+ or sometimes 
+\begin_inset Formula $f^{(3)}(x)$
+\end_inset
+
+ is just the derivative of the second order derivate.
+ 
+\end_layout
+
+\begin_layout Standard
+The second derivative, however, has a special meaning.
+ Geometrically, it is the slope of the slope, i.e.
+ how do the linear approximations at 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ vary with 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ This give us the 
+\emph on
+curvature
+\emph default
+
+\begin_inset LatexCommand index
+name "curvature"
+
+\end_inset
+
+ of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ Intuitively, if the linear approximations at 
+\begin_inset Formula $f(x_{0})$
+\end_inset
+
+ bend away very quickly in the area around 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, then 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ must have a high curvature at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Draw picture to explain the curvature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The geometric intution behind higher-order derivates is somewhat harder.
+ In particular, our visual system is not very good at judging higher-order
+ derivatives.
+ By visual inspection, it is pretty hard to say if e.g.
+ the fourth derivative is positive or negative.
+\end_layout
+
+\begin_layout Subsubsection*
+Example
+\end_layout
+
+\begin_layout Standard
+Suppose that the function 
+\begin_inset Formula $f(t)$
+\end_inset
+
+ is the position of an object in space.
+ Then, 
+\begin_inset Formula $f'(t)$
+\end_inset
+
+ gives us the rate at which the object changes its position, i.e.
+ the object's speed at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ The second order derivative 
+\begin_inset Formula $f''(t)$
+\end_inset
+
+ gives us the rate at which the object changes its speed, which is simply
+ the acceleration of the object.
+ Similarly, if 
+\begin_inset Formula $f(t)$
+\end_inset
+
+ is the concentration of Ca-ions in a neuron at time 
+\begin_inset Formula $t$
+\end_inset
+
+, then 
+\begin_inset Formula $f'(t)$
+\end_inset
+
+ gives you the rate at which ions enter or leave the cell at time 
+\begin_inset Formula $t,$
+\end_inset
+
+and 
+\begin_inset Formula $f''(t)$
+\end_inset
+
+ indicates whether this rate is getting bigger or smaller.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Approximating Functions Locally by Lines and Polynomials
+\end_layout
+
+\begin_layout Subsubsection*
+Example: Finding a linear approximation to the function sin(x) for x near
+ 0
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $f(x)=\sin(x)$
+\end_inset
+
+.
+ If we want to approximate 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+ by a line, i.e.
+ a function of the form 
+\begin_inset Formula $g(x)=wx+b$
+\end_inset
+
+, such that 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ is a good approximation for 
+\begin_inset Formula $x$
+\end_inset
+
+ near 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ From the definition of the derivative, we saw that the derivate of a function
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is really the slope of a linear approximation of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ Therefore we can just compute 
+\begin_inset Formula $f'(x)=\cos(x)$
+\end_inset
+
+ and evaluate it at 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+.
+ This yields the value of 
+\begin_inset Formula $w$
+\end_inset
+
+, since 
+\begin_inset Formula $w$
+\end_inset
+
+ if the derivative of 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ and we want the derivatives of the function 
+\begin_inset Formula $f$
+\end_inset
+
+ and its linear approximation 
+\begin_inset Formula $g$
+\end_inset
+
+ to be the same.
+ In our case, 
+\begin_inset Formula $f'(x_{0})=\cos(0)=1=w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Now, we must ensure, that 
+\begin_inset Formula $g(x_{0})=f(x_{0})$
+\end_inset
+
+.
+ We do that by adjusting 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ The offset 
+\begin_inset Formula $b$
+\end_inset
+
+ shifts the function horizontically.
+ If we want 
+\begin_inset Formula $g$
+\end_inset
+
+ to have the same value at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ as 
+\begin_inset Formula $f$
+\end_inset
+
+, we just need to add 
+\begin_inset Formula $f(x_{0})$
+\end_inset
+
+.
+ Therefore 
+\begin_inset Formula $b=f(x_{0})$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $f(x_{0})=\sin(0)=0$
+\end_inset
+
+, we set 
+\begin_inset Formula $b=0$
+\end_inset
+
+ and get 
+\begin_inset Formula $g(x)=wx$
+\end_inset
+
+ as linear approximation of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/linearApprox.eps
+	width 13cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:linearApprox"
+
+\end_inset
+
+Graph of the function 
+\begin_inset Formula $f(x)=\sin(x)$
+\end_inset
+
+ and its linear approximation 
+\begin_inset Formula $g(x)=x$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You might have noticed that 
+\begin_inset Formula $g(x)=wx+b$
+\end_inset
+
+ is not a linear function in the strict sense.
+ Only 
+\begin_inset Formula $g(x)=wx$
+\end_inset
+
+ is a linear function since any linear function must take the value zero
+ at 
+\begin_inset Formula $x=0$
+\end_inset
+
+.
+ Functions of the form 
+\begin_inset Formula $g(x)=wx+b$
+\end_inset
+
+ are called 
+\emph on
+
+\begin_inset LatexCommand index
+name "affine functions"
+
+\end_inset
+
+affine functions
+\emph default
+.
+ However, since 
+\begin_inset Formula $g'(x)=w$
+\end_inset
+
+ is the slope of the linear approximation 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ for any 
+\begin_inset Formula $b$
+\end_inset
+
+, 
+\begin_inset Formula $g(x)=wx+b$
+\end_inset
+
+ is also ambiguously called linear approximation, even though it is not
+ a linear function for 
+\begin_inset Formula $b\not=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+There is just one last generalization left, that we have to take care of
+ : If 
+\begin_inset Formula $x_{0}\not=0$
+\end_inset
+
+, then we cannot simply choose 
+\begin_inset Formula $b=f(x_{0})$
+\end_inset
+
+, since 
+\begin_inset Formula \begin{eqnarray*}
+g(x_{0}) & = & wx_{0}+b\\
+ & = & f'(x_{0})x_{0}+f(x_{0})\\
+ & \not= & f(x_{o})\mbox{\mbox{for }}w,x_{0}\not=0.\end{eqnarray*}
+
+\end_inset
+
+However, we can fix this by a simple trick: We just subtract 
+\begin_inset Formula $wx_{0}=f'(x_{0})x_{0}$
+\end_inset
+
+ to enforce 
+\begin_inset Formula $g(x_{0})=f(x_{0})$
+\end_inset
+
+.
+ By this, we arrive at the general form of a linear approximation 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ to the function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ for at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+: 
+\begin_inset Formula \begin{eqnarray*}
+g(x) & = & wx+b\\
+ & = & f'(x_{0})x+f(x_{0})-f'(x_{o})x_{0}\\
+ & = & f(x_{0})+(x-x_{o})f'(x_{o}).\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The quality of the approximation depends, of course, on the properties of
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ Clearly, in the example above, the approximation is really bad for e.g.
+ 
+\begin_inset Formula $x=\pi.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Example
+\end_layout
+
+\begin_layout Standard
+The linear approximation to 
+\begin_inset Formula $f(x)=e^{x}$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{o}=0$
+\end_inset
+
+ is given by 
+\begin_inset Formula \begin{eqnarray*}
+g_{0}(x) & = & f(x)+(x-x_{o})f'(x_{o})\\
+ & = & e^{0}+x\cdot e^{0}\\
+ & = & 1+x.\end{eqnarray*}
+
+\end_inset
+
+The approximation at 
+\begin_inset Formula $x_{o}=1$
+\end_inset
+
+ is given by:
+\begin_inset Formula \begin{eqnarray*}
+g_{1}(x) & = & f(x)+(x-x_{o})f'(x_{o})\\
+ & = & e^{1}+(x-1)\cdot e^{1}\\
+ & = & xe.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/expLinApprox.eps
+	width 8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:expLinApprox"
+
+\end_inset
+
+Graph of the functions 
+\begin_inset Formula $f(x)=\exp(x)$
+\end_inset
+
+ and its linear approximation 
+\begin_inset Formula $g_{0}(x)=1+x$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{1}(x)=ex$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{0}=1$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset LatexCommand ref
+reference "fig:expLinApprox"
+
+\end_inset
+
+ shows the graphs of these functions.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Example
+\end_layout
+
+\begin_layout Standard
+As we can see in figure 
+\begin_inset LatexCommand ref
+reference "fig:expLinApprox"
+
+\end_inset
+
+, the linear approximations to 
+\begin_inset Formula $e^{x}$
+\end_inset
+
+ are not very good.
+ Can we find a better approximation by using a quadratic approximation,
+ i.e.
+ one that uses a polynomial of degree 
+\begin_inset Formula $2$
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Standard
+The answer is yes.
+ We simply add a quadratic term to our approximating function 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ So far 
+\begin_inset Formula $g$
+\end_inset
+
+ had the form 
+\begin_inset Formula $g(x)=w(x-x_{0})+b$
+\end_inset
+
+.
+ To turn it into an quadratic approximation, we need to add a term, that
+ is quadratic in 
+\begin_inset Formula $(x-x_{0})$
+\end_inset
+
+.
+ This yields 
+\begin_inset Formula $g(x)=\frac{1}{2}v(x-x_{0})^{2}+w(x-x_{0})+b$
+\end_inset
+
+.
+ The additional work we have to do in comparision to a simple linear approximati
+on is to determine the value of 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ Analogously to determining the value of 
+\begin_inset Formula $w$
+\end_inset
+
+, the value of 
+\begin_inset Formula $v$
+\end_inset
+
+ is simply 
+\begin_inset Formula $v=f''(x_{0})$
+\end_inset
+
+.
+ By making this choice, we enforce that 
+\emph on
+the value
+\emph default
+, 
+\emph on
+the slope
+\emph default
+ and 
+\emph on
+the curvature
+\emph default
+ of 
+\begin_inset Formula $g$
+\end_inset
+
+ and 
+\begin_inset Formula $f$
+\end_inset
+
+ match at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, i.e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+f(x_{0}) & = & g(x_{0})\\
+f'(x_{0}) & = & g'(x_{0})\\
+f''(x_{0}) & = & g''(x_{0}).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is also the reason why we multiplied 
+\begin_inset Formula $v$
+\end_inset
+
+ with 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+.
+ This way, everything cancels out nicely.
+\end_layout
+
+\begin_layout Standard
+For our example 
+\begin_inset Formula $f(x)=e^{x}$
+\end_inset
+
+, the best quadratic approximation is 
+\begin_inset Formula $g(x)=1+x+\frac{x^{2}}{2}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This example can be generalized to polynomials of arbitrary order.
+ We can find better local approximations by matching the (higher order)
+ derivatives.
+ If we want to match the first three derivates, then we have to use approximatio
+ns by a polynomial of degree 
+\begin_inset Formula $3$
+\end_inset
+
+, 
+\begin_inset Formula $4$
+\end_inset
+
+ and so on.
+ It is a remarkable fact that any function that is sufficiently differentiable
+ can (locally) be approximated arbitrarily well by polynomials:
+\end_layout
+
+\begin_layout Subsubsection*
+Theorem (Taylor/MacLaurin) 
+\end_layout
+
+\begin_layout Standard
+For a differentiable function 
+\begin_inset Formula $f$
+\end_inset
+
+ and a 
+\begin_inset Formula $x$
+\end_inset
+
+ near 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ can be approximated by
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Formula \[
+f(x)\approx f(x_{0})+(x-x_{0})f'(x_{0})+\frac{1}{2}(x-x_{0})^{2}f''(x_{0})+\frac{1}{6}(x-x_{0})^{3}f'''(x_{0})+\ldots\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+or in general
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+f(x)\approx f_{(n)}(x)=\sum_{k=0}^{n}\frac{1}{k!}(x-x_{0})^{k}f^{(k)}(x_{0}),\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $f^{(k)}(x_{0})$
+\end_inset
+
+ denotes the 
+\begin_inset Formula $k$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-th
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+ order derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+, and 
+\begin_inset Formula $f_{(n)}$
+\end_inset
+
+is referred to as the 
+\emph on
+Taylor series
+\begin_inset LatexCommand index
+name "Taylor series"
+
+\end_inset
+
+
+\emph default
+ approximation to 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, or simply the 
+\emph on
+Taylor approximation
+\begin_inset LatexCommand index
+name "Taylor approximation"
+
+\end_inset
+
+ of order
+\emph default
+ 
+\begin_inset Formula $k$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Standard
+Computer demo: Pick f(x), draw approximations of higher and higher degree.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The theorem states, that every function can locally be approximated by a
+ polynomial.
+ The higher the order of the polynomial, the more precise is the approximation.
+ The linear approximation we had above is therefore really a special case
+ for a polynomial of degree 1.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Examples
+\end_layout
+
+\begin_layout Enumerate
+The cubic approximation to 
+\begin_inset Formula $f(x)=e^{x}$
+\end_inset
+
+at 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+ is given by 
+\begin_inset Formula \begin{eqnarray*}
+g(x) & = & f(x_{0})+(x-x_{0})f'(x_{0})+\frac{1}{2}(x-x_{0})^{2}f''(x_{0})+\frac{1}{6}(x-x_{0})^{3}f'''(x_{0})\\
+ & = & e^{0}+xe^{0}+\frac{1}{2}x^{2}e^{0}+\frac{1}{6}x^{3}e^{0}\\
+ & = & 1+x+\frac{1}{2}x^{2}+\frac{1}{6}x^{3}.\end{eqnarray*}
+
+\end_inset
+
+We can generalize that to polynomials of any given order 
+\begin_inset Formula $n$
+\end_inset
+
+: The 
+\begin_inset Formula $n$
+\end_inset
+
+-th order approximation to 
+\begin_inset Formula $f(x)=e^{x}$
+\end_inset
+
+ is given by
+\begin_inset Formula \begin{eqnarray*}
+g_{n}(x) & = & \sum_{k=0}^{n}\frac{1}{k!}(x-x_{0})^{k}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The linear and the quadratic approximation to 
+\begin_inset Formula $\cos(x)$
+\end_inset
+
+ for 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+ are given by
+\begin_inset Formula \begin{eqnarray*}
+g_{lin}(x) & = & \cos(x_{0})-x\cdot\sin(x_{0})\\
+ & = & 1\end{eqnarray*}
+
+\end_inset
+
+and
+\begin_inset Formula \begin{eqnarray*}
+g_{quadr}(x) & = & \cos(x_{0})-x\cdot\sin(x_{0})-\frac{x^{2}}{2}\cos(x_{0})\\
+ & = & 1-x^{2}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The quadratic approximation to 
+\begin_inset Formula $\sin(x)$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{o}=0$
+\end_inset
+
+ is given by
+\begin_inset Formula \begin{eqnarray*}
+g(x) & = & \sin(x_{0})+x\cdot\cos(x_{0})-\frac{x^{2}}{2}\cdot\sin(x_{0})\\
+ & = & x.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Here is a small piece of matlab code that plots the Taylor approximation
+ of 
+\begin_inset Formula $e^{x}$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}=1$
+\end_inset
+
+ up to the order of 
+\begin_inset Formula $n=10$
+\end_inset
+
+.
+ You can write it in a file called e.g.
+ 
+\family typewriter
+mytaylor.m
+\family default
+ and run it by typing the command 
+\family typewriter
+mytalyor
+\family default
+ in the matlab shell.
+\newline
+
+\family typewriter
+
+\newline
+
+\newline
+t = [-1:0.01:2]; % define the range where we want to plot exp
+\newline
+x0 = 1; % set
+ x0 = 1; you can change that 
+\newline
+plot(t,f(t),'k-','LineWidth',3) % plot exp
+\newline
+hold
+ on % allow plotting several lines in one plot
+\newline
+fk = exp(x0); % compute constant
+ part
+\newline
+n = 1; % set the polynomial order to 1
+\newline
+for k = 1:10 % loop over 
+\newline
+\InsetSpace ~
+\InsetSpace ~
+plot(t,fk,'-
+r','LineWidth',3); % plot the best approx.
+ in red
+\newline
+\InsetSpace ~
+\InsetSpace ~
+pause % wait until someone presses a key
+\newline
+\InsetSpace ~
+\InsetSpace ~
+plot(t,fk,'-b','LineWidth',3);
+ % plot the same curve in blue
+\newline
+\InsetSpace ~
+\InsetSpace ~
+n = n*k; % update the factorial function 
+\newline
+\InsetSpace ~
+\InsetSpace ~
+fk
+ = fk + 1/n*(t-x0).^k.*exp(x0); % get the next polynomial
+\newline
+end
+\newline
+hold off
+\family default
+
+\newline
+
+\newline
+
+\newline
+Note that this code only works for the function 
+\begin_inset Formula $f(x)=\exp(x)$
+\end_inset
+
+ since 
+\begin_inset Formula $\exp$
+\end_inset
+
+ is its own derivative.
+\newline
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Standard
+Note that the quadratic approximation is actualy a linear function!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Exercise
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+fbox{
+\backslash
+bf{
+\backslash
+Large 
+\backslash
+sf E}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Find the quadratic approximation to 
+\begin_inset Formula $f(x)$
+\end_inset
+
+=
+\begin_inset Formula $x^{4}+3x^{3}+x^{2}+x$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Being able to approximate functions by polynomials is extremely useful,
+ and done very often.
+ Because many functions are hard to analyse, people work with their linear
+ or quadratic approximations in many cases .
+ By using these approximations, one can often get away by just using polynomials.
+ Furthermore, finding Taylor approximations is often not hard, you just
+ have to be able to differentiate.
+ You should keep in mind though that the approximation is only local, i.e.
+ for 
+\begin_inset Formula $x$
+\end_inset
+
+ near 
+\begin_inset Formula $x_{0},$
+\end_inset
+
+ and you should be careful that the approximation is really appropriate
+ for your particular application.
+\end_layout
+
+\begin_layout Subsection
+Finding Extreme Points of a Function
+\end_layout
+
+\begin_layout Standard
+Derivates can be used to find global minima or maxima of functions.
+ A function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ has a local maximum (resp.
+ minimum) at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $f''(x_{0})<0$
+\end_inset
+
+ (resp.
+ 
+\begin_inset Formula $f''(x_{0})>0$
+\end_inset
+
+).
+ If 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $f''(x_{0})=0,$
+\end_inset
+
+ then 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is said to be a saddle-point.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Standard
+Draw Picture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This ties in very well with the quadratic approximations discussed above:
+ If there is a maximum at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, then 
+\begin_inset Formula $f(x_{0})$
+\end_inset
+
+ can be locally approximated by a parabola that is oriented downwards.
+\end_layout
+
+\begin_layout Standard
+It should be pointed out that this procedure only yields 
+\begin_inset Formula $local$
+\end_inset
+
+ maxima, and not necessarily 
+\begin_inset Formula $global$
+\end_inset
+
+ ones.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Standard
+Discuss Example from Exam Sheet here
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

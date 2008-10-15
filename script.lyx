@@ -1,0 +1,192 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+titlepage{ 
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+title{
+\backslash
+Huge 
+\backslash
+bf Essential Mathematics for Neuroscience}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+author{Fabian Sinz 
+\backslash
+& Jakob Macke 
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+includegraphics[width=10cm]{./figs/Caspar_David_Friedrich_009}}
+\end_layout
+
+\begin_layout Standard
+
+}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Basics
+\end_layout
+
+\begin_layout Standard
+This chapter serves as an introduction to a few basic elements that will
+ be needed troughout the course.
+ We begin by reviewing basic families of functions like 
+\emph on
+linear
+\emph default
+ 
+\emph on
+functions
+\emph default
+
+\begin_inset LatexCommand index
+name "linear functions"
+
+\end_inset
+
+, 
+\emph on
+polynomials
+\emph default
+
+\begin_inset LatexCommand index
+name "polynomials"
+
+\end_inset
+
+ and 
+\emph on
+trigonometric functions
+\emph default
+
+\begin_inset LatexCommand index
+name "trigonometric functions"
+
+\end_inset
+
+, as well as some of their properties.
+ Afterwards we will look at some elementary calculus on those types of functions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Include \input{chapter_1.1.lyx}
+preview false
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Appendix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Include \input{appendix.lyx}
+preview false
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

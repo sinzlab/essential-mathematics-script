@@ -3079,14 +3079,13 @@ Potential change
 \end_inset
 
  (solid line) over time at a passive neuron membran after applying a rectangluar
- current pulse (dashed line).
- The figure was taken from 
+ current pulse (dashed line) [Figure from 
 \begin_inset LatexCommand cite
 key "KandelSchwartz1985"
 
 \end_inset
 
-.
+].
  
 \end_layout
 
@@ -3660,17 +3659,8 @@ either because it does not matter or it is clear from the context.
 \end_layout
 
 \begin_layout Standard
-Apart from that, there is a neat trick how to calculate logarithms of arbitrary
- bases by using logarithms of another base.
- We state the trick only for 
-\begin_inset Formula $\ln$
-\end_inset
-
- and 
-\begin_inset Formula $\log$
-\end_inset
-
-:
+There is a neat trick how to calculate logarithms of arbitrary bases by
+ using logarithms of another base:
 \begin_inset Formula \begin{eqnarray*}
 \log_{b}(x) & = & \frac{\ln(x)}{\ln(b)}=\frac{\log(x)}{\log(b)}.\end{eqnarray*}
 
@@ -3774,6 +3764,35 @@ The following rules apply to any logarithm:
 .
 \end_layout
 
+\begin_layout Itemize
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\log_{b}(x)=\frac{\ln(x)}{\ln(b)}=\frac{\log(x)}{\log(b)}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ for 
+\begin_inset Formula $x,b\in\mathbb{R}^{+}$
+\end_inset
+
+.
+\end_layout
+
 \end_inset
 
 
@@ -3786,9 +3805,8 @@ Lines (Affine Functions)
 \begin_layout Standard
 Most people think about lines when they think about linear functions.
  However, lines are not generally linear functions.
- Only the lines that include the origin are true linear functions.
- Other linear are versions of linear functions that are shifted along the
- 
+ Only the lines that include the origin are strictly speaking linear functions.
+ Lines versions of linear functions that are shifted along the 
 \begin_inset Formula $y$
 \end_inset
 
@@ -3818,7 +3836,7 @@ slope
 \end_inset
 
 .
- It is the first derivative or , equivalently, the amount about 
+ It is the first derivative orequivalently, the amount about 
 \begin_inset Formula $f$
 \end_inset
 
