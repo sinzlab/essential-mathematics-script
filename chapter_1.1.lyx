@@ -3971,12 +3971,6 @@ Piecewise functions are just like any other function.
 \end_layout
 
 \begin_layout Standard
-\begin_inset LatexCommand bibtex
-options "plain"
-bibfiles "fabee"
-
-\end_inset
-
 
 \end_layout
 

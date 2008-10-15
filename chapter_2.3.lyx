@@ -1,0 +1,500 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{2}
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Determinants
+\end_layout
+
+\begin_layout Standard
+In the previous section, we saw that a matrix has full rank if the column
+ vectors are linearly independent.
+ 
+\emph on
+Determinants
+\begin_inset LatexCommand index
+name "Determinants"
+
+\end_inset
+
+
+\emph default
+ are functions of square matrices, that are tightly linked to the linear
+ independence of the column or row vectors of this matrix.
+ They also play important roles in many other parts of linear algebra.
+ However, apart from a small example, we will only use determinants to check
+ whether a matrix has full rank so far.
+ The easiest way is to remember their geometric interpretation.
+ 
+\end_layout
+
+\begin_layout Standard
+You should not use the determinant function for programming in order to
+ check whether a matrix has full rank.
+ There are other functions, like e.g.
+ 
+\family typewriter
+rank(A)
+\family default
+ in Matlab.
+ Computing a determinant will take too long for larger matrices.
+ However, there is a simple rule to compute the determinant for 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ and 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ matrices which can be used when doing small analytical calculations.
+ 
+\end_layout
+
+\begin_layout Standard
+The geometric interpretation of a determinant is easy.
+ If 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is a 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix with linearly independent column or row vectors, then 
+\begin_inset Formula $\det(\mathbf{A})$
+\end_inset
+
+ is the volume of the parallelepiped, i.e.
+ the skewed cuboid, spanned by those vectors.
+ Now it is easy to see why we can use a determinant to check, whether 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ has full rank.
+ Consider a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrix.
+ The determinant gives us the area of the parallelogram spanned by the column
+ vectors.
+ If the matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ does not have full rank, the column vectors have the same orientation and
+ the parallelogram collapses to a line, which has area zero.
+ For 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ matrices, three linearly independent column vectors span some skewed cuboid.
+ If they are linearly dependent, all three vectors lie in a plane or even
+ on a line.
+ Hence, the skewed cuboid has volumne zero.
+ This generalizes to 
+\begin_inset Formula $n$
+\end_inset
+
+ dimensions: If the determinant 
+\begin_inset Formula $\det\mathbf{A}$
+\end_inset
+
+ of a squared matrix is zero, then the column vectors are linearly dependent
+ and the matrix does not have full rank.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Theorem
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ be a 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix.
+ The determinant 
+\begin_inset Formula $\det\mathbf{A}$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ yields the volume of the parallelepiped spanned by the column or row vectors
+ of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+.
+ If the matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ does not have full rank, then the determinant is zero.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let us now see how determinants are computed.
+\end_layout
+
+\begin_layout Paragraph
+Lemma
+\end_layout
+
+\begin_layout Enumerate
+The determinant of a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrix 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A} & = & \left(\begin{array}{cc}
+A_{11} & A_{12}\\
+A_{21} & A_{22}\end{array}\right)\end{eqnarray*}
+
+\end_inset
+
+ can be computed via 
+\begin_inset Formula \begin{eqnarray*}
+\det\mathbf{A} & = & A_{11}A_{22}-A_{21}A_{12}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The determinant of a 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ matrix 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A} & = & \left(\begin{array}{ccc}
+A_{11} & A_{12} & A_{13}\\
+A_{21} & A_{22} & A_{23}\\
+A_{31} & A_{32} & A_{33}\end{array}\right)\end{eqnarray*}
+
+\end_inset
+
+is given by
+\begin_inset Formula \begin{eqnarray*}
+\det\mathbf{A} & = & A_{11}A_{22}A_{33}+A_{12}A_{23}A_{31}+A_{13}A_{21}A_{32}-A_{31}A_{22}A_{13}-A_{32}A_{23}A_{11}-A_{33}A_{21}A_{12}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are special cases where the determinant is easy to compute.
+ Before we look at few examples, we just mention them here.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Lemma
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ diagonal matrix, i.e.
+ a matrix that is only non-zero on the diagonal, then the determinant is
+ given by the product of the diagonal entries: 
+\begin_inset Formula \begin{eqnarray*}
+\det\mathbf{A} & = & \prod_{i=1}^{n}A_{ii}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+If 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix, for which all entries below or above the diagonal are zero, then
+ the determinant is also given by the product of the diagonal entries:
+\begin_inset Formula \begin{eqnarray*}
+\det\mathbf{A} & = & \prod_{i=1}^{n}A_{ii}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now let us look at a few examples.
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Enumerate
+The determinant of the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrices from of the linear equation systems above, 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}_{1} & = & \left(\begin{array}{cc}
+2 & 3\\
+4 & 2\end{array}\right)\end{eqnarray*}
+
+\end_inset
+
+and 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}_{2} & = & \left(\begin{array}{cc}
+2 & 4\\
+1 & 2\end{array}\right),\end{eqnarray*}
+
+\end_inset
+
+are 
+\begin_inset Formula $\det\mathbf{A}_{1}=2\cdot2-4\cdot3=-8$
+\end_inset
+
+ and 
+\begin_inset Formula $\det\mathbf{A}_{2}=2\cdot2-1\cdot4=0$
+\end_inset
+
+, as expected, since 
+\begin_inset Formula $\mathbf{A}_{1}$
+\end_inset
+
+ has full rank and 
+\begin_inset Formula $\mathbf{A}_{2}$
+\end_inset
+
+ does not.
+\end_layout
+
+\begin_layout Enumerate
+The determinant of the identity matrix 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+ is 
+\begin_inset Formula $\det\mathbf{I}=1$
+\end_inset
+
+, since the product over the diagonal elements is one.
+\end_layout
+
+\begin_layout Enumerate
+The determinant of the rotation matrix 
+\begin_inset Formula $\mathbf{R}=\left(\begin{array}{cc}
+\cos\phi & -\sin\phi\\
+\sin\phi & \cos\phi\end{array}\right)$
+\end_inset
+
+ is 
+\begin_inset Formula $\det\mathbf{R}=1$
+\end_inset
+
+, because the columns form an orthonormal basis and therefore enclose a
+ square of area one.
+\end_layout
+
+\begin_layout Enumerate
+This last example shows a case where determinants are used in statistics:
+ The density function of a multivariate 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional Gaussian with mean 
+\begin_inset Formula $\bm\mu$
+\end_inset
+
+ and covariance 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ is given by 
+\begin_inset Formula \begin{eqnarray*}
+p(\mathsf{X}|\bm\mu,\mathbf{C}) & = & \frac{1}{(2\pi)^{\frac{n}{2}}\sqrt{\det\mathbf{C}}}\exp\left(\frac{1}{2}(\mathbf{x}-\bm\mu)^{\top}\mathbf{C}^{-1}(\mathbf{x}-\bm\mu)\right).\end{eqnarray*}
+
+\end_inset
+
+Here, the square root of the determinant, i.e.
+ the volumne spanned by the column vectors of 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ is used to normalize the probability density.
+ This is very similar to the one-dimensional case, where the square root
+ of the variance, i.e.
+ 
+\begin_inset Formula $\sigma=\sqrt{\sigma^{2}}$
+\end_inset
+
+, takes over this role.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally let us look at a few useful computatio rules for determinants.
+\end_layout
+
+\begin_layout Paragraph
+Proposition (Properties of Matrices)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathbf{C}=\mathbf{A}\cdot\mathbf{B}$
+\end_inset
+
+, then
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\det\mathbf{C}=\det(\mathbf{AB})=\det\mathbf{A}\cdot\det\mathbf{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\det(\mathbf{A}^{-1})=\det(\mathbf{A})^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\det\mathbf{A}=\det\mathbf{A}^{\top}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the following section we will look deeper into the mechanics of matrices
+ and their properties.
+ Especially, we will look at eigenvalues and eigenvectors, an important
+ concept of matrices which can be used for understanding and analysing a
+ big portion of all matrix equations.
+ For example, it plays an important role in 
+\emph on
+Principal Component Analysis
+\emph default
+, known as 
+\emph on
+PCA
+\emph default
+, which is one of the most common algorithms for analysis data.
+ We will also look at this algorithm in more detail.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

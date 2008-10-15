@@ -1,0 +1,910 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{2}
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Change of Basis
+\end_layout
+
+\begin_layout Standard
+In the previous sections, we have heard that a matrix to a linear function
+ is always with respect to some basis and that the matrix changes, if the
+ basis does.
+ Fortunately, changing a vector of coordinates or a matrix from one basis
+ to another is a linear function.
+ Therefore, we can find a matrix to this function.
+ This is what we will look at in more detail in this section.
+\end_layout
+
+\begin_layout Subsection
+Coordinate Change of a Vector under a Change of Basis
+\end_layout
+
+\begin_layout Standard
+Let us develop the coordinate change along a simple example.
+ Previously, we have seen that 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{e}_{1}={1 \choose 0}\,,\mathbf{e}_{2}={0 \choose 1} & \mbox{\, and } & \mathbf{r}_{1}={\cos\phi \choose \sin\phi},\,\mathbf{r}_{2}={-\sin\phi \choose \cos\phi}\end{eqnarray*}
+
+\end_inset
+
+form orthonormal bases of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+.
+ If we now look at the vector 
+\begin_inset Formula $\mathbf{x}={\cos\phi \choose \sin\phi}$
+\end_inset
+
+, we can see that its coordinates under the first basis are 
+\begin_inset Formula $\cos\phi$
+\end_inset
+
+ and 
+\begin_inset Formula $\sin\phi$
+\end_inset
+
+, since 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x} & = & \cos\phi\cdot{1 \choose 0}+\sin\phi\cdot{0 \choose 1}\\
+ & = & \cos\phi\cdot\mathbf{e}_{1}+\sin\phi\cdot\mathbf{e}_{2}.\end{eqnarray*}
+
+\end_inset
+
+Under the second basis the coordinates are 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $0$
+\end_inset
+
+, since
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x} & = & 1\cdot{\cos\phi \choose \sin\phi}+0\cdot{-\sin\phi \choose \cos\phi}\\
+ & = & 1\cdot\mathbf{r}_{1}+0\cdot\mathbf{r}_{2}.\end{eqnarray*}
+
+\end_inset
+
+Hence, if we are looking for a matrix, that transforms the coordinates with
+ respect to the basis 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+ into coordinates of the same vector with respect to basis 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+, this matrix should transform the coordinates 
+\begin_inset Formula ${\cos\phi \choose \sin\phi}$
+\end_inset
+
+ into the coordinates 
+\begin_inset Formula ${1 \choose 0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In order to find this matrix, we have to remember that a matrix of a linear
+ mapping must contain the results of the linear function on the basis vectors
+ in its columns.
+ Therefore, what we are looking for is a matrix, that contains the basis
+ vectors of the old basis 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+ written in terms of the new basis 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+.
+ If we want to change from 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+, we must express 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $\mathbf{r}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{r}_{2}$
+\end_inset
+
+.
+ Since both bases are orthonormal bases, we can use the dot product trick,
+ i.e.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{e}_{1} & = & \langle\mathbf{e}_{1},\mathbf{r}_{1}\rangle\mathbf{r}_{1}+\langle\mathbf{e}_{1},\mathbf{r}_{2}\rangle\mathbf{r}_{2}\\
+ & = & \cos\phi\cdot\mathbf{r}_{1}-\sin\phi\mathbf{r}_{2}\end{eqnarray*}
+
+\end_inset
+
+and 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{e}_{2} & = & \langle\mathbf{e}_{2},\mathbf{r}_{1}\rangle\mathbf{r}_{1}+\langle\mathbf{e}_{2},\mathbf{r}_{2}\rangle\mathbf{r}_{2}\\
+ & = & \sin\phi\cdot\mathbf{r}_{1}+\cos\phi\mathbf{r}_{2}.\end{eqnarray*}
+
+\end_inset
+
+Therefore, the coordinates of 
+\begin_inset Formula $\mathbf{e}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{e}_{2}$
+\end_inset
+
+ with respect to the basis 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+ are 
+\begin_inset Formula $(\cos\phi,-\sin\phi)^{\top}$
+\end_inset
+
+ and 
+\begin_inset Formula $(\sin\phi,\cos\phi)^{\top}$
+\end_inset
+
+.
+ If we write the new coordinates in the column of a matrix, we get the matrix
+ 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ that changes the coordinates from basis 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{B} & = & \left(\begin{array}{cc}
+\cos\phi & \sin\phi\\
+-\sin\phi & \cos\phi\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+Note, that 
+\series bold
+
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+
+\series default
+ is just the transpose of the matrix 
+\begin_inset Formula $\mathbf{R}=(\mathbf{r}_{1},\mathbf{r}_{2})$
+\end_inset
+
+, which contains the new basis vectors 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+ as column vectors, i.e.
+ 
+\begin_inset Formula $\mathbf{B}=\mathbf{R}^{\top}$
+\end_inset
+
+.
+ This is no suprise, since 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{R}^{\top}{1 \choose 0} & = & {\langle\mathbf{e}_{1},\mathbf{r}_{1}\rangle \choose \langle\mathbf{e}_{1},\mathbf{r}_{2}\rangle}\end{eqnarray*}
+
+\end_inset
+
+ and 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{R}^{\top}{0 \choose 1} & = & {\langle\mathbf{e}_{2},\mathbf{r}_{1}\rangle \choose \langle\mathbf{e}_{2},\mathbf{r}_{2}\rangle},\end{eqnarray*}
+
+\end_inset
+
+i.e.
+ the multiplication of the coordinates of 
+\begin_inset Formula $\mathbf{e}_{1}$
+\end_inset
+
+ and 
+\series bold
+
+\begin_inset Formula $\mathbf{e}_{2}$
+\end_inset
+
+ 
+\series default
+with 
+\begin_inset Formula $\mathbf{R}^{\top}$
+\end_inset
+
+ contains the projections of 
+\begin_inset Formula $\mathbf{e}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{e}_{2}$
+\end_inset
+
+ onto 
+\begin_inset Formula $\mathbf{r}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{r}_{2}$
+\end_inset
+
+.
+ From this observation, we can read of another important theorem.
+\end_layout
+
+\begin_layout Standard
+If we want to reverse the basis change, and change the coordinates of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+ into coordinates with respect to 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+, we need a matrix that contains the coordinates of 
+\begin_inset Formula $\mathbf{r}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{r}_{2}$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+ in its columns.
+ But this is just 
+\begin_inset Formula $\mathbf{R}$
+\end_inset
+
+.
+ Let us now state this finding in a general theorem.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Theorem
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+ are two orthonormal bases, then the matrix that changes the coordinates
+ of a vector with respect to the first basis into coordinates with respect
+ to the second basis, can be found by the following steps:
+\end_layout
+
+\begin_layout Enumerate
+Express the basis 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+ in terms of the basis 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+ and write the coordinates into the column of a matrix 
+\begin_inset Formula $\mathbf{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The matrix, that changes the coordinates from 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+ is then given by 
+\begin_inset Formula $\mathbf{R}^{\top}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The matrix that changes the coordinates from 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+ is given by 
+\begin_inset Formula $\mathbf{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Additionally to this theorem, we can find another useful theorem, that tells
+ us that the inverse of so called 
+\emph on
+orthonormal matrix
+\begin_inset LatexCommand index
+name "orthonormal matrix"
+
+\end_inset
+
+
+\emph default
+, are easy to find.
+\end_layout
+
+\begin_layout Paragraph
+Definition (Orthonormal Matrix)
+\end_layout
+
+\begin_layout Standard
+A matrix, which has orthonormal columns or rows, is called 
+\emph on
+
+\begin_inset LatexCommand index
+name "orthonormal matrix"
+
+\end_inset
+
+orthonormal matrix
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Theorem
+\end_layout
+
+\begin_layout Standard
+The inverse of a orthonormal matrix 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ is given by its transpose, i.e.
+ 
+\begin_inset Formula $\mathbf{B}^{-1}=\mathbf{B}^{\top}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\bar under
+Proof:
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $ij$
+\end_inset
+
+th entry of the matrix 
+\begin_inset Formula $\mathbf{B}^{\top}\mathbf{B}$
+\end_inset
+
+ contains the dot product between the column vectors 
+\begin_inset Formula $\mathbf{b}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{b}_{j}$
+\end_inset
+
+, which are orthonormal by definition, i.e.
+ 
+\begin_inset Formula $\langle\mathbf{b}_{i},\mathbf{b}_{j}\rangle=\delta_{ij}$
+\end_inset
+
+.
+ Therefore, the matrix only contains ones on the diagonal, i.e.
+ where 
+\begin_inset Formula $i=j$
+\end_inset
+
+.
+ On the other hand, consider the identity matrix 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+.
+ This matrix is an orthonormal matrix, that contains the canonical basis
+ in its columns.
+ Therefore, the matrix 
+\begin_inset Formula $\mathbf{B}\mathbf{B}^{\top}\mathbf{I}$
+\end_inset
+
+ can be seen as changing from the orthonormal basis into the basis given
+ by the columns of 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ and back.
+ Since nothing happens, when changing bases back and forth, we have that
+ 
+\begin_inset Formula $\mathbf{B}\mathbf{B}^{\top}\mathbf{I}=\mathbf{I}$
+\end_inset
+
+ and, therefore 
+\begin_inset Formula $\mathbf{B}\mathbf{B}^{\top}=\mathbf{B}^{\top}\mathbf{B}=\mathbf{I}$
+\end_inset
+
+, which shows that 
+\begin_inset Formula $\mathbf{B}^{\top}$
+\end_inset
+
+ is the inverse of 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ and vice versa.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Box$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Changing the Basis of a Matrix
+\end_layout
+
+\begin_layout Standard
+Now that we have the tool to change the coordinates of a vector under the
+ change of coordinates, it is easy to adjust a matrix appropriately under
+ a change of the basis.
+ Consider the two basis 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ again.
+ Assume, that we are given a matrix 
+\begin_inset Formula $\mathbf{A}_{E}$
+\end_inset
+
+ with respect to the first basis, but the coordinates 
+\begin_inset Formula $(y_{1},y_{2})^{\top}$
+\end_inset
+
+ of a vector 
+\begin_inset Formula $\mathbf{y}=y_{1}\cdot\mathbf{r}_{1}+y_{2}\mathbf{r}_{2}$
+\end_inset
+
+ with respect to the second.
+ In order to be able to use the matrix 
+\begin_inset Formula $\mathbf{A}_{E}$
+\end_inset
+
+ for 
+\begin_inset Formula $(y_{1},y_{2})^{\top}$
+\end_inset
+
+, we need to transform it appropriately.
+ But since we know how to transform coordinates, it is easy to obtain the
+ new matrix 
+\begin_inset Formula $\mathbf{A}_{R}$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+.
+ The idea is to change the coordinates 
+\begin_inset Formula $(y_{1},y_{2})^{\top}$
+\end_inset
+
+ into the basis 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+, apply 
+\begin_inset Formula $\mathbf{A}_{E}$
+\end_inset
+
+ and change the coordinates back.
+ Each operation can be done via a matrix multiplication.
+ Therefore, we obtain the new matrix 
+\begin_inset Formula $\mathbf{A}_{R}$
+\end_inset
+
+ by multiplying the single matrices.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Theorem
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+ be two orthonormal bases of 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+, and let 
+\begin_inset Formula $\mathbf{A}_{V}\in\mathbb{R}^{n\times n}$
+\end_inset
+
+ be a square matrix with respect to the basis 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+.
+ We obtain the equivalent matrix 
+\begin_inset Formula $\mathbf{A}_{W}$
+\end_inset
+
+ with respect to the basis 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+ by the following operation:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}_{W} & = & \underbrace{\mathbf{V}}_{change\, V\rightarrow W}\underbrace{\mathbf{A}_{V}}_{apply\,\mathbf{A}_{V}}\underbrace{\mathbf{V}^{\top}}_{change\, W\rightarrow V},\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{V}$
+\end_inset
+
+ is the matrix that contains the coodinate vectors of 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+ with respect to the basis 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\mathbf{V}^{\top}$
+\end_inset
+
+ changes the coordinates from 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+If the matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is not square, i.e.
+ 
+\begin_inset Formula $\mathbf{A}\in\mathbb{R}^{m\times n}$
+\end_inset
+
+, we have two different bases: A basis 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+ for the inputs and a basis 
+\begin_inset Formula $\mathbf{a}_{1},...,\mathbf{a}_{m}$
+\end_inset
+
+ for the outputs, since the linear function 
+\begin_inset Formula $f_{\mathbf{A}}$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ maps from 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbb{R}^{m}$
+\end_inset
+
+.
+ If we want to change the matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ such that is does the equivalent operation, but with respect to two different
+ basis 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{b}_{1},...,\mathbf{b}_{m}$
+\end_inset
+
+, we must multiply a matrix 
+\begin_inset Formula $\mathbf{M}_{A}^{B}$
+\end_inset
+
+ from the left, that changes the coordinates from basis 
+\begin_inset Formula $\mathbf{a}_{1},...,\mathbf{a}_{m}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbf{b}_{1},...,\mathbf{b}_{m}$
+\end_inset
+
+, and a matrix 
+\begin_inset Formula $\mathbf{M}_{V}^{W}$
+\end_inset
+
+ from the right, that changes the coordinates from 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let us look at a few examples.
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Enumerate
+Consider the bases 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{e}_{1}={1 \choose 0}\,,\mathbf{e}_{2}={0 \choose 1} & \mbox{\, and } & \mathbf{r}_{1}={\cos\phi \choose \sin\phi},\,\mathbf{r}_{2}={\-\sin\phi \choose \cos\phi}\end{eqnarray*}
+
+\end_inset
+
+of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+again.
+ If we apply the theorem above in order to change the identity matrix 
+\begin_inset Formula $\mathbf{I}=\left(\begin{array}{cc}
+1 & 0\\
+0 & 1\end{array}\right)$
+\end_inset
+
+ from the canonical basis to the basis 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+, we obtain with 
+\begin_inset Formula $\mathbf{R}=(\mathbf{r}_{1},\mathbf{r}_{2})$
+\end_inset
+
+: 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{I}_{R} & = & \mathbf{R}\mathbf{I}\mathbf{R}^{\top}\\
+ & = & \mathbf{R}\mathbf{I}\mathbf{R}^{\top}\\
+ & = & \mathbf{I},\end{eqnarray*}
+
+\end_inset
+
+since 
+\begin_inset Formula $\mathbf{R}$
+\end_inset
+
+ is the inverse of 
+\begin_inset Formula $\mathbf{R}^{\top}$
+\end_inset
+
+and vice versa.
+ This shows that the identity matrix is always given by 
+\begin_inset Formula $\mathbf{I}=\left(\begin{array}{cc}
+1 & 0\\
+0 & 1\end{array}\right)$
+\end_inset
+
+ no matter which orthonormal basis we choose.
+\end_layout
+
+\begin_layout Enumerate
+Consider the bases 
+\begin_inset Formula $\mathbf{e}_{1}=\left(\begin{array}{c}
+1\\
+0\\
+0\end{array}\right),\mathbf{e}_{2}=\left(\begin{array}{c}
+0\\
+1\\
+0\end{array}\right),\mathbf{e}_{3}=\left(\begin{array}{c}
+0\\
+0\\
+1\end{array}\right)$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+ and
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+ 
+\begin_inset Formula $\mathbf{e}_{1}={1 \choose 0}\,,\mathbf{e}_{2}={0 \choose 1}\mbox{\, and }\mathbf{r}_{1}={\cos\phi \choose \sin\phi},\,\mathbf{r}_{2}={\-\sin\phi \choose \cos\phi}$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+.
+ If we want to adapt the projection matrix 
+\begin_inset Formula $\mathbf{P}=\left(\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\end{array}\right)$
+\end_inset
+
+ such that it takes coordinates with respect to 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2},\mathbf{e}_{3}$
+\end_inset
+
+ and yields coordinates with respect to 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+, we need to do the following multiplication:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{P}_{E}^{R} & = & \mathbf{R}^{\top}\mathbf{P}\\
+ & = & \left(\begin{array}{ccc}
+\cos\phi & \sin\phi & 0\\
+-\sin\phi & \cos\phi & 0\end{array}\right),\end{eqnarray*}
+
+\end_inset
+
+which transforms the outcome of 
+\begin_inset Formula $\mathbf{P}$
+\end_inset
+
+ into coordinates with respect to 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,3258 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{2}
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Vectors
+\end_layout
+
+\begin_layout Standard
+A vector is a shorthand notation for a ordered set of numbers 
+\begin_inset Formula $(x_{1},...,x_{n})$
+\end_inset
+
+.
+ As a convention, we denote vectors with a lower case latin letter in bold
+ font 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x} & = & \left(\begin{array}{c}
+x_{1}\\
+\vdots\\
+x_{n}\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+first, lets go from examples to definition, second, I think that we should
+ introduce vectors first, and then talk about linear functions.
+ Also, maybe it is a good idea to ask the audience at the beginning of the
+ lecture how many of them EVER had a course in linalg.
+ Note that while we find linear functions and vectors intutive, and think
+ they are great ways of explaining thinks like angles between functions,
+ student who have never had a linalg class usually find neither vectors
+ and linear functions intuitive, so we should not take that as given...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ coordinates of a point in 2-D 
+\begin_inset Formula $\mathbf{x}_{0}=\left({x\atop y}\right)\in\mathbb{R}^{2}$
+\end_inset
+
+ is a vector.
+ Similarly, any point in in 3-D 
+\begin_inset Formula $\mathbf{x}_{0}=\left(\begin{array}{c}
+x\\
+y\\
+z\end{array}\right)$
+\end_inset
+
+ can be written as a vector.
+ So, every point in space can be written as a vector.
+ 
+\newline
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+setlength{
+\backslash
+unitlength}{0.04cm}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+begin{picture}(200,200)
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(27,50){27}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+thicklines  
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(77,40){
+\backslash
+makebox(0,0){$x_0$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(77,48){
+\backslash
+line(0,1){4}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(40,100){
+\backslash
+makebox(0,0){$y_0$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(48,100){
+\backslash
+line(1,0){4}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(77,100){
+\backslash
+circle{2}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(82,105){
+\backslash
+makebox(0,0){$
+\backslash
+mathbf{x}_0$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(1,0){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(0,1){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(150,55){
+\backslash
+makebox(0,0){$x$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(55,150){
+\backslash
+makebox(0,0){$y$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(57,35){
+\backslash
+makebox(0,0){$f(x)$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{picture}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+Vectors are sometimes drawn as points and sometimes drawn as arrows, depending
+ on what one intends to indicate.
+ When drawing it as a point one wants to emphasize that the elements of
+ the vector are coordinates in space.
+ When drawing it as an arrow, one wants to emphasize that the vector indicates
+ a 
+\emph on
+direction,
+\emph default
+ i.e.
+ the direction from the center of the coordinate system to the point 
+\begin_inset Formula $\mathbf{x}_{0}=\left(\begin{array}{c}
+x_{1}\\
+\vdots\\
+x_{n}\end{array}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The activity, i.e the firing rates, of 
+\begin_inset Formula $n$
+\end_inset
+
+ simultaneously recorded neurons can be described as a 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional vector 
+\begin_inset Formula $\mathbf{r}=\left(\begin{array}{c}
+r_{1}\\
+\vdots\\
+r_{n}\end{array}\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The pixel intensities of an 
+\begin_inset Formula $n\times m$
+\end_inset
+
+ image 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{I} & = & \left(\begin{array}{ccccc}
+I_{11} & I_{12} & \dots &  & I_{1m}\\
+I_{21} &  &  &  & \vdots\\
+\vdots &  & \ddots\\
+ &  &  &  & I_{(n-1)m}\\
+I_{n1} &  & \dots & I_{n(n-1)} & I_{nm}\end{array}\right)\end{eqnarray*}
+
+\end_inset
+
+can be described as a vector 
+\begin_inset Formula $\mathbf{v}\in\mathbb{R}^{n\times m}$
+\end_inset
+
+ by stacking the columns of 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+ upon each other: 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{v} & = & \left(\begin{array}{c}
+I_{11}\\
+I_{21}\\
+\vdots\\
+I_{ij}\\
+I_{(i+1)j}\\
+\vdots\\
+I_{nm}\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+When talking about operation on images in the following, unless explicitly
+ stated otherwise, we always implicitly assume that a image is represented
+ as this kind of stacked vector.
+ Note, that stacking columns on top of each other is also the way matlab
+ represents matrices as vectors.
+ If 
+\family typewriter
+A 
+\family default
+is a 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ matrix, then 
+\family typewriter
+A(:)
+\family default
+ is a 
+\begin_inset Formula $nm\times1$
+\end_inset
+
+ dimensional column vector.
+ If you converted an image 
+\family typewriter
+I
+\family default
+ into a vector 
+\family typewriter
+v
+\family default
+ via 
+\family typewriter
+v=I(:)
+\family default
+, you can transform it back into matrix form via 
+\family typewriter
+I2=reshape(v,m,n)
+\family default
+, if 
+\family typewriter
+I
+\family default
+ was a 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ image.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As we just saw, quite a few objects can be described by vectors.
+ Additionally, it is possible to carry out certain operations with these
+ objects.
+ E.g.
+ we can always add two images or multiply it with a scalar to increase or
+ decrease its luminance.
+ Of course, the same operations can also be carried out with vectors.
+ Let us just summarize vectors and their properties in a definition.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Definition (Vectors)
+\end_layout
+
+\begin_layout Standard
+A 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional vector 
+\begin_inset Formula $\mathbf{x}=\left(\begin{array}{c}
+x_{1}\\
+\vdots\\
+x_{n}\end{array}\right)$
+\end_inset
+
+ is a ordered set of 
+\begin_inset Formula $n$
+\end_inset
+
+ values 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+.
+ In order to indicate that a symbol denotes a vector, it is written in bold
+ font.
+ The set of all 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional vectors with real entries is denoted 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+ A set like 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ is also called 
+\emph on
+
+\begin_inset LatexCommand index
+name "vector space"
+
+\end_inset
+
+vector space
+\emph default
+.
+ There are a few basic operations that can be applied to vectors:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\bar under
+Addition:
+\emph default
+\bar default
+ Let 
+\begin_inset Formula $\mathbf{x,y}\in\mathbb{R}^{n}$
+\end_inset
+
+ be two 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional vectors.
+ The sum of two vectors is simply the sum of the single entries
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x}+\mathbf{y} & = & \left(\begin{array}{c}
+x_{1}\\
+\vdots\\
+x_{n}\end{array}\right)+\left(\begin{array}{c}
+y_{1}\\
+\vdots\\
+y_{n}\end{array}\right)\\
+ & = & \left(\begin{array}{c}
+x_{1}+y_{1}\\
+\vdots\\
+x_{n}+y_{n}\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\bar under
+Multiplication with a scalar:
+\emph default
+\bar default
+ Let 
+\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{n}$
+\end_inset
+
+ be a 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional vector.
+ The product of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and a scalar 
+\begin_inset Formula $a\in\mathbb{R}$
+\end_inset
+
+ is defined as 
+\begin_inset Formula \begin{eqnarray*}
+a\cdot\mathbf{x} & = & a\cdot\left(\begin{array}{c}
+x_{1}\\
+\vdots\\
+x_{n}\end{array}\right)\\
+ & = & \left(\begin{array}{c}
+ax_{1}\\
+\vdots\\
+{ax}_{n}\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\bar under
+Transposition:
+\emph default
+\bar default
+ So far, each vector was written as a vertical stack of its entries 
+\begin_inset Formula $\mathbf{x}=\left(\begin{array}{c}
+x_{1}\\
+\vdots\\
+x_{n}\end{array}\right)$
+\end_inset
+
+.
+ However, for a reason that will become clear soon, vectors can also be
+ written as an array of numbers 
+\begin_inset Formula $\mathbf{x}=(x_{1},...,x_{n})$
+\end_inset
+
+.
+ The operation of converting a column into a row vector and vice versa is
+ denoted by the symbol ''
+\begin_inset Formula $\top$
+\end_inset
+
+'' in the superscript, i.e.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x} & = & \left(\begin{array}{c}
+x_{1}\\
+\vdots\\
+x_{n}\end{array}\right)\\
+\Leftrightarrow\mathbf{x}^{\top} & = & (x_{1},...,x_{n})\\
+\Leftrightarrow(\mathbf{x}^{\top})^{\top} & = & \mathbf{x}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+I would first introduce the euclidean norm and the scalar product by their
+ 2-D intutions, and not mix linear functions and vectors just yet.
+ Also, the specific example might cause confusion between scalar product
+ and multiplication by a scalar.
+ General idea: from specific to general, so norm first, then dot-product.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Length of a vector: The euclidean norm
+\end_layout
+
+\begin_layout Standard
+A very basic property of a vector that we can compute is its length.
+ In general, the length of a vector is called the 
+\emph on
+
+\begin_inset LatexCommand index
+name "norm"
+
+\end_inset
+
+norm of a vector.
+ 
+\emph default
+Since the norm is a very frequently occuring function of a vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ it has its own notation: It is indicated by 
+\begin_inset Formula $||\mathbf{x}||$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+Assume we are given a 2D vector 
+\begin_inset Formula $\mathbf{x}=\left({3\atop 4}\right)$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{2}$
+\end_inset
+
+ we can use Pythagoras theorem to compute its length 
+\begin_inset Formula $||\mathbf{x}||=\sqrt{3^{2}+4^{2}}=\sqrt{25}=5$
+\end_inset
+
+.
+ 
+\newline
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+setlength{
+\backslash
+unitlength}{0.8cm}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+begin{picture}(7,7)(-2,-2)
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+graphpaper[1](-2,-2)(7,7)
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+thicklines  
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(0,0){
+\backslash
+vector(3,4){3}}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(77,40){
+\backslash
+makebox(0,0){$x_0$}}
+\end_layout
+
+\begin_layout Standard
+
+{
+\backslash
+color{red}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(1.5,-0.3){
+\backslash
+makebox(0,0){$
+\backslash
+underbrace{
+\backslash
+hspace{2.4cm}}_{=a}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(3,0){
+\backslash
+rotatebox{90}{$
+\backslash
+underbrace{
+\backslash
+hspace{3.2cm}}_{=b}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(0,0){
+\backslash
+line(1,0){3}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(3,0){
+\backslash
+line(0,1){4}}
+\end_layout
+
+\begin_layout Standard
+
+}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(40,100){
+\backslash
+makebox(0,0){$y_0$}}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(48,100){
+\backslash
+line(1,0){4}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(77,100){
+\backslash
+circle{2}}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(82,105){
+\backslash
+makebox(0,0){$
+\backslash
+mathbf{x}_0$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(50,50){
+\backslash
+vector(1,0){100}}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(50,50){
+\backslash
+vector(0,1){100}}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(150,55){
+\backslash
+makebox(0,0){$x$}}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(55,150){
+\backslash
+makebox(0,0){$y$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(57,35){
+\backslash
+makebox(0,0){$f(x)$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{picture}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This way of computing a vector generalizes to 
+\begin_inset Formula $n$
+\end_inset
+
+ dimensions.
+ In 
+\begin_inset Formula $n$
+\end_inset
+
+ dimensions, the 
+\emph on
+
+\begin_inset LatexCommand index
+name "Euclidean norm"
+
+\end_inset
+
+Euclidean norm
+\emph default
+ of a vector is the square root of the sum of its squared entries: 
+\begin_inset Formula \begin{eqnarray*}
+||\mathbf{v}|| & = & \sqrt{\sum_{i=1}^{n}v_{i}^{2}}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Euclidean norm has a few properties, that are useful when dealing with
+ it.
+\end_layout
+
+\begin_layout Paragraph
+Lemma (Properties of the Euclidean norm)
+\end_layout
+
+\begin_layout Standard
+The Euclidean norm 
+\begin_inset Formula \begin{eqnarray*}
+ & ||\cdot||:\mathbb{R}^{n}\rightarrow\mathbb{R}\\
+ & \mathbf{x}\mapsto||\mathbf{x}||=\sqrt{\sum_{i=1}^{n}x_{i}^{2}}\end{eqnarray*}
+
+\end_inset
+
+has the following properties:
+\begin_inset Formula \begin{eqnarray}
+||\mathbf{x}||>0 & \mbox{ whenever} & \mathbf{x}\not=\mathbf{0}\label{eq:norm1}\\
+||\mathbf{x}||=0 & \mbox{ whenever } & \mathbf{x}=\mathbf{0}\label{eq:norm11}\\
+||a\mathbf{x}||=|a|\cdot||\mathbf{x}|| & \mbox{ for all } & a\in\mathbb{R}\label{eq:norm2}\\
+||\mathbf{x}+\mathbf{y}||\le||\mathbf{x}||+\mathbf{||y}|| & \mbox{ for all } & \mathbf{x},\mathbf{y}\in\mathbb{R}^{n}.\label{eq:norm3}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Itemize
+In order to scale a vector 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ to length one, we just need to divide all its entries by 
+\begin_inset Formula $||\mathbf{v}||$
+\end_inset
+
+.
+ We can do this, since 
+\begin_inset Formula $||\mathbf{v}||$
+\end_inset
+
+ is just a scalar.
+ The resulting vector will have length one, since
+\begin_inset Formula \begin{eqnarray*}
+\left|\left|\frac{1}{||\mathbf{v}||}\mathbf{v}\right|\right| & \stackrel{\mbox{ \ref{eq:norm1} and \ref{eq:norm2}}}{=} & \frac{1}{||\mathbf{v}||}||\mathbf{v}||\\
+ & = & 1.\end{eqnarray*}
+
+\end_inset
+
+The operation of scaling a vector to length one is called 
+\emph on
+
+\begin_inset LatexCommand index
+name "normalization"
+
+\end_inset
+
+normalization.
+\end_layout
+
+\begin_layout Itemize
+Dividing by the norm of a vector can also be used to normalize the mean
+ luminance of a set of images 
+\begin_inset Formula $\mathbf{I}_{1},...,\mathbf{I}_{m}$
+\end_inset
+
+.
+ Assume you want to fix the luminance of 
+\begin_inset Formula $\mathbf{I}_{1},...,\mathbf{I}_{m}$
+\end_inset
+
+ to a fixed value 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ All you have to do is to multiply each image 
+\begin_inset Formula $\mathbf{I}_{k}$
+\end_inset
+
+ by 
+\begin_inset Formula $\frac{a}{||\mathbf{I}_{k}||}$
+\end_inset
+
+, where we think of 
+\begin_inset Formula $\mathbf{I}_{k}$
+\end_inset
+
+ as a vector with the stacked columns of the 
+\begin_inset Formula $k$
+\end_inset
+
+th image as in the example above.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As you might guess, the Euclidean norm is not the only function that fulfills
+ the properties (
+\begin_inset LatexCommand ref
+reference "eq:norm1"
+
+\end_inset
+
+), (
+\begin_inset LatexCommand ref
+reference "eq:norm11"
+
+\end_inset
+
+), (
+\begin_inset LatexCommand ref
+reference "eq:norm2"
+
+\end_inset
+
+) and (
+\begin_inset LatexCommand ref
+reference "eq:norm3"
+
+\end_inset
+
+).
+ Infact, those properties are usually used to define a norm on a vector
+ space.
+ Since there are several possible norms on 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+, the Euclidean norm is also sometimes written with a two in the subscript,
+ i.e.
+ 
+\begin_inset Formula $||\mathbf{x}||_{2}$
+\end_inset
+
+.
+ Since we will deal with the Euclidean norm for most of the time, we will
+ only use the subscript when it is not clear from the context which norm
+ is meant.
+\end_layout
+
+\begin_layout Subsection
+Projection and Scalar Product
+\end_layout
+
+\begin_layout Standard
+A very important operation between two vectors is the 
+\emph on
+scalar product
+\begin_inset LatexCommand index
+name "scalar product"
+
+\end_inset
+
+
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+not to be confused with a product by a scalar...
+\end_layout
+
+\end_inset
+
+ or 
+\emph on
+dot product
+\emph default
+:
+\end_layout
+
+\begin_layout Subsubsection*
+Definition (Scalar Product)
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+
+\begin_inset LatexCommand index
+name "scalar product"
+
+\end_inset
+
+scalar
+\emph default
+ or 
+\emph on
+
+\begin_inset LatexCommand index
+name "dot product"
+
+\end_inset
+
+dot product
+\emph default
+ between two vectors 
+\begin_inset Formula $\mathbf{x},\mathbf{y}\in\mathbb{R}^{n}$
+\end_inset
+
+ is defined as 
+\begin_inset Formula \begin{eqnarray*}
+\langle\mathbf{x},\mathbf{y}\rangle & = & \langle\mathbf{y},\mathbf{x}\rangle=\sum_{i=1}^{n}x_{i}y_{i}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At this point we can already introduce a small bit of matrix notation: By
+ definition, the product of a row vector 
+\begin_inset Formula $\mathbf{x}^{\top}$
+\end_inset
+
+ and a column vector 
+\begin_inset Formula $\mathbf{y}$
+\end_inset
+
+ equals the scalar product between them:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x}^{\top}\mathbf{y} & = & \langle\mathbf{x},\mathbf{y}\rangle.\end{eqnarray*}
+
+\end_inset
+
+This will make it easies to understand the general matrix-matrix or matrix-vecto
+r products that we introduce later.
+ Unlike in the multiplication of scalar values, the order of the elements
+ does matter in matrix multiplication.
+ Therefore, it is important that the row vector appears first and the column
+ vector appears second.
+\end_layout
+
+\begin_layout Subsubsection*
+Examples
+\end_layout
+
+\begin_layout Itemize
+The mean of the entries 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ can be written in terms of the scalar product as 
+\begin_inset Formula \begin{eqnarray*}
+\frac{1}{n}\sum_{i=1}^{n}x_{i} & = & \frac{1}{n}\langle\mathbf{1}_{n},\mathbf{x}\rangle\\
+ & = & \frac{1}{n}\mathbf{1}_{n}^{\top}\mathbf{x}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset LatexCommand ref
+reference "sec:Integrals"
+
+\end_inset
+
+ we saw, that an integral is the sum of the areas of infinitely narrow rectangle
+ with their height given by the function values at the respective position:
+\begin_inset Formula \begin{eqnarray*}
+\int_{a}^{b}f(x)dx & = & \lim_{h\rightarrow0}\sum_{k=0}^{n-1}f(a+k\cdot h)\cdot h,\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the number of intervalls of width 
+\begin_inset Formula $h$
+\end_inset
+
+ between 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ Assume that we need to compute the value of the integral in a programe
+ we write.
+ If the function 
+\begin_inset Formula $f$
+\end_inset
+
+ is not too nasty and we do not need the exact value of the integral, we
+ can just choose a very small 
+\begin_inset Formula $h$
+\end_inset
+
+, e.g.
+ 
+\begin_inset Formula $h=\frac{b-a}{2^{-m}}$
+\end_inset
+
+ for an appropriate 
+\begin_inset Formula $m$
+\end_inset
+
+, and just use a sum to approximate the integral, i.e.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\int_{a}^{b}f(x)dx & \approx & \sum_{k=0}^{2^{m}-1}f(a+k\cdot h)\cdot h.\end{eqnarray*}
+
+\end_inset
+
+But this sum is simply the scalar product between two 
+\begin_inset Formula $2^{m}$
+\end_inset
+
+-dimensional vectors 
+\begin_inset Formula $\mathbf{h}=h\cdot\mathbf{1}_{2^{m}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{f}=\left(\begin{array}{c}
+f(a)\\
+\vdots\\
+f(a+(2^{m}-1)h)\end{array}\right)$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\int_{a}^{b}f(x)dx & \approx & \langle\mathbf{h},\mathbf{f}\rangle.\end{eqnarray*}
+
+\end_inset
+
+ For programs like Matlab this is an easy and elegant way to write code
+ for that approximate integral.
+ E.g.
+ the code for computing the integral 
+\begin_inset Formula $\int_{0}^{2\pi}\sin(\phi)d\phi$
+\end_inset
+
+ would look like this:
+\newline
+
+\newline
+
+\family typewriter
+>> h = (2*pi)/2^10; % define increment
+\newline
+>> phi = [0:h:2*pi]; % get angles
+ between 0 and 2*pi
+\newline
+>> f = sin(phi); % get the function values 
+\end_layout
+
+\begin_layout Quote
+
+\family typewriter
+>> h = h*ones(length(f),1); % make h into a vector 
+\newline
+>> f*h % compute the
+ approximate integral
+\end_layout
+
+\begin_layout Quote
+
+\family typewriter
+ans =
+\end_layout
+
+\begin_layout Quote
+
+\family typewriter
+-4.5996e-18
+\family default
+
+\newline
+
+\newline
+
+\end_layout
+
+\begin_layout Itemize
+In general, it is often useful to imagine an integral like 
+\begin_inset Formula $\int f(x)g(x)dx$
+\end_inset
+
+ as a dot product between two very long vectors, because a lot of the geometrica
+l intuition carries over.
+ Infact, for a certain type of functions, a dot product between two functions
+ can be defined as 
+\begin_inset Formula $\langle f,g\rangle_{\mathcal{F}}=\int_{-\infty}^{+\infty}f(x)g(x)dx$
+\end_inset
+
+.
+ Here the subscript 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ indicates that this dot product is not the normal dot product as we know
+ it.
+ Another situatation where the dot product intuition is useful is the folding
+ of two functions, which we will introduce later.
+\end_layout
+
+\begin_layout Itemize
+The firing rate of a neuron in the visual system can be modeled as the scalar
+ product between the input image 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+ and the receptive field 
+\begin_inset Formula $\Psi$
+\end_inset
+
+.
+ If we imagine the receptive field as an image of the same size as 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+, which is only non-zero in the area, which the neuron responds to, we can
+ write the answer as 
+\begin_inset Formula $\sum_{i=1}^{m}\sum_{j=1}^{n}\Psi_{ij}\cdot I_{ij}$
+\end_inset
+
+, which is the scalar product between the stacked vectors of 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Psi$
+\end_inset
+
+, which we introduced before.
+ The only problem is, that this dot product can still have negative values
+ and, therefore, the model would allow for negative firing rates.
+ We can fix this by simply setting everything below zero to the value zero.
+ This is done via the 
+\begin_inset Formula $\max$
+\end_inset
+
+-function.
+ We thereby obtain this simple response model:
+\begin_inset Formula \begin{eqnarray*}
+r & = & \max\left\{ 0,\sum_{i=1}^{m}\sum_{j=1}^{n}\Psi_{ij}\cdot I_{ij}\right\} .\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So far, the scalar product may seem as no more than a useful notational
+ shortcut.
+ However, it has a lot of nice properties and it is used to compute a lot
+ of interesting properties of vectors.
+ Therefore, it is very important to get a good intuition for it.
+ In the following we develop a few.
+ 
+\end_layout
+
+\begin_layout Standard
+The first one only applies to vectors of length one.
+ Nevertheless, it is very useful.
+\end_layout
+
+\begin_layout Paragraph
+Lemma (Angle between two vectors) 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\mathbf{x},\mathbf{v}\in\mathbb{R}^{n}$
+\end_inset
+
+ have length one, i.e.
+ 
+\begin_inset Formula $||\mathbf{x}||=1$
+\end_inset
+
+ and 
+\begin_inset Formula $||\mathbf{v}||=1$
+\end_inset
+
+, the scalar product is the cosine of the angle between the two vectors:
+\begin_inset Formula \begin{eqnarray*}
+\langle\mathbf{x},\mathbf{v}\rangle & = & \cos\measuredangle\{\mathbf{x},\mathbf{v}\}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From this lemma we can already read off the geometrical interpretation of
+ 
+\begin_inset Formula $\langle\mathbf{x},\mathbf{v}\rangle=0$
+\end_inset
+
+.
+ Assume that 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ have non-zero length 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+, respectively, and 
+\begin_inset Formula $\langle\mathbf{x},\mathbf{v}\rangle=0$
+\end_inset
+
+.
+ Consequently 
+\begin_inset Formula $||\frac{1}{a}\mathbf{x}||=1$
+\end_inset
+
+ and 
+\begin_inset Formula $||\frac{1}{b}\mathbf{v}||=1$
+\end_inset
+
+.
+ Now we can rewrite the scalar product a little bit:
+\begin_inset Formula \begin{eqnarray*}
+\langle\mathbf{x},\mathbf{v}\rangle & = & \sum_{i=1}^{n}x_{i}v_{i}\\
+ & = & ab\sum_{i=1}^{n}\frac{1}{a}x_{i}\frac{1}{b}v_{i}\\
+ & = & ab\langle\frac{1}{a}\mathbf{x},\frac{1}{b}\mathbf{v}\rangle\\
+ & = & ab\cos\measuredangle\{\mathbf{x},\mathbf{v}\}.\end{eqnarray*}
+
+\end_inset
+
+Since 
+\begin_inset Formula $a,b>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\langle\mathbf{x},\mathbf{v}\rangle=0$
+\end_inset
+
+, the cosine 
+\begin_inset Formula $\cos\measuredangle\{\mathbf{x},\mathbf{v}\}$
+\end_inset
+
+ must be zero, which means that the angle between 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ is 
+\begin_inset Formula $\frac{\pi}{2}$
+\end_inset
+
+ or 
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+.
+ Therefore, 
+\begin_inset Formula $\langle\mathbf{x},\mathbf{v}\rangle=0$
+\end_inset
+
+ implies that 
+\begin_inset Formula $\mathbf{v},\mathbf{x}$
+\end_inset
+
+ form an angle of 
+\begin_inset Formula $\frac{\pi}{2}$
+\end_inset
+
+.
+ In this case, 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ are called 
+\emph on
+
+\begin_inset LatexCommand index
+name "orthogonal"
+
+\end_inset
+
+orthogonal.
+\end_layout
+
+\begin_layout Standard
+The second important intuition about scalar products can be explained in
+ terms of 
+\emph on
+
+\begin_inset LatexCommand index
+name "projection"
+
+\end_inset
+
+projections.
+
+\emph default
+ Let us start with a small example to motivate projections.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+Assume that you have an image 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{I} & = & \left(\begin{array}{ccccc}
+I_{11} & I_{12} & \dots &  & I_{1m}\\
+I_{21} &  &  &  & \vdots\\
+\vdots &  & \ddots\\
+ &  &  &  & I_{(n-1)m}\\
+I_{n1} &  & \dots & I_{n(n-1)} & I_{nm}\end{array}\right)\end{eqnarray*}
+
+\end_inset
+
+which you want to use to approximate another image 
+\begin_inset Formula $\mathbf{J}$
+\end_inset
+
+, i.e.
+ you want to describe the image 
+\begin_inset Formula $\mathbf{J}$
+\end_inset
+
+ by a single value 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ such that 
+\begin_inset Formula $\lambda\mathbf{I}$
+\end_inset
+
+ is closest to 
+\begin_inset Formula $\mathbf{J}$
+\end_inset
+
+ or, in other words, such that
+\begin_inset Formula $||\lambda\mathbf{I}-\mathbf{J}||^{2}$
+\end_inset
+
+ is minimal.
+ The vector 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+ is called 
+\emph on
+projection
+\begin_inset LatexCommand index
+name "projection"
+
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbf{J}$
+\end_inset
+
+ onto 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In a more mathematical language, the idea of a projection can be described
+ as follows: Assume that you have two vectors 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+, and your goal is to express 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ as good as possible in terms of 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ are not pointing in the same directions, you will not be able to express
+ 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+.
+ However, you could search for the scalar 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ such that 
+\begin_inset Formula $||\lambda\mathbf{v}-\mathbf{x}||^{2}$
+\end_inset
+
+ is minimal.
+ If 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ happens to have length one, computing the value of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is easy: It is just 
+\begin_inset Formula $\lambda=\langle\mathbf{v},\mathbf{x}\rangle$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ does not have length one, we can simply normalize it and use 
+\begin_inset Formula $\lambda=\langle\frac{1}{||\mathbf{v}||}\mathbf{v},\mathbf{x}\rangle$
+\end_inset
+
+ .
+ In that case 
+\begin_inset Formula $\frac{\lambda}{||\mathbf{v}||}\mathbf{v}$
+\end_inset
+
+ best approximates 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Lemma (Projection) 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathbf{x},\mathbf{v}\in\mathbb{R}^{n}$
+\end_inset
+
+.
+ The projection of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ onto 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+, i.e.
+ the vector 
+\begin_inset Formula $\frac{\lambda}{||\mathbf{v}||}\mathbf{v}$
+\end_inset
+
+ that minimizes 
+\begin_inset Formula $||\frac{\lambda}{||\mathbf{v}||}\mathbf{v}-\mathbf{x}||^{2}$
+\end_inset
+
+ is given by 
+\begin_inset Formula $\frac{\lambda}{||\mathbf{v}||}\mathbf{v}=\langle\frac{1}{||\mathbf{v}||}\mathbf{v},\mathbf{x}\rangle\cdot\mathbf{v}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+setlength{
+\backslash
+unitlength}{0.04cm}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+begin{picture}(200,200)
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(40,25){60}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(110,95){
+\backslash
+makebox(0,0){$
+\backslash
+langle 
+\backslash
+mathbf{v},
+\backslash
+mathbf{x}
+\backslash
+rangle 
+\backslash
+cdot 
+\backslash
+mathbf{v}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,51){
+\backslash
+rotatebox{32}{$
+\backslash
+underbrace{
+\backslash
+hspace{2.8cm}}_{
+\backslash
+lambda=
+\backslash
+langle 
+\backslash
+mathbf{v},
+\backslash
+mathbf{x}
+\backslash
+rangle}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+thicklines  
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(27,50){40}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(95,125){
+\backslash
+makebox(0,0){$
+\backslash
+mathbf{x}$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(40,25){27}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(73,70){
+\backslash
+makebox(0,0){$
+\backslash
+mathbf{v}$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(1,0){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(50,50){
+\backslash
+vector(0,1){100}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(150,55){
+\backslash
+makebox(0,0){$x$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(55,150){
+\backslash
+makebox(0,0){$y$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(57,35){
+\backslash
+makebox(0,0){$f(x)$}}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{picture}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+Sketch of a projection: If 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ has length one, 
+\begin_inset Formula $\lambda\mathbf{v}=\langle\mathbf{x},\mathbf{v}\rangle\mathbf{v}$
+\end_inset
+
+ is the closest 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+-approximation of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interpreting the scalar product as projection is a very important intuition
+ that helps to understand equations involving scalar products: If 
+\series bold
+
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ 
+\series default
+has length one the dot product 
+\begin_inset Formula $\langle\mathbf{v},\mathbf{x}\rangle$
+\end_inset
+
+ is the amount 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ has at 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\langle\mathbf{v},\mathbf{x}\rangle$
+\end_inset
+
+ has a large positive or negative value compared to the length of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+, then 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ can be well approximated by 
+\begin_inset Formula $\langle\mathbf{v},\mathbf{x}\rangle\cdot\mathbf{v}$
+\end_inset
+
+.
+ The smaller the absolute value 
+\begin_inset Formula $|\langle\mathbf{v},\mathbf{x}\rangle|$
+\end_inset
+
+, the less 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ has in common with 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+.
+ Therefore, we can think of 
+\begin_inset Formula $\langle\mathbf{v},\mathbf{x}\rangle$
+\end_inset
+
+ as a 
+\emph on
+similarity measure
+\emph default
+ between 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+.
+ This also fits very well to the cosine-property of the scalar product.
+ The smaller the angle between two vectors the larger the cosine and therefore
+ the larger the dot product.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have seen, that the scalar product plays an important role when dealing
+ with vectors.
+ Therefore it is good to know a few calculation rules that make it easy
+ to modify it.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Lemma (Properties of the scalar or dot product)
+\end_layout
+
+\begin_layout Standard
+The scalar or dot product of two 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional vectors 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\series bold
+
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+
+\series default
+ 
+\begin_inset Formula \begin{eqnarray*}
+\langle\mathbf{x},\mathbf{v}\rangle & = & \sum_{i=1}^{n}x_{i}v_{i}\end{eqnarray*}
+
+\end_inset
+
+has the following properties:
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+\bar under
+Symmetry:
+\emph default
+\bar default
+ The scalar product is symmetric, i.e.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\langle\mathbf{x},\mathbf{v}\rangle & = & \langle\mathbf{v},\mathbf{x}\rangle,\end{eqnarray*}
+
+\end_inset
+
+for all 
+\begin_inset Formula $\mathbf{x},\mathbf{v}\in\mathbb{R}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+\bar under
+Bi-linearity: 
+\begin_inset Formula $\langle\mathbf{x},\mathbf{v}\rangle$
+\end_inset
+
+ 
+\emph default
+\bar default
+is linear in both arguments, i.e.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\langle a\mathbf{x}+b\mathbf{y},c\mathbf{v}+d\mathbf{w}\rangle & = & \langle a\mathbf{x}+b\mathbf{y},c\mathbf{v}\rangle+\langle a\mathbf{x}+b\mathbf{y},d\mathbf{w}\rangle\\
+ & = & \langle a\mathbf{x},c\mathbf{v}\rangle+\langle b\mathbf{y},c\mathbf{v}\rangle+\langle a\mathbf{x},d\mathbf{w}\rangle+\langle b\mathbf{y},\mathbf{w}\rangle\\
+ & = & ac\langle\mathbf{x},\mathbf{v}\rangle+bc\langle\mathbf{y},\mathbf{v}\rangle+ad\langle\mathbf{x},\mathbf{w}\rangle+bd\langle\mathbf{y},\mathbf{w}\rangle,\end{eqnarray*}
+
+\end_inset
+
+for all 
+\begin_inset Formula $\mathbf{x,y,v,w}\in\mathbb{R}^{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $a,b,c,d\in\mathbb{R}$
+\end_inset
+
+.
+ Note, however, that 
+\begin_inset Formula $\langle\mathbf{x},\mathbf{x}\rangle$
+\end_inset
+
+ is not a linear function of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ since it appears in both arguments.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+\bar under
+Cosine:
+\emph default
+ 
+\bar default
+If 
+\begin_inset Formula $||\mathbf{x}||=||\mathbf{v}||=1$
+\end_inset
+
+, the scalar product is the cosine of the angle between the two vectors:
+\begin_inset Formula \begin{eqnarray*}
+\langle\mathbf{x},\mathbf{v}\rangle & = & \cos\measuredangle\{\mathbf{x},\mathbf{v}\}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+\bar under
+Scalar product and norm:
+\emph default
+\bar default
+ The norm of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ can be written in terms of the scalar product as follows: 
+\begin_inset Formula $||\mathbf{x}||=\sqrt{\langle\mathbf{x},\mathbf{x}\rangle}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Especially the second property is very important, since it basically states
+ that we can drag out sums from the scalar product.
+\end_layout
+
+\begin_layout Subsection
+Linear (In)Dependence
+\end_layout
+
+\begin_layout Standard
+We just saw, that the best approximation of a vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ by another vector 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ is given by 
+\begin_inset Formula $\left\langle \frac{1}{||\mathbf{v}||}\mathbf{v},\mathbf{x}\right\rangle \mathbf{v}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ point in the same direction, we can perfectly express 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\left\langle \frac{1}{||\mathbf{v}||}\mathbf{v},\mathbf{x}\right\rangle \mathbf{v}=\lambda\mathbf{v}=\mathbf{x}$
+\end_inset
+
+.
+ In this case, when 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ can be transformed into 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ by a multiplication with a scalar 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, the vectors 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ are called 
+\emph on
+
+\begin_inset LatexCommand index
+name "linearly dependent"
+
+\end_inset
+
+linearly dependent.
+
+\emph default
+ If this is not possible, i.e.
+ 
+\begin_inset Formula $\left\langle \frac{1}{||\mathbf{v}||}\mathbf{v},\mathbf{x}\right\rangle \mathbf{v}\not=\mathbf{x}$
+\end_inset
+
+, the vectors 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ are called 
+\emph on
+
+\begin_inset LatexCommand index
+name "linearly independent"
+
+\end_inset
+
+linearly independent.
+
+\emph default
+ The extreme case of linear independence is 
+\emph on
+
+\begin_inset LatexCommand index
+name "orthogonality"
+
+\end_inset
+
+orthogonality
+\emph default
+, i.e.
+ if 
+\begin_inset Formula $\langle\mathbf{x},\mathbf{v}\rangle=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In terms of projections and approximating 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ by 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+, this means that the best approximation of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+, or any of its multiples, by 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ is not using 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ at all.
+ 
+\end_layout
+
+\begin_layout Subsection
+Orthonormal Bases of a Vector Space
+\end_layout
+
+\begin_layout Standard
+An important questions that arises in this context is how many vectors 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{m}$
+\end_inset
+
+ suffice to express an arbitrary 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and how to choose them.
+ An important theorem says that 
+\begin_inset Formula $n$
+\end_inset
+
+ linearly independent vectors are enough to describe any vector in an 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional vector space.
+ Such a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ linearly independent vectors is called 
+\emph on
+a 
+\begin_inset LatexCommand index
+name "basis"
+
+\end_inset
+
+basis
+\emph default
+ 
+\emph on
+of
+\emph default
+ 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+ In general, choosing an arbitrary set of 
+\begin_inset Formula $n$
+\end_inset
+
+ linearly independent vectors as basis is not the best way to choose a basis
+ for a vector space.
+ We will later explain why.
+ However, there is one particular type of bases that are easy to handle:
+ 
+\emph on
+orthonormal bases
+\begin_inset LatexCommand index
+name "orthonormal basis"
+
+\end_inset
+
+
+\emph default
+.
+ We will first look at an example and then state a rigorous definition.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+The simplest basis for 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ is the so called 
+\emph on
+canonical basis
+\begin_inset LatexCommand index
+name "canonical basis"
+
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{e}_{1}=\left({1\atop 0}\right)$
+\end_inset
+
+ 
+\emph default
+and 
+\emph on
+
+\begin_inset Formula $\mathbf{e}_{2}=\left({0\atop 1}\right)$
+\end_inset
+
+.
+ 
+\emph default
+Given an arbitrary vector 
+\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{n}$
+\end_inset
+
+ we can express it as a sum of the basis elements
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x} & = & \left({x_{1}\atop x_{2}}\right)\\
+ & = & x_{1}\left({1\atop 0}\right)+x_{2}\left({0\atop 1}\right).\end{eqnarray*}
+
+\end_inset
+
+Defining the canonical basis 
+\begin_inset Formula $\mathbf{e}_{1},...,\mathbf{e}_{n}$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ in exactly the same way, i.e.
+ the 
+\begin_inset Formula $i$
+\end_inset
+
+th coordinate of 
+\begin_inset Formula $\mathbf{e}_{i}$
+\end_inset
+
+ is one and all others are zero, every vector 
+\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{n}$
+\end_inset
+
+ can then be written as 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x} & = & \sum_{i=1}^{n}x_{i}\mathbf{e}_{i}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You might have noted that the canonical basis has two important properties.
+ First of all, all basis vectors have length one, i.e.
+ 
+\begin_inset Formula $||\mathbf{e}_{i}||=1$
+\end_inset
+
+ for all 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+.
+ Secondly, the basis elements are mutually orthogonal, i.e.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\langle\mathbf{e}_{i},\mathbf{e}_{j}\rangle & = & \left\{ \begin{array}{cc}
+1 & \mbox{ if }i=j\\
+0 & \mbox{ else}\end{array}\right..\end{eqnarray*}
+
+\end_inset
+
+There is a notational shortcut to for 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\left\{ \begin{array}{cc}
+1 & \mbox{ if }i=j\\
+0 & \mbox{ else}\end{array}\right.$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+, which is called the 
+\emph on
+
+\begin_inset LatexCommand index
+name "Kronecker Delta"
+
+\end_inset
+
+Kronecker Delta.
+ 
+\emph default
+It is just defined as 
+\begin_inset Formula \begin{eqnarray*}
+\delta_{ij} & = & \left\{ \begin{array}{cc}
+1 & \mbox{ if }i=j\\
+0 & \mbox{ else}\end{array}\right..\end{eqnarray*}
+
+\end_inset
+
+It is used a lot, since it causes less effort to write.
+ You can think of delta functions as the continous equivalent of the Kronecker
+ Delta.
+ Using it, we would write orthogonality as 
+\begin_inset Formula \begin{eqnarray*}
+\langle\mathbf{e}_{i},\mathbf{e}_{j}\rangle & = & \delta_{ij}.\end{eqnarray*}
+
+\end_inset
+
+In the following we will use the Kronecker Delta for notational convenience.
+\end_layout
+
+\begin_layout Standard
+These two properties, i.e.
+ normalized basis vectors and mutual orthogonality, make a basis especially
+ easy to deal with.
+ For that reason, those basis have an own name.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Definition (Orthonormal basis)
+\end_layout
+
+\begin_layout Standard
+A set of vectors 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}\in\mathbb{R}^{n}$
+\end_inset
+
+ is called an 
+\emph on
+orthonormal basis
+\begin_inset LatexCommand index
+name "orthonormal basis"
+
+\end_inset
+
+
+\emph default
+ if each of them has unit length, i.e.
+ 
+\begin_inset Formula $||\mathbf{v}_{i}||=1$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+, and they are all mutually orthogonal: 
+\begin_inset Formula \begin{eqnarray*}
+\langle\mathbf{v}_{i},\mathbf{v}_{j}\rangle & = & \delta_{ij}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Definition (Basis Expansion and Coordinates)
+\end_layout
+
+\begin_layout Standard
+Writing an arbitrary vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ as a sum of basis vectors 
+\begin_inset Formula $\mathbf{x}=\sum_{i=1}^{n}\lambda_{i}\mathbf{v}_{i}$
+\end_inset
+
+ is called 
+\emph on
+basis expansion
+\begin_inset LatexCommand index
+name "basis expansion"
+
+\end_inset
+
+
+\emph default
+ 
+\emph on
+of
+\emph default
+ 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ 
+\emph on
+according to the basis
+\emph default
+ 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+.
+ The coefficients 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ are called 
+\emph on
+coordinates
+\begin_inset LatexCommand index
+name "coordinates"
+
+\end_inset
+
+
+\emph default
+ 
+\emph on
+of
+\emph default
+ 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ 
+\emph on
+according to the basis
+\emph default
+ 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The reason, why orthonormal bases are so useful is that the coordinates
+ of a vector are easy to compute: They are simply given by the projection
+ of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ onto each single basis vector.
+ Therefore, the basis expansion of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ with respect to an arbitrary orthonormal basis 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}\in\mathbb{R}^{n}$
+\end_inset
+
+ is given by: 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x} & = & \sum_{i=1}^{n}\lambda_{i}\mathbf{v}_{i}\\
+ & = & \sum_{i=1}^{n}\langle\mathbf{x},\mathbf{v}_{i}\rangle\mathbf{v}_{i}.\end{eqnarray*}
+
+\end_inset
+
+The term 
+\begin_inset Formula $\sum_{i=1}^{n}\langle\mathbf{x},\mathbf{v}_{i}\rangle\mathbf{v}_{i}$
+\end_inset
+
+ is called 
+\emph on
+
+\begin_inset LatexCommand index
+name "orthonormal expansion"
+
+\end_inset
+
+orthonormal expansion 
+\emph default
+of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+
+\emph on
+.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Itemize
+The orthonormal expansion of a vector 
+\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{3}$
+\end_inset
+
+ is given by
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x} & = & \left\langle \left(\begin{array}{c}
+1\\
+0\\
+0\end{array}\right),\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}\end{array}\right)\right\rangle \cdot\left(\begin{array}{c}
+1\\
+0\\
+0\end{array}\right)+\left\langle \left(\begin{array}{c}
+0\\
+1\\
+0\end{array}\right),\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}\end{array}\right)\right\rangle \cdot\left(\begin{array}{c}
+0\\
+1\\
+0\end{array}\right)\\
+ &  & +\left\langle \left(\begin{array}{c}
+0\\
+0\\
+1\end{array}\right),\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}\end{array}\right)\right\rangle \cdot\left(\begin{array}{c}
+0\\
+0\\
+1\end{array}\right)\\
+ & = & x_{1}\cdot\left(\begin{array}{c}
+1\\
+0\\
+0\end{array}\right)+x_{2}\cdot\left(\begin{array}{c}
+0\\
+1\\
+0\end{array}\right)+x_{3}\cdot\left(\begin{array}{c}
+0\\
+0\\
+1\end{array}\right)\\
+ & = & \left(\begin{array}{c}
+x_{1}\\
+0\\
+0\end{array}\right)+\left(\begin{array}{c}
+0\\
+x_{2}\\
+0\end{array}\right)+\left(\begin{array}{c}
+0\\
+0\\
+x_{3}\end{array}\right)\\
+ & = & \left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For any fixed 
+\begin_inset Formula $\phi$
+\end_inset
+
+, the basis 
+\begin_inset Formula $\mathbf{r}_{1}=\left({\cos(\phi)\atop \sin(\phi)}\right),\mathbf{r}_{2}=\left({-\sin(\phi)\atop \cos(\phi)}\right)$
+\end_inset
+
+ is an orthonormal basis, since 
+\begin_inset Formula \begin{eqnarray*}
+\langle\mathbf{r}_{1},\mathbf{r}_{2}\rangle & = & -\sin(\phi)\cos(\phi)+\sin(\phi)\cos(\phi)=0\end{eqnarray*}
+
+\end_inset
+
+ and 
+\begin_inset Formula \begin{eqnarray*}
+||\mathbf{r}_{i}|| & = & \sqrt{\sin(\phi)^{2}+\cos(\phi)^{2}}\\
+ & = & 1\mbox{ for }i=1,2.\end{eqnarray*}
+
+\end_inset
+
+The coordinates of a vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ are given by 
+\begin_inset Formula $\lambda_{1}=\langle\mathbf{r}_{1},\mathbf{x}\rangle=x_{1}\cos(\phi)+x_{2}\sin(\phi)$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}=\langle\mathbf{r}_{2},\mathbf{x}\rangle=-x_{1}\sin(\phi)+x_{2}\cos(\phi)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From the exampe above, we can learn two important facts.
+ First of all, 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ are the coordinates of the vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ according to the canonical basis.
+ That sounds pretty trivial.
+ However, it is important when we change from the canonical basis 
+\begin_inset Formula $\mathbf{e}_{1},...,\mathbf{e}_{n}$
+\end_inset
+
+ to another orthonormal basis 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+.
+ This is the second observation: If we know which basis 
+\begin_inset Formula $\mathbf{v}_{1},...,\mathbf{v}_{n}$
+\end_inset
+
+ we use, it is enough to remember the coordinates 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
+ and write them in vector notation 
+\begin_inset Formula $\bm\lambda=(\lambda_{1},...,\lambda_{n})^{\top}$
+\end_inset
+
+.
+ We can just use these new coordinates 
+\begin_inset Formula $\bm\lambda$
+\end_inset
+
+ to do our computations with 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ without bothering about the actual underlying basis.
+ If we want to get back the representation in the canonical basis we can
+ write it in the basis expansion 
+\begin_inset Formula $\mathbf{x}=\sum_{i=1}^{n}\lambda_{i}\mathbf{v}_{i}$
+\end_inset
+
+.
+ We will hear more about change of basis in the section about matrices.
+ 
+\end_layout
+
+\begin_layout Subsection
+A Note on Bases which are Not Orthonormal
+\end_layout
+
+\begin_layout Standard
+As mentioned above, basically every set of linearly independent vectors
+ can serve a basis.
+ When working with a non-orthonormal basis 
+\begin_inset Formula $\mathbf{w}_{1},...,\mathbf{w}_{n}$
+\end_inset
+
+, the basis can have non-normalized elements (i.e.
+ 
+\begin_inset Formula $||\mathbf{w}_{i}||\not=1$
+\end_inset
+
+), non-orthogonal elements (i.e.
+ 
+\begin_inset Formula $\langle\mathbf{w}_{i},\mathbf{w}_{j}\rangle\not=0$
+\end_inset
+
+ for 
+\begin_inset Formula $i\not=j$
+\end_inset
+
+), or both.
+ 
+\end_layout
+
+\begin_layout Standard
+Having only non-normalized basis vectors does not cause problems, since
+ we can always normalize them by dividing by their norm and get a new othonormal
+ basis 
+\begin_inset Formula $\frac{1}{||\mathbf{w}_{1}||}\mathbf{w}_{1},...,\frac{1}{||\mathbf{w}_{n}||}\mathbf{w}_{n}$
+\end_inset
+
+.
+ Even if we do not do that, the new coordinates can simply be computed via
+ 
+\begin_inset Formula $\lambda_{i}=\frac{1}{||\mathbf{w}_{i}||^{2}}\langle\mathbf{w}_{i},\mathbf{x}\rangle$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If the basis is non-orthogonal, the situation get more tricky.
+ The problem is, that we cannot simply project our vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ onto the basis components to build the basis expansion.
+ The reason is, that we also gets a bit of 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\mathbf{v}_{i}$
+\end_inset
+
+-part
+\begin_inset Quotes erd
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ when computing the coordinate via 
+\begin_inset Formula $\lambda_{j}=\langle\mathbf{v}_{j},\mathbf{x}\rangle$
+\end_inset
+
+, if 
+\begin_inset Formula $\mathbf{v}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}_{j}$
+\end_inset
+
+ are not orthogonal, i.e.
+ not independent.
+ We will not go into detail here, but show an example of what can happen,
+ instead.
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+Consider the basis 
+\begin_inset Formula $\mathbf{w}_{1}=\left({1\atop 0}\right),\,\mathbf{w}_{2}=\frac{1}{\sqrt{2}}\left({1\atop 1}\right)$
+\end_inset
+
+.
+ The basis has normal elements, since 
+\begin_inset Formula $||\mathbf{w}_{1}||=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{w}_{2}=\sqrt{2\cdot\left(\frac{1}{\sqrt{2}}\right)^{2}}=1$
+\end_inset
+
+, but not orthogonal, since 
+\begin_inset Formula $\langle\mathbf{w}_{1},\mathbf{w}_{2}\rangle=\frac{1}{\sqrt{2}}\not=0$
+\end_inset
+
+.
+ Assume we want to write the vector 
+\begin_inset Formula $\left({0\atop 1}\right)$
+\end_inset
+
+ in as a orthonormal expansion in the basis 
+\begin_inset Formula $\mathbf{w}_{1},\mathbf{w}_{2}$
+\end_inset
+
+ we get 
+\begin_inset Formula \begin{eqnarray*}
+\left\langle \mathbf{w}_{1},\left({0\atop 1}\right)\right\rangle \mathbf{w}_{1}+\left\langle \mathbf{w}_{2},\left({0\atop 1}\right)\right\rangle \mathbf{w}_{2} & = & 0\cdot\mathbf{w}_{1}+\frac{1}{\sqrt{2}}\mathbf{w}_{2}\\
+ & = & \frac{1}{\sqrt{2}}\left({\frac{1}{\sqrt{2}}\atop \frac{1}{\sqrt{2}}}\right)\\
+ & = & \frac{1}{2}\left({1\atop 1}\right)\\
+ & \not= & \left({0\atop 1}\right).\end{eqnarray*}
+
+\end_inset
+
+This show that we cannot use the scalar product trick to compute the coordinates
+ of a vector according to a non-orthogonal basis.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

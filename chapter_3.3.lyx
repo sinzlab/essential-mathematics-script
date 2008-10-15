@@ -1,0 +1,334 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{3}
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+The Fourier Transform
+\end_layout
+
+\begin_layout Standard
+Up to now, we looked at functions on a fixed interval (for convenience,
+\begin_inset Formula $[-\pi,\pi]$
+\end_inset
+
+), and their representation as a Fourier Series, i.e.
+ as a linear combinations of sines and cosines, where the period of each
+ sine is an integer multiple of the base frequency 
+\begin_inset Formula $\frac{1}{2\pi},$
+\end_inset
+
+ i.e.
+ the frequencies are 
+\begin_inset Formula $\frac{1}{2\pi},$
+\end_inset
+
+
+\begin_inset Formula $\frac{2}{2\pi},$
+\end_inset
+
+
+\begin_inset Formula $\frac{3}{2\pi},$
+\end_inset
+
+ etc...
+ If we want to look at multiple functions at the same times, this is a somewhat
+ annoying restriction.
+ For example, one can not find an interval on which both 
+\begin_inset Formula $f(x)=$
+\end_inset
+
+
+\begin_inset Formula $\sin(\sqrt{2}x)$
+\end_inset
+
+ and 
+\begin_inset Formula $g(x)=\sin(x)$
+\end_inset
+
+ have 
+\begin_inset Quotes eld
+\end_inset
+
+simple
+\begin_inset Quotes erd
+\end_inset
+
+ Fourier Series.
+ If we choose the interval 
+\begin_inset Formula $[-\pi,\pi]$
+\end_inset
+
+, then the Fourier Series of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+is quite complicated, and has non-zero coefficients at all frequencies,
+ as 
+\begin_inset Formula $\sqrt{2}$
+\end_inset
+
+is not an integer.
+\end_layout
+
+\begin_layout Standard
+One way around this problem is to use the 
+\emph on
+Fourier Transform
+\emph default
+, rather than the
+\emph on
+ Fourier Series
+\emph default
+, to represent a function in the frequency domain.
+ We get rid of the fixed interval 
+\begin_inset Formula $[-T,T]$
+\end_inset
+
+ by letting 
+\begin_inset Formula $T\rightarrow\infty,$
+\end_inset
+
+ and by that, the sum 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}c_{k}e^{ikx}$
+\end_inset
+
+ over discrete coefficients 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+ turns into an integral over the 
+\family default
+\series default
+\shape default
+\size default
+\emph on
+\bar default
+\noun default
+\color inherit
+spectral densities 
+\begin_inset Formula $c(\omega),$
+\end_inset
+
+ 
+\emph default
+for any real-valued frequency 
+\begin_inset Formula $\omega\in\mathbb{R}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, we can write 
+\begin_inset Formula \[
+f(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}c(w)e^{ixw}dx,\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $c(w)$
+\end_inset
+
+ is the 
+\emph on
+Fourier Transform
+\emph default
+ of 
+\begin_inset Formula $f(x),$
+\end_inset
+
+ which is often written as 
+\begin_inset Formula $\hat{f}(w)$
+\end_inset
+
+.
+ Conversely, 
+\begin_inset Formula $f(x)$
+\end_inset
+
+is the 
+\emph on
+Inverse Fourier Transform
+\emph default
+ of 
+\begin_inset Formula $c(w).$
+\end_inset
+
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+and 
+\begin_inset Formula $c(w)$
+\end_inset
+
+ are sometimes referred to as a 
+\emph on
+Fourier Transform Pair
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We can calculate the Fourier Transform of any function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\hat{f}(w)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(x)e^{-iwx}dx,\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+provided that this integral exists.
+ The notations and conventions can be ambiguous and vary between different
+ communities : The FT is also sometimes defined by 
+\begin_inset Formula $\hat{f}(w)=\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx$
+\end_inset
+
+ or by 
+\begin_inset Formula $\hat{f}(w)=\int_{-\infty}^{\infty}f(x)e^{-2\pi i\omega x}dx.$
+\end_inset
+
+ These different conventions dont, in principle, matter, but one has to
+ be careful not to be confused or get results wich are off by, say, a factor
+ of 
+\begin_inset Formula $2\pi.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In practice, we can rarely use 
+\begin_inset Quotes eld
+\end_inset
+
+actual
+\begin_inset Quotes erd
+\end_inset
+
+ functions 
+\begin_inset Formula $f(x),$
+\end_inset
+
+ but rather have to work with discrete approximations, i.e.
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is only given by a finite set of functions values 
+\begin_inset Formula $f_{1},$
+\end_inset
+
+
+\begin_inset Formula $f_{2},$
+\end_inset
+
+
+\begin_inset Formula $\ldots,f_{n}$
+\end_inset
+
+ In this case, one should use the 
+\emph on
+Discrete Fourier Transform
+\emph default
+, which is defined to be the vector with 
+\begin_inset Formula $m-th$
+\end_inset
+
+ entry 
+\begin_inset Formula \[
+\hat{f}_{m}=\sum_{k=1}^{n-1}f_{k}e^{-\frac{2\pi i}{n}km}.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sometimes, one can read sentences like 
+\begin_inset Quotes eld
+\end_inset
+
+Figure X shows the Fast Fourier Transform of data Y
+\begin_inset Quotes erd
+\end_inset
+
+ in papers.
+ This is slight nonsense, as the Fast Fourier Transform is an 
+\emph on
+algorithm
+\emph default
+ for computing the DFT, and not something one could plot.
+ Of course, they mean that the DFT of the data is shown.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

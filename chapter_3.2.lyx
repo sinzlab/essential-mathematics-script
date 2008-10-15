@@ -1,0 +1,233 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{3}
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Fourier Series and Complex Numbers
+\end_layout
+
+\begin_layout Standard
+Fourier Analysis is usually taught using complex numbers rather than sines
+ and cosines.
+ While this has the disadvantage of requiring at least some familarity of
+ complex numbers, it makes notation much simpler, and is also conceptually
+ more elegant.
+ Furthermore, you will have to understand the complex-number notation in
+ order to understand most references about Fourier Series.
+ Therefore, we will quickly sketch the derivation of Fourier Series with
+ complex numbers.
+ Furthermore, this will set the stage for the Fourier Transform in the next
+ section.
+\end_layout
+
+\begin_layout Itemize
+A complex number 
+\begin_inset Formula $z$
+\end_inset
+
+ consists of a real part and an imaginary part:
+\begin_inset Formula \[
+z=a+bi,\mbox{ where }i=\sqrt{-1}.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Any complex number 
+\begin_inset Formula $z$
+\end_inset
+
+ can also be written in its 
+\emph on
+polar
+\emph default
+ form 
+\emph on
+
+\begin_inset Formula $z=Ae^{i\theta}$
+\end_inset
+
+, 
+\emph default
+where 
+\begin_inset Formula $A$
+\end_inset
+
+ is the modulus of 
+\begin_inset Formula $z$
+\end_inset
+
+, and 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the argument of 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+We can convert from the cartesian form to the polar form by 
+\begin_inset Formula $A=\sqrt{a^{2}+b^{2}},$
+\end_inset
+
+ 
+\begin_inset Formula $\theta=\tan^{-1}(\frac{b}{a}),$
+\end_inset
+
+ and from polar to cartesian by 
+\begin_inset Formula $a=A\sin(\theta),$
+\end_inset
+
+ 
+\begin_inset Formula $b=A\cos(\theta).$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+In other words, any complex number 
+\begin_inset Formula $z$
+\end_inset
+
+ can be written as 
+\begin_inset Formula $z=Ae^{i\theta}=A(cos\theta+i\sin\theta).$
+\end_inset
+
+This will allow us to collapse the sines and cosines into complex numbers.
+\end_layout
+
+\begin_layout Standard
+The Fourier Series approximation of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ of order 
+\begin_inset Formula $N$
+\end_inset
+
+ in complex number notation is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+f_{N}(x)=\sum_{k=-N}^{N}c_{k}e^{ikx}.\]
+
+\end_inset
+
+ To find each coefficient 
+\begin_inset Formula $c_{m},$
+\end_inset
+
+ we need to make use of the integration identity
+\begin_inset Formula \[
+\int_{-\pi}^{\pi}e^{ix(k-m)}dx=\begin{cases}
+2\pi & \mbox{for }k=m\\
+0 & \mbox{for }k\neq m.\end{cases}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We only need 
+\emph on
+one 
+\emph default
+such identity when we are using complex numbers, rather than several ones.
+ Furthermore, this identity can quickly be derived by using the basic integratio
+n rule 
+\begin_inset Formula $\int e^{ax}dx=\frac{1}{a}e^{ax}.$
+\end_inset
+
+ Hence, each coefficient 
+\begin_inset Formula $c_{m}$
+\end_inset
+
+ is found by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\int_{-\pi}^{\pi}f(x)e^{-ixm}dx & = & \int_{-\pi}^{\pi}\left(\sum_{k=-\infty}^{\infty}c_{k}e^{ikx}\right)e^{-ixm}\\
+ & = & \sum_{k=-\infty,k\neq m}^{\infty}\int_{-\pi}^{\pi}c_{k}e^{ix(k-m)}dx+\int_{-\pi}^{\pi}c_{m}e^{ix(m-m)}dx\\
+ & = & 0+2\pi c_{m}\\
+\implies c_{m} & = & \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)e^{-ixm}dx.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It should be noted that, while each coefficient 
+\begin_inset Formula $c_{m}$
+\end_inset
+
+ could be an imaginary number, the Fourier approximation 
+\begin_inset Formula $f_{N}(x)$
+\end_inset
+
+ is actually a real-valued function, as the imaginary parts of its components
+ magically cancel out.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,2456 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{2}
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Eigenvalues, Eigenvectors and Principal Component Analysis
+\end_layout
+
+\begin_layout Standard
+In this section we will look at a very important concept of matrices: 
+\emph on
+
+\begin_inset LatexCommand index
+name "eigenvalues"
+
+\end_inset
+
+eigenvalues
+\emph default
+ and 
+\emph on
+
+\begin_inset LatexCommand index
+name "eigenvectors"
+
+\end_inset
+
+eigenvectors
+\emph default
+.
+ Eigenvalues and eigenvectors are mathematical objects that can be derived
+ from square matrices and which are tightly linked to the intrinsic mechanic
+ of a matrix.
+ Eigenvalues play an important role in data analysis, since they are a key
+ ingredient of the 
+\emph on
+
+\begin_inset LatexCommand index
+name "Principal Component Analysis (PCA)"
+
+\end_inset
+
+Principal Component Analysis (PCA)
+\emph default
+ algorithm.
+ We will first introduce eigenvalues and eigenvectors with an example, then
+ make a few general comments about eigenvalues and eigenvectors and their
+ properties, and then introduce PCA.
+\end_layout
+
+\begin_layout Subsubsection
+Eigenvalues and Eigenvectors
+\end_layout
+
+\begin_layout Standard
+In one of the first sections we saw that a one-dimensional linear function
+ can be expressed by a single number: We compute the result of a linear
+ function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ on some value, say 
+\begin_inset Formula $x_{0}=1$
+\end_inset
+
+, obtain 
+\begin_inset Formula $\lambda=f(x_{0})=f(1)$
+\end_inset
+
+ and compute any other value by 
+\begin_inset Formula $f(x)=f(a\cdot x_{0})=af(x_{0})=\lambda\cdot a.$
+\end_inset
+
+ Here, 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ serves as our basis in 
+\begin_inset Formula $\mathbb{R}^{1}$
+\end_inset
+
+.
+ We express 
+\begin_inset Formula $x$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, get the coordinate 
+\begin_inset Formula $a$
+\end_inset
+
+ and use the linearity so get it into the form 
+\begin_inset Formula $f(x)=\lambda\cdot x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Now we could ask the question, whether there are direction in space, such
+ that a multi-dimensional linear function can also be described by a single
+ number for every input along that direction.
+ Those would be directions, that are tightly linked to the mechanic of that
+ function, since it takes this especially easy form in that direction.
+ 
+\end_layout
+
+\begin_layout Standard
+Let us have a look at, how those directions could look like.
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+Consider the matrix 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A} & = & \left(\begin{array}{cc}
+2 & 0\\
+0 & 1\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+This matrix doubles the 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+-coordinate and leaves the 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+-coordinate untouched, i.e.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}{x_{1} \choose x_{2}} & = & {2x_{1} \choose x_{2}}.\end{eqnarray*}
+
+\end_inset
+
+What are the directions in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ that are tightly linked with the transformation carried out by 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+? Considering the transformation of a vector 
+\begin_inset Formula $\mathbf{x}={x_{1} \choose x_{2}}$
+\end_inset
+
+, we can see that these two directions are the first coordinate direction
+ (i.e.
+ the direction of the first basis vector) and the second coordinate direction,
+ since 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ doubles the length of a vector along the first and leaves a vector untouched
+ along the second direction.
+ In other words, if a vector is given by 
+\begin_inset Formula $\mathbf{y}={a \choose 0}$
+\end_inset
+
+, then the result of 
+\begin_inset Formula $\mathbf{A}\mathbf{y}={2a \choose 0}=2\mathbf{y}$
+\end_inset
+
+ is just an elongated version of the input.
+ The same is true for an input 
+\begin_inset Formula $\mathbf{z}={0 \choose b}$
+\end_inset
+
+, since 
+\begin_inset Formula $\mathbf{A}\mathbf{z}={0 \choose b}=\mathbf{z}$
+\end_inset
+
+ does not change the input vector 
+\begin_inset Formula $\mathbf{z}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we generalize the example, we see that the directions from the example
+ before are exactly the ones that we were looking for: Given the direction
+ and an input vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ that has the same orientation, the linear mapping can be described by one
+ number, i.e.
+ the scaling vector along that direction.
+ This means, we are searching for could say that directions, that are tightly
+ linked to the transformation carried out by a matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+, are those directions in which a vector is only scaled, but not rotated,
+ i.e.
+ the direction that does only affect the length, but not the orientation
+ of a vector when multiplied with 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+.
+ This is the general definition of a eigenvector.
+ The amount of scaling in that direction is called eigenvalue of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Definition
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathbf{A}\in\mathbb{R}^{n\times n}$
+\end_inset
+
+ be a square matrix.
+ Any vector 
+\begin_inset Formula $\mathbf{v}\not=\mathbf{0}$
+\end_inset
+
+ that fulfills 
+\begin_inset Formula $\mathbf{A}\mathbf{v}=\lambda\mathbf{v}$
+\end_inset
+
+ is called 
+\emph on
+eigenvector
+\begin_inset LatexCommand index
+name "eigenvector"
+
+\end_inset
+
+
+\emph default
+ of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+.
+ The value 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is called 
+\emph on
+eigenvalue
+\begin_inset LatexCommand index
+name "eigenvalue"
+
+\end_inset
+
+
+\emph default
+ of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+.
+ Each eigenvector has its eigenvalue.
+ However, the eigenvalues for different eigenvectors might be the same.
+ 
+\end_layout
+
+\begin_layout Standard
+Note, that if 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ is an eigenvector, then 
+\begin_inset Formula $a\mathbf{v}$
+\end_inset
+
+ with 
+\series bold
+
+\begin_inset Formula $\mathbf{v}\in\mathbb{R}$
+\end_inset
+
+ 
+\series default
+is an eigenvector, too.
+ Therefore, we can assume without loss of generality that eigenvectors have
+ length one, i.e.
+ 
+\begin_inset Formula $||\mathbf{v}||=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+How do we compute eigenvectors? In order to answer this question, let us
+ rewrite the definition of an eigenvector a little bit:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}\mathbf{v} & = & \lambda\mathbf{v}\\
+\Leftrightarrow\mathbf{A}\mathbf{v}-\lambda\mathbf{v} & = & \mathbf{0}\\
+\Leftrightarrow(\mathbf{A}-\lambda\mathbf{I})\mathbf{v} & = & \mathbf{0}.\end{eqnarray*}
+
+\end_inset
+
+This shows, that we are interested in a vector 
+\begin_inset Formula $\mathbf{v}\in\mathbb{R}^{n}$
+\end_inset
+
+ and a scalar 
+\begin_inset Formula $\lambda\in\mathbb{R}$
+\end_inset
+
+ such that the linear function given by the matrix 
+\begin_inset Formula $(\mathbf{A}-\lambda\mathbf{I})$
+\end_inset
+
+ maps 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ onto the zero-vector.
+ A trivial solution for this would be, to set 
+\begin_inset Formula $\mathbf{v}=\mathbf{0}$
+\end_inset
+
+, but this is not allowed by the definition of an eigenvector.
+ If 
+\begin_inset Formula $\mathbf{v}\not=\mathbf{0}$
+\end_inset
+
+, we must adjust 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ lives in the 
+\emph on
+
+\begin_inset LatexCommand index
+name "nullspace"
+
+\end_inset
+
+nullspace
+\emph default
+ of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Definition (Nullspace)
+\end_layout
+
+\begin_layout Standard
+The nullspace of a matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is the set of all vectors 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ that are mapped onto the zero vector, i.e.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\mathcal{N}(\mathbf{A}) & = & \{\mathbf{v}\in\mathbb{R}^{n}|\,\mathbf{A}\mathbf{v}=\mathbf{0}\}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+Consider the matrix 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{P} & = & \left(\begin{array}{ccc}
+2 & 1 & 0\\
+1 & 3 & 0\\
+0 & 0 & 0\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+No matter what vector we feed into 
+\begin_inset Formula $\mathtt{\mathbf{P}}$
+\end_inset
+
+, the 
+\begin_inset Formula $x_{3}$
+\end_inset
+
+-coordinate always gets mapped into 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ This means that all vectors along the direction 
+\begin_inset Formula $\left(\begin{array}{c}
+0\\
+0\\
+1\end{array}\right)$
+\end_inset
+
+ are mapped onto the zero vector.
+ Therefore, the nullspace of 
+\begin_inset Formula $\mathbf{P}$
+\end_inset
+
+ is given by 
+\begin_inset Formula \begin{eqnarray*}
+\mathcal{N}(\mathbf{P}) & = & \{a\cdot(0,0,1)^{\top}|\, a\in\mathbb{R}\}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the nullspace of a matrix contains any other element than zero, the matrix
+ is not invertible anymore.
+ This is simply because the zero vector is always mapped onto the zero vector
+ by linear mappings.
+ If another vector is mapped into the zero vector, we would not know which
+ vector we should assign to the zero vector when inverting the linear mapping.
+ Therefore, it cannot be invertible.
+ 
+\end_layout
+
+\begin_layout Standard
+This brings us back to the question of how to compute the eigenvector and
+ the eigenvalues.
+ We know now that 
+\begin_inset Formula $(\mathbf{A}-\lambda\mathbf{I})$
+\end_inset
+
+ must not be invertible.
+ We already saw that determinants can be used to check whether a matrix
+ is invertible or not.
+ We can use that here.
+ If a matrix is not invertible, then the determinant must be zero.
+ Therefore, we are searching for all 
+\begin_inset Formula $\lambda\in\mathbb{R}$
+\end_inset
+
+ such that 
+\begin_inset Formula \begin{eqnarray*}
+\det(\mathbf{A}-\lambda\mathbf{I}) & = & 0.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Once we have the solutions to that equation, we can search for the eigenvectors
+ belonging to each solution.
+ But let us look at a few examples first:
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Enumerate
+Let us start by the example from above
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A} & = & \left(\begin{array}{cc}
+2 & 0\\
+0 & 1\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+The eigenvalues of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ are given by the solution of 
+\begin_inset Formula \begin{eqnarray*}
+\det\left(\left(\begin{array}{cc}
+2 & 0\\
+0 & 1\end{array}\right)-\lambda\left(\begin{array}{cc}
+1 & 0\\
+0 & 1\end{array}\right)\right) & = & \det\left(\left(\begin{array}{cc}
+2-\lambda & 0\\
+0 & 1-\lambda\end{array}\right)\right)\\
+ &  & 0.\end{eqnarray*}
+
+\end_inset
+
+Determinants of diagonal matrices are easy to compute: 
+\begin_inset Formula \begin{eqnarray*}
+\det\left(\left(\begin{array}{cc}
+2-\lambda & 0\\
+0 & 1-\lambda\end{array}\right)\right) & = & (2-\lambda)\cdot(1-\lambda).\end{eqnarray*}
+
+\end_inset
+
+We see that the determinant gives us a polynomial in 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ Since it is already factorized we can read off the solutions as 
+\begin_inset Formula $\lambda_{1}=2$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}=1$
+\end_inset
+
+.
+ Therefore the eigenvalues of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ are given by 
+\begin_inset Formula $\lambda_{1}=2$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Consider 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A} & = & \left(\begin{array}{cc}
+6 & 4\\
+2 & 4\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+Let us do the same steps as in the example before:
+\begin_inset Formula \begin{eqnarray*}
+\det\left(\left(\begin{array}{cc}
+6 & 4\\
+2 & 4\end{array}\right)-\lambda\left(\begin{array}{cc}
+1 & 0\\
+0 & 1\end{array}\right)\right) & = & \det\left(\begin{array}{cc}
+6-\lambda & 4\\
+2 & 4-\lambda\end{array}\right)\\
+ & = & (6-\lambda)(4-\lambda)-2\cdot4\\
+ & = & 24-4\lambda-6\lambda+\lambda^{2}-8\\
+ & = & \lambda^{2}-10\lambda+16\\
+ & = & 0.\end{eqnarray*}
+
+\end_inset
+
+The solution can be found by solving this quadratic equation:
+\begin_inset Formula \begin{eqnarray*}
+\lambda_{1,2} & = & \frac{10\pm\sqrt{100-64}}{2}\\
+ & = & \frac{10\pm6}{2}\\
+ & = & \frac{10\pm6}{2}\\
+ & = & 5\pm3.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Consider the triangular matrix 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A} & = & \left(\begin{array}{ccc}
+1 & 1 & 1\\
+0 & 2 & 2\\
+0 & 0 & 3\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+Since we know that the determinant of a triangluar matrix is again just
+ the product of the diagonal terms
+\begin_inset Formula \begin{eqnarray*}
+\det(\mathbf{A}-\lambda\mathbf{I}) & = & (1-\lambda)(2-\lambda)(3-\lambda).\end{eqnarray*}
+
+\end_inset
+
+If we set the determinant to zero, the cubic equation has the solutions
+ 
+\begin_inset Formula $\lambda_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda_{2}=2$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{3}=3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After the computation of the eigenvalues, we need to find the eigenvectors.
+ However, this is simple task.
+ We can just use the definition of an eigenvector
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}\mathbf{v} & = & \lambda\mathbf{v}\\
+\Leftrightarrow(\mathbf{A}-\lambda\mathbf{I})\mathbf{v} & = & 0.\end{eqnarray*}
+
+\end_inset
+
+Since we know 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ now, the left hand side is just a matrix-vector multiplication, or seen
+ differently, a linear equation system.
+ In order to get the eigenvector, we must solve that for 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+.
+ Let us look at our examples again.
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Enumerate
+We already know that the eigenvalues of 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A} & = & \left(\begin{array}{cc}
+2 & 0\\
+0 & 1\end{array}\right)\end{eqnarray*}
+
+\end_inset
+
+ are given by 
+\begin_inset Formula $\lambda_{1}=2$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}=1$
+\end_inset
+
+.
+ In order to get the eigenvector for 
+\begin_inset Formula $\lambda_{1}$
+\end_inset
+
+, we must solve the following equation system
+\begin_inset Formula \begin{eqnarray*}
+\left(\left(\begin{array}{cc}
+2 & 0\\
+0 & 1\end{array}\right)-\lambda_{1}\left(\begin{array}{cc}
+1 & 0\\
+0 & 1\end{array}\right)\right) & = & \left(\left(\begin{array}{cc}
+2 & 0\\
+0 & 1\end{array}\right)-\left(\begin{array}{cc}
+2 & 0\\
+0 & 2\end{array}\right)\right)\\
+ & = & \left(\begin{array}{cc}
+0 & 0\\
+0 & -1\end{array}\right)\mathbf{v}\\
+ & = & {0 \choose 0}.\end{eqnarray*}
+
+\end_inset
+
+Written down as an equation system 
+\begin_inset Formula \begin{eqnarray*}
+0\cdot v_{1}+0\cdot v_{2} & = & 0\\
+0\cdot v_{1}-v_{2} & = & 0.\end{eqnarray*}
+
+\end_inset
+
+Every vector 
+\begin_inset Formula $\mathbf{v}={a \choose 0}$
+\end_inset
+
+ for arbitrary 
+\begin_inset Formula $a$
+\end_inset
+
+ is a solution to this equation.
+ Since we normalize eigenvectors for convenience, the solution is given
+ by 
+\begin_inset Formula $\mathbf{v}_{1}={1 \choose 0}$
+\end_inset
+
+.
+ Therefore the eigenvector to the eigenvalue 
+\begin_inset Formula $\lambda_{1}=2$
+\end_inset
+
+ is 
+\begin_inset Formula $\mathbf{v}_{1}={1 \choose 0}$
+\end_inset
+
+.
+ An analogous computation yields 
+\begin_inset Formula $\mathbf{v}_{2}={0 \choose 1}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Before, we saw that the eigenvalues of 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A} & = & \left(\begin{array}{cc}
+6 & 4\\
+2 & 4\end{array}\right)\end{eqnarray*}
+
+\end_inset
+
+ are given by 
+\begin_inset Formula \begin{eqnarray*}
+\lambda_{1,2} & = & 5\pm3.\end{eqnarray*}
+
+\end_inset
+
+Now, we do the same steps as in the example before.
+ The linear equation system for the first eigenvalue 
+\begin_inset Formula $\lambda_{1}=8$
+\end_inset
+
+ is given by
+\begin_inset Formula \begin{eqnarray*}
+6v_{1}+4v_{2} & = & 8v_{1}\\
+2v_{1}+4v_{2} & = & 8v_{2},\end{eqnarray*}
+
+\end_inset
+
+which is equivalent to 
+\begin_inset Formula \begin{eqnarray*}
+-2v_{1}+4v_{2} & = & 0\\
+2v_{1}-4v_{2} & = & 0.\end{eqnarray*}
+
+\end_inset
+
+Both equations are the same.
+ Solving the first for 
+\begin_inset Formula $v_{1}$
+\end_inset
+
+ yields 
+\begin_inset Formula \begin{eqnarray*}
+v_{1} & = & 2v_{2}.\end{eqnarray*}
+
+\end_inset
+
+Therefore, the normalized eigenvector to the eigenvalue 
+\begin_inset Formula $\lambda_{1}=8$
+\end_inset
+
+ is given by 
+\begin_inset Formula $\mathbf{v}_{1}=\frac{1}{\sqrt{3}}{2 \choose 1}$
+\end_inset
+
+.
+ An analogous computation yields the eigenvector of 
+\begin_inset Formula $\lambda_{2}=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Eigen Decomposition
+\end_layout
+
+\begin_layout Standard
+Eigenvalues and eigenvectors are important tools to understand the function
+ behind a matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+.
+ Once we know along which directions 
+\begin_inset Formula $\mathbf{v}_{i}$
+\end_inset
+
+ only scales the input, we get insight in what ommit
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is actually doing.
+ In order to make this more apparent, a matrix can be decomposed into a
+ product of matrices, that are built from eigenvectors and eigenvalues.
+\end_layout
+
+\begin_layout Paragraph
+Theorem (Eigen Decomposition)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathbf{A}\in\mathbb{R}^{n\times n}$
+\end_inset
+
+ be an arbitrary square matrix and the eigenvalues of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ be mutually distinct, i.e.
+ 
+\begin_inset Formula $\lambda_{i}\not=\lambda_{j}$
+\end_inset
+
+ for 
+\begin_inset Formula $i\not=j$
+\end_inset
+
+.
+ Then there exists a diagonal matrix 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D} & = & \left(\begin{array}{cccc}
+\lambda_{1} & 0 & \dots & 0\\
+0 & \lambda_{2}\\
+0 &  & \ddots & 0\\
+ & \dots & 0 & \lambda_{n}\end{array}\right)\end{eqnarray*}
+
+\end_inset
+
+ that hold the eigenvalues in the diagonal and a matrix 
+\begin_inset Formula $\mathbf{U}=(\mathbf{u}_{1},...,\mathbf{u}_{n})$
+\end_inset
+
+ that contains the eigenvectors to the eigenvalues 
+\begin_inset Formula $\lambda_{1},...,\lambda_{n}$
+\end_inset
+
+ as column vectors, such that 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}\mathbf{U} & = & \mathbf{U}\mathbf{D}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Even if the eigenvalues are not distinct, i.e.
+ 
+\begin_inset Formula $\lambda_{k_{1}}=...=\lambda_{k_{r}}$
+\end_inset
+
+ for 
+\begin_inset Formula $k_{i}\not=k_{j}$
+\end_inset
+
+, then there still exists such a decomposition if the eivenvectors corresponding
+ to those eigenvalues are linearly independent.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Theorem (Eigen Basis)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathbf{A}\in\mathbb{R}^{n\times n}$
+\end_inset
+
+ be an arbitrary square matrix.
+ Eigenvectors 
+\begin_inset Formula $\mathbf{v}_{i},\mathbf{v}_{j}$
+\end_inset
+
+ to distinct eigenvalues 
+\begin_inset Formula $\lambda_{i}\not=\lambda_{j}$
+\end_inset
+
+ are linearly independent.
+ This implies that the eigenvectors to 
+\begin_inset Formula $n$
+\end_inset
+
+ mutually distinct eigenvalues form a basis of 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These theorems sound very abstract.
+ However, we can get an intuition for them with the following considerations.
+ Let us first look at the matrix 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+.
+ If we assume, that the eigenvalues of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ are mutually distinct, then the columns of 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+ for a - not necessarily orthogonal- basis of 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+ This means that multiplying a vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ with 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+ as we would treat the entries of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ as coordinates with respect to the basis 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+ and change its coordinates to the basis of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ by multiplying 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ with 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+.
+ This holds true, even if the eigenvectors do not form an orthonormal basis.
+ Interpreted in that way the term 
+\begin_inset Formula $\mathbf{A}\mathbf{U}\mathbf{x}$
+\end_inset
+
+ means, that we first change the coordinates in 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ to the coordinates of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+, by 
+\begin_inset Formula $\mathbf{U}\mathbf{x}$
+\end_inset
+
+ and the apply the transformation carried out by 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ via 
+\begin_inset Formula $\mathbf{A}\mathbf{U}\mathbf{x}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The theorem tells us, that this is the same as first scaling the coordinates
+ in 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ by multiplying it with 
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+ and then changing the basis to that of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+.
+ The result of 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D}\mathbf{x} & = & \left(\begin{array}{c}
+\lambda_{1}x_{1}\\
+\lambda_{2}x_{2}\\
+\vdots\\
+\lambda_{n}x_{n}\end{array}\right)\end{eqnarray*}
+
+\end_inset
+
+ is just 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+, but with every entry 
+\begin_inset Formula $i$
+\end_inset
+
+ scaled by the eigenvalue 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+.
+ This is exactly the way how the eigenvalues and eigenvectors are linked
+ to the transformation of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+.
+ If we express a vector with respect to the eigenvectors, then the transformatio
+n is only a rescaling of each coordinate.
+\end_layout
+
+\begin_layout Standard
+Let us look at a few examples and then see how we can use this result.
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Enumerate
+The identity matrix 
+\begin_inset Formula $\mathbf{I}=\left(\begin{array}{cccc}
+1 & 0 & \dots & 0\\
+0 & 1\\
+0 &  & \ddots & 0\\
+ & \dots & 0 & 1\end{array}\right)$
+\end_inset
+
+ is already diagonal.
+ Therefore, its eigenvectors are 
+\begin_inset Formula $\lambda_{1}=...=\lambda_{n}=1$
+\end_inset
+
+ and the matrix 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+ is the matrix containing the canonical basis, i.e.
+ 
+\begin_inset Formula $\mathbf{U}=(\mathbf{e}_{1},...,\mathbf{e}_{n})=\mathbf{I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Consider the matrix 
+\begin_inset Formula \begin{eqnarray*}
+ &  & \left(\begin{array}{cc}
+\cos\phi & -\sin\phi\\
+\sin\phi & \cos\phi\end{array}\right)\left(\begin{array}{cc}
+2 & 0\\
+0 & 1\end{array}\right)\left(\begin{array}{cc}
+\cos\phi & \sin\phi\\
+-\sin\phi & \cos\phi\end{array}\right)\\
+ & = & \left(\begin{array}{cc}
+\cos\phi & -\sin\phi\\
+\sin\phi & \cos\phi\end{array}\right)\left(\begin{array}{cc}
+2\cos\phi & 2\sin\phi\\
+-\sin\phi & \cos\phi\end{array}\right)\\
+ & = & \left(\begin{array}{cc}
+2\cos^{2}\phi+\sin^{2}\phi & 2\cos\phi\sin\phi-\cos\phi\sin\phi\\
+2\cos\phi\sin\phi-\cos\phi\sin\phi & 2\sin^{2}\phi+\cos^{2}\phi\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+This matrix changes the basis from 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+ (see examples before), doubles the first coordinate and changes the coordinates
+ of the results back to 
+\begin_inset Formula $\mathbf{e}_{1},\mathbf{e}_{2}$
+\end_inset
+
+.
+ Therefore, the eigenvalues are 
+\begin_inset Formula $\lambda_{1}=2$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}=1$
+\end_inset
+
+ and the corresponding eigenvectors are 
+\begin_inset Formula $\mathbf{r}_{1},\mathbf{r}_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Consider the matrix 
+\begin_inset Formula $\left(\begin{array}{ccc}
+3 & 0 & 0\\
+0 & 2 & 0\\
+0 & 0 & 0\end{array}\right)$
+\end_inset
+
+.
+ This matrix multiplies the first coordinate by three, doubles the second
+ coordinate and sets the third coordinate to zero.
+ Since the matrix is already diagonal, the eigenvectors are simply the canonical
+ basis vectors.
+ The eigenvalues are given by 
+\begin_inset Formula $\lambda_{1}=3$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda_{2}=2$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{3}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From the third example we can see another important use of eigenvalues.
+ The matrix in example does not have full rank, since the third column is
+ the zero vector and therefore linearly dependent on both others.
+ At the same time, the eigenvalue corresponding to the third column is zero
+ as well.
+ We can look at that as if the zero eigenvalue switches off the corresponding
+ eigenvector.
+ In general, if we compute the eigendecomposition of a matrix and one or
+ more of its eigenvalues is zero, then the matrix does not have full rank,
+ since all information about that direction in space gets lost, when multiplying
+ it with the diagonal matrix, that contains the eigenvalues.
+ There is a slightly more formal way of stating this result.
+ 
+\end_layout
+
+\begin_layout Standard
+Assume that we decompose 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mathbf{A}\mathbf{U}=\mathbf{U}\mathbf{D}$
+\end_inset
+
+ or, equivalently, 
+\begin_inset Formula $\mathbf{A}=\mathbf{UDU}^{-1}$
+\end_inset
+
+.
+ If the eigenvalue of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ are mutually distinct, we can invert 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+, since its column vectors, the eigenvectors of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+, are linearly independent.
+ If 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ had full rank, then its determinant must not be zero.
+ But if one of the eigenvalues equals zero, the determinant 
+\begin_inset Formula $\det\mathbf{D}=\prod_{i=1}^{n}\lambda_{i}$
+\end_inset
+
+ of the diagonal matrix will be zero and so will be the determinant of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+, since 
+\begin_inset Formula \begin{eqnarray*}
+\det\mathbf{A} & = & \det\mathbf{UDU}^{-1}\\
+ & = & \det\mathbf{U}\cdot\det\mathbf{D}\cdot\det\mathbf{U}^{-1}.\end{eqnarray*}
+
+\end_inset
+
+Therefore, as soon as one eigenvalue of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is zero, 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ does not have full rank and is not invertible.
+ 
+\end_layout
+
+\begin_layout Standard
+However, given the eigenvalues and eigenvectors of a matrix, we can do even
+ more than just saying if 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is invertible or not.
+ If it is, i.e.
+ if 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ has mutually distinct eigenvalues 
+\begin_inset Formula $\lambda_{1}\not=...\not=\lambda_{n}\not=0$
+\end_inset
+
+, then we can immediately compute the inverse of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+.
+ It is given by 
+\begin_inset Formula $\mathbf{\mathbf{A}}^{-1}=\mathbf{U}\mathbf{D}^{-1}\mathbf{U}^{-1}$
+\end_inset
+
+, where 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D}^{-1} & = & \left(\begin{array}{cccc}
+\frac{1}{\lambda_{1}} & 0 & \dots & 0\\
+0 & \frac{1}{\lambda_{2}}\\
+0 &  & \ddots & 0\\
+ & \dots & 0 & \frac{1}{\lambda_{n}}\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+It is easy to see that this is indeed the inverse of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+, since 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}\mathbf{A}^{-1} & = & \mathbf{UDU}^{-1}\mathbf{U}\mathbf{D}^{-1}\mathbf{U}^{-1}\\
+ & = & \mathbf{UD}\mathbf{D}^{-1}\mathbf{U}^{-1}\\
+ & = & \mathbf{U}\mathbf{U}^{-1}\\
+ & = & \mathbf{I}.\end{eqnarray*}
+
+\end_inset
+
+The same holds true for 
+\begin_inset Formula $\mathbf{A}^{-1}\mathbf{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Eigenvalues and Eigenvectors of Symmetric Matrices
+\end_layout
+
+\begin_layout Standard
+You might have noticed, that all matrices in the examples above, were symmetric.
+ This has a special reason: For a general eigenvalues decomposition, there
+ are two basic problems.
+ First, there is no reason why the eigenvectors should be orthogonal to
+ each other in the general case.
+ This is unfortunate, since it would be nice to express vectors in terms
+ of the eigenvectors of a matrix, since the operation of a matrix would
+ become very simple in that case.
+ However, we have seen that non-orthogonal bases are difficult do deal with,
+ so for general matrices, changing into the eigenbasis is not an option.
+ 
+\end_layout
+
+\begin_layout Standard
+The second problem is, that the eigenvalues might not be in 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+ For example, if consider any rotation matrix 
+\begin_inset Formula $\mathbf{R}$
+\end_inset
+
+, it is difficult to find a vector 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ and a scalar 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mathbf{R}\mathbf{v}=\lambda\mathbf{v}$
+\end_inset
+
+.
+ However, if 
+\begin_inset Formula $\lambda\in\mathbb{C}$
+\end_inset
+
+, the set of all complex numbers, then this is possible.
+ However, for us it is more interesting to have eigenvalues in 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Fortunately there is a class of matrices, that gives us both: Orthogonality
+ of the eigenvectors and real eigenvalues.
+\end_layout
+
+\begin_layout Paragraph
+Theorem (Eigen Decomposition of Symmetric Matrices)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathbf{A}\in\mathbb{R}^{n\times n}$
+\end_inset
+
+ be an arbitrary symmetric square matrix.
+ Then there exists a diagonal matrix 
+\begin_inset Formula $\mathbf{D}=\left(\begin{array}{cccc}
+\lambda_{1} & 0 & \dots & 0\\
+0 & \lambda_{2}\\
+0 &  & \ddots & 0\\
+ & \dots & 0 & \lambda_{n}\end{array}\right)$
+\end_inset
+
+ that hold the eigenvalues 
+\begin_inset Formula $\lambda_{i}\in\mathbb{R}$
+\end_inset
+
+ in the diagonal and an orthonormal matrix 
+\begin_inset Formula $\mathbf{U}=(\mathbf{u}_{1},...,\mathbf{u}_{n})$
+\end_inset
+
+ that contains the eigenvectors to the eigenvalues 
+\begin_inset Formula $\lambda_{1},...,\lambda_{n}$
+\end_inset
+
+ as column vectors, such that 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}\mathbf{U} & = & \mathbf{U}\mathbf{D}\end{eqnarray*}
+
+\end_inset
+
+or equivalently 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A} & = & \mathbf{U}\mathbf{D}\mathbf{U}^{\top},\end{eqnarray*}
+
+\end_inset
+
+i.e.
+ the transformation with 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is equivalent to changing into the eigenbasis, rescaling the coordinates
+ with the eigenvalues and chaning the basis back.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This property of symmetric matrices is the most important ingredient of
+ the principal component algorithm that we will look at now.
+ 
+\end_layout
+
+\begin_layout Subsection
+Principal Component Analysis (PCA)
+\end_layout
+
+\begin_layout Standard
+Look at the data points in the left plot of figure 
+\begin_inset LatexCommand ref
+reference "fig:PCA"
+
+\end_inset
+
+.
+ The single coordinates are strongly correlated, i.e.
+ if we observe a large 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ coordinate, we would expect to observe a large 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ coordinate as well, and vice versa.
+ If this data was empirically measured data, it is conceivable that direction
+ with large variance is the important one and the variation in the other
+ direction is just noise.
+ Therefore, it would be nice to have an algorithm that gives us new coordinate
+ system where the first basis vector is the important one and the second
+ one contains the noise.
+ If we had that, we could throw away the second coordinate and use only
+ the first coordinate for further analysis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename figs/pcanoncentered.eps
+	height 4cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figs/pcacentered.eps
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:PCA"
+
+\end_inset
+
+Data from a Gaussian in two dimensions.
+ The data points in the left are from a Gaussian with mean 
+\begin_inset Formula $\bm\mu=(5,5)^{\top}$
+\end_inset
+
+.
+ This mean has been subtracted in order to obtain the data points on the
+ right, i.e.
+ the data points on the right have the same covariance as the left data
+ points, but mean zero.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is exactly what principal component analysis does.
+ It gives us a orthonormal basis for which the variation of our data along
+ the basis vectors becomes smaller and smaller, i.e.
+ the variation along the first basis vector is biggest and the variation
+ along the last basis vector is smallest.
+ 
+\end_layout
+
+\begin_layout Standard
+Principal Component Analysis is an algorithm which finds directions of high
+ variance.
+ We will first show how to compute those directions and then explain why
+ the algorithm works.
+ Since you will use a programming language to compute a PCA, we show how
+ to carry out the algorithm in Matlab.
+ In order to to so, we first generate a set of toy examples.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> R = [cos(pi/4),-sin(pi/4);sin(pi/4),cos(pi/4)] 
+\end_layout
+
+\begin_layout Standard
+
+R =
+\end_layout
+
+\begin_layout Standard
+
+    0.7071   -0.7071
+\end_layout
+
+\begin_layout Standard
+
+    0.7071    0.7071
+\end_layout
+
+\begin_layout Standard
+
+>> A = R*[1,0;0,0.01]*R'
+\end_layout
+
+\begin_layout Standard
+
+A =
+\end_layout
+
+\begin_layout Standard
+
+    0.5050    0.4950     0.4950    0.5050
+\end_layout
+
+\begin_layout Standard
+
+>> X = randn(5000,2)*chol(A)+repmat([5,5],5000,1);
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These are the commands that also generated the data in figure 
+\begin_inset LatexCommand ref
+reference "fig:PCA"
+
+\end_inset
+
+.
+ First we generate a covariance matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+, by saying that it should be an diagonal matrix 
+\begin_inset Formula $\left(\begin{array}{cc}
+1 & 0\\
+0 & 0.01\end{array}\right)$
+\end_inset
+
+ with respect to the basis 
+\begin_inset Formula $\mathbf{r}_{1}={\cos\frac{\pi}{4} \choose \sin\frac{\pi}{4}},\,\mathbf{r}_{2}={-\sin\frac{\pi}{4} \choose \cos\frac{\pi}{4}}$
+\end_inset
+
+ and changing the matrix to a matrix with respect to the canonical coordinates
+ via 
+\begin_inset Formula $\mathbf{C}=\mathbf{R}\left(\begin{array}{cc}
+1 & 0\\
+0 & 0.01\end{array}\right)\mathbf{R}^{\top}$
+\end_inset
+
+.
+ Then we sample 
+\begin_inset Formula $5000$
+\end_inset
+
+ data points from a Gaussian with mean zero and unit covariance via the
+ command 
+\family typewriter
+randn
+\family default
+ and transform the result in order to have normally distributed data with
+ covariance 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ and mean 
+\begin_inset Formula $\bm\mu$
+\end_inset
+
+.
+ We will not explain now, why this is the correct transformation to do.
+ However, you can check what the single matlab commands by e.g.
+ typing help randn and then try to prove why this transformation yields
+ data with the distribution 
+\begin_inset Formula $\mathcal{N}\left({5 \choose 5},\mathbf{C}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Note that each row of our Matlab variable 
+\family typewriter
+X
+\family default
+ is one data point.
+ You can look at the data by plotting it with the command:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> plot(X(:,1),X(:,2),'.k','MarkerSize',1), axis equal  
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we can carry out the first step of PCA.
+ We shift the data cloud onto 
+\begin_inset Formula ${0 \choose 0}$
+\end_inset
+
+ by subtracting the mean, i.e.
+ for each data point 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ we obtain a new data point 
+\begin_inset Formula $\tilde{\mathbf{x}}$
+\end_inset
+
+ via 
+\begin_inset Formula $\tilde{\mathbf{x}}=\mathbf{x}-\bm\mu$
+\end_inset
+
+.
+ In Matlab we can do this for all data points at once:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> Xt = X-repmat(mean(X),size(X,1),1);
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This line computes the mean 
+\begin_inset Formula $\bm\mu=\frac{1}{5000}\sum_{i=1}^{5000}\mathbf{x}_{i}$
+\end_inset
+
+, replicates it 
+\begin_inset Formula $5000$
+\end_inset
+
+ times, subtracts the result from our data matrix 
+\family typewriter
+X
+\family default
+ and writes the result in the variable 
+\family typewriter
+Xt
+\family default
+.
+ This is the first step of PCA.
+\end_layout
+
+\begin_layout Paragraph
+Algorithm (First Step of PCA)
+\end_layout
+
+\begin_layout Standard
+In the first step of PCA, subtract the mean 
+\begin_inset Formula $\bm\mu=\frac{1}{n}\sum_{i=1}^{n}\mathbf{x}_{i}$
+\end_inset
+
+ from each data point via 
+\begin_inset Formula $\tilde{\mathbf{x}}_{i}=\mathbf{x}_{i}-\bm\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second part of PCA is just as easy.
+ If you consider the way we generated the covariance matrix 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+, you can see that the direction of the larger variance coincides with the
+ first eigenvector of 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+.
+ This means that if we find the eigenvectors and the eigenvalues of the
+ covariance matrix of 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+, each eigenvalue tells us the variance of the data along the direction
+ given by the eigenvector.
+ In general, you do not know the true covariance matrix.
+ However, we already saw how to compute it from data.
+ This means, that the second step of PCA consists of cimputing an estimation
+ 
+\begin_inset Formula $\hat{\mathbf{C}}$
+\end_inset
+
+ of the covariance matrix via 
+\begin_inset Formula $\hat{\mathbf{C}}=\frac{1}{5000}\tilde{\mathbf{X}}\tilde{\mathbf{X}}^{\top}$
+\end_inset
+
+, where 
+\begin_inset Formula $\tilde{\mathbf{X}}$
+\end_inset
+
+ contains the centered examples in its rows, and computing the eigenvalue
+ decomposition of 
+\begin_inset Formula $\hat{\mathbf{C}}$
+\end_inset
+
+.
+ The very important point here is that a covariance matrix is always symmetric.
+ Therefore, the eigenvalues will always be real numbers and the eigenvectors
+ will always form an orthogonal basis.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Algorithm (Second Step of PCA)
+\end_layout
+
+\begin_layout Standard
+In the second step of PCA, we compute eigendecomposition of the empirical
+ covariance matrix 
+\begin_inset Formula \begin{eqnarray*}
+\hat{\mathbf{C}} & = & \frac{1}{n}\sum_{i=1}^{n}\tilde{\mathbf{x}}\tilde{\mathbf{x}}^{\top}\\
+ & = & \frac{1}{n}\tilde{\mathbf{X}}\tilde{\mathbf{X}}^{\top}.\end{eqnarray*}
+
+\end_inset
+
+This yields an orthonormal basis.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Matlab, you can compute the eigenvalues and the eigenvectors via the
+ command 
+\family typewriter
+eig
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> [U,V] = eig((1/5000)*Xt'*Xt)
+\end_layout
+
+\begin_layout Standard
+
+U =
+\end_layout
+
+\begin_layout Standard
+
+   -0.7087    0.7055     
+\end_layout
+
+\begin_layout Standard
+
+    0.7055    0.7087
+\end_layout
+
+\begin_layout Standard
+
+V =
+\end_layout
+
+\begin_layout Standard
+
+    0.0100         0
+\end_layout
+
+\begin_layout Standard
+
+         0    1.0041
+\end_layout
+
+\begin_layout Standard
+
+>>     
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As you can see, the first variable contains the eigenvectors in its columns
+ and the second matrix is a diagonal matrix that stores the eigenvalues.
+ You can also observe another oddity of Matlab.
+ It sorts the eigenvalues in ascending order.
+ However, we want descending order, since we want the directions with high
+ variance to be first.
+ We can reorder the columns and the eigenvalues via:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> [sv,ind] = sort(-diag(v))
+\end_layout
+
+\begin_layout Standard
+
+sv =
+\end_layout
+
+\begin_layout Standard
+
+   -1.0041    -0.0100
+\end_layout
+
+\begin_layout Standard
+
+ind =
+\end_layout
+
+\begin_layout Standard
+
+     2      1
+\end_layout
+
+\begin_layout Standard
+
+>> v = v(:,ind)
+\end_layout
+
+\begin_layout Standard
+
+v =
+\end_layout
+
+\begin_layout Standard
+
+         0    0.0100
+\end_layout
+
+\begin_layout Standard
+
+    1.0041         0
+\end_layout
+
+\begin_layout Standard
+
+>> v = diag(-sv)
+\end_layout
+
+\begin_layout Standard
+
+v =
+\end_layout
+
+\begin_layout Standard
+
+    1.0041         0
+\end_layout
+
+\begin_layout Standard
+
+         0    0.0100
+\end_layout
+
+\begin_layout Standard
+
+>> u = u(:,ind)
+\end_layout
+
+\begin_layout Standard
+
+u =
+\end_layout
+
+\begin_layout Standard
+
+    0.7055   -0.7087
+\end_layout
+
+\begin_layout Standard
+
+    0.7087    0.7055
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, we need to change the coordinates of our original data.
+ This is the third step of PCA.
+\end_layout
+
+\begin_layout Paragraph
+Algorithm (Third Step of PCA)
+\end_layout
+
+\begin_layout Standard
+Given a orthonormal matrix 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+ that contains the eigenvectors of the empirical covariance matrix (sorted
+ in decreasing order of the eigenvalues), the data is transformed into the
+ PCA basis via
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x}_{PCA} & = & \mathbf{U}^{\top}(\mathbf{x}-\bm\mu)\\
+ & = & \mathbf{U}^{\top}\tilde{\mathbf{x}}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the Matlab commands, we must keep in mind that the data vectors are
+ row vectors.
+ Therefore, we must transpose 
+\begin_inset Formula $\tilde{\mathbf{X}}$
+\end_inset
+
+ first or equivalently compute 
+\begin_inset Formula $\mathbf{U}^{\top}\tilde{\mathbf{X}}^{\top}=(\tilde{\mathbf{X}}\mathbf{U})^{\top}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>>Xtt = (X-repmat(mean(X),size(X,1),1))*u;
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can look at the result by plotting the data via
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+plot(Xt(:,1),Xt(:,2),'.k','MarkerSize',1), axis equal
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The result should look similar to the plot in figure 
+\begin_inset LatexCommand ref
+reference "fig:AfterPCA"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename figs/PCA.eps
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:AfterPCA"
+
+\end_inset
+
+Gaussian data of figure 
+\begin_inset LatexCommand ref
+reference "fig:PCA"
+
+\end_inset
+
+ in the PCA basis.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+PCA allows one to reduce high-dimensional data by only taking those directions
+ along which the variance is large.
+ While those are often the 
+\begin_inset Quotes eld
+\end_inset
+
+interesting
+\begin_inset Quotes erd
+\end_inset
+
+ directions, this is not necessarily the case.
+ In particular, PCA is sensitive to rescaling of the data: If we multiply
+ one dimension by a large number, than the variance along that direction
+ will be larger.
+ Furthermore, large variance along one direction could also be the result
+ of there being just more noise in that particular direction, rather than
+ meaningful signal.
+ 
+\end_layout
+
+\begin_layout Standard
+Recently, PCA has been used to extract those features from a high-dimensional
+ stimulus that a neuron is sensitive to: PCA is applied to the set of all
+ stimuli that caused the neuron to spike, the spike-triggered stimulus ensemble.
+ Then, the eigenvectors with large eigenvalues represent those stimuli that
+ have a maximally excitatory influence on the neuron, and those with very
+ small eigenvalues those that have an inhibitory influence.
+ This procedure is often referred to as 
+\begin_inset Quotes eld
+\end_inset
+
+spike triggered covariance analysis
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Why PCA works
+\end_layout
+
+\begin_layout Standard
+We want to find directions along which the variance of our dataset is maximal.
+ Mathematically, this means that we want to find some direction 
+\begin_inset Formula $\mathbf{a}$
+\end_inset
+
+ such that the variance of the projection onto a, 
+\begin_inset Formula $\mathbf{y_{k}=\langle a,x_{k}\rangle}=\mathbf{a^{\top}x_{k}}$
+\end_inset
+
+ has maximal variance.
+ For any such vector 
+\begin_inset Formula $\mathbf{a},$
+\end_inset
+
+we can calculate the variance of 
+\begin_inset Formula $\mathbf{y}$
+\end_inset
+
+ from the covariance matrix 
+\begin_inset Formula $C:$
+\end_inset
+
+ 
+\begin_inset Formula \begin{eqnarray*}
+\mbox{Var}\mathbf{y} & = & \frac{1}{n}\sum_{k=1}^{n}\mathbf{y}_{k}^{2}-(E\mathbf{y})^{2}\\
+ & = & \frac{1}{n}\sum_{k=1}^{n}\mathbf{y}_{k}^{2}\\
+ & = & \frac{1}{n}\sum_{k=1}^{n}\mathbf{y}_{k}\mathbf{y}_{K}^{\top}\\
+ & = & \frac{1}{n}\sum_{k=1}^{n}\mathbf{(a^{\top}x_{k})}\mathbf{(a^{\top}x_{k})}^{\top}\\
+ & = & \frac{1}{n}\sum_{k=1}^{n}(\mathbf{a^{\top}x_{k}})(\mathbf{x_{k}^{\top}a})\\
+ & = & \mathbf{a}^{\top}\frac{1}{n}\sum_{k=1}^{n}\mathbf{x}_{k}\mathbf{x}_{k}^{\top}\mathbf{a}\\
+ & = & \mathbf{a}^{\top}C\mathbf{a}\end{eqnarray*}
+
+\end_inset
+
+ Therefore, finding the direction of maximal variance is the same as finding
+ 
+\begin_inset Formula $\mathbf{a}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mathbf{a^{\top}Ca}$
+\end_inset
+
+ is maximal.
+ If we suppose that 
+\begin_inset Formula $\mathbf{a}$
+\end_inset
+
+ is an eigenvector with eigenvalue 
+\begin_inset Formula $\lambda,$
+\end_inset
+
+ then 
+\begin_inset Formula $\mbox{Var}\mathbf{y}=\mathbf{a}^{\top}C\mathbf{a}=\mathbf{a^{\top}\lambda a=\lambda a^{\top}a=\lambda||a||^{2}=\lambda.}$
+\end_inset
+
+ The variance of a projection onto any eigenvector is just the associated
+ eigenvalue! Therefore, if we restrict out attention to eigenvectors, the
+ vector with maximal eigenvalue gives the direction of maximal variance.
+ 
+\end_layout
+
+\begin_layout Standard
+Could it be that there is a (non-eigen) vector 
+\begin_inset Formula $\mathbf{b}$
+\end_inset
+
+ such that the projection onto 
+\begin_inset Formula $\mathbf{b}$
+\end_inset
+
+ has a variance that is larger than the biggest eigenvalue 
+\begin_inset Formula $\lambda_{max}?$
+\end_inset
+
+ The answer is no: As 
+\begin_inset Formula $C$
+\end_inset
+
+ is symmetric, its eigenvectors form an orthonormal basis for the space,
+ and therefore any vector can be written as a weighted combination of eigenvecto
+rs.
+ It can easily be shown that its variance is the weighted mean of the eigen-valu
+es, and the weighted mean of any set of numbers can clearly not be bigger
+ than the maximal element in the set.
+\end_layout
+
+\begin_layout Standard
+In the above, we showed that each eigenvalue is the variance of the projection
+ along an eigenvector.
+ As variances are always greater or equal to zero, this implies that all
+ eigenvalues of covariance-matrices are necessarily nonnegative! Matrices
+ with this property are often referred to as being 
+\emph on
+nonnegative-definite
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

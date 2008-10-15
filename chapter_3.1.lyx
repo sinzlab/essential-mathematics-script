@@ -1,0 +1,980 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{3}
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Fourier Series
+\end_layout
+
+\begin_layout Subsection
+Decomposing a function into sines and cosines
+\end_layout
+
+\begin_layout Standard
+Suppose we are looking at a function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+which is defined on the interval 
+\begin_inset Formula $[-\pi,\pi].$
+\end_inset
+
+ We want to decompose it into components that correspond to different frequencie
+s, i.e.
+ sines and cosines.
+ 
+\begin_inset Formula $sin(x)$
+\end_inset
+
+ is a function that has exactly one 
+\begin_inset Quotes eld
+\end_inset
+
+oscillation
+\begin_inset Quotes erd
+\end_inset
+
+ on 
+\begin_inset Formula $[-\pi,\pi],$
+\end_inset
+
+ 
+\begin_inset Formula $\sin(2x)$
+\end_inset
+
+ exactly 2, 
+\begin_inset Formula $sin(nx)$
+\end_inset
+
+ has exactly 
+\begin_inset Formula $n$
+\end_inset
+
+ cycles.
+ It turns out that (almost) any function 
+\begin_inset Formula $f$
+\end_inset
+
+ on this interval can be approximated arbitrarily well by functions of the
+ form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+f_{\infty}(x) & = & b_{0}+a_{1}\sin(x)+b_{1}\cos(x)\\
+ & + & a_{2}\sin(2x)+b_{2}\cos(2x)\\
+ & + & a_{3}\sin(3x)+b_{3}\cos(3x)\\
+ & + & ...\\
+ & + & a_{n}\sin(nx)+b_{n}\cos(nx)\\
+ & + & ...\\
+ & = & b_{0}+\sum_{k=1}^{\infty}(b_{k}\cos(kx)+a_{k}\sin(kx)),\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+i.e.
+ by a weighted sum of (possibly infininitely many) sines and cosines at
+ different frequencies 
+\begin_inset Formula $n.$
+\end_inset
+
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is not differentiable, or 
+\begin_inset Formula $f(\pi)\neq f(-\pi),$
+\end_inset
+
+ then the approximation might not be perfect, but is often good enough for
+ practical purposes.
+ 
+\end_layout
+
+\begin_layout Standard
+This way of approximating function is reminscient of the approximation of
+ functions by their Taylor Series, i.e a weight sum of the functions 
+\begin_inset Formula $1,$
+\end_inset
+
+
+\begin_inset Formula $x,$
+\end_inset
+
+
+\begin_inset Formula $x^{2},$
+\end_inset
+
+
+\begin_inset Formula $x^{3},$
+\end_inset
+
+etc...
+ However, whereas the Taylor Series provided a 
+\emph on
+local
+\emph default
+ approximation to the function at some point 
+\begin_inset Formula $x_{0},$
+\end_inset
+
+ the approximation by the Fourier Series is global, i.e it is a good approximatio
+n for any point on 
+\begin_inset Formula $[-\pi,\pi].$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{k}=a_{k}^{2}+b_{k}^{2}$
+\end_inset
+
+ is often referred to as the 
+\begin_inset Quotes eld
+\end_inset
+
+power at frequency 
+\begin_inset Formula $\frac{k}{2\pi}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Finding the coefficients
+\end_layout
+
+\begin_layout Standard
+In order to use this approximation in practice, we have to determine the
+ coefficients 
+\begin_inset Formula $b_{o},$
+\end_inset
+
+
+\begin_inset Formula $b_{1},$
+\end_inset
+
+ 
+\begin_inset Formula $b_{2},\ldots$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{1},$
+\end_inset
+
+
+\begin_inset Formula $a_{2},\ldots$
+\end_inset
+
+ For the Taylor Series, they were find by computing derivatives, for the
+ Fourier Series, they are found by different integrations over 
+\begin_inset Formula $f(x).$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+We will need the following identities, which we will just state here, but
+ not prove (see problem sheet for that).
+ For any integers and 
+\begin_inset Formula $m$
+\end_inset
+
+, 
+\begin_inset Formula $m\neq k$
+\end_inset
+
+, 
+\begin_inset Formula $m\neq0$
+\end_inset
+
+ it is true that: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray}
+\int_{\pi}^{\pi}\sin(kx) & dx= & 0\nonumber \\
+\int_{-\pi}^{\pi}\cos(kx) & dx= & 0\mbox{}\nonumber \\
+\int_{-\pi}^{\pi}\sin(kx)\sin(mx)dx & = & 0\label{eq:fourOrth1}\\
+\int_{-\pi}^{\pi}\sin(kx)\cos(mx)dx & = & 0\label{eq:fourOrth2}\\
+\int_{-\pi}^{\pi}\cos(kx)\cos(mx)dx & = & 0\label{eq:fourOrth3}\\
+\int_{-\pi}^{\pi}\sin(mx)\cos(mx)dx & = & 0\label{eq:fourOrth4}\end{eqnarray}
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray}
+\int_{-\pi}^{\pi}\sin(mx)\sin(mx)dx & = & \pi\label{eq:fourNorm1}\\
+\int_{-\pi}^{\pi}\cos(mx)\cos(mx)dx & = & \pi.\label{eq:fourNorm2}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While these identies might look complicated in writing, at least some of
+ them are intuitive.
+ One period of a sine consists of a positive first half, and a second half
+ which is an identical copy of the first, just flipped into the negative
+ numbers.
+ Therefore, the integral across one oscillation is 0.
+ Hence, if we integrat 
+\begin_inset Formula $\sin(kx)$
+\end_inset
+
+, which has exactly 
+\begin_inset Formula $k$
+\end_inset
+
+ oscillations on 
+\begin_inset Formula $[-\pi,\pi],$
+\end_inset
+
+ this integral is 0.
+ A similary reasoning can show that 
+\begin_inset Formula $\sin(kx)\sin(mx)$
+\end_inset
+
+ still integrates to 
+\begin_inset Formula $0,$
+\end_inset
+
+provided that 
+\begin_inset Formula $k\neq m.$
+\end_inset
+
+ If 
+\begin_inset Formula $k=m,$
+\end_inset
+
+ we are integrating 
+\begin_inset Formula $\sin(kx)\sin(kx)=\sin(kx)^{2},$
+\end_inset
+
+ which is nonnegative for all 
+\begin_inset Formula $x,$
+\end_inset
+
+and therefore can not integrate to 
+\begin_inset Formula $0.$
+\end_inset
+
+ Finally, 
+\begin_inset Formula $\sin$
+\end_inset
+
+and 
+\begin_inset Formula $\cos$
+\end_inset
+
+are really just shifted copies of each other, so anything that we derived
+ for 
+\begin_inset Formula $\sin$
+\end_inset
+
+ will also hold for 
+\begin_inset Formula $\cos.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+The coefficient 
+\begin_inset Formula $b_{o}$
+\end_inset
+
+ can be found by integrating 
+\begin_inset Formula $f(x):$
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray*}
+\int_{-\pi}^{\pi}f(x)dx & = & \int_{-\pi}^{\pi}\left(b_{o}+\sum_{k=1}^{\infty}(b_{k}\cos(kx)+a_{k}\sin(kx))\right)dx\\
+ & = & \int_{-\pi}^{\pi}b_{o}dx+\sum_{k=1}^{\infty}\left(b_{k}\int_{-\pi}^{\pi}\cos(kx)dx+a_{k}\int_{-\pi}^{\pi}\sin(kx)dx\right)\\
+ & = & 2\pi b_{o}+\sum_{k=1}^{\infty}\left(0+0\right)=2\pi b_{o}\\
+\implies b_{o} & = & \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)dx.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Any coefficient 
+\begin_inset Formula $b_{m}$
+\end_inset
+
+ can be found by integrating the product 
+\begin_inset Formula $f(x)\cos(mx)$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\int_{-\pi}^{\pi}f(x)\cos(mx)dx & = & \int_{-\pi}^{\pi}\left(b_{o}+\sum_{k=1}^{\infty}(b_{k}\cos(kx)+a_{k}\sin(kx))\right)\cos(mx)dx\\
+ & = & \int_{-\pi}^{\pi}b_{o}\cos(mx)dx+\int_{-\pi}^{\pi}b_{m}\cos(mx)\cos(mx)dx\\
+ &  & +\sum_{k=1,k\neq m}^{\infty}\int_{-\pi}^{\pi}b_{k}\cos(kx)\cos(mx)dx\\
+ &  & +\sum_{k=1}^{\infty}\int_{-\pi}^{\pi}a_{k}\sin(kx)\cos(mx)dx\\
+ & = & 0+\pi b_{m}+0+0=\pi b_{m}\\
+\implies b_{m} & = & \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(mx)dx.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Similarly, 
+\begin_inset Formula $a_{m}$
+\end_inset
+
+ can be found by integrating 
+\begin_inset Formula $f(x)\sin(mx):$
+\end_inset
+
+
+\begin_inset Formula \[
+a_{m}=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(mx)dx.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In theory, we have to calculate infinetely many integrals in order to obtain
+ the complete Fourier Series.
+ However, in practice, it is usually sufficient to just compute a couple
+ of them, just like we usually only computed the first couple of terms in
+ the Taylor Series.
+ 
+\end_layout
+
+\begin_layout Standard
+So far, we restricted out attention to functions which were defined on the
+ interval 
+\begin_inset Formula $[-\pi,\pi].$
+\end_inset
+
+This simplifies notation considerably, and the general case of intervals
+ 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ can easily be reduced to this special case by a change of variables from
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ to 
+\begin_inset Formula $x'=2\pi\frac{x-a}{b-a}-\pi.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Fourier series and 
+\begin_inset Quotes eld
+\end_inset
+
+change of basis
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In the linear algebra part of this course, we learnt that a set of vectors
+ 
+\begin_inset Formula $v_{1},v_{2},\ldots,v_{n}$
+\end_inset
+
+ is said to be orthonormal if each of them has length 
+\begin_inset Formula $1$
+\end_inset
+
+
+\begin_inset Formula $(\|v_{k}\|=\sqrt{\langle v_{k},v_{k}\rangle}=1)$
+\end_inset
+
+, and they are mutually orthogonal (
+\begin_inset Formula $\langle v_{k},v_{m}\rangle=0$
+\end_inset
+
+ for 
+\begin_inset Formula $m\neq k$
+\end_inset
+
+).
+ We also saw that it is particularly easy to change coordinates from the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+standard
+\begin_inset Quotes erd
+\end_inset
+
+ basis to any orthogonal basis by computing scalar products.
+ To express a vector 
+\begin_inset Formula $w$
+\end_inset
+
+ as 
+\begin_inset Formula $w=\alpha_{1}v_{1}+\alpha_{2}v_{2}+\ldots+\alpha_{n}v_{n},$
+\end_inset
+
+ the new coordinates 
+\begin_inset Formula $\alpha_{1},\ldots,\alpha_{n}$
+\end_inset
+
+ are given by 
+\begin_inset Formula $\alpha_{1}=\langle w,v_{1}\rangle,$
+\end_inset
+
+
+\begin_inset Formula $\alpha_{2}=\langle w,v_{2}\rangle$
+\end_inset
+
+, etc.
+ 
+\end_layout
+
+\begin_layout Standard
+Now, lets think of functions on 
+\begin_inset Formula $[-\pi,\pi]$
+\end_inset
+
+ as vectors: Just as the 
+\begin_inset Formula $k$
+\end_inset
+
+-th value of a vector 
+\begin_inset Formula $w$
+\end_inset
+
+ is given by its 
+\begin_inset Formula $k$
+\end_inset
+
+-th entry 
+\begin_inset Formula $w_{k}$
+\end_inset
+
+, we can think of the 
+\begin_inset Formula $"x"$
+\end_inset
+
+-th value of a function as 
+\begin_inset Formula $f(x).$
+\end_inset
+
+ Of course, there are infinetely many choices of 
+\begin_inset Formula $x,$
+\end_inset
+
+ so 
+\begin_inset Formula $f$
+\end_inset
+
+ is really an infinitely long vector, but lets ignore this technical nuisance
+ for the moment.
+ For example, when we are working in matlab, we usually represent 
+\begin_inset Formula $f(x)$
+\end_inset
+
+just by its values on some grid 
+\begin_inset Formula $x_{o},x_{1},\ldots,x_{n}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let us consider the 
+\begin_inset Formula $ $
+\end_inset
+
+set 
+\begin_inset Formula $S$
+\end_inset
+
+ consisting of the 
+\begin_inset Formula $2n+1$
+\end_inset
+
+ vectors 
+\begin_inset Formula $\frac{1}{\sqrt{2\pi}},\frac{1}{\sqrt{\pi}}\sin(x)$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{\sqrt{\pi}}\cos(x)$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{\sqrt{\pi}}\sin(2x)$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{\sqrt{\pi}}\cos(2x)$
+\end_inset
+
+, ..., 
+\begin_inset Formula $\frac{1}{\sqrt{\pi}}\sin(nx),\frac{1}{\sqrt{\pi}}\cos(nx).$
+\end_inset
+
+ Also, let us define the scalar product between two functions 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ by the integral of their product: 
+\begin_inset Formula $\langle f,g\rangle=\int_{-\pi}^{\pi}f(x)g(x)dx.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Well, we can show that the integral identities that we had above imply that
+ the set 
+\begin_inset Formula $S$
+\end_inset
+
+ is orthonormal!
+\end_layout
+
+\begin_layout Itemize
+Firstly, identities 
+\begin_inset LatexCommand ref
+reference "eq:fourNorm1"
+
+\end_inset
+
+ and 
+\begin_inset LatexCommand ref
+reference "eq:fourNorm2"
+
+\end_inset
+
+ imply that each vector in the set 
+\begin_inset Formula $S$
+\end_inset
+
+ has length 
+\begin_inset Formula $1.$
+\end_inset
+
+ E.g for 
+\begin_inset Formula $v(x)=\frac{1}{\sqrt{\pi}}\sin(kx):$
+\end_inset
+
+ 
+\begin_inset Formula \[
+\|v\|=\sqrt{\langle v,v\rangle}=\sqrt{\int_{-\pi}^{\pi}\frac{1}{\pi}\sin(kx)\sin(mx)dx}=\sqrt{\frac{\pi}{\pi}}=1\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Secondly, identities 
+\begin_inset LatexCommand ref
+reference "eq:fourOrth1"
+
+\end_inset
+
+, 
+\begin_inset LatexCommand ref
+reference "eq:fourOrth2"
+
+\end_inset
+
+, 
+\begin_inset LatexCommand ref
+reference "eq:fourOrth3"
+
+\end_inset
+
+ and 
+\begin_inset LatexCommand ref
+reference "eq:fourOrth4"
+
+\end_inset
+
+ imply that the vectors are orthogonal.
+ E.g.
+ for 
+\begin_inset Formula $v$
+\end_inset
+
+ and 
+\begin_inset Formula $w(x)=\frac{1}{\sqrt{\pi}}\cos(mx)$
+\end_inset
+
+:
+\begin_inset Formula \[
+\langle v,w\rangle=\int_{-\pi}^{\pi}\frac{1}{\pi}\sin(kx)\sin(mx)dx=0.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thirdly, when we want to represent a function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+as a weighted combination of the vectors in 
+\begin_inset Formula $S,$
+\end_inset
+
+i.e.
+ by its Fourier Series, we have to calculate the coefficients by computing
+ scalar products between 
+\begin_inset Formula $f(x)$
+\end_inset
+
+and each 
+\begin_inset Quotes eld
+\end_inset
+
+vector
+\begin_inset Quotes erd
+\end_inset
+
+ in S.
+ E.g.
+ the coefficient of 
+\begin_inset Formula $v(x)=\frac{1}{\sqrt{\pi}}\sin(kx)$
+\end_inset
+
+ is given by
+\begin_inset Formula \[
+\alpha_{k}=\langle f,v\rangle=\frac{1}{\sqrt{\pi}}\int f(x)\sin(kx)dx.\]
+
+\end_inset
+
+ (Note that the coefficients 
+\begin_inset Formula $\alpha_{k}$
+\end_inset
+
+ differ from the 
+\begin_inset Formula $a_{k}$
+\end_inset
+
+by a factor of 
+\begin_inset Formula $\sqrt{\pi}$
+\end_inset
+
+, as we normalized each sine and cosine such that it has 
+\begin_inset Quotes eld
+\end_inset
+
+length
+\begin_inset Quotes erd
+\end_inset
+
+ 1.)
+\end_layout
+
+\begin_layout Standard
+Therefore, one can think of going from a function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ to its Fourier Series 
+\begin_inset Formula $a_{1},a_{2},a_{3}\ldots$
+\end_inset
+
+
+\begin_inset Formula $b_{o},b_{1},b_{2}\ldots$
+\end_inset
+
+ as changing the basis from the 
+\begin_inset Quotes eld
+\end_inset
+
+normal
+\begin_inset Quotes erd
+\end_inset
+
+ basis to the 
+\begin_inset Quotes eld
+\end_inset
+
+frequency
+\begin_inset Quotes erd
+\end_inset
+
+ basis given by the (normalized) sines and cosines at different frequencies!
+\end_layout
+
+\begin_layout Standard
+While this relationship between Linear Algebra and Analysis might seem a
+ bit surprising (and useless), it really helps to sharpen our intuition
+ about why the frequency-decomposition of a function is a useful thing to
+ look at.
+ It also explains the formulae for calculating the coefficients, which seemed
+ to magically appear out of nowhere in the previous section.
+ Furthermore, a similar logic can not only be applied to bases consisting
+ of sines and cosines, but to very different sets of functions, as long
+ as they are orthonormal.
+ For example, we can represent a function using 
+\emph on
+wavelet coefficients.
+
+\emph default
+ In this case, the basis functions are given by special sets of functions
+ called 
+\emph on
+wavelets.
+ 
+\end_layout
+
+\begin_layout Standard
+Furthermore, in stochastic Fourier Analysis, which deals with random functions,
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+frequency
+\begin_inset Quotes erd
+\end_inset
+
+ basis is often equivalent to the PCA-basis.
+ Therefore, one can think of stochastic Fourier Analysis as doing PCA not
+ on random vectors, but on certain classes of random functions.
+ The general relationship between PCA and Fourier Analysis is beyond the
+ scope of the course, but a nice informal treatment can be found in XXX.
+ 
+\end_layout
+
+\begin_layout Subsection
+Getting rid of the cosines: Amplitudes and phases
+\end_layout
+
+\begin_layout Standard
+We can get rid of alll the cosines in the Fourier Series of a function if
+ we do not represent it by a linear combination of sines and cosines, but
+ rather by a weighted sum of 
+\emph on
+shifted
+\emph default
+ sines.
+ In other words, we want to write 
+\begin_inset Formula \[
+f(x)=b_{o}+\sum_{k=1}^{\infty}A_{k}\sin(kx-\phi_{k}),\]
+
+\end_inset
+
+where each 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+ is the 
+\emph on
+amplitude
+\emph default
+ at frequency 
+\begin_inset Formula $k,$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi_{k}$
+\end_inset
+
+ is the 
+\emph on
+phase
+\emph default
+ at that frequency.
+ Each 
+\begin_inset Formula $\phi_{k}$
+\end_inset
+
+ is a real number in 
+\begin_inset Formula $[0,2\pi],$
+\end_inset
+
+ and tells us by how much we have to shift 
+\begin_inset Formula $\sin(kx)$
+\end_inset
+
+ along the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+ Once we have found the coefficients 
+\begin_inset Formula $a_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{k}$
+\end_inset
+
+ by performing the integrations outlined above, we can calculate the amplitudes
+ and phases using the trigonometric identity
+\begin_inset Formula \[
+\sin(u-v)=\sin(u)\cos(v)-\cos(u)\sin(v).\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By applying this identity to 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\sin(kx-\phi_{k}),$
+\end_inset
+
+we get that 
+\begin_inset Formula \[
+A_{k}\sin(kx-\phi_{k})=A_{k}\sin(kx)\cos(\phi_{k})-A_{k}\cos(kx)\sin(\phi_{k}).\]
+
+\end_inset
+
+By comparing this to our previous formulation 
+\begin_inset Formula $a_{k}\sin(kx)+b_{k}\cos(kx)$
+\end_inset
+
+, we can see that the two representations are equal if and only if
+\begin_inset Formula \begin{eqnarray*}
+A_{k}\cos(\phi_{k}) & = & a_{k}\\
+-A_{k}\sin(\phi_{k}) & = & b_{k}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dividing the second equation by the first yields
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\frac{-A_{k}\sin(\phi_{k})}{A_{k}\cos(\phi_{k})} & = & \frac{b_{k}}{a_{k}}\\
+\implies\tan(\phi_{k}) & = & -\frac{b_{k}}{a_{k}}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Squaring each of the two eqations, and adding them leads to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+A_{k}^{2}\cos(\phi_{k})^{2}+A_{k}^{2}\sin(\phi_{k})^{2} & = & a_{k}^{2}+b_{k}^{2}\\
+A_{k}^{2}\left(\cos(\phi_{k})^{2}+\sin(\phi_{k})^{2}\right) & = & a_{k}^{2}+b_{k}^{2}\\
+A_{k} & = & \sqrt{a_{k}^{2}+b_{k}^{2}}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In other words, the amplitude at frequency 
+\begin_inset Formula $k$
+\end_inset
+
+ is the square-root of the power at frequency 
+\begin_inset Formula $\frac{k}{2\pi},$
+\end_inset
+
+ and the phase is given by the inverse-tangent of the ratio of the coefficients
+ 
+\begin_inset Formula $a_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{k}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
