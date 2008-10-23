@@ -2832,6 +2832,103 @@ Suppose that the function
 \end_layout
 
 \begin_layout Subsection
+Finding Extreme Points of a Function
+\end_layout
+
+\begin_layout Standard
+Derivates can be used to find global minima or maxima of functions.
+ A function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ has a local maximum (resp.
+ minimum) at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ if 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $f''(x_{0})<0$
+\end_inset
+
+ (resp.
+ 
+\begin_inset Formula $f''(x_{0})>0$
+\end_inset
+
+).
+ If 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $f''(x_{0})=0,$
+\end_inset
+
+ then 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is said to be a saddle-point.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Standard
+Draw Picture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This ties in very well with the quadratic approximations discussed above:
+ If there is a maximum at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, then 
+\begin_inset Formula $f(x_{0})$
+\end_inset
+
+ can be locally approximated by a parabola that is oriented downwards.
+\end_layout
+
+\begin_layout Standard
+It should be pointed out that this procedure only yields 
+\begin_inset Formula $local$
+\end_inset
+
+ maxima, and not necessarily 
+\begin_inset Formula $global$
+\end_inset
+
+ ones.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Standard
+Discuss Example from Exam Sheet here
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Approximating Functions Locally by Lines and Polynomials
 \end_layout
 
@@ -2917,11 +3014,12 @@ Suppose
 
  to be the same.
  In our case, 
-\begin_inset Formula $f'(x_{0})=\cos(0)=1=w$
+\begin_inset Formula \begin{eqnarray*}
+w & = & f'(x_{0})=\cos(0)=1.\end{eqnarray*}
+
 \end_inset
 
-.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -2983,7 +3081,21 @@ Now, we must ensure, that
 \end_inset
 
 .
- 
+ Figure 
+\begin_inset LatexCommand ref
+reference "fig:linearApprox"
+
+\end_inset
+
+ plots the linear approximation.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3040,72 +3152,28 @@ Graph of the function
 \end_layout
 
 \begin_layout Standard
-You might have noticed that 
-\begin_inset Formula $g(x)=wx+b$
+In the example, we implicitly used that the function is approximated at
+ 
+\begin_inset Formula $x_{0}=0$
 \end_inset
 
- is not a linear function in the strict sense.
- Only 
-\begin_inset Formula $g(x)=wx$
-\end_inset
-
- is a linear function since any linear function must take the value zero
- at 
-\begin_inset Formula $x=0$
-\end_inset
-
-.
- Functions of the form 
-\begin_inset Formula $g(x)=wx+b$
-\end_inset
-
- are called 
-\emph on
-
-\begin_inset LatexCommand index
-name "affine functions"
-
-\end_inset
-
-affine functions
-\emph default
-.
- However, since 
-\begin_inset Formula $g'(x)=w$
-\end_inset
-
- is the slope of the linear approximation 
-\begin_inset Formula $f(x)$
-\end_inset
-
- for any 
+ when computing the offset 
 \begin_inset Formula $b$
 \end_inset
 
-, 
-\begin_inset Formula $g(x)=wx+b$
-\end_inset
-
- is also ambiguously called linear approximation, even though it is not
- a linear function for 
-\begin_inset Formula $b\not=0$
-\end_inset
-
 .
- 
-\end_layout
-
-\begin_layout Standard
-There is just one last generalization left, that we have to take care of
- : If 
+ In general, if 
 \begin_inset Formula $x_{0}\not=0$
 \end_inset
 
-, then we cannot simply choose 
+, we cannot simply use 
 \begin_inset Formula $b=f(x_{0})$
 \end_inset
 
-, since 
+, since
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula \begin{eqnarray*}
 g(x_{0}) & = & wx_{0}+b\\
  & = & f'(x_{0})x_{0}+f(x_{0})\\
@@ -3113,36 +3181,99 @@ g(x_{0}) & = & wx_{0}+b\\
 
 \end_inset
 
-However, we can fix this by a simple trick: We just subtract 
-\begin_inset Formula $wx_{0}=f'(x_{0})x_{0}$
+
+\end_layout
+
+\begin_layout Standard
+How can we compute the offset 
+\begin_inset Formula $b$
 \end_inset
 
- to enforce 
+ in the general case 
+\begin_inset Formula $x_{0}\not=0$
+\end_inset
+
+? We can answer this question by some geometrical thoughts.
+ First of all, imagine we set 
+\begin_inset Formula $b=0$
+\end_inset
+
+.
+ The approximating function 
+\begin_inset Formula $g(x)=wx=f'(x_{0})\cdot x$
+\end_inset
+
+ would be a true linear function that had the same slope as 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ but not the same function value 
+\begin_inset Formula $g(x_{0})=wx_{0}\not=f(x_{0})$
+\end_inset
+
+.
+ Since we know that 
+\begin_inset Formula $b$
+\end_inset
+
+ lifts 
+\begin_inset Formula $g$
+\end_inset
+
+ along the 
+\begin_inset Formula $y$
+\end_inset
+
+-axis we need to find out by how much we must lift it in order to obtain
+ 
 \begin_inset Formula $g(x_{0})=f(x_{0})$
 \end_inset
 
 .
- By this, we arrive at the general form of a linear approximation 
-\begin_inset Formula $g(x)$
+ The answer is: We need to lift it by the difference between the true function
+ value 
+\begin_inset Formula $f(x_{0})$
 \end_inset
 
- to the function 
-\begin_inset Formula $f(x)$
+ and the linear function 
+\begin_inset Formula $g(x_{0})=wx_{0}$
 \end_inset
 
- for at 
+ that has the same slope but the wrong offset, i.e.
+ 
+\begin_inset Formula $b=f(x_{0})-wx_{0}$
+\end_inset
+
+.
+ By substituting 
+\begin_inset Formula $w=f'(x_{0})$
+\end_inset
+
+ and 
+\begin_inset Formula $b=f(x_{0})-wx_{0}$
+\end_inset
+
+ in the general line equation, we end up with 
+\begin_inset Formula \begin{eqnarray*}
+g(x) & = & f'(x_{0})x+f(x_{0})-f'(x_{0})x_{0}\\
+ & = & f(x_{0})+f'(x_{0})(x-x_{0})\end{eqnarray*}
+
+\end_inset
+
+as the best ``linear'' approximation (it is not linear, is is a line) of
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
 \begin_inset Formula $x_{0}$
 \end_inset
 
-: 
-\begin_inset Formula \begin{eqnarray*}
-g(x) & = & wx+b\\
- & = & f'(x_{0})x+f(x_{0})-f'(x_{o})x_{0}\\
- & = & f(x_{0})+(x-x_{o})f'(x_{o}).\end{eqnarray*}
-
-\end_inset
-
- 
+.
 \end_layout
 
 \begin_layout Standard
@@ -3175,8 +3306,8 @@ The linear approximation to
 
  is given by 
 \begin_inset Formula \begin{eqnarray*}
-g_{0}(x) & = & f(x)+(x-x_{o})f'(x_{o})\\
- & = & e^{0}+x\cdot e^{0}\\
+g_{0}(x) & = & f(x)+f'(x_{o})(x-x_{o})\\
+ & = & e^{0}+e^{0}\cdot x\\
  & = & 1+x.\end{eqnarray*}
 
 \end_inset
@@ -3187,10 +3318,28 @@ The approximation at
 
  is given by:
 \begin_inset Formula \begin{eqnarray*}
-g_{1}(x) & = & f(x)+(x-x_{o})f'(x_{o})\\
+g_{1}(x) & = & f(x)+f'(x_{o})(x-x_{o})\\
  & = & e^{1}+(x-1)\cdot e^{1}\\
  & = & xe.\end{eqnarray*}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset LatexCommand ref
+reference "fig:expLinApprox"
+
+\end_inset
+
+ shows the graphs of these functions.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
 \end_inset
 
 
@@ -3258,28 +3407,6 @@ Graph of the functions
 \end_layout
 
 \begin_layout Standard
-Figure 
-\begin_inset LatexCommand ref
-reference "fig:expLinApprox"
-
-\end_inset
-
- shows the graphs of these functions.
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Formula $\lhd$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-Example
-\end_layout
-
-\begin_layout Standard
 As we can see in figure 
 \begin_inset LatexCommand ref
 reference "fig:expLinApprox"
@@ -3322,7 +3449,11 @@ The answer is yes.
 \end_inset
 
 .
- This yields 
+ For reasons that will become clear soon this additional term is 
+\begin_inset Formula $\frac{1}{2}v(x-x_{0})^{2}$
+\end_inset
+
+ yielding 
 \begin_inset Formula $g(x)=\frac{1}{2}v(x-x_{0})^{2}+w(x-x_{0})+b$
 \end_inset
 
@@ -3385,16 +3516,33 @@ f''(x_{0}) & = & g''(x_{0}).\end{eqnarray*}
 \end_layout
 
 \begin_layout Standard
-This is also the reason why we multiplied 
-\begin_inset Formula $v$
-\end_inset
-
- with 
+The reason why the quadratic term is multiplied with 
 \begin_inset Formula $\frac{1}{2}$
 \end_inset
 
+ is to cancel the exponent 
+\begin_inset Formula $2$
+\end_inset
+
+ when taking the derivatives.
+ It is an instructive exercise to check that the function value and the
+ first two derivatives really match at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ for 
+\begin_inset Formula $w=f'(x_{0})$
+\end_inset
+
+ and 
+\begin_inset Formula $v=f''(x_{0})$
+\end_inset
+
 .
- This way, everything cancels out nicely.
+\end_layout
+
+\begin_layout Subsubsection*
+Example
 \end_layout
 
 \begin_layout Standard
@@ -3599,8 +3747,8 @@ at
 
  is given by 
 \begin_inset Formula \begin{eqnarray*}
-g(x) & = & f(x_{0})+(x-x_{0})f'(x_{0})+\frac{1}{2}(x-x_{0})^{2}f''(x_{0})+\frac{1}{6}(x-x_{0})^{3}f'''(x_{0})\\
- & = & e^{0}+xe^{0}+\frac{1}{2}x^{2}e^{0}+\frac{1}{6}x^{3}e^{0}\\
+g(x) & = & f(x_{0})+f'(x_{0})(x-x_{0})+f''(x_{0})\frac{1}{2}(x-x_{0})^{2}+f'''(x_{0})\frac{1}{6}(x-x_{0})^{3}\\
+ & = & e^{0}+e^{0}x+\frac{1}{2}e^{0}x^{2}+\frac{1}{6}e^{0}x^{3}\\
  & = & 1+x+\frac{1}{2}x^{2}+\frac{1}{6}x^{3}.\end{eqnarray*}
 
 \end_inset
@@ -3637,14 +3785,14 @@ The linear and the quadratic approximation to
 
  are given by
 \begin_inset Formula \begin{eqnarray*}
-g_{lin}(x) & = & \cos(x_{0})-x\cdot\sin(x_{0})\\
+g_{lin}(x) & = & \cos(x_{0})-\sin(x_{0})\cdot x\\
  & = & 1\end{eqnarray*}
 
 \end_inset
 
 and
 \begin_inset Formula \begin{eqnarray*}
-g_{quadr}(x) & = & \cos(x_{0})-x\cdot\sin(x_{0})-\frac{x^{2}}{2}\cos(x_{0})\\
+g_{quadr}(x) & = & \cos(x_{0})-\sin(x_{0})\cdot x-\frac{1}{2}\cos(x_{0})x^{2}\\
  & = & 1-x^{2}.\end{eqnarray*}
 
 \end_inset
@@ -3658,12 +3806,12 @@ The quadratic approximation to
 \end_inset
 
  at 
-\begin_inset Formula $x_{o}=0$
+\begin_inset Formula $x_{0}=0$
 \end_inset
 
  is given by
 \begin_inset Formula \begin{eqnarray*}
-g(x) & = & \sin(x_{0})+x\cdot\cos(x_{0})-\frac{x^{2}}{2}\cdot\sin(x_{0})\\
+g(x) & = & \sin(x_{0})+\cos(x_{0})\cdot x-\frac{1}{2}\sin(x_{0})\cdot x^{2}\\
  & = & x.\end{eqnarray*}
 
 \end_inset
@@ -3686,72 +3834,98 @@ Here is a small piece of matlab code that plots the Taylor approximation
 \end_inset
 
 .
- You can write it in a file called e.g.
  
 \family typewriter
-mytaylor.m
+
+\newline
+
 \family default
- and run it by typing the command 
-\family typewriter
-mytalyor
-\family default
- in the matlab shell.
-\newline
 
-\family typewriter
+\begin_inset ERT
+status open
 
-\newline
+\begin_layout Standard
 
-\newline
-t = [-1:0.01:2]; % define the range where we want to plot exp
-\newline
-x0 = 1; % set
- x0 = 1; you can change that 
-\newline
-plot(t,f(t),'k-','LineWidth',3) % plot exp
-\newline
-hold
- on % allow plotting several lines in one plot
-\newline
-fk = exp(x0); % compute constant
- part
-\newline
-n = 1; % set the polynomial order to 1
-\newline
-for k = 1:10 % loop over 
-\newline
-\InsetSpace ~
-\InsetSpace ~
-plot(t,fk,'-
-r','LineWidth',3); % plot the best approx.
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> t = [-1:0.01:2]; % define the range where we want to plot exp
+\end_layout
+
+\begin_layout Standard
+
+>> x0 = 1; % set x0 = 1; you can change that 
+\end_layout
+
+\begin_layout Standard
+
+>> plot(t,exp(t),'k-','LineWidth',3), hold on % plot exp
+\end_layout
+
+\begin_layout Standard
+
+>> fk = exp(x0); % compute constant part
+\end_layout
+
+\begin_layout Standard
+
+>> n = 1; % set the polynomial order to 1
+\end_layout
+
+\begin_layout Standard
+
+>> for k = 1:10 % loop over 
+\end_layout
+
+\begin_layout Standard
+
+     plot(t,fk,'-r','LineWidth',3); % plot the best approx.
  in red
-\newline
-\InsetSpace ~
-\InsetSpace ~
-pause % wait until someone presses a key
-\newline
-\InsetSpace ~
-\InsetSpace ~
-plot(t,fk,'-b','LineWidth',3);
- % plot the same curve in blue
-\newline
-\InsetSpace ~
-\InsetSpace ~
-n = n*k; % update the factorial function 
-\newline
-\InsetSpace ~
-\InsetSpace ~
-fk
- = fk + 1/n*(t-x0).^k.*exp(x0); % get the next polynomial
-\newline
-end
-\newline
-hold off
-\family default
+\end_layout
 
-\newline
+\begin_layout Standard
 
-\newline
+     pause % wait until someone presses a key
+\end_layout
+
+\begin_layout Standard
+
+     plot(t,fk,'-b','LineWidth',3); % plot the same curve in blue
+\end_layout
+
+\begin_layout Standard
+
+     n = n*k; % update the factorial function 
+\end_layout
+
+\begin_layout Standard
+
+     fk = fk + 1/n*(t-x0).^k.*exp(x0); % get the next polynomial
+\end_layout
+
+\begin_layout Standard
+
+   end
+\end_layout
+
+\begin_layout Standard
+
+>> hold off
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
 
 \newline
 Note that this code only works for the function 
@@ -3859,103 +4033,6 @@ Being able to approximate functions by polynomials is extremely useful,
 
  and you should be careful that the approximation is really appropriate
  for your particular application.
-\end_layout
-
-\begin_layout Subsection
-Finding Extreme Points of a Function
-\end_layout
-
-\begin_layout Standard
-Derivates can be used to find global minima or maxima of functions.
- A function 
-\begin_inset Formula $f(x)$
-\end_inset
-
- has a local maximum (resp.
- minimum) at 
-\begin_inset Formula $x_{0}$
-\end_inset
-
- if 
-\begin_inset Formula $f'(x_{0})=0$
-\end_inset
-
- and 
-\begin_inset Formula $f''(x_{0})<0$
-\end_inset
-
- (resp.
- 
-\begin_inset Formula $f''(x_{0})>0$
-\end_inset
-
-).
- If 
-\begin_inset Formula $f'(x_{0})=0$
-\end_inset
-
- and 
-\begin_inset Formula $f''(x_{0})=0,$
-\end_inset
-
- then 
-\begin_inset Formula $x_{0}$
-\end_inset
-
- is said to be a saddle-point.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Standard
-Draw Picture
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This ties in very well with the quadratic approximations discussed above:
- If there is a maximum at 
-\begin_inset Formula $x_{0}$
-\end_inset
-
-, then 
-\begin_inset Formula $f(x_{0})$
-\end_inset
-
- can be locally approximated by a parabola that is oriented downwards.
-\end_layout
-
-\begin_layout Standard
-It should be pointed out that this procedure only yields 
-\begin_inset Formula $local$
-\end_inset
-
- maxima, and not necessarily 
-\begin_inset Formula $global$
-\end_inset
-
- ones.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Standard
-Discuss Example from Exam Sheet here
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_body
