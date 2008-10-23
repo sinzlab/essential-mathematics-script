@@ -3715,7 +3715,7 @@ Since rates are always positive (i.e.
 \end_inset
 
 ) the second derivative is always smaller than zero and, therefore, 
-\begin_inset Formula $\lambda=\frac{1}{m}\sum_{i=1}^{m}k_{i}$
+\begin_inset Formula $\hat{\lambda}=\frac{1}{m}\sum_{i=1}^{m}k_{i}$
 \end_inset
 
 
@@ -3741,8 +3741,8 @@ Since rates are always positive (i.e.
 
 \begin_layout Standard
 You should include the maximum likelihood estimate in the matlab example
- from above and compare it to the expected rate of 
-\begin_inset Formula $p\cdot n_{bins}$
+ from above and compare it to the expected rate 
+\begin_inset Formula $\lambda=p\cdot n_{bins}$
 \end_inset
 
 .
@@ -4887,6 +4887,390 @@ Being able to approximate functions by polynomials is extremely useful,
 
  and you should be careful that the approximation is really appropriate
  for your particular application.
+\end_layout
+
+\begin_layout Standard
+Here are two applications where the Taylor expansion is used.
+\end_layout
+
+\begin_layout Subsubsection*
+Example: Estimating small angles
+\end_layout
+
+\begin_layout Standard
+A calculation that has to be done for many psychophysical experiments it
+ to compute the degree of visual angle.
+ A part of the problem (it is still part of the exercises which) is to figure
+ out the angle 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+ in the following setup:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+setlength{
+\backslash
+unitlength}{0.04cm}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+begin{picture}(200,230)
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(125,184){
+\backslash
+makebox(0,0){$
+\backslash
+overbrace{
+\backslash
+hspace{1.3cm}}^{y}$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(95,78){
+\backslash
+rotatebox{90}{$
+\backslash
+overbrace{
+\backslash
+hspace{4cm}}^{x}$}}
+\end_layout
+
+\begin_layout Standard
+
+%
+\backslash
+put(108,76){
+\backslash
+line(0,1){102}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(142,178){
+\backslash
+line(-1,0){34}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(108,76){
+\backslash
+line(2,6){40}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(108,76){
+\backslash
+line(0,1){120}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+bezier(108,116)(115,126)(121,116)
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+put(114,115){
+\backslash
+makebox(0,0){$
+\backslash
+vartheta$}}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{picture}
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The natural way to do so is simply by 
+\begin_inset Formula $\tan\vartheta=\frac{y}{x}$
+\end_inset
+
+ and, therefore, 
+\begin_inset Formula $\vartheta=\mbox{atan}\frac{y}{x}$
+\end_inset
+
+.
+ However, if you do not have a computer at your disposal (e.g.
+ when reading the methods section of a paper on much more comfortable couch)
+ you would still like to have an idea what 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+ is, even if you cannot invert the 
+\begin_inset Formula $\tan$
+\end_inset
+
+ function in your head.
+ Since the usual setup involves large 
+\begin_inset Formula $x$
+\end_inset
+
+ and small 
+\begin_inset Formula $y$
+\end_inset
+
+, we expect 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+ to be very small, i.e.
+ close to zero.
+ Therefore, we can simply start by computing the first order Taylor approximatio
+n of 
+\begin_inset Formula $\tan$
+\end_inset
+
+ around 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ First, we need the derivative of course:
+\begin_inset Formula \begin{eqnarray*}
+(\tan\vartheta)' & = & \left(\frac{\sin\vartheta}{\cos\vartheta}\right)'\\
+ & = & \frac{\cos^{2}\vartheta+\sin^{2}\vartheta}{\cos^{2}\vartheta}\\
+ & = & \frac{1}{\cos^{2}\vartheta}.\end{eqnarray*}
+
+\end_inset
+
+At zero, the first derivative is simply one.
+ Since 
+\begin_inset Formula $\tan0=0$
+\end_inset
+
+, the first order Taylor approximation has the simple form 
+\begin_inset Formula \begin{eqnarray*}
+\tan\vartheta & \approx & f_{(1)}(\vartheta)=\vartheta.\end{eqnarray*}
+
+\end_inset
+
+Fortunately, this function is really easy to invert: It is simply the function
+ itself 
+\begin_inset Formula $f_{(1)}^{-1}(\vartheta)=\vartheta$
+\end_inset
+
+.
+ This shows that we can use 
+\begin_inset Formula $\frac{y}{x}$
+\end_inset
+
+ for small 
+\begin_inset Formula $y$
+\end_inset
+
+ and large 
+\begin_inset Formula $x$
+\end_inset
+
+ itself as good estimate for the angle 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Example: An error anaylsis of depth perception
+\end_layout
+
+\begin_layout Standard
+Very often a physical system shows a very specific error behaviour, i.e.
+ how the error in the inputs shows up in the outputs of a system.
+ This error transformation is important to know, since it tells us how an
+ error in the input will affect the quality of the system's output.
+ A good example for that is depth perception from disparity.
+ In this case the error in the estimated depth will grow quadratically with
+ depth.
+ This is what we will show in this example.
+\end_layout
+
+\begin_layout Standard
+In the simplest case of two parallel pinhole cameras with a focal length
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ a distance of 
+\begin_inset Formula $b$
+\end_inset
+
+ between them, the distance of a point 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ space to the view planes of the cameras can be estimated by 
+\begin_inset Formula $d(\varrho)=\frac{fb}{\varrho}$
+\end_inset
+
+ where 
+\begin_inset Formula $\varrho=x_{l}-x_{r}$
+\end_inset
+
+ the disparity of the two images of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+, i.e.
+ the distance between the x-coordinates of the image of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ in the two view planes of the cameras.
+ Consider we have measured a certain disparity 
+\begin_inset Formula $\hat{\varrho}$
+\end_inset
+
+ which is 
+\begin_inset Formula $\delta$
+\end_inset
+
+ away from the true disparity 
+\begin_inset Formula $\varrho$
+\end_inset
+
+, i.e.
+ our measurement error was 
+\begin_inset Formula $\delta$
+\end_inset
+
+, or 
+\begin_inset Formula $\hat{\varrho}=\varrho+\delta$
+\end_inset
+
+.
+ To see how this error affects the depth estimation 
+\begin_inset Formula $d$
+\end_inset
+
+ we make a first order Taylor expansion around the true value 
+\begin_inset Formula $\varrho$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+d(\hat{\varrho}) & \approx & d_{(1)}(\hat{\varrho})\\
+ & = & \frac{fb}{\varrho}-\frac{fb}{\varrho^{2}}(\hat{\varrho}-\varrho)\\
+ & = & \frac{fb}{\varrho}-\frac{fb}{\varrho^{2}}(\varrho+\delta-\varrho)\\
+ & = & \frac{fb}{\varrho}-\frac{fb}{\varrho^{2}}\delta.\end{eqnarray*}
+
+\end_inset
+
+The true depth error is 
+\begin_inset Formula $d(\hat{\varrho})-d(\varrho)$
+\end_inset
+
+.
+ Using the Taylor expansion instead of 
+\begin_inset Formula $d$
+\end_inset
+
+, we get 
+\begin_inset Formula $d(\hat{\varrho})-d(\varrho)\approx\frac{fb}{\varrho^{2}}\delta.$
+\end_inset
+
+ From 
+\begin_inset Formula $d(\varrho)=\frac{fb}{\varrho}$
+\end_inset
+
+ we can read off that the depth 
+\begin_inset Formula $d$
+\end_inset
+
+ is inversely proportional to the true disparity, i.e.
+ 
+\begin_inset Formula $d\sim\frac{1}{\rho}$
+\end_inset
+
+.
+ Plugging that into our expression for the depth estimation error, we obtain
+ 
+\begin_inset Formula $d(\hat{\varrho})-d(\varrho)\sim fbd^{2}\rho$
+\end_inset
+
+, which shows that the influence of an error in the inputs grows quadratically
+ with the depth that we want to estimate.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
 \end_layout
 
 \end_body
