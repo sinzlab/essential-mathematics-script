@@ -83,17 +83,63 @@ The derivative
 \begin_inset Formula $f'(x_{0})=\frac{df}{dx}(x_{0})$
 \end_inset
 
- of a function 
+ (denoted with a ``
+\begin_inset Formula $'$
+\end_inset
+
+'', 
+\begin_inset Formula $\frac{df}{dx}$
+\end_inset
+
+, or 
+\begin_inset Formula $\frac{d}{dx}f$
+\end_inset
+
+) of a function 
 \begin_inset Formula $f(x)$
 \end_inset
 
- has a very intuitive meaning: It measures the rate of change of a function
- at a certain location 
+ has two intuitive meanings: 
+\end_layout
+
+\begin_layout Enumerate
+It measures the rate of change of a function at a certain location 
 \begin_inset Formula $x_{0}$
 \end_inset
 
 .
- This means 
+ 
+\end_layout
+
+\begin_layout Enumerate
+It is the slope of the line touching the function 
+\begin_inset Formula $f$
+\end_inset
+
+ at a the point 
+\begin_inset Formula $(x_{0},f(x_{0}))$
+\end_inset
+
+.
+ This line is called 
+\emph on
+
+\begin_inset LatexCommand index
+name "tangent line"
+
+\end_inset
+
+tangent line
+\emph default
+ or simply 
+\emph on
+tangent
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Using the first intuition, 
 \begin_inset Formula $f'(x_{0})$
 \end_inset
 
@@ -128,7 +174,7 @@ The derivative
 \end_inset
 
  is not linear we will make some error.
- However, we still can use 
+ We still can use 
 \begin_inset Formula $f'(x)$
 \end_inset
 
@@ -141,7 +187,7 @@ The derivative
 \end_inset
 
 .
- But let us start with an example of the exact case.
+ But we will start with an example of the exact case.
 \end_layout
 
 \begin_layout Standard
@@ -190,7 +236,7 @@ Consider the linear function
 \end_inset
 
 .
- According to what we just heard, the derivative 
+ According to the first intuition, the derivative 
 \begin_inset Formula $f'(x)$
 \end_inset
 
@@ -208,7 +254,7 @@ Consider the linear function
 \end_inset
 
 .
- Let us take two arbitrary points 
+ Consider two arbitrary points 
 \begin_inset Formula $x_{0}$
 \end_inset
 
@@ -216,7 +262,8 @@ Consider the linear function
 \begin_inset Formula $x_{1}$
 \end_inset
 
- in order to calculate this quotient:
+.
+ The rate of change is then given by:
 \begin_inset Formula \begin{eqnarray*}
 f'(x) & = & \frac{f(x_{1})-f(x_{0})}{x_{1}-x_{0}}\\
  & = & \frac{3x_{1}-3x_{0}}{x_{1}-x_{0}}\\
@@ -426,24 +473,42 @@ Geometrical picture for calculating derivatives of linear functions.
 \end_layout
 
 \begin_layout Standard
-As we just showed in this example, the rate of change 
+Since any linear function can be written as 
+\begin_inset Formula $f(x)=ax$
+\end_inset
+
+, we just showed that the first derivative 
 \begin_inset Formula $f'(x)$
 \end_inset
 
- is everywhere the same for linear functions.
- A linear function 
-\begin_inset Formula $f(x)=c\cdot x$
-\end_inset
-
- will exactly change by 
-\begin_inset Formula $f'(x)=c$
-\end_inset
-
- when making a step of size one along the 
+ of a linear function does not depend on 
 \begin_inset Formula $x$
 \end_inset
 
--axis.
+.
+ This means that it is the same everywhere.
+ This is what we expect intuitively from a line.
+ Secondly we verified the second intuition for linear functions.
+ The first derivative at a point 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is the slope of the tangent line of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $(x_{0},f(x_{0}))$
+\end_inset
+
+.
+ Since the tangent line is simply the linear function itself, the first
+ derivative 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ is the slope of the linear function.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -476,33 +541,16 @@ There is lot of technical stuff coming in the next section, like limits,
 \end_layout
 
 \begin_layout Standard
-This example shows that the best linear approximation of a linear function
- at any point is the linear function itself and the rate of change is the
- factor 
-\begin_inset Formula $c$
-\end_inset
-
- of the input variable, called 
-\emph on
-
-\begin_inset LatexCommand index
-name "the slope"
-
-\end_inset
-
-the slope
-\emph default
-.
- The situation changes when we consider arbitrary functions 
+The situation changes when we consider arbitrary functions 
 \begin_inset Formula $f(x)$
 \end_inset
 
 .
- In that case the value of the quotient 
+ In that case the value of the rate of change, given by the quotient 
 \begin_inset Formula $\frac{f(x_{1})-f(x_{0})}{x_{1}-x_{0}}$
 \end_inset
 
- will depend on the choices of 
+, will depend on the choices of 
 \begin_inset Formula $x_{1}$
 \end_inset
 
@@ -511,29 +559,126 @@ the slope
 \end_inset
 
 .
- But since we are interested in the best linear approximation of the function
- 
-\begin_inset Formula $f$
+ This raises the question how we could define the rate of change in a meaningul
+ way? The second intuition can help us here: In order to get the first derivativ
+e at a point 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ we approximate 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ with a line and define the first derivative to be its slope.
+ Since we are merely interested in computing the slope of that line, we
+ do not need to compute the full line equation but start with the slope
+ right away.
+ Remember, given a line 
+\begin_inset Formula $g(x)=ax+t$
+\end_inset
+
+, we can compute its slope via 
+\begin_inset Formula $\frac{g(x_{1})-g(x_{0})}{(x_{1}-x_{0})}=\frac{ax_{1}+t-ax_{0}-t}{(x_{1}-x_{0})}=a$
+\end_inset
+
+ where 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ are two arbitrary points.
+ Now imagine we have a line 
+\begin_inset Formula $g(x)=ax+t$
+\end_inset
+
+ that contains the two points 
+\begin_inset Formula $(x_{0},f(x_{0}))$
+\end_inset
+
+ and 
+\begin_inset Formula $(x_{1},f(x_{1}))$
+\end_inset
+
+ (see Figure 
+\begin_inset LatexCommand ref
+reference "fig:DerivativeArbrFunc"
+
+\end_inset
+
+).
+ In order to compute its slope we do not need the full line equation.
+ Instead we can simply use the quotient from above and compute 
+\begin_inset Formula \begin{eqnarray*}
+a & = & \frac{g(x_{1})-g(x_{0})}{x_{1}-x_{0}}\\
+ & = & \frac{f(x_{1})-f(x_{0})}{x_{1}-x_{0}}.\end{eqnarray*}
+
+\end_inset
+
+The slope 
+\begin_inset Formula $a$
+\end_inset
+
+ of this line is not yet the first derivative since 
+\begin_inset Formula $g$
+\end_inset
+
+ contains 
+\begin_inset Formula $(x_{0},f(x_{0}))$
 \end_inset
 
  
 \emph on
-at the point
+and
 \emph default
  
-\begin_inset Formula $x_{0}$
+\begin_inset Formula $(x_{1},f(x_{1}))$
 \end_inset
 
-, we fix 
-\begin_inset Formula $x_{0}$
+.
+ This means, that (in most cases) it will intersect with 
+\begin_inset Formula $f$
 \end_inset
 
- and choose 
+ and not 
+\emph on
+touch
+\emph default
+ it at 
+\begin_inset Formula $(x_{0},f(x_{0}))$
+\end_inset
+
+.
+ However, we can achieve this goal by moving 
 \begin_inset Formula $x_{1}$
 \end_inset
 
- just to be a infinitesimal step away from 
+ close to 
 \begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ Once it is infinitely, called 
+\emph on
+infinitesimally
+\emph default
+, close to 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $a=\frac{f(x_{1})-f(x_{0})}{x_{1}-x_{0}}$
+\end_inset
+
+ will be the slope of the tangent line, i.e.
+ 
+\begin_inset Formula $a=f'(x_{0})$
 \end_inset
 
 .
@@ -552,7 +697,7 @@ at the point
 \begin_inset Formula $x_{1}=x_{0}+h$
 \end_inset
 
- can be written as
+ can be written in terms of limits as
 \begin_inset Formula \begin{eqnarray*}
 f'(x) & = & \lim_{h\rightarrow0}\frac{f(\overbrace{x_{0}+h}^{=x_{1}})-f(x_{0})}{\underbrace{h}_{=x_{1}-x_{0}}}.\end{eqnarray*}
 
@@ -566,11 +711,11 @@ The ''
 \begin_inset Formula $h$
 \end_inset
 
- come infinitesimal close to zero and therefore 
+ come infinitesimally close to zero and therefore 
 \begin_inset Formula $x_{1}=x_{0}+h$
 \end_inset
 
- infinitesimal close to 
+ infinitesimally close to 
 \begin_inset Formula $x_{0}$
 \end_inset
 
@@ -594,13 +739,41 @@ differential quotient
 \end_inset
 
 .
- Figure 
-\begin_inset LatexCommand ref
-reference "fig:DerivativeArbrFunc"
-
+ Note that, in order to obtain a unique notion of a derivative at a point
+ 
+\begin_inset Formula $x_{0}$
 \end_inset
 
- depicts the process of building the limit of the differential quotient.
+, the direction from which 
+\begin_inset Formula $x_{1}=x_{0}+h$
+\end_inset
+
+ approaches 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ should not matter.
+ This means that 
+\begin_inset Formula $h$
+\end_inset
+
+ could be negative (
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ approaches 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ from the left) or positive (
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ approaches 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ from the right).
 \end_layout
 
 \begin_layout Standard
@@ -979,8 +1152,13 @@ Geometrical picture of the differential quotient for arbitrary functions.
 \end_layout
 
 \begin_layout Standard
-It is clear from the geometric picture that not every function has a derivative
- at any point 
+Looking at Figure 
+\begin_inset LatexCommand ref
+reference "fig:DerivativeArbrFunc"
+
+\end_inset
+
+, we can see that not every function has a derivative at any point 
 \begin_inset Formula $x_{0}$
 \end_inset
 
@@ -1101,8 +1279,14 @@ If a function is continous, we can calculate the value of the differential
 \end_inset
 
 .
- If we can find a linear function that with its slope equal to the value
- of the differential quotient, no matter if 
+ If the function is not continous, the derivative at that point is classified
+ as 
+\emph on
+not defined
+\emph default
+.
+ However, if we can find a linear function that with its slope equal to
+ the value of the differential quotient, no matter if 
 \begin_inset Formula $h$
 \end_inset
 
@@ -1111,7 +1295,7 @@ If a function is continous, we can calculate the value of the differential
 \end_inset
 
 ) or from the right 
-\begin_inset Formula $h>0$
+\begin_inset Formula $(h>0)$
 \end_inset
 
 , the function is called 
@@ -1124,6 +1308,42 @@ name "differentiable function"
 
 differentiable.
  
+\end_layout
+
+\begin_layout Standard
+In a similar fashion, functions that have a kink at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ give rise to an undefined derivative at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ The reason is that because of the kink approaching 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ from the left yields a different slope than approaching 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ from the right.
+ For example 
+\begin_inset Formula $f(x)=|x|=\mbox{abs}(x)$
+\end_inset
+
+ is not differentiable at 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+.
+ At all other points, however, it is.
+ We will see how to differentiate 
+\begin_inset Formula $f(x)=|x|$
+\end_inset
+
+ in an example below.
 \end_layout
 
 \begin_layout Paragraph
@@ -1194,18 +1414,21 @@ differentiable
 \begin_layout Standard
 Fortunately, we do not need to go through the tedious process of calculating
  the value of the differential quotient every time.
- There exist calculation rules for a large class of functions how to calculate
- 
-\begin_inset Formula $f'(x)$
+ There are easier ways to compute the slope of the tangent at a point 
+\begin_inset Formula $x_{0}$
 \end_inset
 
 .
- We start with the simplest rule for calculating the derivatives of powers.
+ In the following we will review the most important rules how to compute
+ derivatives.
+ In most cases those rules are sufficient to compute derivatives of functions
+ that you are dealing with.
  
 \end_layout
 
 \begin_layout Standard
-If 
+We start with the simplest rule: Calculating the derivatives of powers.
+ If 
 \begin_inset Formula $f(x)=ax^{b}$
 \end_inset
 
@@ -1265,7 +1488,6 @@ Here,
 \end_inset
 
  are arbitrary differentiable functions.
- Let us now apply these rules to a simple polynomial.
 \end_layout
 
 \begin_layout Paragraph
@@ -1278,12 +1500,12 @@ Assume that
 \end_inset
 
 .
- In order to be able to apply the rule, we must rewrite the constant 
+ In order to apply the rule, we must rewrite the constant 
 \begin_inset Formula $10$
 \end_inset
 
 .
- Since 
+ Since we already know that 
 \begin_inset Formula $x^{0}=1$
 \end_inset
 
@@ -1325,7 +1547,7 @@ As we can see, the last term vanishes since premultiplying
 \begin_inset Formula $b=bx^{0}$
 \end_inset
 
-, constants vanish when calculating the derivative.
+, constants always vanish when calculating the derivative.
 \end_layout
 
 \begin_layout Standard
@@ -1452,7 +1674,7 @@ As those examples show, we can already calculate the derivative of a fair
 \end_inset
 
  and 
-\begin_inset Formula ${y=g}_{1}(x)=\frac{1}{2}x^{2}+5x+10$
+\begin_inset Formula $y=g_{1}(x)=\frac{1}{2}x^{2}+5x+10$
 \end_inset
 
 .
@@ -1482,6 +1704,14 @@ chain rule:
 
 
 \emph default
+ with two arbitrary differentiable functions 
+\begin_inset Formula $g_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{2}$
+\end_inset
+
 , then the derivative 
 \emph on
 
@@ -1556,7 +1786,7 @@ Let
 \end_inset
 
  and 
-\begin_inset Formula ${y=g}_{1}(x)=\frac{1}{2}x^{2}+5x+10$
+\begin_inset Formula $y=g_{1}(x)=\frac{1}{2}x^{2}+5x+10$
 \end_inset
 
 .
@@ -1587,11 +1817,19 @@ f'(x) & = & g_{2}'(g_{1}(x))\cdot g_{1}'(x)\\
 \end_layout
 
 \begin_layout Standard
-Now, there is only one rule left: the rule for differenting products 
+Now, there is only one rule left: How to differentiate products 
 \begin_inset Formula $f(x)=g_{1}(x)\cdot g_{2}(x)$
 \end_inset
 
- of two functions.
+ of two differentiable functions 
+\begin_inset Formula $g_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{2}$
+\end_inset
+
+.
  If 
 \begin_inset Formula $f$
 \end_inset
@@ -1621,7 +1859,7 @@ name "product rule"
 product rule
 \emph default
 .
- It says, that we first differentiate 
+ It tells us to first differentiate 
 \begin_inset Formula $g_{1}(x)$
 \end_inset
 
@@ -1679,8 +1917,11 @@ f'(x) & = & (x+1)'\cdot\left(\frac{1}{2}x^{2}+5\right)+(x+1)\cdot\left(\frac{1}{
 
 \end_inset
 
-In this particular case, we can check the rule by multiplying out 
-\begin_inset Formula $f(x)=(x+1)(\frac{1}{2}x^{2}+5)=\frac{1}{2}x^{3}+\frac{1}{2}x^{2}+5x+5.$
+In this particular case, we can check the rule by expanding 
+\begin_inset Formula \begin{eqnarray*}
+f(x) & = & (x+1)(\frac{1}{2}x^{2}+5)\\
+ & = & \frac{1}{2}x^{3}+\frac{1}{2}x^{2}+5x+5.\end{eqnarray*}
+
 \end_inset
 
  Using the rule for polynomials, yields:
@@ -1748,7 +1989,7 @@ Let
 .
  Let us look at the calculation step by step:
 \begin_inset Formula \begin{eqnarray*}
-f'(x) & \stackrel{\mbox{ProductRule}}{=} & (x+1)'\left(\frac{1}{2}x^{2}+5\right)^{-1}+(x+1)\left(\left(\frac{1}{2}x^{2}+5\right)^{-1}\right)'\\
+f'(x) & \stackrel{\mbox{Product Rule}}{=} & (x+1)'\left(\frac{1}{2}x^{2}+5\right)^{-1}+(x+1)\left(\left(\frac{1}{2}x^{2}+5\right)^{-1}\right)'\\
  & \stackrel{\mbox{Chain Rule}}{=} & (x+1)'\left(\frac{1}{2}x^{2}+5\right)^{-1}-(x+1)\left(\frac{1}{2}x^{2}+5\right)^{-2}\left(\frac{1}{2}x^{2}+5\right)'\\
  & = & \frac{(x+1)'}{\left(\frac{1}{2}x^{2}+5\right)}-\frac{(x+1)\left(\frac{1}{2}x^{2}+5\right)'}{\left(\frac{1}{2}x^{2}+5\right)^{2}}\\
  & = & \frac{(x+1)'(\frac{1}{2}x^{2}+5)-(x+1)\left(\frac{1}{2}x^{2}+5\right)'}{\left(\frac{1}{2}x^{2}+5\right)^{2}}\\
@@ -1796,9 +2037,7 @@ f'(x) & = & \frac{g_{1}'(x)g_{2}(x)-g_{1}(x)g_{2}'(x)}{g_{2}(x)^{2}}.\end{eqnarr
 \end_layout
 
 \begin_layout Standard
-The rules above are basically all we need to calculate derivatives of most
- common functions.
- Let us just summarize them
+Here is a summary of all the rules we just saw:
 \end_layout
 
 \begin_layout Standard
@@ -1819,6 +2058,22 @@ status open
 
 \series bold
 Differentiation Rules
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Derivatives of constant functions
+\bar default
+: The derivative of any constant function 
+\begin_inset Formula $f(x)=a$
+\end_inset
+
+ is 
+\begin_inset Formula $f'(x)=0$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
@@ -1949,13 +2204,9 @@ f'(x) & = & \frac{g_{1}'(x)g_{2}(x)-g_{1}(x)g_{2}'(x)}{g_{2}(x)^{2}}.\end{eqnarr
 \begin_layout Subsubsection*
 
 \series medium
-We conclude this section by stating derivatives of all functions of the
- previous section.
- Some of those derivatives can not be calculated with the rules that we
- just listed.
- However, remember and the differentiation rules can be used for calculating
- the derivatives of more complex functions built from the ones of the previous
- section.
+We conclude this section by stating derivatives of important functions that
+ you cannot compute using the rules above.
+ Since they occur quite often, you should know them by heart.
 \end_layout
 
 \begin_layout Standard
@@ -1976,20 +2227,6 @@ status open
 
 \series bold
 Derivatives of important functions
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $f(x)=ax\Rightarrow f'(x)=a$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $f(x)=x^{a}\Rightarrow f'(x)=ax^{a-1}$
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -2014,7 +2251,7 @@ Derivatives of important functions
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $f(x)=\ln(x)\Rightarrow f'(x)=\frac{1}{x}$
+\begin_inset Formula $f(x)=\ln(x)=\log_{e}(x)\Rightarrow f'(x)=\frac{1}{x}$
 \end_inset
 
 
@@ -2225,6 +2462,196 @@ If you do use this example in lectures, I would just hands and pointing
 
 \end_layout
 
+\begin_layout Subsubsection*
+Example
+\end_layout
+
+\begin_layout Standard
+There is an easy numerical way to check and compute derivatives with matlab
+ based on the differential quotient:
+\begin_inset Formula \begin{eqnarray*}
+f'(x) & = & \lim_{h\rightarrow0}\frac{f(\overbrace{x_{0}+h}^{=x_{1}})-f(x_{0})}{\underbrace{h}_{=x_{1}-x_{0}}}.\end{eqnarray*}
+
+\end_inset
+
+The idea is that 
+\begin_inset Formula $\frac{f(\overbrace{x_{0}+h}^{=x_{1}})-f(x_{0})}{\underbrace{h}_{=x_{1}-x_{0}}}$
+\end_inset
+
+ already sufficiently approximates 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ for really small 
+\begin_inset Formula $h$
+\end_inset
+
+.
+ This means, that you choose at a set of closely spaced points 
+\begin_inset Formula $x_{1},...,x_{i},x_{i+1},...,x_{n}$
+\end_inset
+
+ and compute the function values 
+\begin_inset Formula $f(x_{1}),...,f(x_{i}),f(x_{i+1}),...,f(x_{n})$
+\end_inset
+
+ at those points and compute 
+\begin_inset Formula $f'(x_{i})\approx\frac{f(x_{i+1})-f(x_{i})}{x_{i+1}-x_{i}}$
+\end_inset
+
+.
+ Fortunantely, there is a built-in matlab function that takes the differences
+ for you.
+ Here is an example for how to compute the numerical derivative of 
+\begin_inset Formula $f(x)=\sin(x)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> h = .001; x = 0:h:2*pi; % define h and the base points
+\end_layout
+
+\begin_layout Standard
+
+>> f = sin(x); % sample the function at x
+\end_layout
+
+\begin_layout Standard
+
+>> df = diff(f)/h; % compute the differences
+\end_layout
+
+\begin_layout Standard
+
+>> plot(x,f,'k'), hold on; % plot the function
+\end_layout
+
+\begin_layout Standard
+
+>> plot(x(1:end-1),df,'r'); % plot the approximation
+\end_layout
+
+\begin_layout Standard
+
+>> plot(x(1:end-1),cos(x(1:end-1)),'g'); % plot the true derivative
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+You surely noticed that we were only able to compute 
+\begin_inset Formula $f'(x)$
+\end_inset
+
+ for all but the last 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ The reason is, that there is no 
+\begin_inset Formula $x_{n+1}$
+\end_inset
+
+ and 
+\begin_inset Formula $f(x_{n+1})$
+\end_inset
+
+ that we could have used for computing 
+\begin_inset Formula $f'(x_{n})$
+\end_inset
+
+.
+ However, there is also a little more involved matlab function that computed
+ the derivatives at all base points.
+ Using that function the example becomes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> h = .001; x = 0:h:2*pi; % define h and the base points
+\end_layout
+
+\begin_layout Standard
+
+>> f = sin(x); % sample the function at x
+\end_layout
+
+\begin_layout Standard
+
+>> dfdh = gradient(f,h); % compute the first derivative
+\end_layout
+
+\begin_layout Standard
+
+>> plot(x,f,'k'), hold on; % plot the function
+\end_layout
+
+\begin_layout Standard
+
+>> plot(x,dfdh,'r'); % plot the approximation
+\end_layout
+
+\begin_layout Standard
+
+>> plot(x,cos(x),'g'); % plot the true derivative
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can (and should) use this function to check derivatives that you computed
+ analytically.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Higher-Order Derivatives
 \end_layout
@@ -2280,7 +2707,7 @@ The second derivative, however, has a special meaning.
 \end_inset
 
 .
- This give us the 
+ This give us a notion of 
 \emph on
 curvature
 \emph default
@@ -2344,7 +2771,11 @@ Suppose that the function
 \begin_inset Formula $f(t)$
 \end_inset
 
- is the position of an object in space.
+ is the position of an object in space at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
  Then, 
 \begin_inset Formula $f'(t)$
 \end_inset
@@ -2365,7 +2796,15 @@ Suppose that the function
 \begin_inset Formula $f(t)$
 \end_inset
 
- is the concentration of Ca-ions in a neuron at time 
+ is the concentration of 
+\emph on
+
+\begin_inset Formula $Ca^{2+}$
+\end_inset
+
+
+\emph default
+-ions in a neuron at time 
 \begin_inset Formula $t$
 \end_inset
 
@@ -2377,7 +2816,7 @@ Suppose that the function
 \begin_inset Formula $t,$
 \end_inset
 
-and 
+ and 
 \begin_inset Formula $f''(t)$
 \end_inset
 
