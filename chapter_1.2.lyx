@@ -2832,21 +2832,282 @@ Suppose that the function
 \end_layout
 
 \begin_layout Subsection
-Finding Extreme Points of a Function
+Finding Maxima/Minima of a Function
 \end_layout
 
 \begin_layout Standard
 Derivates can be used to find global minima or maxima of functions.
- A function 
+ If 
 \begin_inset Formula $f(x)$
 \end_inset
 
- has a local maximum (resp.
- minimum) at 
+ has a local maximum or minimum at a point 
 \begin_inset Formula $x_{0}$
 \end_inset
 
- if 
+, the tangent line is horizontal.
+ This means that the slope of the tangent and, therefore, the derivative
+ of the function at that point 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ must be 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+.
+ Mathematically speaking, 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+ is a 
+\emph on
+necessary condition
+\begin_inset LatexCommand index
+name "necessary condition"
+
+\end_inset
+
+
+\emph default
+ for the function 
+\begin_inset Formula $f$
+\end_inset
+
+ having a maximum or a minimum, i.e.
+ ``
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is maximum/minimum'' 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\begin_inset Formula $f'(x_{0})$
+\end_inset
+
+.
+ However, it can happen, that 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+ but not 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is not a maximum or a minimum.
+ Those points are called saddle-points.
+ They arise for example, when 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ increases, becomes more and more flat when approaching 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, is comepletely flat at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, and increases again afterwards.
+ Therefore, since 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+ does not imply a maximum or a minimum, we must find a condition that does
+ that, i.e.
+ we need to find a 
+\emph on
+
+\begin_inset LatexCommand index
+name "sufficient condition"
+
+\end_inset
+
+sufficient condition, 
+\emph default
+one for which ``condition''
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+``
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is maximum/minimum''.
+ 
+\end_layout
+
+\begin_layout Standard
+Since we already know that we only need to look at points 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ where 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+, we can think about what must happen for 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ to be
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+---
+\end_layout
+
+\end_inset
+
+say
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+---
+\end_layout
+
+\end_inset
+
+a maximum.
+ If 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is a maximum, then the slope of tangent lines of points to the right of
+ 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ must become more and more negative.
+ At the same time the slope of tangent lines at points left to 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ must become less and less negative and approach zero at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ If you think about it, this is exactly the same as requiring 
+\begin_inset Formula $f''(x_{0})<0$
+\end_inset
+
+.
+ Similarly, 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $f''(x_{0})>0$
+\end_inset
+
+ imply a minimum of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+, 
+\begin_inset Formula $f''(x_{0})=0$
+\end_inset
+
+, then 
+\begin_inset Formula $f$
+\end_inset
+
+ has a saddle-point at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+
+\series bold
+Finding Maxima, Minima, and Saddle-Points
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be a twice differentiable function.
+ Then 
+\begin_inset Formula $f$
+\end_inset
+
+ has a 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\begin_inset LatexCommand index
+name "mimimum"
+
+\end_inset
+
+mimimum
+\emph default
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $f'(x_{0})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $f''(x_{0})>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\begin_inset LatexCommand index
+name "maximum"
+
+\end_inset
+
+maximum
+\emph default
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ if and only if 
 \begin_inset Formula $f'(x_{0})=0$
 \end_inset
 
@@ -2854,52 +3115,38 @@ Derivates can be used to find global minima or maxima of functions.
 \begin_inset Formula $f''(x_{0})<0$
 \end_inset
 
- (resp.
- 
-\begin_inset Formula $f''(x_{0})>0$
+.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+saddle-point
+\begin_inset LatexCommand index
+name "saddle-point"
+
 \end_inset
 
-).
- If 
+
+\emph default
+ 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ if and only if 
 \begin_inset Formula $f'(x_{0})=0$
 \end_inset
 
  and 
-\begin_inset Formula $f''(x_{0})=0,$
+\begin_inset Formula $f''(x_{0})=0$
 \end_inset
 
- then 
-\begin_inset Formula $x_{0}$
-\end_inset
-
- is said to be a saddle-point.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Standard
-Draw Picture
+.
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-This ties in very well with the quadratic approximations discussed above:
- If there is a maximum at 
-\begin_inset Formula $x_{0}$
-\end_inset
-
-, then 
-\begin_inset Formula $f(x_{0})$
-\end_inset
-
- can be locally approximated by a parabola that is oriented downwards.
 \end_layout
 
 \begin_layout Standard
@@ -2915,14 +3162,621 @@ It should be pointed out that this procedure only yields
  
 \end_layout
 
+\begin_layout Subsubsection*
+Example
+\end_layout
+
 \begin_layout Standard
-\begin_inset Note Comment
+Consider the function 
+\begin_inset Formula $f(x)=(x-1)^{2}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $f'(x)=2(x-1)$
+\end_inset
+
+ and 
+\begin_inset Formula $f''(x)=2$
+\end_inset
+
+.
+ In order to find candidates for a maximum or a minimum, we set 
+\begin_inset Formula $f'(x)=0$
+\end_inset
+
+ and solve for 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+f'(x)=0 & \Leftrightarrow & 2(x-1)=2\\
+ & \Leftrightarrow & x=1.\end{eqnarray*}
+
+\end_inset
+
+Since 
+\begin_inset Formula $f''(x)>0$
+\end_inset
+
+ for all 
+\begin_inset Formula $x$
+\end_inset
+
+ (therefore also for 
+\begin_inset Formula $x=1$
+\end_inset
+
+), 
+\begin_inset Formula $x=1$
+\end_inset
+
+ must be a minimum of 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Example: Estimating the rate of a Poisson distribution
+\end_layout
+
+\begin_layout Standard
+A probabilistic model for a neuron that generates completely random spike
+ trains with no temporal structure is the homogeneous 
+\emph on
+Poisson process
+\emph default
+.
+ Since there is no temporal structure, it serves as a baseline model that
+ other
+\begin_inset ERT
 status open
 
 \begin_layout Standard
-Discuss Example from Exam Sheet here
+
+---
 \end_layout
 
+\end_inset
+
+more advanced
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+---
+\end_layout
+
+\end_inset
+
+models for spike trains can compare to.
+ You can generate spike trains from that model as follows: Bin the time
+ axis into sufficiently small bins (say 
+\begin_inset Formula $1ms$
+\end_inset
+
+).
+ For each bin you randomly place a spike with a certain small probability.
+ The matlab code looks like this
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> t = [0:0.001:10]; 
+\end_layout
+
+\begin_layout Standard
+
+>> p = 0.05; % spiking probability in each bin
+\end_layout
+
+\begin_layout Standard
+
+>> ind = find( rand(size(t)) <= p); % sample spike times 
+\end_layout
+
+\begin_layout Standard
+
+>> s = zeros(size(t)); % generate spike train 
+\end_layout
+
+\begin_layout Standard
+
+>> s(ind) = 1; % insert spikes 
+\end_layout
+
+\begin_layout Standard
+
+>> plot(t,s,'k')
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+The reason, why it is called Poisson process it that the probability of
+ observing 
+\begin_inset Formula $k$
+\end_inset
+
+ spikes in a time window of length 
+\begin_inset Formula $\Delta t=1$
+\end_inset
+
+ is given by the Poisson distribution 
+\begin_inset Formula \begin{eqnarray*}
+p(k\mbox{ spikes}) & = & \frac{\lambda^{k}e^{-\lambda}}{k!}\end{eqnarray*}
+
+\end_inset
+
+ or simply 
+\begin_inset Formula \begin{eqnarray*}
+p(k) & = & \frac{\lambda^{k}e^{-\lambda}}{k!}.\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is called the rate of the poisson distribution.
+ It tells us how many spike we expect in one second on average.
+ The question that we want to solve in this example is how to estimate 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ from a number of observed spike trains.
+ But lets first look at our matlab example again and check, whether our
+ spike counts in one second really follow a Poisson distribution.
+ For that reason, we generate a large number of spike trains of length 
+\begin_inset Formula $1s$
+\end_inset
+
+, count the spikes in each spike train and look at the empirical histogram.
+ The matlab code looks like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> t = [0:0.001:1];
+\end_layout
+
+\begin_layout Standard
+
+>> p = 0.05; % probability of spike in each bin
+\end_layout
+
+\begin_layout Standard
+
+>> m = 5000; % number of spike trains
+\end_layout
+
+\begin_layout Standard
+
+>> U = rand(m,length(t)); 
+\end_layout
+
+\begin_layout Standard
+
+>> S = zeros(size(U)); % generate spike train matrix (trains X time) 
+\end_layout
+
+\begin_layout Standard
+
+>> S(U <= p) = 1;
+\end_layout
+
+\begin_layout Standard
+
+>> figure 
+\end_layout
+
+\begin_layout Standard
+
+>> imagesc(1-S); colormap gray; 
+\end_layout
+
+\begin_layout Standard
+
+>> xlabel('time bins'); ylabel('spike trains')
+\end_layout
+
+\begin_layout Standard
+
+>> figure C = sum(S,2); % get spike counts 
+\end_layout
+
+\begin_layout Standard
+
+>> K = [1:max(C)]; 
+\end_layout
+
+\begin_layout Standard
+
+>> hist(C,K); % plot histogram 
+\end_layout
+
+\begin_layout Standard
+
+>> hold on
+\end_layout
+
+\begin_layout Standard
+
+>> lambda = p*length(t); 
+\end_layout
+
+\begin_layout Standard
+
+>> plot(K, m*poisspdf(K,lambda),'r','LineWidth',2); hold off
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/spiketrain.eps
+	width 6cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figs/Poisson.eps
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:PoissonSpikes"
+
+\end_inset
+
+Poisson spikes with rate 
+\begin_inset Formula $\lambda=50.05$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A typical output of the matlab code fragment is shown in Figure 
+\begin_inset LatexCommand ref
+reference "fig:PoissonSpikes"
+
+\end_inset
+
+.
+ Before we see how to estimate 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ from the data, let us first spend a tought about what values we expect.
+ The answer is not too difficult.
+ Since we see a spike with probability 
+\begin_inset Formula $p=0.05$
+\end_inset
+
+ in each bin, all bins are independent, we expect to see a total number
+ of 
+\begin_inset Formula $\lambda=n_{bins}\cdot p$
+\end_inset
+
+ spikes per second where 
+\begin_inset Formula $n_{bins}$
+\end_inset
+
+ is the number of bins per second.
+ Strictly speaking, the rate 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is defined as the number of bins times the probability of spiking per bin
+ in the limit of infinite 
+\begin_inset Formula $n_{bins}$
+\end_inset
+
+.
+ The idea is, that the larger the number of bins gets, the lower the probability
+ of observing a spike in a specific bin becomes, i.e.
+ it goes to zero for 
+\begin_inset Formula $n_{bins}$
+\end_inset
+
+ to infinity.
+ Therefore, the product of both number can be something finite, i.e.
+ the rate 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let us know turn to the question of how to estimate 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ Assume that you are only given the number of spikes 
+\begin_inset Formula $k_{1},...,k_{m}$
+\end_inset
+
+ in each of the spike trains of length 
+\begin_inset Formula $1s$
+\end_inset
+
+.
+ Certainly you also do not know 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ However, you do know (or do assume) that the spikes have been generated
+ as described above and therefore the spike counts 
+\begin_inset Formula $k$
+\end_inset
+
+ must be Poisson distributed.
+ We furthe assume that each spike train has been generated independently
+ of the others.
+\end_layout
+
+\begin_layout Standard
+Given a distribution and a number of observations, one principled way of
+ estimating the parameters of that distribution (in our case the rate 
+\begin_inset Formula $\lambda$
+\end_inset
+
+) is the 
+\emph on
+
+\begin_inset LatexCommand index
+name "maximum likelihood"
+
+\end_inset
+
+maximum likelihood
+\emph default
+ method.
+ The idea behind that method is simple: We choose 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ such that the probability of our observations is maximized:
+\begin_inset Formula \begin{eqnarray*}
+\hat{\lambda} & = & \mbox{argmax}_{\lambda\in\mathbb{R}^{+}}p(k_{1},...,k_{m}|\lambda).\end{eqnarray*}
+
+\end_inset
+
+Since we assumed that the observations are independent from each other,
+ the probability of observing all spike counts jointly, is the product of
+ the probabilities of observing each single spike count:
+\begin_inset Formula \begin{eqnarray*}
+p(k_{1},...,k_{m}|\lambda) & = & \prod_{i=1}^{m}p(k_{i}|\lambda).\end{eqnarray*}
+
+\end_inset
+
+For each single spike count, we know that 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ is Poisson distributed and therefore 
+\begin_inset Formula \begin{eqnarray*}
+p(k_{1},...,k_{m}|\lambda) & = & \prod_{i=1}^{m}p(k_{i}|\lambda)\\
+ & = & \prod_{i=1}^{m}\frac{\lambda^{k_{i}}e^{-\lambda}}{k_{i}!}.\end{eqnarray*}
+
+\end_inset
+
+Now, we only need to find that maximum of 
+\begin_inset Formula $f(\lambda)=\prod_{i=1}^{m}\frac{\lambda^{k_{i}}e^{-\lambda}}{k_{i}!}$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ Unfortunately, taking the derivative of 
+\begin_inset Formula $f(\lambda)=\prod_{i=1}^{m}\frac{\lambda^{k_{i}}e^{-\lambda}}{k_{i}!}$
+\end_inset
+
+ is very complicated.
+ Luckily, there is a simple trick that we can apply: By taking the 
+\begin_inset Formula $\log$
+\end_inset
+
+ of both sides changes the function values, but leaves the position of the
+ maxima unchanged (the reason for that is, that 
+\begin_inset Formula $\log$
+\end_inset
+
+ is a strictly increasing continous function).
+ However, taking the 
+\begin_inset Formula $\log$
+\end_inset
+
+ makes the right hand side considerably easier to deal with:
+\begin_inset Formula \begin{eqnarray*}
+\log f(\lambda) & = & \log\left(\prod_{i=1}^{m}\frac{\lambda^{k_{i}}e^{-\lambda}}{k_{i}!}\right)\\
+ & = & \sum_{i=1}^{m}\log\frac{\lambda^{k_{i}}e^{-\lambda}}{k_{i}!}\\
+ & = & \sum_{i=1}^{m}\left(\log\lambda^{k_{i}}+\log e^{-\lambda}-\log k_{i}!\right)\\
+ & = & \sum_{i=1}^{m}\left(k_{i}\log\lambda-\lambda-\log k_{i}!\right).\end{eqnarray*}
+
+\end_inset
+
+Let us know compute the maximum of 
+\begin_inset Formula $\sum_{i=1}^{m}k_{i}\log\lambda-\lambda-\log k_{i}!.$
+\end_inset
+
+ For that reason, we first compute the frist derivative
+\begin_inset Formula \begin{eqnarray*}
+\frac{d}{d\lambda}\left(\sum_{i=1}^{m}k_{i}\log\lambda-\lambda-\log k_{i}!.\right) & = & \sum_{i=1}^{m}\left(k_{i}\frac{d}{d\lambda}\log\lambda-\frac{d}{d\lambda}\lambda-\frac{d}{d\lambda}\log k_{i}!\right)\\
+ & = & \sum_{i=1}^{m}\left(k_{i}\frac{1}{\lambda}-1\right)\\
+ & = & -m+\frac{1}{\lambda}\sum_{i=1}^{m}k_{i}.\end{eqnarray*}
+
+\end_inset
+
+Setting the first derivative to zero and solving for 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ yields
+\begin_inset Formula \begin{eqnarray*}
+-m+\frac{1}{\lambda}\sum_{i=1}^{m}k_{i}=0 & \Leftrightarrow & \frac{1}{\lambda}\sum_{i=1}^{m}k_{i}=m\\
+ & \Leftrightarrow & \lambda=\frac{1}{m}\sum_{i=1}^{m}k_{i}.\end{eqnarray*}
+
+\end_inset
+
+In order to check that it is really a maximum, we compute the second derivative
+\begin_inset Formula \begin{eqnarray*}
+\frac{d}{d\lambda}\left(-m+\frac{1}{\lambda}\sum_{i=1}^{m}k_{i}\right) & = & -\frac{1}{\lambda^{2}}\sum_{i=1}^{m}k_{i}.\end{eqnarray*}
+
+\end_inset
+
+Since rates are always positive (i.e.
+ 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+) the second derivative is always smaller than zero and, therefore, 
+\begin_inset Formula $\lambda=\frac{1}{m}\sum_{i=1}^{m}k_{i}$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+ is really a maximum.
+ It also has a very intuitive interpretation.
+ The maximum likelihood estimate for the rate of a Poisson distribution
+ is the mean of the observed spike counts.
+ In that sense it is also not suprising, that the mean of a Poisson distribution
+ is 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+You should include the maximum likelihood estimate in the matlab example
+ from above and compare it to the expected rate of 
+\begin_inset Formula $p\cdot n_{bins}$
+\end_inset
+
+.
+ The code fragement, you have to add, is:
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> lambda_est = mean(C);
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
 \end_inset
 
 
