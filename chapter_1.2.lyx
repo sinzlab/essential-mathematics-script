@@ -160,11 +160,11 @@ Using the first intuition,
 \begin_inset Formula $f$
 \end_inset
 
- is a linear function, the approximation will be exact, that mean 
+ is a linear function, the approximation will be exact, that means 
 \begin_inset Formula $f$
 \end_inset
 
- will change exatly by 
+ will change exactly by 
 \begin_inset Formula $f'(x_{0})$
 \end_inset
 
@@ -173,8 +173,7 @@ Using the first intuition,
 \begin_inset Formula $f$
 \end_inset
 
- is not linear we will make some error.
- We still can use 
+ is not linear we will make some error, but we still can use 
 \begin_inset Formula $f'(x)$
 \end_inset
 
@@ -187,7 +186,7 @@ Using the first intuition,
 \end_inset
 
 .
- But we will start with an example of the exact case.
+ But first, we will start with an example of the exact case.
 \end_layout
 
 \begin_layout Standard
@@ -1285,33 +1284,7 @@ If a function is continous, we can calculate the value of the differential
 not defined
 \emph default
 .
- However, if we can find a linear function that with its slope equal to
- the value of the differential quotient, no matter if 
-\begin_inset Formula $h$
-\end_inset
-
- approaches zero from the left (
-\begin_inset Formula $h<0$
-\end_inset
-
-) or from the right 
-\begin_inset Formula $(h>0)$
-\end_inset
-
-, the function is called 
-\emph on
-
-\begin_inset LatexCommand index
-name "differentiable function"
-
-\end_inset
-
-differentiable.
- 
-\end_layout
-
-\begin_layout Standard
-In a similar fashion, functions that have a kink at 
+ In a similar fashion, functions that have a kink at 
 \begin_inset Formula $x_{0}$
 \end_inset
 
@@ -1344,6 +1317,32 @@ In a similar fashion, functions that have a kink at
 \end_inset
 
  in an example below.
+\end_layout
+
+\begin_layout Standard
+However, if we can find a linear function that with its slope equal to the
+ value of the differential quotient, no matter if 
+\begin_inset Formula $h$
+\end_inset
+
+ approaches zero from the left (
+\begin_inset Formula $h<0$
+\end_inset
+
+) or from the right 
+\begin_inset Formula $(h>0)$
+\end_inset
+
+, the function is called 
+\emph on
+
+\begin_inset LatexCommand index
+name "differentiable function"
+
+\end_inset
+
+differentiable.
+ 
 \end_layout
 
 \begin_layout Paragraph
