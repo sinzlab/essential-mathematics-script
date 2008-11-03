@@ -42,6 +42,7 @@
 \tracking_changes false
 \output_changes false
 \author "" 
+\author "" 
 \end_header
 
 \begin_body
@@ -361,7 +362,7 @@ The integral is the signed area under the graph of
 \end_inset
 
 .
- A parts of 
+ All parts of 
 \begin_inset Formula $f(x)$
 \end_inset
 
@@ -386,7 +387,7 @@ The integral is the signed area under the graph of
 \end_inset
 
 -axis and must compute the integrals between those points separately, putting
- a minus infront of the integral where 
+ a minus in front of the integral where 
 \begin_inset Formula $f(x)$
 \end_inset
 
@@ -819,7 +820,7 @@ If
 \begin_inset Formula $C.$
 \end_inset
 
-This constant does not matter, because if evaluate the integral, the constants
+ This constant does not matter, because if evaluate the integral, the constants
  cancel: 
 \begin_inset Formula $F(b)+C-(F(a)+C)=F(b)-F(a)+C-C=F(b)-F(a).$
 \end_inset
@@ -1063,6 +1064,460 @@ Anti-Derivatives of important functions
 
 \end_layout
 
+\begin_layout Subsubsection*
+Example (Approximating Integrals with Matlab)
+\end_layout
+
+\begin_layout Standard
+Using a similar idea as for taking numerical derivatives we can also numerically
+ compute approximate values of integrals in matlab.
+ This idea is to use the definition of an integral as the sum of the areas
+ of rectangles with height 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ and width 
+\begin_inset Formula $\Delta x$
+\end_inset
+
+ in the limit of infinitesimally small 
+\begin_inset Formula $\Delta x$
+\end_inset
+
+.
+ In order to give you a function, that you can reuse, we will use a bit
+ more advanced matlab programming.
+ Assume you are given a matlab function 
+\begin_inset Formula $f$
+\end_inset
+
+ which returns the function values at the points that you call it on.
+ You can realize that in matlab via a so called 
+\emph on
+function handle.
+ 
+\emph default
+A function handle is a variable, which is really a function.
+ That means you can simply call the variable as if it would be a function.
+ The important point is, that you can write code that uses a function for
+ which you do not know what it will be exatly.
+ For now, we simply a assign a function to a function handle 
+\family typewriter
+f
+\family default
+.
+ This seems completely pointless now, but will be become clear later.
+ You can assign functions to variable by using the ``
+\family typewriter
+@
+\family default
+''-symbol.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+ >> f = @exp % assign f to be the exponential function
+\end_layout
+
+\begin_layout Standard
+
+f =
+\end_layout
+
+\begin_layout Standard
+
+    @exp 
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we go on with approximating our integral.
+ First, we choose a certain small stepwidth 
+\begin_inset Formula $\Delta x$
+\end_inset
+
+, integral border between which we want to compute the integral, and base
+ points at which we will evaluate the function to get the height of the
+ rectangles.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> dx = .01; % set stepwidth
+\end_layout
+
+\begin_layout Standard
+
+>> a = 1; b = 2; % set integral borders
+\end_layout
+
+\begin_layout Standard
+
+>> x = [a:dx:b]; % get base points
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, we evaluate the function 
+\family typewriter
+f
+\family default
+ (which is 
+\begin_inset Formula $\exp$
+\end_inset
+
+ at the moment) at the base points.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> fval = f(x); % evaluate function handle at x
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we use the fact that 
+\begin_inset Formula \begin{eqnarray*}
+\int_{a}^{b}f(x)dx & \approx & \sum_{i=1}^{n}f(x_{i})\Delta x\\
+ & = & \Delta x\sum_{i=1}^{n}f(x_{i}),\end{eqnarray*}
+
+\end_inset
+
+where is the number of our base points 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $f(x_{i})$
+\end_inset
+
+ are the values contained in the array 
+\family typewriter
+fval
+\family default
+.
+ Translating that formula into matlab yields:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> I = sum(fval)*dx; % compute approximate integral
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can use the fact that we did not directly specify what function
+ 
+\family typewriter
+f
+\family default
+ exactly is to write a matlab function which we can reuse.
+ For that purpose, we create a file with the name of the function by:
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> edit integrate.m
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In that file we specify the function.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+function I = integrate(f,a,b,dx)
+\end_layout
+
+\begin_layout Standard
+
+    x = [a:dx:b]; % get base points
+\end_layout
+
+\begin_layout Standard
+
+    fval = f(x); % evaluate function handle at x     
+\end_layout
+
+\begin_layout Standard
+
+    I = sum(fval)*dx; % compute approximate integral
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The code above defines a function named 
+\family typewriter
+integrate
+\family default
+ that takes four input arguments: the function handle 
+\family typewriter
+f
+\family default
+, the integral boundaries 
+\family typewriter
+a
+\family default
+ and 
+\family typewriter
+b
+\family default
+ and the stepwidth 
+\family typewriter
+dx
+\family default
+.
+ It returns the approximate value of the integral 
+\begin_inset Formula $\int_{a}^{b}f(x)dx$
+\end_inset
+
+ as we compute it above.
+ However, we can call it on different functions and different integral boundarie
+s now, without having to redefine 
+\family typewriter
+a
+\family default
+ and 
+\family typewriter
+b
+\family default
+ all the time.
+ Our example from above can be reproduced via:
+\newline
+
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> I = integrate(@exp,1,2,.01)
+\end_layout
+
+\begin_layout Standard
+
+I =
+\end_layout
+
+\begin_layout Standard
+
+    4.7213 
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Other uses of the function could look like
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> I = integrate(@cos,0,2,.01)
+\end_layout
+
+\begin_layout Standard
+
+I =
+\end_layout
+
+\begin_layout Standard
+
+    0.9122 
+\end_layout
+
+\begin_layout Standard
+
+>> I = integrate(@log,1,3,.001)
+\end_layout
+
+\begin_layout Standard
+
+I =
+\end_layout
+
+\begin_layout Standard
+
+    1.2964 
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Evaluating and Transforming Integrals
 \end_layout
@@ -1111,7 +1566,7 @@ By the same reasoning, constant factors can be pulled out of the integral,
 
 \begin_layout Standard
 \begin_inset Formula \[
-\int_{a}^{b}c\cdot f(x)dx=c\int_{a}^{b}f(x)dx.\]
+\int_{a}^{b}c\cdot f(x)dx=c\cdot\int_{a}^{b}f(x)dx.\]
 
 \end_inset
 
@@ -1125,7 +1580,7 @@ Integrals of Polynomials
 \begin_layout Standard
 Now we are equiped with enough rules to be able to calculate the anti-derivative
  of polynomials.
- We show how to do this with a small example 
+ We show how to do this with a small example.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1169,39 +1624,13 @@ We can use this anti-derivative to compute the integral
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-Wir sollten das als Exercise stellen: Find the anti-derivatives of 
-\begin_inset Formula $\sin(x)$
-\end_inset
-
-and 
-\begin_inset Formula $\cos(x)$
-\end_inset
-
-.
- Use it to calculate the integral 
-\begin_inset Formula $\int_{0}^{2\pi}\sin(x)dx.$
-\end_inset
-
- Comment.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection*
 Example
 \end_layout
 
 \begin_layout Standard
 Before coming to more advanced rules for calculating integrals, we show
- a more sophistcated example: What is the integral of 
+ a more sophisticated example: What is the integral of 
 \begin_inset Formula $f(x)=|x|$
 \end_inset
 
@@ -1324,10 +1753,15 @@ Example
 \end_layout
 
 \begin_layout Standard
-Similarly, we might want to integrate the scaled function 
-\begin_inset Formula $g(x)=f(sx).$
+Similarly, we might want to integrate a function 
+\begin_inset Formula $g(x)=f(sx)$
 \end_inset
 
+ where the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis has been rescaled.
  In this case, we also have to adjust the limits of integration, but also
  get an extra factor in front of the integral.
 \end_layout
@@ -1394,8 +1828,8 @@ Example
 \end_layout
 
 \begin_layout Standard
-Let us now look at a summary of all allowed transformations that we introduced
- so far.
+The following box provides a summary of all transformation rules, that we
+ have seen so far.
 \end_layout
 
 \begin_layout Standard
@@ -1478,7 +1912,11 @@ Integrating from
 \end_layout
 
 \begin_layout Itemize
-Shift Rule:
+
+\bar under
+Shift Rule
+\bar default
+:
 \begin_inset Formula \[
 \int_{a}^{b}f(x+s)dx=\int_{a+s}^{b+s}f(x)dx.\]
 
@@ -1488,7 +1926,11 @@ Shift Rule:
 \end_layout
 
 \begin_layout Itemize
-Constant Factor Rule:
+
+\bar under
+Rescaling Rule
+\bar default
+:
 \end_layout
 
 \begin_layout Standard
@@ -1510,7 +1952,7 @@ Integrals and Statistics
 \end_layout
 
 \begin_layout Standard
-Integrals are extremely useful in probability theory and statistics.
+Integrals are extremely important in probability theory and statistics.
  The expected value of a random variable 
 \begin_inset Formula $X$
 \end_inset
@@ -1583,12 +2025,12 @@ The pdf of a Uniform Distribution on
 \begin_inset Formula $[0,1]$
 \end_inset
 
-is 
+ is 
 \begin_inset Formula $f(x)=1.$
 \end_inset
 
  The expectation is 
-\begin_inset Formula $E(X)=\int_{0}^{1}xdx=\frac{1}{2}$
+\begin_inset Formula $\mathbb{E}[X]=\int_{0}^{1}xdx=\frac{1}{2}$
 \end_inset
 
 
@@ -1602,11 +2044,173 @@ The Variance of a Uniform Distribution
 
 \newline
 The Variance is 
-\begin_inset Formula $Var(X)=E(X^{2})-(E(X))^{2}.$
+\begin_inset Formula $\mathbb{V}[X]=\mathbb{E}[X^{2}]-[\mathbb{E}[X]]^{2}.$
 \end_inset
 
  So, for the Uniform distribution, 
-\begin_inset Formula $Var(X)=\int_{o}^{1}x^{2}dx-\frac{1}{4}=\frac{1}{3}-\frac{1}{4}=\frac{1}{12}.$
+\begin_inset Formula $\mathbb{V}[X]=\int_{o}^{1}x^{2}dx-\frac{1}{4}=\frac{1}{3}-\frac{1}{4}=\frac{1}{12}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+The expectation function 
+\begin_inset Formula $\mathbb{E}$
+\end_inset
+
+ is a linear function for any distribution:
+\newline
+
+\series default
+Consider the random variables 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ and their joint distribution 
+\begin_inset Formula $p(x,y)$
+\end_inset
+
+.
+ The expectation of 
+\begin_inset Formula $X$
+\end_inset
+
+ is given by 
+\begin_inset Formula $\mathbb{E}[X]=\int xp(x)dx$
+\end_inset
+
+, the expectation of 
+\begin_inset Formula $Y$
+\end_inset
+
+ by 
+\begin_inset Formula $\mathbb{E}[y]=\int yp(y)dy$
+\end_inset
+
+.
+ By not specifying any integral boundaries we silently assume that the integrals
+ are taken over the whole range of possible values of each random variable.
+ The single distributions 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $p(y)$
+\end_inset
+
+, called 
+\emph on
+
+\begin_inset LatexCommand index
+name "marginal distribution"
+
+\end_inset
+
+marginal distributions
+\emph default
+ or simply 
+\emph on
+
+\begin_inset LatexCommand index
+name "marginals"
+
+\end_inset
+
+marginals
+\emph default
+, can be computed from the joint distribution 
+\begin_inset Formula $p(x,y)$
+\end_inset
+
+ by 
+\begin_inset Formula $p(x)=\int p(x,y)dy$
+\end_inset
+
+ and 
+\begin_inset Formula $p(y)=\int p(x,y)dx$
+\end_inset
+
+.
+ This computation is usually referred to as ``integrating out variables''.
+ What it means is, that when writing 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ we do not care about the value of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ For that reason we have to collect all the probability mass of the 
+\begin_inset Formula $y$
+\end_inset
+
+s that occur together with that 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ This is exactly what we do by integrating.
+ 
+\newline
+Eventhough, we do not know anything about the distribution 
+\begin_inset Formula $p(x,y)$
+\end_inset
+
+, by simply using properties of integrals, we can show that the expectation
+ is a linear function.
+ For that purpose we have to show that (i) the expectation of the sum of
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ is the sum of the expectations and (ii) the expectation of scaled versions
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+ is the scaled expectation of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ For the sake of compactness, we merge (i) and (ii) in a single computation.
+ We show that 
+\begin_inset Formula $\mathbb{E}[aX+bY]=a\mathbb{E}[X]+b\mathbb{E}[Y]$
+\end_inset
+
+ for 
+\begin_inset Formula $a,b\in\mathbb{R}$
+\end_inset
+
+.
+\begin_inset Formula \begin{eqnarray*}
+\mathbb{E}[aX+bY] & = & \int\int(ax+by)p(x,y)\, dxdy\\
+ & = & \int\int axp(x,y)\, dxdy+\int\int byp(x,y)\, dxdy\\
+ & = & a\int\int xp(x,y)\, dxdy+b\int\int yp(x,y)\, dxdy\\
+ & = & a\int x\int p(x,y)\, dydx+b\int y\int p(x,y)\, dxdy\\
+ & = & a\int xp(x)\, dx+b\int yp(y)dy\\
+ & = & a\mathbb{E}[X]+b\mathbb{E}[Y]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
 \end_inset
 
 
