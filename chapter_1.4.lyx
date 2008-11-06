@@ -394,6 +394,165 @@ univariate functions
 \begin_layout Standard
 
 \series bold
+Remark (Gradient Descent)
+\end_layout
+
+\begin_layout Standard
+The gradient of a function 
+\begin_inset Formula $f$
+\end_inset
+
+ at a point 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ has a remarkable property.
+ It always points into the direction of steepest ascent of the function
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+.
+ This property is used in the so called 
+\emph on
+
+\begin_inset LatexCommand index
+name "gradient descent"
+
+\end_inset
+
+gradient descent
+\emph default
+ algorithm.
+ Starting at a random position 
+\begin_inset Formula $\mathbf{x}^{(0)}$
+\end_inset
+
+, gradient descent computes the gradient 
+\begin_inset Formula $\nabla f(\mathbf{x}^{(0)})$
+\end_inset
+
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $\mathbf{x}^{(0)}$
+\end_inset
+
+ and makes a small step in its direction (or in the opposite direction,
+ when minimizing a function).
+ Let us assume that we want to minimize a function (for maximizing, the
+ gradient is added and not subtracted).
+ We start at a random position 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\mathbf{x}^{(0)}$
+\end_inset
+
+, compute the gradient 
+\begin_inset Formula $\nabla f(\mathbf{x}^{(0)})$
+\end_inset
+
+ and obtain a new value for 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ via 
+\begin_inset Formula $\mathbf{x}^{(1)}=\mathbf{x}^{(0)}-\alpha\nabla f(\mathbf{x}^{(0)})$
+\end_inset
+
+.
+ At 
+\begin_inset Formula $\mathbf{x}^{(1)}$
+\end_inset
+
+, we repeat this procedure.
+ By that we obtain the general update rule 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{x}^{(t+1)} & = & \mathbf{x}^{(t)}-\alpha\nabla f(\mathbf{x}^{(t)}).\end{eqnarray*}
+
+\end_inset
+
+The art, somehow, is to choose the scaling constant 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ This is usually done by 
+\family default
+\series default
+\shape default
+\size default
+\emph on
+\bar default
+\noun default
+\color inherit
+
+\begin_inset LatexCommand index
+name "line search"
+
+\end_inset
+
+line search
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+ algorithms, that we do not describe here.
+ However, choosing a small constant value for 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ also works for simple examples.
+ The procedure is repeated until the gradient becomes zero, i.e.
+ 
+\begin_inset Formula $\nabla f(\mathbf{x}^{(t)})=(0,...,0)$
+\end_inset
+
+.
+ Gradient descent does not yield a global minimum.
+ It simply gives you the local minimum that you reach when running down
+ the surface defined by the function 
+\begin_inset Formula $f$
+\end_inset
+
+ starting at 
+\begin_inset Formula $\mathbf{x}^{(0)}$
+\end_inset
+
+.
+ Intuitively, you can imagine gradient descent as a small ball, that rolls
+ down a surface until it gets stuck in the next valley.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 Example (Least Squares cont'd)
 \end_layout
 
