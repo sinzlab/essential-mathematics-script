@@ -1,0 +1,2220 @@
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{1}
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Integrals
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "sec:Integrals"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Introduction and Definition of Integral
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Itemize
+I am sure that people have an intuition about what an integral is, but just
+ have trouble doing the actual calculations.
+ So, we should focus on just explaining calculation rules and calculating
+ some examples in the lectures, and leave out some theory.
+ But of course, we should leave it in the script so they can read up on
+ it.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sometimes we face the situation that we are only given the rate of change
+ 
+\begin_inset Formula $\dot{x}(t)$
+\end_inset
+
+ of some quantity of interest.
+ How can we convert this rate into an absolute value? One simple idea would
+ be to start with a fixed value 
+\begin_inset Formula $x_{0}:=x(t_{0})$
+\end_inset
+
+ and add up the changes 
+\begin_inset Formula $\dot{x}(t)\Delta t$
+\end_inset
+
+ for small intervals 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ until we arrive at the point 
+\begin_inset Formula $t_{n}$
+\end_inset
+
+ where we want to know the value of 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+x(t_{n}) & = & \sum_{i=0}^{n-1}\dot{x}(t_{i})\Delta t_{i}\\
+ & \mbox{with } & \Delta t_{i}=t_{i+1}-t_{i}.\end{eqnarray*}
+
+\end_inset
+
+ However, in most cases we will make an error, since the rate of change
+ within an interval 
+\begin_inset Formula $\Delta t_{i}$
+\end_inset
+
+ might vary.
+ By only looking at the rate at the interval borders 
+\begin_inset Formula $t_{i}$
+\end_inset
+
+, we completely ignore that.
+ We could make the intervals shorter to keep the error small, but in general
+ we will always get an answer 
+\begin_inset Formula $x(t_{n})$
+\end_inset
+
+ that is slightly wrong.
+ How can we avoid those errors? 
+\end_layout
+
+\begin_layout Standard
+In the previous section, we saw that taking the derivative of a function
+ is calculating the rate of change of this function at every point.
+ In this situation we were given the function and wanted to know the rate
+ of change.
+ Now, the situation is reverse.
+ Therefore, what we would really like to do is to reverse the process of
+ differentiation, i.e.
+ to get from the rate of change to the actual function value.
+ This is the subject of this chapter.
+ It will turn out that integration is not as easy as differentiation.
+ However, it has a nice geometrical interpretation that we already read
+ of the introductory example above.
+ Figure 
+\begin_inset LatexCommand ref
+reference "fig:approxIntegral"
+
+\end_inset
+
+ shows a picture of our approximate integration from above.
+ When looking at the sum 
+\begin_inset Formula $\sum_{i=0}^{n-1}\dot{x}(t_{i})\Delta t_{i}$
+\end_inset
+
+ we can interpret 
+\begin_inset Formula $\Delta t_{i}$
+\end_inset
+
+ as the width of a rectangle with height 
+\begin_inset Formula $\dot{x}(t_{i})$
+\end_inset
+
+.
+ Summing up their products then means summing up the areas of those rectangles.
+ We saw in earlier sections, that taking the derivative is the same as computing
+ the rate of change of a function for infinitesimal small steps along the
+ 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+ This infinitesimal small step was incoporated via taking the limit of the
+ differential quotient, when letting the stepsize go to zero.
+ Integration involves a similar operation that we just mention here.
+ When integrating, you really apply the approximate summation from above,
+ but with infinitesimal small 
+\begin_inset Formula $\Delta t_{i}$
+\end_inset
+
+.
+ This means that an integral is the limit of the sum from above when letting
+ 
+\begin_inset Formula $\Delta t_{i}$
+\end_inset
+
+ go to zero.
+ This limit of the sum is then denoted by a new symbol ''
+\begin_inset Formula $\int$
+\end_inset
+
+'', a stilised ''S'' for ''
+\bar under
+s
+\bar default
+um''.
+ The 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ is replaced by the symbol 
+\begin_inset Formula $dt$
+\end_inset
+
+, which indicates that 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ is infinitesimally small.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/approxgaussintegral.eps
+	lyxscale 50
+	width 6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figs/gaussintegral.eps
+	lyxscale 50
+	width 6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:approxIntegral"
+
+\end_inset
+
+Left: Geometrical interpretation of the approximate integration: Areas of
+ width 
+\begin_inset Formula $\Delta t_{i}$
+\end_inset
+
+ and height 
+\begin_inset Formula $\dot{x}(t_{i})$
+\end_inset
+
+ are summed up.
+ Right: Geometrical interpretation of integration: The integral of the displayed
+ funtion in the interval 
+\begin_inset Formula $[-1,1]$
+\end_inset
+
+ is the area under the curve of that function.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we are ready to give the geometrical interpretation of the integral
+ 
+\begin_inset Formula $\int_{t_{0}}^{t_{n}}\dot{x}(t)dt$
+\end_inset
+
+: By making the width of the rectangles infinitesimally small, the area
+ of all rectangles together is the area under the curve 
+\begin_inset Formula $\dot{x}(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Definition:
+\end_layout
+
+\begin_layout Standard
+The integral of the function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ from 
+\begin_inset Formula $a$
+\end_inset
+
+ to 
+\begin_inset Formula $b$
+\end_inset
+
+ is denoted by
+\begin_inset Formula $\int_{a}^{b}f(x)dx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can read of another important property of the integral from the geometrical
+ interpretation.
+ When computing our approximate integral, we did not make sure that the
+ function values of 
+\begin_inset Formula $\dot{x}(t)$
+\end_inset
+
+ where positive.
+ Since 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ was always negative, it could in principle happen, that the area 
+\begin_inset Formula $\dot{x}(t_{i})\Delta t_{i}$
+\end_inset
+
+ has a negative value.
+ In this case the area would really be subtracted from the whole area, instead
+ of being added.
+ Therefore, our approximate integral was really the signed area under the
+ curve.
+ This carries over to the real integral.
+ 
+\emph on
+The integral is the signed area under the graph of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ All parts of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ that lie under the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis will be subtracted from the whole area.
+
+\emph default
+ Therefore, if we really want to compute the area between the graph and
+ the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis, we have to find out where 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ crosses the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis and must compute the integrals between those points separately, putting
+ a minus in front of the integral where 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is under the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Example
+\end_layout
+
+\begin_layout Standard
+If a car is moving at constant speed 
+\begin_inset Formula $v,$
+\end_inset
+
+the distance it travels in time 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+ is given by 
+\begin_inset Formula $vt_{0}$
+\end_inset
+
+.
+ If we draw a plot of 
+\begin_inset Formula $v$
+\end_inset
+
+ against 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+, we can see that the distance travelled between times 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+ is given by the following shaded region.
+ This is also true if the speed 
+\begin_inset Formula $v$
+\end_inset
+
+ is not constant, but a function of time 
+\begin_inset Formula $v(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Therefore, the distance travelled between times 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+ can be computed by solving the integral 
+\begin_inset Formula $\int_{0}^{t_{0}}v(t)dt$
+\end_inset
+
+.
+ In the case of constant speed, the velocity 
+\begin_inset Formula $v$
+\end_inset
+
+ does not depend on 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ In this case we can alreay compute the integral geometrically.
+ As already said, it is the area under the constant curve between 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+.
+ This is simply 
+\begin_inset Formula $vt_{0}$
+\end_inset
+
+.
+ So far, we do not know how to compute the integral for the case where 
+\begin_inset Formula $v$
+\end_inset
+
+ depends on 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ We first have to introduce a few rules how to solve integrals.
+ This is what we are going to do in the following paragraphs.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/speedconst.eps
+	lyxscale 50
+	width 6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figs/speedvary.eps
+	lyxscale 50
+	width 6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:approxIntegral"
+
+\end_inset
+
+Distance travelled at time in the time interval 
+\begin_inset Formula $[0,3]$
+\end_inset
+
+ with constant speed (left) and with varying speed (right).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Most rules for solving simple integrals are actually the inversed rules
+ for differentiation.
+ Before reversing this rules we must make sure that integrating is indeed
+ the inverse of differentiation.
+\end_layout
+
+\begin_layout Subsubsection*
+Proposition (Integrating is the inverse of differentiating)
+\end_layout
+
+\begin_layout Standard
+Suppose that the function 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ is defined by 
+\begin_inset Formula $F(x)=\int_{0}^{x}f(s)ds$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ is the area under the curve from 
+\begin_inset Formula $0$
+\end_inset
+
+ to 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Then, 
+\begin_inset Formula $F'(x)=f(x),$
+\end_inset
+
+ provided that 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is continous at 
+\begin_inset Formula $x.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+
+\series medium
+\emph on
+\bar under
+Proof:
+\series default
+\emph default
+\bar default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Subsubsection*
+
+\series medium
+- draw picture as well
+\end_layout
+
+\begin_layout Subsubsection*
+
+\series medium
+- if pressed for time, leave this out
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For simplicity, suppose that 
+\begin_inset Formula $f(s)$
+\end_inset
+
+ is increasing near 
+\begin_inset Formula $x.$
+\end_inset
+
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+f(x)\Delta x & \leq\int_{x}^{x+\Delta x}f(s)ds & \leq f(x+\Delta x)\Delta x\\
+f(x) & \leq\frac{\int_{x}^{x+\Delta x}f(s)ds}{\Delta x} & \leq f(x+\Delta x).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can observe that 
+\begin_inset Formula \[
+F(x+\Delta x)-F(x)=\int_{x}^{x+\Delta x}f(s)ds,\]
+
+\end_inset
+
+so
+\begin_inset Formula \[
+f(x)\leq\frac{F(x+\Delta x)-F(x)}{\Delta x}\leq f(x+\Delta x).\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we let 
+\begin_inset Formula $\Delta x\rightarrow$
+\end_inset
+
+0, 
+\begin_inset Formula $f(x+\Delta x)\rightarrow f(x)$
+\end_inset
+
+ by continuity of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\frac{F(x+\Delta x)-F(x)}{\Delta x}\rightarrow F'(x)$
+\end_inset
+
+ by definition of derivative.
+ In summary,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+f(x)\leq F'(x)\leq f(x),\]
+
+\end_inset
+
+ which implies that 
+\begin_inset Formula $F'(x)=f(x).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Box$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The proposition shows, that integrating is really inverse differentiation.
+ That is why the integral is also sometimes called 
+\emph on
+
+\begin_inset LatexCommand index
+name "anti-derivative"
+
+\end_inset
+
+anti-derivative.
+
+\emph default
+ So far we have only dicussed so called 
+\emph on
+
+\begin_inset LatexCommand index
+name "definite integral"
+
+\end_inset
+
+definite integrals,
+\emph default
+ i.e.
+ integrals that are computed between two points on the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+ Often, we can also inverse the process of differentiation first and plug
+ in the borders of the integral later.
+ The notation for this kind of integral is the same except that the boundary
+ points are left out at the integral sign.
+ Now, we can collect all our kinds of integrals in a mathematical definition.
+\end_layout
+
+\begin_layout Subsubsection*
+Definition (Anti-Derivative)
+\end_layout
+
+\begin_layout Standard
+Any function 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ with the property that 
+\begin_inset Formula $F'(x)=f(x)$
+\end_inset
+
+ is called an 
+\emph on
+anti-derivative
+\emph default
+ or 
+\emph on
+indefinite integral
+\emph default
+ of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ A indefinite integral is denoted by 
+\begin_inset Formula $F(x)=\int f(s)ds$
+\end_inset
+
+.
+ Once we have the indefinite integral, calculating any definite integral
+ can be computed via: 
+\begin_inset Formula \[
+\int_{a}^{b}f(s)ds=F(b)-F(a).\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ is an anti-derivative, so is 
+\begin_inset Formula $F(x)+C$
+\end_inset
+
+ for any constant 
+\begin_inset Formula $C.$
+\end_inset
+
+ This constant does not matter, because if evaluate the integral, the constants
+ cancel: 
+\begin_inset Formula $F(b)+C-(F(a)+C)=F(b)-F(a)+C-C=F(b)-F(a).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In many cases, the shorthand 
+\begin_inset Formula $[F(x)]_{a}^{b}=F(b)-F(a)$
+\end_inset
+
+ is used.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The relationship between integrating and differentiating allows us to calculate
+ integrals.
+ Furthermore, once we have calculated an indefinite integral, we can easily
+ check whether it is correct by just differentiating it again.
+ If we get the original function we started with, everything is correct,
+ otherwise there is a mistake somewhere.
+ One could even just guess the integral, and then verify whether the guess
+ is correct.
+ So, even if integrating can be hard sometimes, checking whether the result
+ is correct is almost always easy.
+\end_layout
+
+\begin_layout Subsubsection*
+Example
+\end_layout
+
+\begin_layout Standard
+Even without knowing any rule how to integrate so far, we know the anti-derivati
+ve of 
+\begin_inset Formula $f(x)=e^{x}$
+\end_inset
+
+ is again 
+\begin_inset Formula $F(x)=e^{x}+C$
+\end_inset
+
+, since 
+\begin_inset Formula $\left(e^{x}\right)'=e^{x}$
+\end_inset
+
+.
+ The area under the graph of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ between 
+\begin_inset Formula $0$
+\end_inset
+
+ and some other point is given by the integral 
+\begin_inset Formula \begin{eqnarray*}
+\int_{0}^{T}f(x)dx & = & F(T)-F(0)\\
+ & = & e^{T}-e^{0}\\
+ & = & e^{T}-1.\end{eqnarray*}
+
+\end_inset
+
+ For 
+\begin_inset Formula $T\rightarrow\infty$
+\end_inset
+
+ the integral diverges, which means that the area under 
+\begin_inset Formula $f(x)=e^{x}$
+\end_inset
+
+ is not finite.
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Exercise
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+fbox{
+\backslash
+bf{
+\backslash
+Large 
+\backslash
+sf E}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Calculate the derivative of 
+\begin_inset Formula $F(x)=\frac{1}{n+1}x^{n+1}$
+\end_inset
+
+ and thus verify that 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ is the anti-derivative of 
+\begin_inset Formula $f(x)=x^{n}.$
+\end_inset
+
+ For which values of 
+\begin_inset Formula $n$
+\end_inset
+
+ is this not valid?
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you have solved the exercise, you have verified that the indefinite integral
+ of 
+\begin_inset Formula $f(x)=x^{n}$
+\end_inset
+
+ is 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ for all 
+\begin_inset Formula $n\not=-1$
+\end_inset
+
+.
+ This is the only rule we will introduce here.
+ More advanced rules will be introduced in the next section.
+ Like for differentiation, there are a few anti-derivatives that we will
+ not prove here and which you should just remember, because they occur very
+ often when calculating integrals.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+
+\series bold
+Anti-Derivatives of important functions
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=a\Rightarrow F(x)=ax+C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=x^{a}\Rightarrow F(x)=\frac{1}{a+1}x^{a+1}+C$
+\end_inset
+
+ for 
+\begin_inset Formula $a\not=-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=\sin(x)\Rightarrow F(x)=-\cos(x)+C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=\cos(x)\Rightarrow F(x)=\sin(x)+C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=e^{x}\Rightarrow F(x)=e^{x}+C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)=\frac{1}{x}\Rightarrow F(x)=\ln(x)+C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Example (Approximating Integrals with Matlab)
+\end_layout
+
+\begin_layout Standard
+Using a similar idea as for taking numerical derivatives we can also numerically
+ compute approximate values of integrals in matlab.
+ This idea is to use the definition of an integral as the sum of the areas
+ of rectangles with height 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ and width 
+\begin_inset Formula $\Delta x$
+\end_inset
+
+ in the limit of infinitesimally small 
+\begin_inset Formula $\Delta x$
+\end_inset
+
+.
+ In order to give you a function, that you can reuse, we will use a bit
+ more advanced matlab programming.
+ Assume you are given a matlab function 
+\begin_inset Formula $f$
+\end_inset
+
+ which returns the function values at the points that you call it on.
+ You can realize that in matlab via a so called 
+\emph on
+function handle.
+ 
+\emph default
+A function handle is a variable, which is really a function.
+ That means you can simply call the variable as if it would be a function.
+ The important point is, that you can write code that uses a function for
+ which you do not know what it will be exatly.
+ For now, we simply a assign a function to a function handle 
+\family typewriter
+f
+\family default
+.
+ This seems completely pointless now, but will be become clear later.
+ You can assign functions to variable by using the ``
+\family typewriter
+@
+\family default
+''-symbol.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+ >> f = @exp % assign f to be the exponential function
+\end_layout
+
+\begin_layout Standard
+
+f =
+\end_layout
+
+\begin_layout Standard
+
+    @exp 
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we go on with approximating our integral.
+ First, we choose a certain small stepwidth 
+\begin_inset Formula $\Delta x$
+\end_inset
+
+, integral border between which we want to compute the integral, and base
+ points at which we will evaluate the function to get the height of the
+ rectangles.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> dx = .01; % set stepwidth
+\end_layout
+
+\begin_layout Standard
+
+>> a = 1; b = 2; % set integral borders
+\end_layout
+
+\begin_layout Standard
+
+>> x = [a:dx:b]; % get base points
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, we evaluate the function 
+\family typewriter
+f
+\family default
+ (which is 
+\begin_inset Formula $\exp$
+\end_inset
+
+ at the moment) at the base points.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> fval = f(x); % evaluate function handle at x
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we use the fact that 
+\begin_inset Formula \begin{eqnarray*}
+\int_{a}^{b}f(x)dx & \approx & \sum_{i=1}^{n}f(x_{i})\Delta x\\
+ & = & \Delta x\sum_{i=1}^{n}f(x_{i}),\end{eqnarray*}
+
+\end_inset
+
+where is the number of our base points 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $f(x_{i})$
+\end_inset
+
+ are the values contained in the array 
+\family typewriter
+fval
+\family default
+.
+ Translating that formula into matlab yields:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> I = sum(fval)*dx; % compute approximate integral
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can use the fact that we did not directly specify what function
+ 
+\family typewriter
+f
+\family default
+ exactly is to write a matlab function which we can reuse.
+ For that purpose, we create a file with the name of the function by:
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> edit integrate.m
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In that file we specify the function.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+function I = integrate(f,a,b,dx)
+\end_layout
+
+\begin_layout Standard
+
+    x = [a:dx:b]; % get base points
+\end_layout
+
+\begin_layout Standard
+
+    fval = f(x); % evaluate function handle at x     
+\end_layout
+
+\begin_layout Standard
+
+    I = sum(fval)*dx; % compute approximate integral
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The code above defines a function named 
+\family typewriter
+integrate
+\family default
+ that takes four input arguments: the function handle 
+\family typewriter
+f
+\family default
+, the integral boundaries 
+\family typewriter
+a
+\family default
+ and 
+\family typewriter
+b
+\family default
+ and the stepwidth 
+\family typewriter
+dx
+\family default
+.
+ It returns the approximate value of the integral 
+\begin_inset Formula $\int_{a}^{b}f(x)dx$
+\end_inset
+
+ as we compute it above.
+ However, we can call it on different functions and different integral boundarie
+s now, without having to redefine 
+\family typewriter
+a
+\family default
+ and 
+\family typewriter
+b
+\family default
+ all the time.
+ Our example from above can be reproduced via:
+\newline
+
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> I = integrate(@exp,1,2,.01)
+\end_layout
+
+\begin_layout Standard
+
+I =
+\end_layout
+
+\begin_layout Standard
+
+    4.7213 
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Other uses of the function could look like
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Standard
+
+>> I = integrate(@cos,0,2,.01)
+\end_layout
+
+\begin_layout Standard
+
+I =
+\end_layout
+
+\begin_layout Standard
+
+    0.9122 
+\end_layout
+
+\begin_layout Standard
+
+>> I = integrate(@log,1,3,.001)
+\end_layout
+
+\begin_layout Standard
+
+I =
+\end_layout
+
+\begin_layout Standard
+
+    1.2964 
+\end_layout
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Evaluating and Transforming Integrals
+\end_layout
+
+\begin_layout Subsubsection
+Integrals and Sums
+\end_layout
+
+\begin_layout Standard
+Above, we have seen that the integral of 
+\begin_inset Formula $f$
+\end_inset
+
+ is the limit of a sum of infinitesimal narrow rectangles with heights given
+ by the function values 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is the sum of two functions 
+\begin_inset Formula $f(x)=g_{1}(x)+g_{2}(x)$
+\end_inset
+
+, we can split this sum into two.
+ Therefore, the integral of a sum of two functions is the sum of their integrals
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\int_{a}^{b}(f(x)+g(x))dx=\int_{a}^{b}f(x)dx+\int_{a}^{b}g(x)dx.\]
+
+\end_inset
+
+This rule is of course also valid for a sum of an arbitrary number of functions.
+\end_layout
+
+\begin_layout Standard
+By the same reasoning, constant factors can be pulled out of the integral,
+ because constant factors can be pulled out of sums:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\int_{a}^{b}c\cdot f(x)dx=c\cdot\int_{a}^{b}f(x)dx.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Integrals of Polynomials
+\end_layout
+
+\begin_layout Standard
+Now we are equiped with enough rules to be able to calculate the anti-derivative
+ of polynomials.
+ We show how to do this with a small example.
+\end_layout
+
+\begin_layout Subsubsection*
+Example
+\end_layout
+
+\begin_layout Standard
+We calculate the anti-derivative of 
+\begin_inset Formula $f(x)=2x^{2}+x+1$
+\end_inset
+
+: 
+\begin_inset Formula \begin{eqnarray*}
+F(x) & = & \int f(x)dx\\
+ & = & \int2x^{2}+x+1dx\\
+ & = & \int2x^{2}dx+\int xdx+\int1dx\\
+ & = & \frac{2}{3}x^{3}+\frac{1}{2}x^{2}+x.\end{eqnarray*}
+
+\end_inset
+
+We can use this anti-derivative to compute the integral 
+\begin_inset Formula $\int_{1}^{2}f(x)dx$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\int_{1}^{2}f(x)dx & = & F(2)-F(1)\\
+ & = & \frac{16}{3}+1+2-\frac{2}{3}-\frac{1}{2}-1\\
+ & = & \frac{37}{6}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Example
+\end_layout
+
+\begin_layout Standard
+Before coming to more advanced rules for calculating integrals, we show
+ a more sophisticated example: What is the integral of 
+\begin_inset Formula $f(x)=|x|$
+\end_inset
+
+ from 
+\begin_inset Formula $-10$
+\end_inset
+
+ to 
+\begin_inset Formula $10$
+\end_inset
+
+? At first glance, it is not clear how we should integrate 
+\begin_inset Formula $|x|$
+\end_inset
+
+.
+ Therefore, we apply a simple trick.
+ Since an integral is simply an infinite sum of infinitesimal small rectangle,
+ it does not matter if we split an integral into two ''sums''.
+ Therefore, we can split the integral 
+\begin_inset Formula $\int_{-10}^{10}|x|dx$
+\end_inset
+
+ into 
+\begin_inset Formula $\int_{-10}^{10}|x|dx=\int_{-10}^{0}|x|dx+\int_{0}^{10}|x|dx$
+\end_inset
+
+.
+ Between those boundaries, we can use the piecewise definition of 
+\begin_inset Formula $|x|$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\int_{-10}^{10}|x|dx & = & \int_{-10}^{0}-x\, dx+\int_{0}^{10}x\, dx\\
+ & = & [-\frac{1}{2}x^{2}]_{-10}^{0}+[\frac{1}{2}x^{2}]_{0}^{10}\\
+ & = & \frac{100}{2}+\frac{100}{2}=100.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Integrals and Change of Variables
+\end_layout
+
+\begin_layout Standard
+Sometimes, it is easy to integrate 
+\begin_inset Formula $f(s),$
+\end_inset
+
+ but we actually want to integrate 
+\begin_inset Formula $g(x)=f(x+s)$
+\end_inset
+
+ .
+ The new function 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ can be seen as a shifted version of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, so we can integrate by shifting the limits of integration as well.
+ This leads the rule:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\int_{a}^{b}f(x+s)dx=\int_{a+s}^{b+s}f(x)dx.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Standard
+Draw picture on the board, especially point out how the shift works, i.e.
+ that a shift by t is equivalent to using x MINUS t instead of t.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\int_{0}^{10}(x-5)^{2}dx=\int_{-5}^{5}x^{2}dx=\frac{2}{3}5^{3}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, we might want to integrate a function 
+\begin_inset Formula $g(x)=f(sx)$
+\end_inset
+
+ where the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis has been rescaled.
+ In this case, we also have to adjust the limits of integration, but also
+ get an extra factor in front of the integral.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\int_{a}^{b}f(sx)dx={\frac{1}{s}\int}_{as}^{bs}f(x)dx\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Standard
+Draw picture, point out where the extra factor comes from.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\int_{0}^{3}(2x)^{2}dx={\frac{1}{2}\int}_{0}^{6}x^{2}dx=2\cdot\frac{1}{3}\cdot8\cdot27\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\int_{0}^{1}e^{2x}dx={\frac{1}{2}\int}_{0}^{2}e^{x}dx=\frac{1}{2}\left(e^{2}-1\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\int_{0}^{2\pi}\sin\left(\frac{x}{2}\right)={2\int}_{0}^{\pi}\sin(x)dx=2\cdot2.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following box provides a summary of all transformation rules, that we
+ have seen so far.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Standard
+
+\series bold
+Transformations rules for integrals
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Summation Rule:
+\bar default
+ The integral of a sum of is the sum of the integrals: 
+\begin_inset Formula \begin{eqnarray*}
+\int_{a}^{b}\sum_{i=1}^{n}g_{i}(x)dx & = & \sum_{i=1}^{n}\int_{a}^{b}g_{i}(x)dx.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Constant factors can be pulled out of the integral:
+\begin_inset Formula \begin{eqnarray*}
+\int_{a}^{b}c\cdot f(x)dx & = & c\cdot\int_{a}^{b}f(x)dx.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Integrating from 
+\begin_inset Formula $a$
+\end_inset
+
+ to 
+\begin_inset Formula $c$
+\end_inset
+
+ is the same as integrating from 
+\begin_inset Formula $a$
+\end_inset
+
+ to 
+\begin_inset Formula $b$
+\end_inset
+
+, and then 
+\begin_inset Formula $b$
+\end_inset
+
+ to 
+\begin_inset Formula $c$
+\end_inset
+
+, and adding the two integrals (This is useful for evaluating integrals
+ over piecewise functions):
+\begin_inset Formula \begin{eqnarray*}
+\int_{a}^{b}\cdot f(x)dx & +\int_{b}^{c}f(x)dx= & \int_{a}^{c}f(x)dx.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Shift Rule
+\bar default
+:
+\begin_inset Formula \[
+\int_{a}^{b}f(x+s)dx=\int_{a+s}^{b+s}f(x)dx.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Rescaling Rule
+\bar default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\int_{a}^{b}f(sx)dx={\frac{1}{s}\int}_{as}^{bs}f(x)dx\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Integrals and Statistics
+\end_layout
+
+\begin_layout Standard
+Integrals are extremely important in probability theory and statistics.
+ The expected value of a random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ is simply the integral 
+\begin_inset Formula $E(X)=\int_{\Omega}x\cdot p(x)dx$
+\end_inset
+
+, where 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is the probability density function of 
+\begin_inset Formula $x.$
+\end_inset
+
+ The subscribt 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ indicates that we choose the boundaries of the integral such that all possible
+ values of the random variable are covered.
+ The integral is often not too hard to do.
+ Unfortunately, for our favourite distribution, the 
+\emph on
+
+\begin_inset LatexCommand index
+name "Normal distribution"
+
+\end_inset
+
+Normal distribution
+\emph default
+ or 
+\emph on
+
+\begin_inset LatexCommand index
+name "Gaussian"
+
+\end_inset
+
+Gaussian
+\emph default
+, calculating the expectation involves some techniques that are beyond the
+ scope of this course
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+namely either transforming to polar coordinates or using contour integration
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Examples
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+The Expectation of a Uniform Distribution:
+\series default
+
+\newline
+The pdf of a Uniform Distribution on 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ is 
+\begin_inset Formula $f(x)=1.$
+\end_inset
+
+ The expectation is 
+\begin_inset Formula $\mathbb{E}[X]=\int_{0}^{1}xdx=\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+The Variance of a Uniform Distribution
+\series default
+
+\newline
+The Variance is 
+\begin_inset Formula $\mathbb{V}[X]=\mathbb{E}[X^{2}]-[\mathbb{E}[X]]^{2}.$
+\end_inset
+
+ So, for the Uniform distribution, 
+\begin_inset Formula $\mathbb{V}[X]=\int_{o}^{1}x^{2}dx-\frac{1}{4}=\frac{1}{3}-\frac{1}{4}=\frac{1}{12}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+The expectation function 
+\begin_inset Formula $\mathbb{E}$
+\end_inset
+
+ is a linear function for any distribution:
+\newline
+
+\series default
+Consider the random variables 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ and their joint distribution 
+\begin_inset Formula $p(x,y)$
+\end_inset
+
+.
+ The expectation of 
+\begin_inset Formula $X$
+\end_inset
+
+ is given by 
+\begin_inset Formula $\mathbb{E}[X]=\int xp(x)dx$
+\end_inset
+
+, the expectation of 
+\begin_inset Formula $Y$
+\end_inset
+
+ by 
+\begin_inset Formula $\mathbb{E}[y]=\int yp(y)dy$
+\end_inset
+
+.
+ By not specifying any integral boundaries we silently assume that the integrals
+ are taken over the whole range of possible values of each random variable.
+ The single distributions 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $p(y)$
+\end_inset
+
+, called 
+\emph on
+
+\begin_inset LatexCommand index
+name "marginal distribution"
+
+\end_inset
+
+marginal distributions
+\emph default
+ or simply 
+\emph on
+
+\begin_inset LatexCommand index
+name "marginals"
+
+\end_inset
+
+marginals
+\emph default
+, can be computed from the joint distribution 
+\begin_inset Formula $p(x,y)$
+\end_inset
+
+ by 
+\begin_inset Formula $p(x)=\int p(x,y)dy$
+\end_inset
+
+ and 
+\begin_inset Formula $p(y)=\int p(x,y)dx$
+\end_inset
+
+.
+ This computation is usually referred to as ``integrating out variables''.
+ What it means is, that when writing 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ we do not care about the value of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ For that reason we have to collect all the probability mass of the 
+\begin_inset Formula $y$
+\end_inset
+
+s that occur together with that 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ This is exactly what we do by integrating.
+ 
+\newline
+Eventhough, we do not know anything about the distribution 
+\begin_inset Formula $p(x,y)$
+\end_inset
+
+, by simply using properties of integrals, we can show that the expectation
+ is a linear function.
+ For that purpose we have to show that (i) the expectation of the sum of
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ is the sum of the expectations and (ii) the expectation of scaled versions
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+ is the scaled expectation of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ For the sake of compactness, we merge (i) and (ii) in a single computation.
+ We show that 
+\begin_inset Formula $\mathbb{E}[aX+bY]=a\mathbb{E}[X]+b\mathbb{E}[Y]$
+\end_inset
+
+ for 
+\begin_inset Formula $a,b\in\mathbb{R}$
+\end_inset
+
+.
+\begin_inset Formula \begin{eqnarray*}
+\mathbb{E}[aX+bY] & = & \int\int(ax+by)p(x,y)\, dxdy\\
+ & = & \int\int axp(x,y)\, dxdy+\int\int byp(x,y)\, dxdy\\
+ & = & a\int\int xp(x,y)\, dxdy+b\int\int yp(x,y)\, dxdy\\
+ & = & a\int x\int p(x,y)\, dydx+b\int y\int p(x,y)\, dxdy\\
+ & = & a\int xp(x)\, dx+b\int yp(y)dy\\
+ & = & a\mathbb{E}[X]+b\mathbb{E}[Y]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

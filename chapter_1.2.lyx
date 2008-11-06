@@ -2558,6 +2558,10 @@ end{verbatim}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 You surely noticed that we were only able to compute 
 \begin_inset Formula $f'(x)$
 \end_inset
@@ -3023,12 +3027,57 @@ a maximum.
 \begin_inset Formula $f''(x_{0})=0$
 \end_inset
 
-, then 
+, but 
+\begin_inset Formula $f'''(x_{0})\not=0$
+\end_inset
+
+ then 
 \begin_inset Formula $f$
 \end_inset
 
  has a saddle-point at 
 \begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ In general, if the first 
+\begin_inset Formula $n$
+\end_inset
+
+ derivatives are zero and the 
+\begin_inset Formula $(n+1)$
+\end_inset
+
+th derivative 
+\begin_inset Formula $f^{(n+1)}(x_{0})$
+\end_inset
+
+ is not equal to zero, then 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is a minimum, if 
+\begin_inset Formula $n+1$
+\end_inset
+
+ is even and 
+\begin_inset Formula $f^{(n+1)}(x_{0})>0$
+\end_inset
+
+, a maximum if 
+\begin_inset Formula $n+1$
+\end_inset
+
+ is even and 
+\begin_inset Formula $f^{(n+1)}(x_{0})<0$
+\end_inset
+
+, and a saddle-point if 
+\begin_inset Formula $n+1$
+\end_inset
+
+ is odd and 
+\begin_inset Formula $f^{(n+1)}(x_{0})\not=0$
 \end_inset
 
 .
@@ -3059,7 +3108,11 @@ Let
 \begin_inset Formula $f$
 \end_inset
 
- be a twice differentiable function.
+ be a 
+\begin_inset Formula $(n+1)$
+\end_inset
+
+ times differentiable function.
  Then 
 \begin_inset Formula $f$
 \end_inset
@@ -3082,14 +3135,22 @@ mimimum
 \end_inset
 
  if and only if 
-\begin_inset Formula $f'(x_{0})=0$
+\begin_inset Formula $f^{(k)}(x_{0})=0$
+\end_inset
+
+ for 
+\begin_inset Formula $k=1,...,n$
 \end_inset
 
  and 
-\begin_inset Formula $f''(x_{0})>0$
+\begin_inset Formula $f^{(n+1)}(x_{0})>0$
 \end_inset
 
-.
+ with 
+\begin_inset Formula $(n+1)$
+\end_inset
+
+ even.
 \end_layout
 
 \begin_layout Itemize
@@ -3107,14 +3168,22 @@ maximum
 \end_inset
 
  if and only if 
-\begin_inset Formula $f'(x_{0})=0$
+\begin_inset Formula $f^{(k)}(x_{0})=0$
+\end_inset
+
+ for 
+\begin_inset Formula $k=1,...,n$
 \end_inset
 
  and 
-\begin_inset Formula $f''(x_{0})<0$
+\begin_inset Formula $f^{(n+1)}(x_{0})<0$
 \end_inset
 
-.
+ with 
+\begin_inset Formula $(n+1)$
+\end_inset
+
+ even.
 \end_layout
 
 \begin_layout Itemize
@@ -3133,14 +3202,22 @@ name "saddle-point"
 \end_inset
 
  if and only if 
-\begin_inset Formula $f'(x_{0})=0$
+\begin_inset Formula $f^{(k)}(x_{0})=0$
+\end_inset
+
+ for 
+\begin_inset Formula $k=1,...,n$
 \end_inset
 
  and 
-\begin_inset Formula $f''(x_{0})=0$
+\begin_inset Formula $f^{(n+1)}(x_{0})\not=0$
 \end_inset
 
-.
+ with 
+\begin_inset Formula $(n+1)$
+\end_inset
+
+ odd.
 \end_layout
 
 \end_inset
