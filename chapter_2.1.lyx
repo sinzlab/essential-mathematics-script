@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -73,26 +73,6 @@ A vector is a shorthand notation for a ordered set of numbers
 x_{1}\\
 \vdots\\
 x_{n}\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-first, lets go from examples to definition, second, I think that we should
- introduce vectors first, and then talk about linear functions.
- Also, maybe it is a good idea to ask the audience at the beginning of the
- lecture how many of them EVER had a course in linalg.
- Note that while we find linear functions and vectors intutive, and think
- they are great ways of explaining thinks like angles between functions,
- student who have never had a linalg class usually find neither vectors
- and linear functions intuitive, so we should not take that as given...
-\end_layout
 
 \end_inset
 
@@ -384,6 +364,18 @@ r_{n}\end{array}\right).$
 \end_layout
 
 \begin_layout Itemize
+The color of a pixel, e.g.
+ in the RGB color space, can be written as a vector 
+\begin_inset Formula $\mathbf{c}=\left(\begin{array}{c}
+r\\
+g\\
+b\end{array}\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 The pixel intensities of an 
 \begin_inset Formula $n\times m$
 \end_inset
@@ -478,7 +470,7 @@ I
 \end_layout
 
 \begin_layout Standard
-As we just saw, quite a few objects can be described by vectors.
+As we just saw, quite a few objects can naturally be described by vectors.
  Additionally, it is possible to carry out certain operations with these
  objects.
  E.g.
@@ -514,8 +506,8 @@ x_{n}\end{array}\right)$
 \end_inset
 
 .
- In order to indicate that a symbol denotes a vector, it is written in bold
- font.
+ In order to indicate that a symbol denotes a vector, it is usually written
+ in bold font.
  The set of all 
 \begin_inset Formula $n$
 \end_inset
@@ -668,20 +660,6 @@ x_{n}\end{array}\right)\\
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-I would first introduce the euclidean norm and the scalar product by their
- 2-D intutions, and not mix linear functions and vectors just yet.
- Also, the specific example might cause confusion between scalar product
- and multiplication by a scalar.
- General idea: from specific to general, so norm first, then dot-product.
- 
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -3093,12 +3071,12 @@ From the exampe above, we can learn two important facts.
 \end_inset
 
  and write them in vector notation 
-\begin_inset Formula $\bm\lambda=(\lambda_{1},...,\lambda_{n})^{\top}$
+\begin_inset Formula $\bm{\lambda}=(\lambda_{1},...,\lambda_{n})^{\top}$
 \end_inset
 
 .
  We can just use these new coordinates 
-\begin_inset Formula $\bm\lambda$
+\begin_inset Formula $\bm{\lambda}$
 \end_inset
 
  to do our computations with 
