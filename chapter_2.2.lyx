@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -49,6 +49,14 @@
 
 \begin_layout Section
 Matrices
+\end_layout
+
+\begin_layout Standard
+Matrices are really nothing but a very convenient notation for (linear)
+ transformations on vectors.
+ For example, the transformations of stretching a vector, or rotating it,
+ or reflecting it can all be written as matrix products.
+ In fact, every linear function can be written as a matrix product:
 \end_layout
 
 \begin_layout Standard
@@ -109,7 +117,666 @@ reference "sub:LinearFunctions"
 \end_layout
 
 \begin_layout Paragraph
-Example
+Example 1
+\end_layout
+
+\begin_layout Standard
+In the photoreceptors of the retina, color is represented by the activation
+ of L, M and S cones (which are selective to 'red', 'green' and 'blue' light,
+ respectively.) In a crude approximation, the classical view of color vision
+ is that, at later processing stages, the color of a stimulus is rather
+ represented by two 'color-opponent' channels, and a 'luminance' channel.
+ Luminance could be computed by simply adding the activities of all cones:
+ 
+\begin_inset Formula $Lum=L+M+S.$
+\end_inset
+
+ the 'red-green' channel could be computed by subtracting the M cone activity
+ from the S cones, 
+\begin_inset Formula $RG=L-M,$
+\end_inset
+
+ and the 'blue yellow' channel by subtracting a combination of M and L from
+ S: 
+\begin_inset Formula $BY=S-(M+L).$
+\end_inset
+
+ To sum up: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\]
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray*}
+RG & = & L-M+0\cdot S\\
+BY & = & -L-M+S\\
+Lum & = & L+M+S.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This can be written in matrix notation as
+\begin_inset Formula \[
+\left(\begin{array}{c}
+RG\\
+BY\\
+Lum\end{array}\right)=\left(\begin{array}{ccc}
+1 & -1 & 0\\
+-1 & -1 & 1\\
+1 & 1 & 1\end{array}\right)\left(\begin{array}{c}
+L\\
+M\\
+S\end{array}\right).\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, multiplying the vector of cone-activities by this matrix returns the
+ vector of channel-activies.
+ This mapping from one 
+\begin_inset Formula $3$
+\end_inset
+
+ dimensional vector to another 
+\begin_inset Formula $3$
+\end_inset
+
+ dimensional vector can be summarized succinctly by a matrix product.
+\end_layout
+
+\begin_layout Standard
+Now, we will formally define what we mean by a matrix, and by a matrix-vector
+ product:
+\end_layout
+
+\begin_layout Subsubsection*
+Definition (Matrix and matrix-vector product)
+\end_layout
+
+\begin_layout Standard
+A matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ of size 
+\begin_inset Formula $m$
+\end_inset
+
+ by 
+\begin_inset Formula $n$
+\end_inset
+
+ is a collection of numbers of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{A}=\left(\begin{array}{cccc}
+A_{11} & A_{12} & \cdots & A_{1n}\\
+A_{21} & A_{22} &  & A_{2n}\\
+\vdots & \vdots & \dots & \vdots\\
+A_{m1} & A_{m2} & \dots & A_{mn}\end{array}\right).\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The matrix product 
+\begin_inset Formula $y=Ax$
+\end_inset
+
+ between an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ matrix and an 
+\begin_inset Formula $n$
+\end_inset
+
+ dimensional vector x is defined to be
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+y=Ax=\left(\begin{array}{c}
+\sum_{i=1}^{n}A_{1i}x_{i}\\
+\sum_{i=1}^{n}A_{2i}x_{i}\\
+\vdots\\
+\sum_{i=1}^{n}A_{mi}x_{i}\end{array}\right).\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We often say that 
+\begin_inset Formula $x$
+\end_inset
+
+ is 'pre-multiplied' by 
+\begin_inset Formula $A.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Note
+\end_layout
+
+\begin_layout Itemize
+We can see that multiplying a vector by a matrix is really nothing but a
+ couple of dot products: To compute the first element of 
+\begin_inset Formula $y,$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+ we simply compute the dot product between 
+\begin_inset Formula $x$
+\end_inset
+
+ and the first row of 
+\begin_inset Formula $A:$
+\end_inset
+
+ 
+\begin_inset Formula $y_{1}=\sum_{i=1}^{n}A_{1i}x_{i}=\langle A_{(1)},x\rangle,$
+\end_inset
+
+ where we define 
+\begin_inset Formula $A_{(1)}=(A_{11},A_{12},\ldots,A_{1n}).$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For matrix-vector multiplication to make sense, the sizes have to match:
+ If 
+\begin_inset Formula $x$
+\end_inset
+
+ has 
+\begin_inset Formula $n$
+\end_inset
+
+ elements, we can only compute 
+\begin_inset Formula $Ax$
+\end_inset
+
+ if 
+\begin_inset Formula $A$
+\end_inset
+
+ is of size 
+\begin_inset Formula $m\times n$
+\end_inset
+
+! Thus, if 
+\begin_inset Formula $m\neq n,$
+\end_inset
+
+ 
+\begin_inset Formula $Ax$
+\end_inset
+
+ is defined, but 
+\begin_inset Formula $xA$
+\end_inset
+
+ would not be defined!
+\end_layout
+
+\begin_layout Itemize
+The result of multiplying an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ matrix to a vector of size 
+\begin_inset Formula $n\times$
+\end_inset
+
+1 is always a vector of size 
+\begin_inset Formula $m\times1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Examples of matrices
+\end_layout
+
+\begin_layout Itemize
+The identify matrix is a boring matrix which does not do anything.
+ Multiplying any vector by it leaves it unchanged:
+\begin_inset Formula \begin{eqnarray*}
+\\\mathbf{I} & = & (\mathbf{e}_{1},\mathbf{e}_{2},...,\mathbf{e}_{n})\\
+ & = & \left(\begin{array}{cccc}
+1 & 0 & \dots & 0\\
+\vdots & 1 & \ddots & 0\\
+0 & \vdots & \dots & \vdots\\
+0 & 0 & \dots & 1\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+Despite its boringness, this matrix occurs so frequently that we give it
+ its own symbol, namely uppercase 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+.
+ This should not be confused with images, that we also denote by 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+.
+ However, it should be clear from the context what we mean by 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+.
+\newline
+The result of multplying a vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ with the identity matrix is just the vector itself:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Ix} & = & \left(\begin{array}{cccc}
+1 & 0 & \dots & 0\\
+\vdots & 1 & \ddots & 0\\
+0 & \vdots & \dots & \vdots\\
+0 & 0 & \dots & 1\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+\vdots\\
+x_{n}\end{array}\right)\\
+ & = & \left(\begin{array}{c}
+\mathbf{e}_{1}^{\top}\mathbf{x}\\
+\vdots\\
+\mathbf{e}_{n}^{\top}\mathbf{x}\end{array}\right)\\
+ & = & \left(\begin{array}{c}
+x_{1}\\
+\vdots\\
+x_{n}\end{array}\right)=\mathbf{x}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Matrices that look very similar to the identity matrix, are 
+\emph on
+
+\begin_inset LatexCommand index
+name "permutation matrices"
+
+\end_inset
+
+permutation matrices
+\emph default
+.
+ A permutation simply changes the order of coordinates of a vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+.
+ Let us look at a 3D example.
+ Let 
+\begin_inset Formula $\mathbf{x}=(x_{1},x_{2},x_{3})^{\top}$
+\end_inset
+
+ and let 
+\begin_inset Formula $f$
+\end_inset
+
+ be the permutation that swaps 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $f(\mathbf{x})=(x_{2},x_{1},x_{3})$
+\end_inset
+
+.
+ The corresponding permutation matrix is given by
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{P} & = & \left(\begin{array}{ccc}
+0 & 1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 1\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+
+\newline
+Multiplying a three dimensional vector 
+\begin_inset Formula $\mathbf{x}=(x_{1},x_{2},x_{3})^{\top}$
+\end_inset
+
+ with our example of a permutation matrix yields 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Px} & = & \left(\begin{array}{ccc}
+0 & 1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 1\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}\end{array}\right)\\
+ & = & \left(\begin{array}{c}
+\mathbf{e}_{2}^{\top}\mathbf{x}\\
+\mathbf{e}_{1}^{\top}\mathbf{x}\\
+\mathbf{e}_{3}^{\top}\mathbf{x}\end{array}\right)\\
+ & = & \left(\begin{array}{c}
+x_{2}\\
+x_{1}\\
+x_{3}\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In geometry, 
+\emph on
+
+\begin_inset LatexCommand index
+name "rotation matrices"
+
+\end_inset
+
+rotation matrices
+\emph default
+ play an important role: For a fixed a rotation angle 
+\begin_inset Formula $\varphi$
+\end_inset
+
+, rotating vectors is linear mapping, since it does not matter if we add
+ two vectors, rotate the result by 
+\begin_inset Formula $\varphi$
+\end_inset
+
+, or do it the other way around.
+ In 2D there is only one rotation matrix for a given angle 
+\begin_inset Formula $\varphi$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{R} & = & \left(\begin{array}{cc}
+\cos\varphi & -\sin\varphi\\
+\sin\varphi & \cos\varphi\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+In 3D we have three coordinate planes where we can rotate a vector in, i.e.
+ the 
+\begin_inset Formula $x_{1}x_{2}$
+\end_inset
+
+-, the 
+\begin_inset Formula $x_{1}x_{3}$
+\end_inset
+
+- and the 
+\begin_inset Formula $x_{2}x_{3}$
+\end_inset
+
+-plane.
+ In ND we have even more.
+ However, the corresponding rotation matrices are easy to remember.
+ You can build them by taking the identity matrix and replacing the entries
+ corresponding to the coordinate plane you want to rotate in by the entries
+ that you would use for the 2D rotation matrix.
+ For example, the rotation matrix for the 
+\begin_inset Formula $x_{1}x_{2}$
+\end_inset
+
+-plane in 3D is given by 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{R} & = & \left(\begin{array}{ccc}
+\cos\varphi & -\sin\varphi & 0\\
+\sin\varphi & \cos\varphi & 0\\
+0 & 0 & 1\end{array}\right),\end{eqnarray*}
+
+\end_inset
+
+the matrix for a rotation in the 
+\begin_inset Formula $x_{1}x_{3}$
+\end_inset
+
+-plane is given by 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{R} & = & \left(\begin{array}{ccc}
+\cos\varphi & 0 & -\sin\varphi\\
+0 & 1 & 0\\
+\sin\varphi & 0 & \cos\varphi\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+
+\newline
+Multiplying a vector with a rotation matrix, means rotating this vector.
+ Let us look at one simple example in detail: Rotating the vector 
+\begin_inset Formula ${1 \choose 0}\in\mathbb{R}^{2}$
+\end_inset
+
+ about 
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+.
+ From their definition, we can get the appropriate rotation matrix: 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{R} & = & \left(\begin{array}{cc}
+\cos90^{\circ} & -\sin90^{\circ}\\
+\sin90^{\circ} & \cos90^{\circ}\end{array}\right)\\
+ & = & \left(\begin{array}{cc}
+0 & -1\\
+1 & 0\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+Now we can apply it to our vector 
+\begin_inset Formula $(1,0)^{\top}$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{R}{1 \choose 0} & = & {0 \choose 1}.\end{eqnarray*}
+
+\end_inset
+
+We see that the resulting vector has been rotated by 
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+.
+ Multiplying it again with 
+\begin_inset Formula $\mathbf{R}$
+\end_inset
+
+, yields 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{R}\mathbf{R}{1 \choose 0} & = & \mathbf{R}{0 \choose 1}\\
+ & = & {0 \choose -1},\end{eqnarray*}
+
+\end_inset
+
+which is indeed a rotation about 
+\begin_inset Formula $2\cdot90^{\circ}=180^{\circ}$
+\end_inset
+
+.
+ In general this choice of 
+\begin_inset Formula $\mathbf{R}$
+\end_inset
+
+ will rotate any vector in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ about 
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+ around the origin.
+ If we choose 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ differently, the resulting matrix will rotate any vector in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ about 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ 
+\newline
+In 3D the example works just the same.
+ You might want to try it with a few examples in order to get used to multiplyin
+g vectors with matrices.
+\end_layout
+
+\begin_layout Itemize
+The matrix that corresponds to the projection of a vector 
+\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{3}$
+\end_inset
+
+ onto the 
+\begin_inset Formula $x_{1}x_{2}$
+\end_inset
+
+-plane, is given by
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{P}_{12} & = & \left(\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+Note, that the third column is zero since projecting the vector 
+\begin_inset Formula $(0,0,1)^{\top}$
+\end_inset
+
+ onto the 
+\begin_inset Formula $x_{1}x_{2}$
+\end_inset
+
+-plane yields the vector 
+\begin_inset Formula $(0,0)^{\top}$
+\end_inset
+
+.
+\newline
+Applying the matrix, that projects every vector 
+\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{3}$
+\end_inset
+
+ onto the 
+\begin_inset Formula $x_{1}x_{2}$
+\end_inset
+
+-plane, to an arbitrary vector 
+\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{3}$
+\end_inset
+
+ yields
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{P}_{12}\mathbf{x} & = & \left(\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}\end{array}\right)\\
+ & = & {x_{1} \choose x_{2}},\end{eqnarray*}
+
+\end_inset
+
+which is indeed the projection of 
+\begin_inset Formula $\mathbf{x}=(x_{1},x_{2},x_{3})^{\top}$
+\end_inset
+
+ onto the 
+\begin_inset Formula $x_{1}x_{2}$
+\end_inset
+
+-plane.
+\end_layout
+
+\begin_layout Itemize
+Any scalar product can be thought of as a matrix product: The scalar product
+ between two vectors 
+\begin_inset Formula $v$
+\end_inset
+
+ and 
+\begin_inset Formula $w$
+\end_inset
+
+ is defined to be
+\begin_inset Formula \[
+\langle v,w\rangle=\sum_{i}v_{i}w_{i}.\]
+
+\end_inset
+
+ We can see that this is equivalent to 
+\begin_inset Formula $v^{\top}w=\sum_{i}v_{i}w_{i},$
+\end_inset
+
+ i.e.
+ of pre-multiplying 
+\begin_inset Formula $w$
+\end_inset
+
+ be the transpose of 
+\begin_inset Formula $v,$
+\end_inset
+
+
+\begin_inset Formula $v^{\top}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Every linear function can be written as a matrix product:
+\end_layout
+
+\begin_layout Paragraph
+Example 
 \end_layout
 
 \begin_layout Standard
@@ -156,7 +823,7 @@ Assume now that we measured the response of our three neurons for the four
 
 \end_inset
 
-which yieled us four spike rate measurements 
+which yielded us four spike rate measurements 
 \begin_inset Formula $\mathbf{r}_{1}=\left(\begin{array}{c}
 r_{11}\\
 \vdots\\
@@ -197,7 +864,7 @@ Note that the vectors
 \begin_inset Formula $\mathbf{I}_{1},...,\mathbf{I}_{n}$
 \end_inset
 
-, form a orthonormal basis of 
+, are really just the canonical basis of 
 \begin_inset Formula $\mathbb{R}^{4}$
 \end_inset
 
@@ -290,15 +957,21 @@ This example shows a very important aspect of
  Now, we state this observation in a more general way.
 \end_layout
 
-\begin_layout Subsection
-Matrices and Linear Functions
-\end_layout
-
 \begin_layout Standard
-Let 
-\begin_inset Formula $f:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}.$
+We can always define the matrix of a mapping with respect to any basis:
+ Let 
+\begin_inset Formula $f:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}$
 \end_inset
 
+ be a linear function which takes in an 
+\begin_inset Formula $n$
+\end_inset
+
+ dimensional vector and returns an 
+\begin_inset Formula $m$
+\end_inset
+
+ dimensional one.
  We know that each 
 \begin_inset Formula $n$
 \end_inset
@@ -367,7 +1040,6 @@ th coordinate of the output vector
 
 .
  This is the basic mathematical mechanic behind matrices.
- 
 \end_layout
 
 \begin_layout Paragraph
@@ -501,731 +1173,11 @@ f_{m}(\mathbf{e}_{1}) & f_{m}(\mathbf{e}_{2}) & \dots & f_{m}(\mathbf{e}_{n})\en
 
 \end_inset
 
-Before introducing matrix-vector multiplication, we look at a few examples.
-\end_layout
-
-\begin_layout Paragraph
-Examples
-\end_layout
-
-\begin_layout Itemize
-Let 
-\begin_inset Formula $f(\mathbf{x})=\mathbf{x}$
-\end_inset
-
- be the identity function.
- The corresponding matrix, the so called 
-\emph on
-
-\begin_inset LatexCommand index
-name "identity matrix"
-
-\end_inset
-
-identity matrix
-\emph default
- or simply 
-\emph on
-
-\begin_inset LatexCommand index
-name "identity"
-
-\end_inset
-
-identity
-\emph default
-, is given by
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{I} & = & (f(\mathbf{e}_{1}),f(\mathbf{e}_{2}),...,f(\mathbf{e}_{n}))\\
- & = & (\mathbf{e}_{1},\mathbf{e}_{2},...,\mathbf{e}_{n})\\
- & = & \left(\begin{array}{cccc}
-1 & 0 & \dots & 0\\
-\vdots & 1 & \ddots & 0\\
-0 & \vdots & \dots & \vdots\\
-0 & 0 & \dots & 1\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-This matrix occurs very frequently and usually denoted by uppercase 
-\begin_inset Formula $\mathbf{I}$
-\end_inset
-
-.
- This should not be confused with images, that we also denote by 
-\begin_inset Formula $\mathbf{I}$
-\end_inset
-
-.
- However, it should be clear from the context what we mean by 
-\begin_inset Formula $\mathbf{I}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Matrices that look very similar to the identity matrix, are 
-\emph on
-
-\begin_inset LatexCommand index
-name "permutation matrices"
-
-\end_inset
-
-permutation matrices
-\emph default
-.
- A permutation simply changes the order of coordinates of a vector 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
-.
- Let us look at a 3D example.
- Let 
-\begin_inset Formula $\mathbf{x}=(x_{1},x_{2},x_{3})^{\top}$
-\end_inset
-
- and let 
-\begin_inset Formula $f$
-\end_inset
-
- be the permutation that swaps 
-\begin_inset Formula $x_{1}$
-\end_inset
-
- and 
-\begin_inset Formula $x_{2}$
-\end_inset
-
-, i.e.
- 
-\begin_inset Formula $f(\mathbf{x})=(x_{2},x_{1},x_{3})$
-\end_inset
-
-.
- The corresponding permutation matrix is given by
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{P} & = & \left(\begin{array}{ccc}
-0 & 1 & 0\\
-1 & 0 & 0\\
-0 & 0 & 1\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Probably the most important matrices are 
-\emph on
-
-\begin_inset LatexCommand index
-name "rotation matrices"
-
-\end_inset
-
-rotation matrices
-\emph default
-.
- For a fixed a rotation angle 
-\begin_inset Formula $\varphi$
-\end_inset
-
-, rotating vectors is linear mapping, since it does not matter if we add
- two vectors, rotate the result by 
-\begin_inset Formula $\varphi$
-\end_inset
-
-, or do it the other way around.
- In 2D there is only one rotation matrix for a given angle 
-\begin_inset Formula $\varphi$
-\end_inset
-
-:
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{R} & = & \left(\begin{array}{cc}
-\cos\varphi & -\sin\varphi\\
-\sin\varphi & \cos\varphi\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-In 3D we have three coordinate planes where we can rotate a vector in, i.e.
- the 
-\begin_inset Formula $x_{1}x_{2}$
-\end_inset
-
--, the 
-\begin_inset Formula $x_{1}x_{3}$
-\end_inset
-
-- and the 
-\begin_inset Formula $x_{2}x_{3}$
-\end_inset
-
--plane.
- In ND we have even more.
- However, the corresponding rotation matrices are easy to remember.
- You can build them by taking the identity matrix and replacing the entries
- corresponding to the coordinate plane you want to rotate in by the entries
- that you would use for the 2D rotation matrix.
- For example, the rotation matrix for the 
-\begin_inset Formula $x_{1}x_{2}$
-\end_inset
-
--plane in 3D is given by 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{R} & = & \left(\begin{array}{ccc}
-\cos\varphi & -\sin\varphi & 0\\
-\sin\varphi & \cos\varphi & 0\\
-0 & 0 & 1\end{array}\right),\end{eqnarray*}
-
-\end_inset
-
-the matrix for a rotation in the 
-\begin_inset Formula $x_{1}x_{3}$
-\end_inset
-
--plane is given by 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{R} & = & \left(\begin{array}{ccc}
-\cos\varphi & 0 & -\sin\varphi\\
-0 & 1 & 0\\
-\sin\varphi & 0 & \cos\varphi\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-The matrix that corresponds to the projection of a vector 
-\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{3}$
-\end_inset
-
- onto the 
-\begin_inset Formula $x_{1}x_{2}$
-\end_inset
-
--plane, is given by
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{P}_{12} & = & \left(\begin{array}{ccc}
-1 & 0 & 0\\
-0 & 1 & 0\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-Note, that the third column is zero since projecting the vector 
-\begin_inset Formula $(0,0,1)^{\top}$
-\end_inset
-
- onto the 
-\begin_inset Formula $x_{1}x_{2}$
-\end_inset
-
--plane yields the vector 
-\begin_inset Formula $(0,0)^{\top}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Formula $\lhd$
-\end_inset
-
 
 \end_layout
 
 \begin_layout Subsection
-Matrix Notation and Matrix Calculation Rules
-\end_layout
-
-\begin_layout Subsubsection
-Matrix-Vector Product
-\end_layout
-
-\begin_layout Standard
-We already have all bits and pieces together to introduce the matrix- vector
- product.
- Given a matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- of a linear function to a certain basis 
-\begin_inset Formula $\mathbf{b}_{1},...,\mathbf{b}_{n}$
-\end_inset
-
- and the coordinates 
-\begin_inset Formula $\bm\lambda=(\lambda_{1},...,\lambda_{n})^{\top}$
-\end_inset
-
- of a vector 
-\begin_inset Formula $\mathbf{x}=\sum_{i=1}^{n}\lambda_{i}\mathbf{b}_{i}$
-\end_inset
-
-, multiplying the coordinate vector 
-\begin_inset Formula $\bm\lambda$
-\end_inset
-
- with 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-, means evaluating the linear function 
-\begin_inset Formula $f$
-\end_inset
-
- at 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
-.
- We already know how to do that.
- Let us go through it again, step by step.
-\end_layout
-
-\begin_layout Enumerate
-We know that the columns of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- contain the outcomes of 
-\begin_inset Formula $f$
-\end_inset
-
- on 
-\begin_inset Formula $\mathbf{b}_{1},...,\mathbf{b}_{n}$
-\end_inset
-
-, i.e.
- 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{A} & = & \left(\begin{array}{cccc}
-f_{1}(\mathbf{b}_{1}) & f_{1}(\mathbf{b}_{2}) & f_{1}(\mathbf{b}_{n-1}) & f_{1}(\mathbf{b}_{n})\\
-\vdots & f_{2}(\mathbf{b}_{2}) &  & f_{2}(\mathbf{b}_{n})\\
-f_{n-1}(\mathbf{b}_{1}) & \vdots & \dots & \vdots\\
-f_{n}(\mathbf{b}_{1}) & f_{n}(\mathbf{b}_{2}) & \dots & f_{n}(\mathbf{b}_{n})\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-We know that evaluating 
-\begin_inset Formula $f$
-\end_inset
-
- at 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- only requires its coordinates 
-\begin_inset Formula $\bm\lambda$
-\end_inset
-
- according to 
-\begin_inset Formula $\mathbf{b}_{1},...,\mathbf{b}_{n}$
-\end_inset
-
- and the values stored in 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-:
-\begin_inset Formula \begin{eqnarray*}
-f(\mathbf{x}) & = & \left(\begin{array}{c}
-\sum_{i=1}^{n}\lambda_{i}f_{1}(\mathbf{b}_{i})\\
-\vdots\\
-\sum_{i=1}^{n}\lambda_{i}f_{n}(\mathbf{b}_{i})\end{array}\right)=\left(\begin{array}{c}
-\sum_{i=1}^{n}\lambda_{i}\mathbf{A}_{1i}\\
-\vdots\\
-\sum_{i=1}^{n}\lambda_{i}\mathbf{A}_{ni}\end{array}\right)\\
- & = & \left(\begin{array}{c}
-\langle\mathbf{a}_{1},\bm\lambda\rangle\\
-\vdots\\
-\langle\mathbf{a}_{n},\bm\lambda\rangle\end{array}\right)=\left(\begin{array}{c}
-\mathbf{a}_{1}^{\top}\bm\lambda\\
-\vdots\\
-\mathbf{a}_{n}^{\top}\bm\lambda\end{array}\right),\end{eqnarray*}
-
-\end_inset
-
-where 
-\begin_inset Formula $\mathbf{a}_{k}$
-\end_inset
-
- denote the 
-\begin_inset Formula $k$
-\end_inset
-
-th row vector of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-This shows, that given a matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- of a linear function and a vector of coordinates 
-\begin_inset Formula $\bm\lambda$
-\end_inset
-
-, both to the same basis 
-\begin_inset Formula $\mathbf{b}_{1},...,\mathbf{b}_{n}$
-\end_inset
-
-, we do not need to know 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbf{b}_{1},...,\mathbf{b}_{n}$
-\end_inset
-
- explicitly in order to evaluate 
-\begin_inset Formula $f$
-\end_inset
-
- at 
-\begin_inset Formula $\mathbf{x}=\sum_{i=1}^{n}\lambda_{i}\mathbf{b}_{i}$
-\end_inset
-
-.
- All we need to do is multiply the coordinate vector 
-\begin_inset Formula $\bm\lambda$
-\end_inset
-
- with the matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-.
- Since multiplying a coordinate vector with a matrix should be the same
- as evaluating the function corresponding to that matrix, the matrix-vector
- product must take the following form.
- 
-\end_layout
-
-\begin_layout Paragraph
-Definition (Matrix-Vector Product)
-\end_layout
-
-\begin_layout Standard
-The product of a matrix 
-\begin_inset Formula $\mathbf{A}\in\mathbb{R}^{m\times n}$
-\end_inset
-
- with a coordinate vector 
-\begin_inset Formula $\bm\lambda\in\mathbb{R}^{n}$
-\end_inset
-
- is defined as 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{A}\bm\lambda & = & \left(\begin{array}{c}
-\sum_{i=1}^{n}\lambda_{i}\mathbf{A}_{1i}\\
-\vdots\\
-\sum_{i=1}^{n}\lambda_{i}\mathbf{A}_{ni}\end{array}\right)\\
- & = & \left(\begin{array}{c}
-\mathbf{a}_{1}^{\top}\bm\lambda\\
-\vdots\\
-\mathbf{a}_{n}^{\top}\bm\lambda\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-This means, the result of a matrix-vector product is a 
-\begin_inset Formula $m$
-\end_inset
-
--dimensional vector for which the 
-\begin_inset Formula $i$
-\end_inset
-
-th entry contains the scalar product of the vector 
-\begin_inset Formula $\bm\lambda$
-\end_inset
-
- with the 
-\begin_inset Formula $i$
-\end_inset
-
-th row of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-.
- Therefore, the number of columns of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- and the dimension of 
-\begin_inset Formula $\bm\lambda$
-\end_inset
-
- must be equal.
- In that sense, we can interpret the scalar product 
-\begin_inset Formula $\mathbf{x}^{\top}\mathbf{y}$
-\end_inset
-
- between two 
-\begin_inset Formula $n$
-\end_inset
-
--dimensional vectors 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbf{y}$
-\end_inset
-
- as the matrix multiplication between an 
-\begin_inset Formula $1\times n$
-\end_inset
-
- matrix 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- and a 
-\begin_inset Formula $n\times1$
-\end_inset
-
- matrix 
-\begin_inset Formula $\mathbf{y}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Formula $\Diamond$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-It is important to note, that the number of columns of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- and the number of rows of 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- must match.
- Otherwise, the product does not make sense or has a completely different
- meaning.
- 
-\end_layout
-
-\begin_layout Standard
-Since we usually use the canonical basis, for which a vector 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- and its coordinate representation are the same, we also write 
-\begin_inset Formula $\mathbf{A}\mathbf{x}$
-\end_inset
-
- in most cases.
- Apart from a few exception, we will adopt this convention in the following.
- Let us look at the examples from above and compute their outcome on a few
- vectors.
-\end_layout
-
-\begin_layout Paragraph
-Examples
-\end_layout
-
-\begin_layout Itemize
-The result of multplying a vector 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- with the identity matrix is just the vector itself:
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{Ix} & = & \left(\begin{array}{cccc}
-1 & 0 & \dots & 0\\
-\vdots & 1 & \ddots & 0\\
-0 & \vdots & \dots & \vdots\\
-0 & 0 & \dots & 1\end{array}\right)\left(\begin{array}{c}
-x_{1}\\
-\vdots\\
-x_{n}\end{array}\right)\\
- & = & \left(\begin{array}{c}
-\mathbf{e}_{1}^{\top}\mathbf{x}\\
-\vdots\\
-\mathbf{e}_{n}^{\top}\mathbf{x}\end{array}\right)\\
- & = & \left(\begin{array}{c}
-x_{1}\\
-\vdots\\
-x_{n}\end{array}\right)=\mathbf{x}.\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Mutltiplying a three dimensional vector 
-\begin_inset Formula $\mathbf{x}=(x_{1},x_{2},x_{3})^{\top}$
-\end_inset
-
- with our example of a permutation matrix yields 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{Px} & = & \left(\begin{array}{ccc}
-0 & 1 & 0\\
-1 & 0 & 0\\
-0 & 0 & 1\end{array}\right)\left(\begin{array}{c}
-x_{1}\\
-x_{2}\\
-x_{3}\end{array}\right)\\
- & = & \left(\begin{array}{c}
-\mathbf{e}_{2}^{\top}\mathbf{x}\\
-\mathbf{e}_{1}^{\top}\mathbf{x}\\
-\mathbf{e}_{3}^{\top}\mathbf{x}\end{array}\right)\\
- & = & \left(\begin{array}{c}
-x_{2}\\
-x_{1}\\
-x_{3}\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Multiplying a vector with a rotation matrix, means rotating this vector.
- Let us look at one simple example in detail: Rotating the vector 
-\begin_inset Formula ${1 \choose 0}\in\mathbb{R}^{2}$
-\end_inset
-
- about 
-\begin_inset Formula $90^{\circ}$
-\end_inset
-
-.
- From their definition, we can get the appropriate rotation matrix: 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{R} & = & \left(\begin{array}{cc}
-\cos90^{\circ} & -\sin90^{\circ}\\
-\sin90^{\circ} & \cos90^{\circ}\end{array}\right)\\
- & = & \left(\begin{array}{cc}
-0 & -1\\
-1 & 0\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-Now we can apply it to our vector 
-\begin_inset Formula $(1,0)^{\top}$
-\end_inset
-
-:
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{R}{1 \choose 0} & = & {0 \choose 1}.\end{eqnarray*}
-
-\end_inset
-
-We see that the resulting vector has been rotated by 
-\begin_inset Formula $90^{\circ}$
-\end_inset
-
-.
- Multiplying it again with 
-\begin_inset Formula $\mathbf{R}$
-\end_inset
-
-, yields 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{R}\mathbf{R}{1 \choose 0} & = & \mathbf{R}{0 \choose 1}\\
- & = & {0 \choose -1},\end{eqnarray*}
-
-\end_inset
-
-which is indeed a rotation about 
-\begin_inset Formula $2\cdot90^{\circ}=180^{\circ}$
-\end_inset
-
-.
- In general this choice of 
-\begin_inset Formula $\mathbf{R}$
-\end_inset
-
- will rotate any vector in 
-\begin_inset Formula $\mathbb{R}^{2}$
-\end_inset
-
- about 
-\begin_inset Formula $90^{\circ}$
-\end_inset
-
- around the origin.
- If we choose 
-\begin_inset Formula $\varphi$
-\end_inset
-
- differently, the resulting matrix will rotate any vector in 
-\begin_inset Formula $\mathbb{R}^{2}$
-\end_inset
-
- about 
-\begin_inset Formula $\varphi$
-\end_inset
-
-.
- 
-\newline
-In 3D the example works just the same.
- You might want to try it with a few examples in order to get used to multiplyin
-g vectors with matrices.
-\end_layout
-
-\begin_layout Itemize
-Applying the matrix, that projects every vector 
-\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{3}$
-\end_inset
-
- onto the 
-\begin_inset Formula $x_{1}x_{2}$
-\end_inset
-
--plane, to an arbitrary vector 
-\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{3}$
-\end_inset
-
- yields
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{P}_{12}\mathbf{x} & = & \left(\begin{array}{ccc}
-1 & 0 & 0\\
-0 & 1 & 0\end{array}\right)\left(\begin{array}{c}
-x_{1}\\
-x_{2}\\
-x_{3}\end{array}\right)\\
- & = & {x_{1} \choose x_{2}},\end{eqnarray*}
-
-\end_inset
-
-which is indeed the projection of 
-\begin_inset Formula $\mathbf{x}=(x_{1},x_{2},x_{3})^{\top}$
-\end_inset
-
- onto the 
-\begin_inset Formula $x_{1}x_{2}$
-\end_inset
-
--plane.
+Multiplying two matrices
 \end_layout
 
 \begin_layout Standard
@@ -1390,55 +1342,63 @@ and the number of rows of
 
 \end_layout
 
-\begin_layout Standard
-From the fact that the number of columns of the first factor must match
- the number of columns of the second, we can see that we must not swap the
- order of matrices in a matrix product.
- For product of scalars, the order in which we multiply them does not matter.
- For matrices, however, it does.
- If we permute the order of the factors it might happen, that the row and
- column dimensions do not match anymore and the matrix product makes no
- sense.
- Thinking of matrices in terms of linear mappings from 
-\begin_inset Formula $\mathbb{R}^{n}$
+\begin_layout Subsubsection*
+Notes
+\end_layout
+
+\begin_layout Itemize
+We can multiply two matrices if the 'length' of the first matches the 'height'
+ of the second: 
+\begin_inset Formula $C=AB$
 \end_inset
 
- to 
-\begin_inset Formula $\mathbb{R}^{m}$
+ is only defined if 
+\begin_inset Formula $A$
 \end_inset
 
-, the result of a matrix product of several matrices 
-\begin_inset Formula $\mathbf{A}_{k}\cdot...\cdot\mathbf{A}_{1}$
+ is of size 
+\begin_inset Formula $m\times n$
 \end_inset
 
- is the matrix corresponding to the composition of the functions 
-\begin_inset Formula $g_{i}$
+ and 
+\begin_inset Formula $B$
 \end_inset
 
- associated with the single 
-\begin_inset Formula $\mathbf{A}_{i}$
+ is of size 
+\begin_inset Formula $n\times k.$
 \end_inset
 
-, i.e.
+ Then, the outcome 
+\begin_inset Formula $C$
+\end_inset
+
+ will be of size 
+\begin_inset Formula $m\times k.$
+\end_inset
+
+ ('Inner dimensions must match and drop out').
  
-\begin_inset Formula $\mathbf{A}_{k}\cdot...\cdot\mathbf{A}_{1}$
+\end_layout
+
+\begin_layout Itemize
+Matrix multiplication is not commutative, in general, 
+\begin_inset Formula $AB\neq BA!$
 \end_inset
 
- is the matrix to the linear mapping 
-\begin_inset Formula $g_{k}(g_{k-1}(...g_{1}(\mathbf{x})...))$
+ Thinking of matrix multiplication as applying a linear functions, this
+ makes a lot of sense: For example, suppose that our matrix 
+\begin_inset Formula $A$
 \end_inset
 
-.
- Permuting the order of the matrices in the product means permuting the
- order in which we apply the functions 
-\begin_inset Formula $g_{i}$
+ swaps the first and second dimension of a two-dimensional vector, and that
+ 
+\begin_inset Formula $B$
 \end_inset
 
- to 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
-.
+ doubles its first dimension.
+ Clearly, it does matter whether we switch dimensions before or after doubling
+ the first dimension.
+ 
 \end_layout
 
 \begin_layout Paragraph
@@ -1479,7 +1439,7 @@ as above.
 \end_layout
 
 \begin_layout Itemize
-Multiplying a 
+Again, the identity matrix likes to be boring: Multiplying a 
 \begin_inset Formula $m\times n$
 \end_inset
 
@@ -1648,7 +1608,7 @@ The result is given by
 
 \end_inset
 
-Note, that the order in which we multiply the matrices is the reverse order
+Note that the order in which we multiply the matrices is the reverse order
  in which we apply the transformations, i.e.
  projection and rotation.
  The reason is simply that a vector 
@@ -1968,7 +1928,7 @@ Definition (Covariance Matrix)
 
 \begin_layout Standard
 Let 
-\begin_inset Formula $\mathsf{\bm X}=(\mathsf{X}_{1},...,\mathsf{X}_{n})^{\top}$
+\begin_inset Formula $\mathsf{\bm{X}}=(\mathsf{X}_{1},...,\mathsf{X}_{n})^{\top}$
 \end_inset
 
  be an 
@@ -2057,12 +2017,12 @@ Empirically, i.e.
 \begin_layout Standard
 For simplicity, let us assume that our sample has mean zero, i.e.
  
-\begin_inset Formula $\bm\mu=0$
+\begin_inset Formula $\bm{\mu}=0$
 \end_inset
 
 .
  This is no restriction since we can always subtract 
-\begin_inset Formula $\bm\mu$
+\begin_inset Formula $\bm{\mu}$
 \end_inset
 
  from each 
@@ -2071,7 +2031,7 @@ For simplicity, let us assume that our sample has mean zero, i.e.
 
  in order to center them around zero.
  For 
-\begin_inset Formula $\bm\mu=0$
+\begin_inset Formula $\bm{\mu}=0$
 \end_inset
 
 , the above equation for the empirical mean becomes
@@ -2247,1162 +2207,6 @@ This is exactly what we intended.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Hyperplanes, Linear Equation Systems and the Matrix Inversion
-\end_layout
-
-\begin_layout Standard
-An important application of matrices is solving linear equation systems.
- In this section we will show how to solve linear equation systems with
- matrices and how a linear equation system can be interpreted geometrically.
- We develop this idea along two simple examples and state the general case
- at the end.
- 
-\end_layout
-
-\begin_layout Standard
-Consider two linear equation systems 
-\begin_inset Formula \begin{eqnarray*}
-2x_{1}+3x_{2} & = & 1\\
-4x_{1}+2x_{2} & = & 6\end{eqnarray*}
-
-\end_inset
-
-and 
-\begin_inset Formula \begin{eqnarray*}
-2x_{1}+4x_{2} & = & 2\\
-1x_{1}+2x_{2} & = & 1.\end{eqnarray*}
-
-\end_inset
-
-Note, that the solution to the first system is 
-\begin_inset Formula $x_{1}=2$
-\end_inset
-
- and 
-\begin_inset Formula $x_{2}=-1$
-\end_inset
-
-.
- The second system does have infinitly many solution.
- Examples are 
-\begin_inset Formula $x_{1}=\frac{1}{2},\, x_{2}=\frac{1}{4}$
-\end_inset
-
- or 
-\begin_inset Formula $x_{1}=1,\, x_{2}=0$
-\end_inset
-
-.
- Therefore, the second system does not have a unique solution.
- We will see soon how this can be encountered from the linear equations
- system written in matrix notation.
- Let us start by rewritting the two systems in matrix form.
- We show the necessary steps with the first example.
- The linear equation system 
-\begin_inset Formula \begin{eqnarray*}
-2x_{1}+3x_{2} & = & 1\\
-4x_{1}+2x_{2} & = & 6\end{eqnarray*}
-
-\end_inset
-
-can also be written as 
-\begin_inset Formula \begin{eqnarray*}
-(2,3)\cdot\mathbf{x} & = & 1\\
-(4,2)\cdot\mathbf{x} & = & 6,\end{eqnarray*}
-
-\end_inset
-
-with 
-\begin_inset Formula $\mathbf{x}={x_{1} \choose x_{2}}$
-\end_inset
-
-.
- From the rules of matrix multiplication this can be further rephrased into
- 
-\begin_inset Formula \begin{eqnarray*}
-\left(\begin{array}{cc}
-2 & 3\\
-4 & 2\end{array}\right)\mathbf{x} & = & {1 \choose 6}.\end{eqnarray*}
-
-\end_inset
-
-In the same manner, the second system can be written as 
-\begin_inset Formula \begin{eqnarray*}
-\left(\begin{array}{cc}
-2 & 4\\
-1 & 2\end{array}\right)\mathbf{x} & = & {2 \choose 1}.\end{eqnarray*}
-
-\end_inset
-
-Solving those linear equation systems therefore means findings an 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- such that 
-\begin_inset Formula $\mathbf{A}\mathbf{x}=\mathbf{b}$
-\end_inset
-
- with 
-\begin_inset Formula $\mathbf{A}=\left(\begin{array}{cc}
-2 & 3\\
-4 & 2\end{array}\right)$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbf{b}={1 \choose 6}$
-\end_inset
-
- for the first equation system, and 
-\begin_inset Formula $\mathbf{A}=\left(\begin{array}{cc}
-2 & 4\\
-1 & 2\end{array}\right)$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbf{b}={2 \choose 1}$
-\end_inset
-
- for the second.
- 
-\end_layout
-
-\begin_layout Standard
-Before looking at how to solve such a matrix equation, let us first develop
- a geometric intuition for linear equations systems.
- In order to do so, we must introduce the concept of a hyperplane.
- Hyperplanes are the generalization of lines in 
-\begin_inset Formula $\mathbb{R}^{2}$
-\end_inset
-
- and planes in 
-\begin_inset Formula $\mathbb{R}^{3}$
-\end_inset
-
- to arbitrary dimensions.
- Before stating a general definition, we look at a small example.
-\end_layout
-
-\begin_layout Paragraph
-Examples
-\end_layout
-
-\begin_layout Standard
-Figure 
-\begin_inset LatexCommand ref
-reference "fig:Hyperplane"
-
-\end_inset
-
- shows a simple sketch of the following two examples.
-\end_layout
-
-\begin_layout Enumerate
-Consider the simple line in 
-\begin_inset Formula $\mathbb{R}^{2}$
-\end_inset
-
- given by 
-\begin_inset Formula $x_{2}=f(x_{1})=x_{1}$
-\end_inset
-
-.
- This line contains 
-\begin_inset Formula $(0,0)^{\top}$
-\end_inset
-
- and has slope one.
- A different way of looking at this line can be obtained by rewriting its
- equation: 
-\begin_inset Formula \begin{eqnarray*}
-x_{2}=x_{1} & \Leftrightarrow & x_{1}-x_{2}=0\\
- & \Leftrightarrow & \langle(1,-1)^{\top},\mathbf{x}\rangle=0.\end{eqnarray*}
-
-\end_inset
-
-From the last equation we can see that our line can equivalently be seen
- as the set of all vectors 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- that are orthogonal to 
-\begin_inset Formula $(1,-1)^{\top}$
-\end_inset
-
-.
- This vector 
-\begin_inset Formula $(1,-1)^{\top}$
-\end_inset
-
- is called 
-\emph on
-
-\begin_inset LatexCommand index
-name "normal vector"
-
-\end_inset
-
-normal vector
-\emph default
-.
- It uniquely specifies all lines, planes and generalizations to 
-\begin_inset Formula $n$
-\end_inset
-
--dimensions that contain the origin.
- Certainly not every line, plane or hyperplane will fulfill this constraint.
- Therefore we need to expand the above equation.
- We show how to do this with another example.
-\newline
-
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status collapsed
-
-\begin_layout Standard
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Standard
-
-
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-setlength{
-\backslash
-unitlength}{0.8cm}
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-begin{picture}(5,5)(-1,-1)
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-graphpaper[1](-1,-1)(5,5)
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-thicklines  
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-put(-1,-1){
-\backslash
-line(1,1){5}}
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-put(0,0){
-\backslash
-vector(1,-1){1}}
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-
-%
-\backslash
-put(77,40){
-\backslash
-makebox(0,0){$x_0$}}
-\end_layout
-
-\begin_layout Standard
-
-{
-\backslash
-color{blue}
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-thicklines  
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-put(-0,-1){
-\backslash
-line(1,1){5}}
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-put(0,0){
-\backslash
-vector(1,-1){0.5}}
-\end_layout
-
-\begin_layout Standard
-
-}
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-vspace{1cm}
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-end{picture}
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Caption
-
-\begin_layout Standard
-\begin_inset LatexCommand label
-name "fig:Hyperplane"
-
-\end_inset
-
-Sketch of the two lines.
- The black line corresponds to the hyperplane 
-\begin_inset Formula $\langle(1,-1)^{\top},\mathbf{x}\rangle=0$
-\end_inset
-
-, the blue line corresponds to 
-\begin_inset Formula $\langle(1,-1)^{\top},\mathbf{x}\rangle-1=0$
-\end_inset
-
-.
- The length of the blue arrow indicates the distance of the hyperplane to
- the origin, i.e.
- 
-\begin_inset Formula $\frac{1}{||(1,-1)^{\top}||}$
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-Consider the slightly more complex line 
-\begin_inset Formula $x_{2}=f(x_{1})=x_{1}-1$
-\end_inset
-
-.
- Note, that this line does not contain the origin.
- Now we can rewrite the equation in the same way we did before:
-\begin_inset Formula \begin{eqnarray*}
-\langle(1,-1)^{\top},\mathbf{x}\rangle & = & 1.\end{eqnarray*}
-
-\end_inset
-
-If we multiply both sides of the equation by 
-\begin_inset Formula $\frac{1}{||(1,-1)^{\top}||}$
-\end_inset
-
-, we obtain a formula for the projection of 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- onto the normal 
-\begin_inset Formula $(1,-1)^{\top}$
-\end_inset
-
-:
-\begin_inset Formula \begin{eqnarray*}
-\frac{1}{||(1,-1)^{\top}||}\langle(1,-1)^{\top},\mathbf{x}\rangle & = & \frac{1}{||(1,-1)^{\top}||}.\end{eqnarray*}
-
-\end_inset
-
- Now we can interpret this equation as the set of points for which the projectio
-n onto 
-\begin_inset Formula $(1,-1)^{\top}$
-\end_inset
-
- equals 
-\begin_inset Formula $\frac{1}{||(1,-1)^{\top}||}$
-\end_inset
-
-.
- This describes a line, that does not contain the origin.
- Since the length of the normal in this projection equation is one, we can
- interpret the projection as signed distance of the point 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- to the line given by the equation 
-\begin_inset Formula \begin{eqnarray*}
-\frac{1}{||(1,-1)^{\top}||}\langle(1,-1)^{\top},\mathbf{x}\rangle & = & 0\\
-\Leftrightarrow\langle(1,-1)^{\top},\mathbf{x}\rangle & = & 0.\end{eqnarray*}
-
-\end_inset
-
-Here, the sign indicate the side, on which 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- lies.
- This means that the line given by the equation 
-\begin_inset Formula \begin{eqnarray*}
-\langle(1,-1)^{\top},\mathbf{x}\rangle & = & 1\\
-\Leftrightarrow\langle(1,-1)^{\top},\mathbf{x}\rangle-1 & = & 0\end{eqnarray*}
-
-\end_inset
-
-is the line 
-\begin_inset Formula $\langle(1,-1)^{\top},\mathbf{x}\rangle=0$
-\end_inset
-
- (which contains the origin) shifted about 
-\begin_inset Formula $\frac{1}{||(1,-1)^{\top}||}$
-\end_inset
-
- along the normal 
-\begin_inset Formula $(1,-1)^{\top}$
-\end_inset
-
-.
- This means that we can get any line, plane or hyperplane by adjusting the
- normal and the offset to the origin.
- The normal determines the orientation of the hyperplane and the offset
- determines its distance to the origin.
- 
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Formula $\lhd$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Now we can state a general definition of a hyperplane.
- 
-\end_layout
-
-\begin_layout Paragraph
-Definition (Hyperplane)
-\end_layout
-
-\begin_layout Standard
-A hyperplane is the set of all point 
-\begin_inset Formula $\mathbf{x}\in\mathbb{R}^{n}$
-\end_inset
-
- that satisfies 
-\begin_inset Formula $\langle\mathbf{n},\mathbf{x}\rangle-b=0$
-\end_inset
-
-.
- The vector 
-\begin_inset Formula $\mathbf{n}\in\mathbb{R}^{n}$
-\end_inset
-
- is called normal vector or simply normal.
- It determines the orientation of the hyperplane and is orthogonal to the
- hyperplane, when attached to one of its elements.
- The scalar 
-\begin_inset Formula $b\in\mathbb{R}$
-\end_inset
-
- is called 
-\emph on
-offset 
-\emph default
-and determines the distance of the hyperplane to the origin, i.e.
- the distance of the plane to the origin is given
-\series bold
- 
-\series default
-by 
-\begin_inset Formula $|\frac{b}{||\mathbf{n}||}|$
-\end_inset
-
-.
- The distance of any point in space to the hyperplane can be computed via
- 
-\begin_inset Formula \begin{eqnarray*}
-d_{\mathbf{n},b}(\mathbf{x}) & = & \frac{1}{||\mathbf{n}||}|\langle\mathbf{n},\mathbf{x}\rangle+b|.\end{eqnarray*}
-
-\end_inset
-
-Note, that if 
-\begin_inset Formula $d_{\mathbf{n},b}(\mathbf{x})=0$
-\end_inset
-
-, then 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- is element of the hyperplane.
- 
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Formula $\Diamond$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The interesting point is now, that a linear equation system can be interpreted
- in terms of hyperplanes.
- Looking at the first system 
-\begin_inset Formula \begin{eqnarray*}
-\left(\begin{array}{cc}
-2 & 3\\
-4 & 2\end{array}\right)\mathbf{x} & = & {1 \choose 6}\\
-\Leftrightarrow\left(\begin{array}{cc}
-2 & 3\\
-4 & 2\end{array}\right)\mathbf{x}-{1 \choose 6} & = & {0 \choose 0},\end{eqnarray*}
-
-\end_inset
-
-we see that every line is a hyperplane equation.
- Therefore, we can interpret the solution 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- as a point, that lies in both hyperplanes.
- In 
-\begin_inset Formula $\mathbb{R}^{2}$
-\end_inset
-
-, hyperplanes are simply lines.
- So the solution 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- is the point, where the the two lines given by 
-\begin_inset Formula $\langle(2,3)^{\top},\mathbf{x}\rangle-1=0$
-\end_inset
-
- and 
-\begin_inset Formula $\langle(4,2)^{\top},\mathbf{x}\rangle-6=0$
-\end_inset
-
- intersect.
- 
-\end_layout
-
-\begin_layout Standard
-Keeping this geometrical picture in mind, there are two degenerate cases,
- that can happen.
- First, the two lines do not intersect.
- Then the equation system does not have a solution.
- Second, the lines are actually the same.
- Then there are infinitely many intersection points, each of which is a
- possible solution.
- This is the case for our second example
-\begin_inset Formula \begin{eqnarray*}
-\left(\begin{array}{cc}
-2 & 4\\
-1 & 2\end{array}\right)\mathbf{x}-{2 \choose 1} & = & {0 \choose 0}.\end{eqnarray*}
-
-\end_inset
-
-Since the righthand side equals zero, we can multiply both sides of the
- single hyperplane equations with a scalar without changing the equation.
- In that way we can transform one equation into the other, thereby showing
- that they are the same.
- 
-\begin_inset Formula \begin{eqnarray*}
-\langle(2,4)^{\top},\mathbf{x}\rangle-2 & = & 0\\
-\Leftrightarrow\frac{1}{2}\left(\langle(2,4)^{\top},\mathbf{x}\rangle-2\right) & = & \frac{1}{2}\cdot0\\
-\Leftrightarrow\langle(1,2)^{\top},\mathbf{x}\rangle-1 & = & 0.\end{eqnarray*}
-
-\end_inset
-
-Now we can see, what is the problem in the second equation system: The normal
- vectors are linearly dependent, i.e.
- they point in the same direction.
- If this is the case, then the lines (hyperplanes) are either the same or
- they are parallel.
- In the first case, there are infinitely many intersections, in the second
- case there is none.
- For this examples, they are the same and, therefore, there are infinitely
- many solution.
-\end_layout
-
-\begin_layout Standard
-Motivated by this example, we can draw the conclusion that a linear equation
- system only has a unique solution if the rows of the matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-, i.e.
- the normal vectors of the corresponding hyperplanes, are linearly independent.
- This means that all we have to do in order to check whether a linear equation
- system has a unique solution, is to check whether the rows of the matrix
- are linearly independent.
- If they are, then there is a unique solution.
- 
-\end_layout
-
-\begin_layout Standard
-An important theorem, which we just state without proof, tells us that we
- can equivalently check the linear independence of the columns of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Paragraph
-Theorem
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- be an 
-\begin_inset Formula $m\times n$
-\end_inset
-
- matrix.
- The number of linearly independent rows of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- equals the number of lineary independent columns of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-.
- This implies that the maximal number of linearly independent rows/columns
- can at most be 
-\begin_inset Formula $\min\{m,n\}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Formula $\Diamond$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The geometric interpretation has another important consequence.
- It tells us that we can only expect a unique solution to the linear equation
- system 
-\begin_inset Formula $\mathbf{A}\mathbf{x}=\mathbf{b}$
-\end_inset
-
- if the matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- is a 
-\emph on
-square matrix
-\begin_inset LatexCommand index
-name "square matrix"
-
-\end_inset
-
-
-\emph default
-, i.e.
- the number of rows equals the number of columns.
- If we have more rows than colums, we must find a single intersection point
- of more hyperplanes than we have dimensions.
- In most cases this might not be possible.
- On the other hand, if we have more columns than rows, then we have less
- hyperplanes then dimensions.
- In this case, the intersection will almost surely be not a single point
- but a whole set of points (e.g.
- the intersection of two planes in 
-\begin_inset Formula $\mathbb{R}^{3}$
-\end_inset
-
- is usually a line).
- Only if the number of hyperplanes equals the number of dimensions of 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- and if the normals of those hyperplanes are linearly independent, we can
- obtain an unique solution.
- Therefore, we assume square matrices 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- when talking about general linear equation systems in the following.
- 
-\end_layout
-
-\begin_layout Standard
-In terms of matrices the number of linearly independent rows/columns has
- a special name.
-\end_layout
-
-\begin_layout Paragraph
-Definition (Rank of a Matrix)
-\end_layout
-
-\begin_layout Standard
-The 
-\emph on
-
-\begin_inset LatexCommand index
-name "rank"
-
-\end_inset
-
-rank
-\emph default
- of a matrix is the number of linearly independent rows/columns.
- If the rank of an 
-\begin_inset Formula $n\times n$
-\end_inset
-
- matrix is 
-\begin_inset Formula $n$
-\end_inset
-
-, the matrix is said to have 
-\emph on
-
-\begin_inset LatexCommand index
-name "full rank"
-
-\end_inset
-
-full rank
-\emph default
-.
- 
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Formula $\Diamond$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Now we can translate the existence of a solution of a linear equation system
- into the language of linear algebra.
- 
-\end_layout
-
-\begin_layout Paragraph
-Theorem
-\end_layout
-
-\begin_layout Standard
-A linear equation system 
-\begin_inset Formula $\mathbf{A}\mathbf{x}=\mathbf{b}$
-\end_inset
-
- with 
-\begin_inset Formula $\mathbf{b},\mathbf{x}\in\mathbb{R}^{n}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbf{A}\in\mathbb{R}^{n\times n}$
-\end_inset
-
- has a uniques solution if and only if the matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- has full rank.
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Formula $\Diamond$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We can apply the theorem to our two examples.
- In the first examples 
-\begin_inset Formula \begin{eqnarray*}
-\left(\begin{array}{cc}
-2 & 3\\
-4 & 2\end{array}\right)\mathbf{x} & = & {1 \choose 6},\end{eqnarray*}
-
-\end_inset
-
-the rows are linearly independent.
- Therefore, the rank of 
-\begin_inset Formula $\left(\begin{array}{cc}
-2 & 3\\
-4 & 2\end{array}\right)$
-\end_inset
-
- is two, which means that it has full rank.
- This implies that the system has a unique solution.
- We have already seen, that it is given by 
-\begin_inset Formula $\mathbf{x}=(-1,3)^{\top}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-In the second example
-\begin_inset Formula \begin{eqnarray*}
-\left(\begin{array}{cc}
-2 & 4\\
-1 & 2\end{array}\right)\mathbf{x} & = & {2 \choose 1},\end{eqnarray*}
-
-\end_inset
-
-the first row is twice the second row (or the first column is half the first
- column).
- This means that the number of linearly independent vectors is one.
- Therefore, the rank of 
-\begin_inset Formula $\left(\begin{array}{cc}
-2 & 4\\
-1 & 2\end{array}\right)$
-\end_inset
-
- is less than two, which implies that the linear equation system does not
- have a unique solution or does not have a solution at all.
- 
-\end_layout
-
-\begin_layout Standard
-So far, the rank of the matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- only told us, if the linear equation system had a solution.
- However, if it does, then there exists a matrix 
-\begin_inset Formula $\mathbf{A}^{^{-1}}$
-\end_inset
-
- such that 
-\begin_inset Formula $\mathbf{A}\cdot\mathbf{A}^{-1}=\mathbf{A}^{-1}\cdot\mathbf{A}=\mathbf{I}$
-\end_inset
-
-, i.e.
- the matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- and the matrix 
-\begin_inset Formula $\mathbf{A}^{-1}$
-\end_inset
-
- cancel each other to the identity matrix 
-\begin_inset Formula $\mathbf{I}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Paragraph
-Theorem (Inverse of a Matrix)
-\end_layout
-
-\begin_layout Standard
-If a square matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- has full rank, then there exists a matrix 
-\begin_inset Formula $\mathbf{A}^{-1}$
-\end_inset
-
- such that 
-\begin_inset Formula $\mathbf{A}\cdot\mathbf{A}^{-1}=\mathbf{A}^{-1}\cdot\mathbf{A}=\mathbf{I}$
-\end_inset
-
-, which 
-\begin_inset Formula $\mathbf{I}$
-\end_inset
-
- being the identity matrix.
- The matrix 
-\begin_inset Formula $\mathbf{A}^{-1}$
-\end_inset
-
- is called 
-\emph on
-inverse
-\emph default
- of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Formula $\Diamond$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We will neither proof the existence of the inverse matrix nor will we show
- how to compute it.
- In some cases, one can guess 
-\begin_inset Formula $\mathbf{A}^{-1}$
-\end_inset
-
-, but in general there are algorithms to find it.
- In Matlab you can compute the inverse with the command 
-\family typewriter
-inv(A)
-\family default
-.
- The important fact, that you should remember is the following: If the matrix
- 
-\begin_inset Formula $\mathbf{A}^{-1}$
-\end_inset
-
- exists, then we can use it to solve the linear equation system via 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{A}\mathbf{x} & = & \mathbf{b}\\
-\Leftrightarrow\mathbf{A}^{-1}\mathbf{A}\mathbf{x} & = & \mathbf{A}^{-1}\mathbf{b}\\
-\Leftrightarrow\mathbf{I}\mathbf{x} & = & \mathbf{A}^{-1}\mathbf{b}\\
-\mathbf{x} & = & \mathbf{A}^{-1}\mathbf{b}.\end{eqnarray*}
-
-\end_inset
-
-We finish this section by showing how to compute the solution of our first
- example in Matlab.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Standard
-
-
-\backslash
-begin{verbatim}
-\end_layout
-
-\begin_layout Standard
-
->> A = [2,1;3,2]
-\end_layout
-
-\begin_layout Standard
-
-A =
-\end_layout
-
-\begin_layout Standard
-
-     2     1      3     2
-\end_layout
-
-\begin_layout Standard
-
->> b = [1;3]
-\end_layout
-
-\begin_layout Standard
-
-b =
-\end_layout
-
-\begin_layout Standard
-
-     1      3
-\end_layout
-
-\begin_layout Standard
-
->> inv(A)
-\end_layout
-
-\begin_layout Standard
-
-ans =
-\end_layout
-
-\begin_layout Standard
-
-    2.0000   -1.0000    
-\end_layout
-
-\begin_layout Standard
-
-   -3.0000    2.0000
-\end_layout
-
-\begin_layout Standard
-
->> x = inv(A)*b
-\end_layout
-
-\begin_layout Standard
-
-x =
-\end_layout
-
-\begin_layout Standard
-
-   -1.0000     3.0000
-\end_layout
-
-\begin_layout Standard
-
->> A*x
-\end_layout
-
-\begin_layout Standard
-
-ans =
-\end_layout
-
-\begin_layout Standard
-
-    1.0000     3.0000
-\end_layout
-
-\begin_layout Standard
-
->> A*x
-\end_layout
-
-\begin_layout Standard
-
->> A*inv(A)
-\end_layout
-
-\begin_layout Standard
-
-ans =
-\end_layout
-
-\begin_layout Standard
-
-    1.0000    0.0000    
-\end_layout
-
-\begin_layout Standard
-
-    0.0000    1.0000
-\end_layout
-
-\begin_layout Standard
-
->> inv(A)*A
-\end_layout
-
-\begin_layout Standard
-
-ans =
-\end_layout
-
-\begin_layout Standard
-
-    1.0000    0.0000    
-\end_layout
-
-\begin_layout Standard
-
-    0.0000    1.0000
-\end_layout
-
-\begin_layout Standard
-
-
-\backslash
-end{verbatim}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-You might want to try to solve the second example in the same way and see
- what happens.
 \end_layout
 
 \end_body

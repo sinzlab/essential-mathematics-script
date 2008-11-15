@@ -52,7 +52,13 @@ Vectors
 \end_layout
 
 \begin_layout Standard
-A vector is a shorthand notation for a ordered set of numbers 
+A vector is a 
+\begin_inset LatexCommand index
+name "shorthand"
+
+\end_inset
+
+shorthand notation for a ordered set of numbers 
 \begin_inset Formula $(x_{1},...,x_{n})$
 \end_inset
 
@@ -412,10 +418,20 @@ I_{nm}\end{array}\right).\end{eqnarray*}
 
 \end_inset
 
-When talking about operation on images in the following, unless explicitly
- stated otherwise, we always implicitly assume that a image is represented
- as this kind of stacked vector.
- Note, that stacking columns on top of each other is also the way matlab
+It might be tempting to think of an image as a matrix.
+ In matlab, they are usually stored as matrices, and that is certainly useful
+ for looking at them.
+ However, 
+\emph on
+mathematically, 
+\emph default
+it is really much more natural to think of an image as a vector.
+ Matrices (as we will see later) are really transformations which can be
+ multiplied--does it really make sense to multiply to images? When talking
+ about operation on images in the following, unless explicitly stated otherwise,
+ we always implicitly assume that a image is represented as this kind of
+ stacked vector.
+ Note that stacking columns on top of each other is also the way matlab
  represents matrices as vectors.
  If 
 \family typewriter
@@ -459,6 +475,36 @@ I
 \end_inset
 
  image.
+\end_layout
+
+\begin_layout Itemize
+Functions
+\begin_inset Formula $f(x)$
+\end_inset
+
+ can often be viewed as vectors, provided that we only consider a fixed
+ set of inputs 
+\begin_inset Formula $x_{1,}\ldots x_{n}.$
+\end_inset
+
+ Then, we the function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ can be thought of as a vector 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula \[
+\mathbf{f}=\left(\begin{array}{c}
+f(x_{1})\\
+\vdots\\
+f(x_{n})\end{array}\right).\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1114,6 +1160,44 @@ Dividing by the norm of a vector can also be used to normalize the mean
 th image as in the example above.
 \end_layout
 
+\begin_layout Itemize
+Variance: The variance of a set of numbers 
+\begin_inset Formula $\mathbf{x}=(x_{1},x_{2},\dots,x_{n})$
+\end_inset
+
+ is given by 
+\begin_inset Formula $Var(\mathbf{x})=\frac{1}{n}\sum_{i}(x_{i}-\mbox{E}(\mathbf{x}))^{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $\mbox{E}(x)=\frac{1}{n}\sum_{i}x_{i}$
+\end_inset
+
+ is the average of 
+\begin_inset Formula $\mbox{x}.$
+\end_inset
+
+ This can be rewritten as 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\mbox{Var}(x)=\frac{1}{n}\|\mathbf{x}-\mbox{E}(\mathbf{x})\|^{2}.$
+\end_inset
+
+ 
+\newline
+(Subtracting the number 
+\begin_inset Formula $E(x)$
+\end_inset
+
+ from the vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is slightly sloppy notation, though)
+\end_layout
+
 \begin_layout Standard
 \align right
 \begin_inset Formula $\Diamond$
@@ -1435,13 +1519,74 @@ l intuition carries over.
 
  indicates that this dot product is not the normal dot product as we know
  it.
- Another situatation where the dot product intuition is useful is the folding
- of two functions, which we will introduce later.
+ Another situatation where the dot product intuition is useful is the convolutio
+n of two functions, which we will introduce later.
 \end_layout
 
 \begin_layout Itemize
-The firing rate of a neuron in the visual system can be modeled as the scalar
- product between the input image 
+Spectral sensitivity of cones: The frequency spectrum of any light source
+ can be characterized by a vector 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\mathbf{l}=(l_{1},l_{2},\cdots,l_{n})$
+\end_inset
+
+, where, 
+\begin_inset Formula $l_{k}$
+\end_inset
+
+denotes the power of the light source for some wavelength which we index
+ as 
+\begin_inset Formula $k.$
+\end_inset
+
+ Similarly, the spectral sensitivity of any cone in the retina can be described
+ by a spectral sensitivity curve 
+\begin_inset Formula $\mathbf{s}=(s_{1,}s_{2},\ldots,s_{n}).$
+\end_inset
+
+ For example, for an 
+\begin_inset Formula $L$
+\end_inset
+
+-cone, the curve 
+\begin_inset Formula $\mathbf{s}$
+\end_inset
+
+ would have its maximum at the index 
+\begin_inset Formula $k$
+\end_inset
+
+ which corresponds to the wavelength 
+\begin_inset Formula $560nm.$
+\end_inset
+
+ Then, the response of the receptor to any light source 
+\begin_inset Formula $\mathbf{l}$
+\end_inset
+
+ can be computed by calculating the dot product between 
+\begin_inset Formula $\mathbf{l}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{s}:$
+\end_inset
+
+
+\begin_inset Formula \[
+R=\langle\mathbf{l,}\mathbf{s}\rangle=\sum_{i=1}^{n}l_{i}s_{i}.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+More generally, the firing rate of some neurons in the visual system can
+ be modeled as the scalar product between the input image 
 \begin_inset Formula $\mathbf{I}$
 \end_inset
 
@@ -1450,6 +1595,15 @@ The firing rate of a neuron in the visual system can be modeled as the scalar
 \end_inset
 
 .
+ In fact, neurons for which this holds are usually referred to as 
+\emph on
+simple cells
+\emph default
+, and neurons for which it does not are called 
+\emph on
+complex cells.
+
+\emph default
  If we imagine the receptive field as an image of the same size as 
 \begin_inset Formula $\mathbf{I}$
 \end_inset
@@ -1485,6 +1639,35 @@ r & = & \max\left\{ 0,\sum_{i=1}^{m}\sum_{j=1}^{n}\Psi_{ij}\cdot I_{ij}\right\} 
 
 \end_layout
 
+\begin_layout Itemize
+Covariance: The covariance between two data vectors 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{y}$
+\end_inset
+
+ is defined to be 
+\begin_inset Formula $\mbox{Cov}(x,y)=\frac{1}{n}\sum_{i}x_{i}y_{i}-E(x)E(y).$
+\end_inset
+
+ So, if both 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ have zero mean, the covariance is exactly the same as the dot-product between
+ the vectors (divided by 
+\begin_inset Formula $n).$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \align right
 \begin_inset Formula $\lhd$
@@ -1503,32 +1686,15 @@ So far, the scalar product may seem as no more than a useful notational
  
 \end_layout
 
-\begin_layout Standard
-The first one only applies to vectors of length one.
- Nevertheless, it is very useful.
-\end_layout
-
 \begin_layout Paragraph
 Lemma (Angle between two vectors) 
 \end_layout
 
 \begin_layout Standard
-If 
-\begin_inset Formula $\mathbf{x},\mathbf{v}\in\mathbb{R}^{n}$
-\end_inset
-
- have length one, i.e.
- 
-\begin_inset Formula $||\mathbf{x}||=1$
-\end_inset
-
- and 
-\begin_inset Formula $||\mathbf{v}||=1$
-\end_inset
-
-, the scalar product is the cosine of the angle between the two vectors:
+The cosine of the angle between the two vectors is given by their dot-product
+ divided by the product of their norms:
 \begin_inset Formula \begin{eqnarray*}
-\langle\mathbf{x},\mathbf{v}\rangle & = & \cos\measuredangle\{\mathbf{x},\mathbf{v}\}.\end{eqnarray*}
+\frac{\langle\mathbf{x,}\mathbf{y}\rangle}{\|\mathbf{x\|\|}\mathbf{y}\|} & = & \cos\measuredangle\{\mathbf{x},\mathbf{v}\}.\end{eqnarray*}
 
 \end_inset
 
@@ -1544,93 +1710,119 @@ If
 \end_layout
 
 \begin_layout Standard
-From this lemma we can already read off the geometrical interpretation of
- 
-\begin_inset Formula $\langle\mathbf{x},\mathbf{v}\rangle=0$
+We know that the cosine of any angle must be between 
+\begin_inset Formula $-1,$
 \end_inset
 
-.
- Assume that 
-\begin_inset Formula $\mathbf{x}$
+and 
+\begin_inset Formula $1.$
 \end_inset
 
- and 
-\begin_inset Formula $\mathbf{v}$
+ As a consequence, we can see that the term on the left hand size, 
+\begin_inset Formula $\frac{\langle\mathbf{x,}\mathbf{y}\rangle}{\|\mathbf{x\|\|}\mathbf{y}\|}$
 \end_inset
 
- have non-zero length 
-\begin_inset Formula $a$
+, must always be at least 
+\begin_inset Formula $-1,$
 \end_inset
 
- and 
-\begin_inset Formula $b$
+ and at most 
+\begin_inset Formula $1.$
 \end_inset
 
-, respectively, and 
-\begin_inset Formula $\langle\mathbf{x},\mathbf{v}\rangle=0$
-\end_inset
-
-.
- Consequently 
-\begin_inset Formula $||\frac{1}{a}\mathbf{x}||=1$
-\end_inset
-
- and 
-\begin_inset Formula $||\frac{1}{b}\mathbf{v}||=1$
-\end_inset
-
-.
- Now we can rewrite the scalar product a little bit:
+ Thus, we obtain the inequality
 \begin_inset Formula \begin{eqnarray*}
-\langle\mathbf{x},\mathbf{v}\rangle & = & \sum_{i=1}^{n}x_{i}v_{i}\\
- & = & ab\sum_{i=1}^{n}\frac{1}{a}x_{i}\frac{1}{b}v_{i}\\
- & = & ab\langle\frac{1}{a}\mathbf{x},\frac{1}{b}\mathbf{v}\rangle\\
- & = & ab\cos\measuredangle\{\mathbf{x},\mathbf{v}\}.\end{eqnarray*}
+-1 & \leq\frac{\langle\mathbf{x,}\mathbf{y}\rangle}{\|\mathbf{x\|\|}\mathbf{y}\|} & \leq1\\
+-\|\mathbf{x\|\|}\mathbf{y}\|\leq & \langle\mathbf{x,}\mathbf{y\rangle} & \leq\|\mathbf{x\|\|}\mathbf{y}\|\\
+\\\end{eqnarray*}
 
 \end_inset
 
-Since 
-\begin_inset Formula $a,b>0$
-\end_inset
 
- and 
-\begin_inset Formula $\langle\mathbf{x},\mathbf{v}\rangle=0$
-\end_inset
+\end_layout
 
-, the cosine 
-\begin_inset Formula $\cos\measuredangle\{\mathbf{x},\mathbf{v}\}$
-\end_inset
+\begin_layout Standard
+In other words, the dot-product between any two vectors can never be bigger
+ than the product of their norms, and never be smaller than minus that.
+ This inequality is known as the Cauchy Schwarz inequality.
+ 
+\end_layout
 
- must be zero, which means that the angle between 
+\begin_layout Subsubsection*
+Example: Correlation coefficients are between -1 and 1
+\end_layout
+
+\begin_layout Standard
+We can use the Cauchy Schwarz inequality to show that the correlation coefficien
+ts between any two vectors of data 
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
  and 
-\begin_inset Formula $\mathbf{v}$
+\begin_inset Formula $\mathbf{y}$
 \end_inset
 
- is 
-\begin_inset Formula $\frac{\pi}{2}$
+ must be between 
+\begin_inset Formula $-1$
+\end_inset
+
+ and 
+\begin_inset Formula $1:$
+\end_inset
+
+ The correlation coefficients is defined to be 
+\begin_inset Formula \begin{eqnarray*}
+\mbox{Corr}(\mathbf{x},\mathbf{y)} & = & \frac{\mbox{Cov}(\mathbf{x,}\mathbf{y})}{\sqrt{\mbox{Var}\mathbf{x}\mbox{Var}\mathbf{y}}}\\
+\mbox{where \mbox{Cov}(\mathbf{x,}\mathbf{y})} & = & \frac{1}{n}\sum_{i}x_{i}y_{i}-\bar{\mathbf{x}}\bar{\mathbf{y}}\\
+\mbox{and }\mbox{Var}\mathbf{x} & = & \sqrt{\frac{1}{n}\sum_{i}x_{i}^{2}-\bar{\mathbf{x}}}\\
+\bar{\mathbf{x}} & = & \frac{1}{n}\sum_{i}x_{i}.\end{eqnarray*}
+
+\end_inset
+
+Without loss of generality, we can assume that the means of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ and 
+\series bold
+y 
+\series default
+are both zero.
+ (If they are not, one can simply subtract off the mean.) Then, the formula
+ for the correlation coefficient becomes
+\begin_inset Formula \begin{eqnarray*}
+\mbox{Corr}(\mathbf{x},\mathbf{y)} & = & \frac{\frac{1}{n}\sum_{i}x_{i}y_{i}}{\sqrt{\frac{1}{n}\sum_{i}x_{i}^{2}}\sqrt{\frac{1}{n}\sum_{i}y_{i}^{2}}}\\
+ & = & \frac{\sum_{i}x_{i}y_{i}}{\sqrt{\sum_{i}x_{i}^{2}}\sqrt{\sum_{i}y_{i}^{2}}}\\
+ & = & \frac{\langle\mathbf{x},\mathbf{y}\rangle}{\|\mathbf{x\|\|y\|}.}\end{eqnarray*}
+
+\end_inset
+
+ Now, by the Cauchy-Schwarz inequaility, we can see that correlation-coefficient
+s always have to be between -1 and 1.
+\end_layout
+
+\begin_layout Subsubsection*
+Orthogonality
+\end_layout
+
+\begin_layout Standard
+Finally, if 
+\begin_inset Formula $\langle x,y\rangle=0$
+\end_inset
+
+ , we know that the cosine of the angle between them must be 
+\begin_inset Formula $0,$
+\end_inset
+
+ which implies that the angle is 
+\begin_inset Formula $90^{o},$
 \end_inset
 
  or 
-\begin_inset Formula $90^{\circ}$
+\begin_inset Formula $\pi/2$
 \end_inset
 
-.
- Therefore, 
-\begin_inset Formula $\langle\mathbf{x},\mathbf{v}\rangle=0$
-\end_inset
-
- implies that 
-\begin_inset Formula $\mathbf{v},\mathbf{x}$
-\end_inset
-
- form an angle of 
-\begin_inset Formula $\frac{\pi}{2}$
-\end_inset
-
-.
+ in radians.
  In this case, 
 \begin_inset Formula $\mathbf{x}$
 \end_inset
