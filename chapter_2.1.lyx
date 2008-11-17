@@ -1773,7 +1773,7 @@ ts between any two vectors of data
  The correlation coefficients is defined to be 
 \begin_inset Formula \begin{eqnarray*}
 \mbox{Corr}(\mathbf{x},\mathbf{y)} & = & \frac{\mbox{Cov}(\mathbf{x,}\mathbf{y})}{\sqrt{\mbox{Var}\mathbf{x}\mbox{Var}\mathbf{y}}}\\
-\mbox{where \mbox{Cov}(\mathbf{x,}\mathbf{y})} & = & \frac{1}{n}\sum_{i}x_{i}y_{i}-\bar{\mathbf{x}}\bar{\mathbf{y}}\\
+\mbox{where \mbox{Cov}}(\mathbf{x,}\mathbf{y}) & = & \frac{1}{n}\sum_{i}x_{i}y_{i}-\bar{\mathbf{x}}\bar{\mathbf{y}}\\
 \mbox{and }\mbox{Var}\mathbf{x} & = & \sqrt{\frac{1}{n}\sum_{i}x_{i}^{2}-\bar{\mathbf{x}}}\\
 \bar{\mathbf{x}} & = & \frac{1}{n}\sum_{i}x_{i}.\end{eqnarray*}
 

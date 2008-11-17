@@ -1,4 +1,4 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -728,9 +728,13 @@ The term
 \begin_inset Formula $y_{i}$
 \end_inset
 
+ divided by the standard deviation of the 
+\begin_inset Formula $x_{i}$
+\end_inset
+
 , i.e.
  
-\begin_inset Formula $w=\rho\sigma_{y}$
+\begin_inset Formula $w=\rho\frac{\sigma_{y}}{\sigma_{x}}$
 \end_inset
 
 .
@@ -741,15 +745,15 @@ The term
  yields
 \begin_inset Formula \begin{eqnarray*}
 b & = & \mu_{y}-w\mu_{x}\\
- & = & \mu_{y}-\rho\sigma_{y}\mu_{x}\end{eqnarray*}
+ & = & \mu_{y}-\rho\frac{\sigma_{y}}{\sigma_{x}}\mu_{x}\end{eqnarray*}
 
 \end_inset
 
 and we are left with the line equation 
 \begin_inset Formula \begin{eqnarray*}
 g(x) & = & wx+b\\
- & = & \rho\sigma_{y}x+\mu_{y}-\rho\sigma_{y}\mu_{x}\\
- & = & \rho\sigma_{y}(x-\mu_{x})+\mu_{y}.\end{eqnarray*}
+ & = & \rho\frac{\sigma_{y}}{\sigma_{x}}x+\mu_{y}-\rho\frac{\sigma_{y}}{\sigma_{x}}\mu_{x}\\
+ & = & \rho\frac{\sigma_{y}}{\sigma_{x}}(x-\mu_{x})+\mu_{y}.\end{eqnarray*}
 
 \end_inset
 
@@ -766,8 +770,9 @@ If you think about it, this equation makes perfect sense.
 \begin_inset Formula $x$
 \end_inset
 
- as estimated by our sample, the we multiply the result with the correlation
- coefficient 
+ as estimated by our sample, normlize its variance to one by dividing by
+ the standard deviation, multiply the result with the correlation coefficient
+ 
 \begin_inset Formula $\rho$
 \end_inset
 
