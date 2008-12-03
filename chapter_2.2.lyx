@@ -56,64 +56,6 @@ Matrices are really nothing but a very convenient notation for (linear)
  transformations on vectors.
  For example, the transformations of stretching a vector, or rotating it,
  or reflecting it can all be written as matrix products.
- In fact, every linear function can be written as a matrix product:
-\end_layout
-
-\begin_layout Standard
-In 
-\begin_inset LatexCommand ref
-reference "sub:LinearFunctions"
-
-\end_inset
-
- we saw that a one-dimensional linear function is completely determined
- by one input-output pair 
-\begin_inset Formula $(x,f(x))$
-\end_inset
-
-.
- The basic reason for that was, that each function must contain 
-\begin_inset Formula $(0,0)$
-\end_inset
-
- and, therefore, we can draw a line between the points 
-\begin_inset Formula $(0,0)$
-\end_inset
-
- and 
-\begin_inset Formula $(x,f(x))$
-\end_inset
-
- which represents the linear function.
- If we go from one-dimensional to 
-\begin_inset Formula $n$
-\end_inset
-
--dimensional linear functions the situation is similar, with the difference
- that a 
-\begin_inset Formula $n$
-\end_inset
-
--dimensional linear function 
-\begin_inset Formula $f:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}$
-\end_inset
-
- is completely determined by 
-\begin_inset Formula $n$
-\end_inset
-
- pairs 
-\begin_inset Formula $(\mathbf{x}_{1},f(\mathbf{x}_{1})),...,(\mathbf{x}_{n},f(\mathbf{x}_{n}))$
-\end_inset
-
- with linear independent 
-\begin_inset Formula $\mathbf{x}_{k}$
-\end_inset
-
-.
- The reason for this is exactly the same as in the linear case.
- Let us first look at an example and then examine this very important finding
- in more detail.
 \end_layout
 
 \begin_layout Paragraph
@@ -362,6 +304,124 @@ The result of multiplying an
 
 .
  
+\end_layout
+
+\begin_layout Subsection
+Reading a matrix
+\end_layout
+
+\begin_layout Standard
+The 'canonical basis vectors' are defined to be those vectors that have
+ exactly one entry equal to 
+\begin_inset Formula $1$
+\end_inset
+
+, and 
+\begin_inset Formula $0$
+\end_inset
+
+ everywhere else.
+ For example, in 
+\begin_inset Formula $2D,$
+\end_inset
+
+ the canonical basis vectors are 
+\begin_inset Formula $e_{1}={1 \choose 0}$
+\end_inset
+
+ and 
+\begin_inset Formula $e_{2}={0 \choose 1},$
+\end_inset
+
+ i.e the vectors that define the 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y-$
+\end_inset
+
+axis, respectively.
+ If we multiply a matrix 
+\begin_inset Formula $M$
+\end_inset
+
+ by 
+\begin_inset Formula $e_{1},$
+\end_inset
+
+ we get back the first column of 
+\begin_inset Formula $M:$
+\end_inset
+
+ For example, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\left(\begin{array}{cc}
+2 & 3\\
+1 & 1\end{array}\right){1 \choose 0} & = & {2 \choose 1}\\
+\left(\begin{array}{cc}
+2 & 3\\
+1 & 1\end{array}\right){0 \choose 1} & = & {3 \choose 1}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, the columns of a matrix are exactly the 'images' of the canonical
+ basis vectors under matrix multiplication.
+ From these images, we can calculate the image of any arbitrary vector 
+\begin_inset Formula $x,$
+\end_inset
+
+ as 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula \[
+x={x_{1} \choose x_{2}}=x_{1}{1 \choose 0}+x_{2}{0 \choose 1}.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula \begin{eqnarray*}
+Mx & = & M\left(x_{1}{1 \choose 0}+x_{2}{0 \choose 1}\right)\\
+ & = & x_{1}{2 \choose 1}+x_{2}{3 \choose 1}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence, the image of any vector 
+\begin_inset Formula $x$
+\end_inset
+
+ under multiplication by the matrix 
+\begin_inset Formula $M$
+\end_inset
+
+ can always be written as a linear combination of the columns of 
+\begin_inset Formula $M.$
+\end_inset
+
+
+\begin_inset Formula \[
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -1439,6 +1499,67 @@ as above.
 \end_layout
 
 \begin_layout Itemize
+Let 
+\begin_inset Formula $A=\left(\begin{array}{cc}
+2 & 0\\
+0 & 1\end{array}\right),B=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0\end{array}\right)$
+\end_inset
+
+, then
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{eqnarray*}
+AB & = & \left(\begin{array}{cc}
+0 & 2\\
+1 & 0\end{array}\right),\\
+BA & = & \left(\begin{array}{cc}
+0 & 1\\
+2 & 0\end{array}\right).\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Matrices do not have to be 'square' to be multiplied:
+\begin_inset Formula \[
+\left(\begin{array}{ccc}
+1 & 0 & 1\\
+3 & 2 & 1\end{array}\right)\left(\begin{array}{cc}
+1 & 0\\
+1 & 1\\
+1 & 2\end{array}\right)=\left(\begin{array}{cc}
+2 & 2\\
+6 & 4\end{array}\right).\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 Again, the identity matrix likes to be boring: Multiplying a 
 \begin_inset Formula $m\times n$
 \end_inset
@@ -1473,97 +1594,57 @@ Again, the identity matrix likes to be boring: Multiplying a
 \end_inset
 
 .
- The reason for this is easy to see.
- We just show it for multiplying 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- with 
-\begin_inset Formula $\mathbf{I}_{n}$
-\end_inset
-
-:
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{A}\cdot\mathbf{I}_{m} & = & \left(\begin{array}{cccc}
-\langle\mathbf{a}^{1},\mathbf{e}_{1}\rangle & \langle\mathbf{a}^{1},\mathbf{e}_{2}\rangle & \dots & \langle\mathbf{a}^{1},\mathbf{e}_{n}\rangle\\
-\langle\mathbf{a}^{2},\mathbf{e}_{1}\rangle & \ddots &  & \vdots\\
-\vdots &  & \ddots & \langle\mathbf{a}^{m-1},\mathbf{e}_{n}\rangle\\
-\langle\mathbf{a}^{m},\mathbf{e}_{1}\rangle & \dots & \langle\mathbf{a}^{m},\mathbf{e}_{n-1}\rangle & \langle\mathbf{a}^{m},\mathbf{e}_{n}\rangle\end{array}\right)\\
- & = & \left(\begin{array}{cccc}
-\mathbf{a}_{1}^{1} & \mathbf{a}_{2}^{1} & \dots & \mathbf{a}_{n}^{1}\\
-\mathbf{a}_{1}^{2} & \ddots &  & \vdots\\
-\vdots &  & \ddots & \mathbf{a}_{n}^{m-1}\\
-\mathbf{a}_{1}^{m} & \dots & \mathbf{a}_{n-1}^{m} & \mathbf{a}_{n}^{m}\end{array}\right)\\
- & = & \left(\begin{array}{cccc}
-\mathbf{A}_{11} & \mathbf{A}_{12} &  & \mathbf{A}_{1n}\\
-\mathbf{A}_{21}\\
-\vdots &  &  & \mathbf{A}_{(m-1)n}\\
-\mathbf{A}_{m1} &  & \mathbf{A}_{m(n-1)} & \mathbf{A}_{mn}\end{array}\right)\end{eqnarray*}
-
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Itemize
-Let us look at the example with the rotation matrices again and multiplying
+We can derived the addition theorems for sine and cosine from the rule of
+ matrix multiplication: Clearly, rotating a vector first by an angle of
  
-\begin_inset Formula $\mathbf{R}$
+\begin_inset Formula $\alpha$
 \end_inset
 
- with itself yields 
+, and then by 
+\begin_inset Formula $\beta$
+\end_inset
+
+, should yield exactly the same result as rotating it by 
+\begin_inset Formula $\alpha+\beta$
+\end_inset
+
+ in one go.
+ If we denote the matrix which rotates by 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ by 
+\begin_inset Formula $R(\alpha)$
+\end_inset
+
+, we get
 \begin_inset Formula \begin{eqnarray*}
-\mathbf{R}\cdot\mathbf{R} & = & \left(\begin{array}{cc}
-\cos90^{\circ} & -\sin90^{\circ}\\
-\sin90^{\circ} & \cos90^{\circ}\end{array}\right)\cdot\left(\begin{array}{cc}
-\cos90^{\circ} & -\sin90^{\circ}\\
-\sin90^{\circ} & \cos90^{\circ}\end{array}\right)\\
+R(\alpha+\beta) & = & R(\alpha)R(\beta)\\
+\left(\begin{array}{cc}
+\cos(\alpha+\beta) & -\sin(\alpha+\beta)\\
+\sin(\alpha+\beta) & \cos(\alpha+\beta)\end{array}\right) & = & \left(\begin{array}{cc}
+\cos(\alpha) & -\sin(\alpha)\\
+\sin(\alpha) & \cos(\alpha)\end{array}\right)\left(\begin{array}{cc}
+\cos(\beta) & -\sin(\beta)\\
+\sin(\beta) & \cos(\beta)\end{array}\right)\\
  & = & \left(\begin{array}{cc}
-(\cos90^{\circ}\cos90^{\circ}-\sin90^{\circ}\sin90^{\circ}) & (-\cos90^{\circ}\sin90^{\circ}-\sin90^{\circ}\cos90^{\circ})\\
-(\cos90^{\circ}\sin90^{\circ}+\sin90^{\circ}\cos90^{\circ}) & (-\sin90^{\circ}\sin90^{\circ}+\cos90^{\circ}\cos90^{\circ})\end{array}\right).\end{eqnarray*}
+\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta) & -\cos(\alpha)\sin(\beta)-\cos(\beta)\sin(\alpha)\\
+\cos(\alpha)\sin(\beta)+\cos(\beta)\sin(\alpha) & \cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)\end{array}\right).\end{eqnarray*}
 
 \end_inset
 
-Using the addition theorems 
+Equation coefficients, we recover the addition theorems 
 \begin_inset Formula \begin{eqnarray*}
-\cos(x+y) & = & \cos(x)\cos(y)-\sin(x)\sin(y)\\
-\sin(x+y) & = & \sin(x)\cos(y)+\cos(x)\sin(y)\end{eqnarray*}
+\cos(\alpha+\beta) & = & \cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)\\
+\sin(\alpha+\beta) & = & \sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta).\end{eqnarray*}
 
 \end_inset
 
-from 
-\begin_inset LatexCommand ref
-reference "sub:periodic_signal_view"
 
-\end_inset
-
- we can rewrite 
-\begin_inset Formula $\mathbf{R}\cdot\mathbf{R}$
-\end_inset
-
- as 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{R}\cdot\mathbf{R} & = & \left(\begin{array}{cc}
-(\cos90^{\circ}\cos90^{\circ}-\sin90^{\circ}\sin90^{\circ}) & (-\cos90^{\circ}\sin90^{\circ}-\sin90^{\circ}\cos90^{\circ})\\
-(\cos90^{\circ}\sin90^{\circ}+\sin90^{\circ}\cos90^{\circ}) & (-\sin90^{\circ}\sin90^{\circ}+\cos90^{\circ}\cos90^{\circ})\end{array}\right)\\
- & = & \left(\begin{array}{cc}
-\cos(90^{\circ}+90^{\circ}) & -\sin(90^{\circ}+90^{\circ})\\
-\sin(90^{\circ}+90^{\circ}) & \cos(90^{\circ}+90^{\circ})\end{array}\right)\\
- & = & \left(\begin{array}{cc}
-\cos(180^{\circ}) & -\sin(180^{\circ})\\
-\sin(180^{\circ}) & \cos(180^{\circ})\end{array}\right).\end{eqnarray*}
-
-\end_inset
-
-We can see that the multiplication of 
-\begin_inset Formula $\mathbf{R}$
-\end_inset
-
- with itself is indeed equal to a rotation matrix which rotates by 
-\begin_inset Formula $180^{\circ}$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Itemize
@@ -1683,139 +1764,27 @@ Matrix Transposition
 \end_layout
 
 \begin_layout Standard
-With these tools at hand we can already do quite a bit of matrix-vector
- operation.
- Let us introduce another important matrix operation with an example.
- Assume that we have measured the activity, i.e.
- the rate, of three neurons at times 
-\begin_inset Formula $t$
+It is often convenient (or necessary) to 'flip' a matrix or a vector by
+ exchanging its rows and columns.
+ For example, we might want to write a column vector 
+\begin_inset Formula $n\times1$
 \end_inset
 
- and 
-\begin_inset Formula $t+\tau$
-\end_inset
-
-, and stored them in the vectors 
-\begin_inset Formula $\mathbf{r}=(r_{1},r_{2},r_{3})^{\top}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbf{s}=(s_{1},s_{2},s_{3})^{\top}$
+ as a row vector of size 
+\begin_inset Formula $1\times n$
 \end_inset
 
 .
- Now, we want to compare the first two activities by using the scalar product
- as similarity measure.
- Of course, we could just compute the scalar product between 
-\begin_inset Formula ${r_{1} \choose r_{2}}$
-\end_inset
+ Formally, this operation is called 'taking the transpose':
+\end_layout
 
- and 
-\begin_inset Formula ${s_{1} \choose s_{2}}$
-\end_inset
-
-, but for the sake of practising matrix calculations, we want to express
- this operation completely in terms of matrix products.
- The easiest way to compute the dot product only in the first two dimensions
- is two project the vectors in the 
-\begin_inset Formula $x_{1}x_{2}$
-\end_inset
-
--plane and compute the dot product then.
- We already know the corresponding projection matrix 
-\begin_inset Formula $\mathbf{P}=\left(\begin{array}{ccc}
-1 & 0 & 0\\
-0 & 1 & 0\end{array}\right)$
-\end_inset
-
-.
- Our special dot product can then be written as 
-\begin_inset Formula $(\mathbf{P}\mathbf{r})^{\top}(\mathbf{P}\mathbf{s})$
-\end_inset
-
-.
- Now we can further simplify this expression by noting that 
-\begin_inset Formula $(\mathbf{Px})^{\top}=\mathbf{x}^{\top}\mathbf{P}^{\top}$
-\end_inset
-
-, where 
-\begin_inset Formula $\mathbf{P}^{\top}$
-\end_inset
-
- denotes the transposed matrix of 
-\begin_inset Formula $\mathbf{P}$
-\end_inset
-
-, i.e.
- 
-\begin_inset Formula $\mathbf{P}^{\top}=\left(\begin{array}{cc}
-1 & 0\\
-0 & 1\\
-0 & 0\end{array}\right)$
-\end_inset
-
-.
- When transposing a matrix, rows of the original matrix become columns of
- the transposed matrix, i.e.
- the matrix is 
-\begin_inset Quotes eld
-\end_inset
-
-flipped along the diagonal
-\begin_inset Quotes erd
-\end_inset
-
-.
- Putting everything together, our special dot product becomes:
-\begin_inset Formula \begin{eqnarray*}
-(\mathbf{P}\mathbf{r})^{\top}(\mathbf{P}\mathbf{s}) & = & \mathbf{x}^{\top}\mathbf{P}^{\top}\mathbf{P}\mathbf{s}\\
- & = & (x_{1},x_{2},x_{3})\left(\begin{array}{ccc}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & 0\end{array}\right)\left(\begin{array}{c}
-s_{1}\\
-s_{2}\\
-s_{3}\end{array}\right).\end{eqnarray*}
+\begin_layout Standard
+\begin_inset Formula \[
+\]
 
 \end_inset
 
-We can see that the result of the product 
-\begin_inset Formula $\mathbf{P}^{\top}\mathbf{P}$
-\end_inset
 
- is almost an identity matrix, except that the entry 
-\begin_inset Formula $(\mathbf{P}^{\top}\mathbf{P})_{33}=0$
-\end_inset
-
-.
- This entry sets the third coordinate of 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbf{s}$
-\end_inset
-
- to zero when multiplying 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
- and 
-\begin_inset Formula $\mathbf{s}$
-\end_inset
-
- with 
-\begin_inset Formula $\mathbf{P}^{\top}\mathbf{P}$
-\end_inset
-
-, which then allows us to compute our special dot product as a dot product
- in 
-\begin_inset Formula $\mathbb{R}^{3}$
-\end_inset
-
-.
- Let us just summarise the example in a more abstract way.
- 
 \end_layout
 
 \begin_layout Paragraph
@@ -1857,34 +1826,40 @@ is given by
 \end_layout
 
 \begin_layout Standard
-\align right
-\begin_inset Formula $\Diamond$
+If 
+\begin_inset Formula $A$
+\end_inset
+
+ is of size 
+\begin_inset Formula $m\times n,$
+\end_inset
+
+ 
+\begin_inset Formula $A^{\top}$
+\end_inset
+
+is of size 
+\begin_inset Formula $n\times m.$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-The equality 
-\begin_inset Formula $(\mathbf{Px})^{\top}=\mathbf{x}^{\top}\mathbf{P}^{\top}$
-\end_inset
-
- can be stated more general in a calculation rule.
+\begin_layout Subsubsection*
+Note
 \end_layout
 
-\begin_layout Paragraph
-Lemma 
-\end_layout
-
-\begin_layout Standard
-The transpose of a product of an arbitrary number of matrices 
-\begin_inset Formula $\mathbf{A}_{1},...,\mathbf{A}_{k}$
+\begin_layout Itemize
+The usual dot-product between two vectors can be written as 
+\begin_inset Formula $\langle v,w\rangle=v^{\top}w$
 \end_inset
 
- can equivalently be written as 
-\begin_inset Formula \begin{eqnarray*}
-(\mathbf{A}_{1}\cdot\mathbf{A}_{2}\cdot...\cdot\mathbf{A}_{k-1}\cdot\mathbf{A}_{k})^{\top} & = & \mathbf{A}_{k}^{\top}\cdot\mathbf{A}_{k-1}^{\top}\cdot...\cdot\mathbf{A}_{2}^{\top}\cdot\mathbf{A}_{1}^{\top}.\end{eqnarray*}
+.
+\end_layout
 
+\begin_layout Itemize
+If we take the transpose of a product, we have to reverse the order: 
+\begin_inset Formula $(ABC)^{\top}=C^{\top}B^{\top}A^{\top}.$
 \end_inset
 
 

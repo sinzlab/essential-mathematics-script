@@ -1,4 +1,4 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -48,196 +48,254 @@
 \begin_body
 
 \begin_layout Section
-Determinants
+Invertibility, Inverses and Rank
+\end_layout
+
+\begin_layout Subsection
+The Inverse of a matrix
 \end_layout
 
 \begin_layout Standard
-In the previous section, we saw that a matrix has full rank if the column
- vectors are linearly independent.
+Suppose we have given a linear system of equations, 
+\begin_inset Formula $y=Mx,$
+\end_inset
+
+ where 
+\begin_inset Formula $M$
+\end_inset
+
+ is a given 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix, and 
+\begin_inset Formula $y$
+\end_inset
+
+ is some knows vector.
+ For example, lets say we want to find a vector 
+\begin_inset Formula $x$
+\end_inset
+
+ such that 
+\begin_inset Formula \[
+{1 \choose 0}=\left(\begin{array}{cc}
+2 & 3\\
+-1 & 4\end{array}\right){x_{1} \choose x_{2}}.\]
+
+\end_inset
+
+How can we find 
+\begin_inset Formula $x?$
+\end_inset
+
+ We know that the outcome of multipying 
+\begin_inset Formula $x$
+\end_inset
+
+ with the matrix 
+\begin_inset Formula $M$
+\end_inset
+
+ gives us the vector 
+\begin_inset Formula $y={1 \choose 0},$
+\end_inset
+
+ but is that enough for determining 
+\begin_inset Formula $x?$
+\end_inset
+
+ Matrices for which we can 'recover' 
+\begin_inset Formula $x$
+\end_inset
+
+ from knowing the outcome of the matrix multiplication 
+\begin_inset Formula $Mx$
+\end_inset
+
+ are said to be invertible.
+ Formally: 
+\end_layout
+
+\begin_layout Subsubsection*
+Definition: 
+\end_layout
+
+\begin_layout Standard
+A square matrix M is said to be invertible if there exists a second matrix,
+ called 
+\begin_inset Formula $M^{-1},$
+\end_inset
+
+ which is such that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+MM^{-1}=M^{-1}M=I_{n}.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Notes:
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $M$
+\end_inset
+
+ is invertible, the linear system of equations 
+\begin_inset Formula $y=Mx$
+\end_inset
+
+ has the unique solution 
+\begin_inset Formula $x=M^{-1}y.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In the example above, 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $M^{-1}=\frac{1}{11}\left(\begin{array}{cc}
+4 & -3\\
+1 & 2\end{array}\right)$
+\end_inset
+
+, so 
+\begin_inset Formula $x=M^{-1}y=\frac{1}{11}\left(\begin{array}{cc}
+4 & -3\\
+1 & 2\end{array}\right){1 \choose 0}=\frac{1}{11}{4 \choose 1}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Inverses and Determinants
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $ $
+\end_inset
+
+matrices of size 
+\begin_inset Formula $2\times2,$
+\end_inset
+
+ we can directly derive the inverse by hand: Given a matrix 
+\begin_inset Formula $M=\left(\begin{array}{cc}
+m_{11} & m_{12}\\
+m_{21} & m_{22}\end{array}\right)$
+\end_inset
+
+, we want to find 
+\begin_inset Formula $M^{-1}=\left(\begin{array}{cc}
+k_{11} & k_{12}\\
+k_{21} & k_{22}\end{array}\right)$
+\end_inset
+
+such that 
+\begin_inset Formula $MM^{-1}=I$
+\end_inset
+
+, i.e.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\left(\begin{array}{cc}
+m_{11} & m_{12}\\
+m_{21} & m_{22}\end{array}\right)\left(\begin{array}{cc}
+k_{11} & k_{12}\\
+k_{21} & k_{22}\end{array}\right)=\left(\begin{array}{cc}
+1 & 0\\
+0 & 1\end{array}\right).\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Writing this matrix product out line by line yields for equations in four
+ unknowns, which can be solved yielding 
+\begin_inset Formula \[
+M^{-1}=\frac{1}{m_{11}m_{22}-m_{12}m_{21}}\left(\begin{array}{cc}
+m_{22} & -m_{12}\\
+-m_{21} & m_{11}\end{array}\right).\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Clearly, this formula only makes sense if 
+\begin_inset Formula $m_{11}m_{22}-m_{12}m_{21}$
+\end_inset
+
+ does not equal zero.
+ So, by computing this term, we can immediately see whether a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrix is invertible, or not.
+ It is therefore given a special name, it is the 
 \emph on
-Determinants
-\begin_inset LatexCommand index
-name "Determinants"
-
-\end_inset
-
-
+determinant
 \emph default
- are functions of square matrices, that are tightly linked to the linear
- independence of the column or row vectors of this matrix.
- They also play important roles in many other parts of linear algebra.
- However, apart from a small example, we will only use determinants to check
- whether a matrix has full rank so far.
- The easiest way is to remember their geometric interpretation.
+ of M.
  
 \end_layout
 
-\begin_layout Standard
-You should not use the determinant function for programming in order to
- check whether a matrix has full rank.
- There are other functions, like e.g.
- 
-\family typewriter
-rank(A)
-\family default
- in Matlab.
- Computing a determinant will take too long for larger matrices.
- However, there is a simple rule to compute the determinant for 
-\begin_inset Formula $2\times2$
-\end_inset
-
- and 
-\begin_inset Formula $3\times3$
-\end_inset
-
- matrices which can be used when doing small analytical calculations.
- 
+\begin_layout Subsubsection*
+Definition: Determinant
 \end_layout
 
 \begin_layout Standard
-The geometric interpretation of a determinant is easy.
- If 
-\begin_inset Formula $\mathbf{A}$
+\begin_inset Formula $ $
 \end_inset
 
- is a 
-\begin_inset Formula $n\times n$
-\end_inset
-
- matrix with linearly independent column or row vectors, then 
-\begin_inset Formula $\det(\mathbf{A})$
-\end_inset
-
- is the volume of the parallelepiped, i.e.
- the skewed cuboid, spanned by those vectors.
- Now it is easy to see why we can use a determinant to check, whether 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- has full rank.
- Consider a 
-\begin_inset Formula $2\times2$
-\end_inset
-
- matrix.
- The determinant gives us the area of the parallelogram spanned by the column
- vectors.
- If the matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- does not have full rank, the column vectors have the same orientation and
- the parallelogram collapses to a line, which has area zero.
- For 
-\begin_inset Formula $3\times3$
-\end_inset
-
- matrices, three linearly independent column vectors span some skewed cuboid.
- If they are linearly dependent, all three vectors lie in a plane or even
- on a line.
- Hence, the skewed cuboid has volumne zero.
- This generalizes to 
-\begin_inset Formula $n$
-\end_inset
-
- dimensions: If the determinant 
-\begin_inset Formula $\det\mathbf{A}$
-\end_inset
-
- of a squared matrix is zero, then the column vectors are linearly dependent
- and the matrix does not have full rank.
- 
-\end_layout
-
-\begin_layout Paragraph
-Theorem
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- be a 
-\begin_inset Formula $n\times n$
-\end_inset
-
- matrix.
- The determinant 
-\begin_inset Formula $\det\mathbf{A}$
-\end_inset
-
- of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- yields the volume of the parallelepiped spanned by the column or row vectors
- of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-.
- If the matrix 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
- does not have full rank, then the determinant is zero.
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset Formula $\Diamond$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Let us now see how determinants are computed.
-\end_layout
-
-\begin_layout Paragraph
-Lemma
-\end_layout
-
-\begin_layout Enumerate
 The determinant of a 
 \begin_inset Formula $2\times2$
 \end_inset
 
  matrix 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{A} & = & \left(\begin{array}{cc}
-A_{11} & A_{12}\\
-A_{21} & A_{22}\end{array}\right)\end{eqnarray*}
-
+\begin_inset Formula $M$
 \end_inset
 
- can be computed via 
-\begin_inset Formula \begin{eqnarray*}
-\det\mathbf{A} & = & A_{11}A_{22}-A_{21}A_{12}.\end{eqnarray*}
-
+ is defined as 
+\begin_inset Formula $\mbox{det}(M)=m_{11}m_{22}-m_{12}m_{21}.$
 \end_inset
 
-
+ In general, a matrix is invertible if and onfly if its determinant is non-zero.
 \end_layout
 
-\begin_layout Enumerate
-The determinant of a 
+\begin_layout Paragraph
+Notes: 
+\end_layout
+
+\begin_layout Itemize
+For a 
 \begin_inset Formula $3\times3$
 \end_inset
 
  matrix 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{A} & = & \left(\begin{array}{ccc}
-A_{11} & A_{12} & A_{13}\\
-A_{21} & A_{22} & A_{23}\\
-A_{31} & A_{32} & A_{33}\end{array}\right)\end{eqnarray*}
-
+\begin_inset Formula $A$
 \end_inset
 
-is given by
+, we have that 
 \begin_inset Formula \begin{eqnarray*}
 \det\mathbf{A} & = & A_{11}A_{22}A_{33}+A_{12}A_{23}A_{31}+A_{13}A_{21}A_{32}-A_{31}A_{22}A_{13}-A_{32}A_{23}A_{11}-A_{33}A_{21}A_{12}.\end{eqnarray*}
 
@@ -246,27 +304,9 @@ is given by
 
 \end_layout
 
-\begin_layout Standard
-\align right
-\begin_inset Formula $\Diamond$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-There are special cases where the determinant is easy to compute.
- Before we look at few examples, we just mention them here.
- 
-\end_layout
-
-\begin_layout Paragraph
-Lemma
-\end_layout
-
-\begin_layout Enumerate
+\begin_layout Itemize
 If 
-\begin_inset Formula $\mathbf{A}$
+\begin_inset Formula $\mathbf{D}$
 \end_inset
 
  is an 
@@ -277,14 +317,32 @@ If
  a matrix that is only non-zero on the diagonal, then the determinant is
  given by the product of the diagonal entries: 
 \begin_inset Formula \begin{eqnarray*}
-\det\mathbf{A} & = & \prod_{i=1}^{n}A_{ii}.\end{eqnarray*}
+\det\mathbf{D} & = & \prod_{i=1}^{n}D_{ii}.\end{eqnarray*}
 
 \end_inset
 
+This statements makes sense: The inverse of a diagonal matrix 
+\begin_inset Formula $D=\left(\begin{array}{ccc}
+d_{11} & 0 & 0\\
+0 & d_{22} & 0\\
+0 & 0 & d_{33}\end{array}\right)$
+\end_inset
 
+ can be written directly as 
+\begin_inset Formula $D^{-1}=\left(\begin{array}{ccc}
+1/d_{11} & 0 & 0\\
+0 & 1/d_{22} & 0\\
+0 & 0 & 1/d_{33}\end{array}\right)$
+\end_inset
+
+, but this construction only works if all diagonal entries are different
+ from zero.
+ On the other hand, as the determinant is the product of all diagonal entries,
+ it will only be non-zero if all of the diagonal entries are non-zero.
+ 
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
 If 
 \begin_inset Formula $\mathbf{A}$
 \end_inset
@@ -303,28 +361,12 @@ If
 
 \end_layout
 
-\begin_layout Standard
-\align right
-\begin_inset Formula $\Diamond$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Now let us look at a few examples.
-\end_layout
-
 \begin_layout Paragraph
 Examples
 \end_layout
 
 \begin_layout Enumerate
-The determinant of the 
-\begin_inset Formula $2\times2$
-\end_inset
-
- matrices from of the linear equation systems above, 
+The determinant of the matrices 
 \begin_inset Formula \begin{eqnarray*}
 \mathbf{A}_{1} & = & \left(\begin{array}{cc}
 2 & 3\\
@@ -348,15 +390,7 @@ are
 \begin_inset Formula $\det\mathbf{A}_{2}=2\cdot2-1\cdot4=0$
 \end_inset
 
-, as expected, since 
-\begin_inset Formula $\mathbf{A}_{1}$
-\end_inset
-
- has full rank and 
-\begin_inset Formula $\mathbf{A}_{2}$
-\end_inset
-
- does not.
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -372,28 +406,13 @@ The determinant of the identity matrix
 \end_layout
 
 \begin_layout Enumerate
-The determinant of the rotation matrix 
-\begin_inset Formula $\mathbf{R}=\left(\begin{array}{cc}
-\cos\phi & -\sin\phi\\
-\sin\phi & \cos\phi\end{array}\right)$
-\end_inset
-
- is 
-\begin_inset Formula $\det\mathbf{R}=1$
-\end_inset
-
-, because the columns form an orthonormal basis and therefore enclose a
- square of area one.
-\end_layout
-
-\begin_layout Enumerate
 This last example shows a case where determinants are used in statistics:
  The density function of a multivariate 
 \begin_inset Formula $n$
 \end_inset
 
 -dimensional Gaussian with mean 
-\begin_inset Formula $\bm\mu$
+\begin_inset Formula $\bm{\mu}$
 \end_inset
 
  and covariance 
@@ -402,7 +421,7 @@ This last example shows a case where determinants are used in statistics:
 
  is given by 
 \begin_inset Formula \begin{eqnarray*}
-p(\mathsf{X}|\bm\mu,\mathbf{C}) & = & \frac{1}{(2\pi)^{\frac{n}{2}}\sqrt{\det\mathbf{C}}}\exp\left(\frac{1}{2}(\mathbf{x}-\bm\mu)^{\top}\mathbf{C}^{-1}(\mathbf{x}-\bm\mu)\right).\end{eqnarray*}
+p(\mathsf{X}|\bm{\mu},\mathbf{C}) & = & \frac{1}{(2\pi)^{\frac{n}{2}}\sqrt{\det\mathbf{C}}}\exp\left(\frac{1}{2}(\mathbf{x}-\bm{\mu})^{\top}\mathbf{C}^{-1}(\mathbf{x}-\bm{\mu})\right).\end{eqnarray*}
 
 \end_inset
 
@@ -421,20 +440,8 @@ Here, the square root of the determinant, i.e.
 , takes over this role.
 \end_layout
 
-\begin_layout Standard
-\align right
-\begin_inset Formula $\lhd$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Finally let us look at a few useful computatio rules for determinants.
-\end_layout
-
 \begin_layout Paragraph
-Proposition (Properties of Matrices)
+Properties of determinants:
 \end_layout
 
 \begin_layout Standard
@@ -466,6 +473,766 @@ Let
 .
 \end_layout
 
+\begin_layout Subsection
+When is a matrix invertible? 
+\end_layout
+
+\begin_layout Standard
+In the above, we stated a general rule for determining whether a matrix
+ is invertible, namely computing its determinant.
+ Now, we want to get more intuition into what 'makes' a matrix invertible.
+ If a matrix is invertible, then given any vector 
+\begin_inset Formula $y$
+\end_inset
+
+, we can always find a unique 
+\begin_inset Formula $x$
+\end_inset
+
+ such that 
+\begin_inset Formula $y=Mx.$
+\end_inset
+
+ When could this fail? 
+\end_layout
+
+\begin_layout Standard
+Suppose that we have any vector 
+\begin_inset Formula $x$
+\end_inset
+
+ that is such that 
+\begin_inset Formula $Mx=0.$
+\end_inset
+
+ (With 
+\begin_inset Formula $0$
+\end_inset
+
+, we here mean a vector that has all entries equal to 
+\begin_inset Formula $0).$
+\end_inset
+
+ Then clearly, 
+\begin_inset Formula $M(2x)=0$
+\end_inset
+
+ also, or 
+\begin_inset Formula $M(\alpha x)=0$
+\end_inset
+
+ for any 
+\begin_inset Formula $ $
+\end_inset
+
+number 
+\begin_inset Formula $\alpha.$
+\end_inset
+
+ In this case, we would have non-uniquness, as 
+\begin_inset Formula $Mx=M(2x)$
+\end_inset
+
+ but clearly 
+\begin_inset Formula $x\neq2x,$
+\end_inset
+
+ for 
+\begin_inset Formula $x\neq0.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alternatively, one possible scenario is that we have two vectors 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+ which are such that 
+\begin_inset Formula $y=Mx=Mz.$
+\end_inset
+
+ If that is the case, if we are only given the outcome 
+\begin_inset Formula $y,$
+\end_inset
+
+ there is know way of determining whether 
+\begin_inset Formula $x$
+\end_inset
+
+ or 
+\begin_inset Formula $z$
+\end_inset
+
+ went into the matrix-multiplication.
+ Actually, this scenario is the same as the previous one: If 
+\begin_inset Formula $Mx=My,$
+\end_inset
+
+ then 
+\begin_inset Formula $M(x-y)=0,$
+\end_inset
+
+ so we have found a vector 
+\begin_inset Formula $x-y$
+\end_inset
+
+ which is not equal to 
+\begin_inset Formula $0,$
+\end_inset
+
+ but 
+\begin_inset Formula $M(x-y)$
+\end_inset
+
+ is 
+\begin_inset Formula $0.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+In general, we have the statement that 
+\end_layout
+
+\begin_layout Subsubsection*
+Invertibility and the null-space: 
+\end_layout
+
+\begin_layout Standard
+A square matrix 
+\begin_inset Formula $M$
+\end_inset
+
+ is not invertible exactly we can find a vector 
+\begin_inset Formula $x\neq0$
+\end_inset
+
+ for which 
+\begin_inset Formula $Mx=0.$
+\end_inset
+
+ A vector is said to belong to the 
+\emph on
+null-space 
+\emph default
+of 
+\begin_inset Formula $M$
+\end_inset
+
+ is 
+\begin_inset Formula $Mx=0.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+An example
+\end_layout
+
+\begin_layout Standard
+Lets consider the matrix 
+\begin_inset Formula $A=\left(\begin{array}{cc}
+1 & 2\\
+2 & 4\end{array}\right).$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ maps the first canonical basis vector 
+\begin_inset Formula ${1 \choose 0}$
+\end_inset
+
+ to 
+\begin_inset Formula ${1 \choose 2}$
+\end_inset
+
+, and the second basis vector 
+\begin_inset Formula ${0 \choose 1}$
+\end_inset
+
+ is mapped to 
+\begin_inset Formula ${2 \choose 4}=2{1 \choose 2}.$
+\end_inset
+
+ As 
+\begin_inset Formula $Ax$
+\end_inset
+
+ can always be written as 
+\begin_inset Formula $Ax=x_{1}{1 \choose 2}+x_{2}{2 \choose 4}=(x_{1}+2x_{2}){1 \choose 2}$
+\end_inset
+
+, we can see that the image of any vector will be proportional to 
+\begin_inset Formula ${1 \choose 2}$
+\end_inset
+
+.
+ This implies, e.g.
+ that 
+\begin_inset Formula $A{-2 \choose 1}=(-2+2){1 \choose 2}=0.$
+\end_inset
+
+ So, we can see that a matrix if not invertible if its columns do not 'fill
+ the space'.
+ In two dimensions, this is the case if one column is a multiple of the
+ other column.
+ In general, this will be the case if 
+\begin_inset Formula ${A_{11} \choose A_{21}}=\alpha{A_{12} \choose A_{22}}$
+\end_inset
+
+, for some number 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, i.e.
+ if 
+\begin_inset Formula $A_{11}=\alpha A_{12}$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{21}=\alpha A_{22}.$
+\end_inset
+
+ Getting rid of 
+\begin_inset Formula $\alpha,$
+\end_inset
+
+ we get the condition that 
+\begin_inset Formula $A_{11}=\frac{A_{21}}{A_{22}}A_{12},$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+or 
+\begin_inset Formula $A_{11}A_{22}=A_{21}A_{22}.$
+\end_inset
+
+ If this condition is satisfied, 
+\begin_inset Formula $A_{11}A_{22}-A_{21}A_{22}=\mbox{det}(A)=0.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+In three dimensions, a matrix is not invertible if its columns do not 'fill
+ the space', in the sense that either all three columns lie on a line, or
+ in a 2-dimensional plane.
+ We can formalize this concept using the notion of linear independence:
+\end_layout
+
+\begin_layout Subsection
+Linear independence
+\end_layout
+
+\begin_layout Subsubsection*
+Definition:
+\end_layout
+
+\begin_layout Standard
+A set of vectors 
+\begin_inset Formula $v_{1}\ldots v_{m}$
+\end_inset
+
+ is said to be linearly independent if we can not find number 
+\begin_inset Formula $\alpha_{1},\alpha_{2},\ldots,\alpha_{m}$
+\end_inset
+
+, where at least one of the 
+\begin_inset Formula $\alpha$
+\end_inset
+
+'s is not equal to 0, such that 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula \[
+\alpha_{1}v_{1}+\alpha_{2}v_{2}+\ldots\alpha_{m}v_{m}=0.\]
+
+\end_inset
+
+ If we can find such numbers, then the set of vector is said to be linearly
+ dependent.
+ 
+\end_layout
+
+\begin_layout Standard
+In other words, a set of vectors is linearly independent if we can not find
+ a (non-trivial) linear combination of them that is 
+\begin_inset Formula $0.$
+\end_inset
+
+ If vectors 
+\begin_inset Formula $v_{1}\ldots v_{m}$
+\end_inset
+
+ are linearly dependent, then we can find some number such that 
+\begin_inset Formula $\alpha_{1}v_{1}+\alpha_{2}v_{2}+\ldots\alpha_{m}v_{m}=0,$
+\end_inset
+
+ where, lets say, 
+\begin_inset Formula $\alpha_{1}\neq0$
+\end_inset
+
+.
+ So, in this case, we can write 
+\begin_inset Formula \[
+v_{1}=\frac{-1}{\alpha_{1}}(\alpha_{2}v_{2}+\ldots+\alpha_{m}v_{m}),\]
+
+\end_inset
+
+i.e.
+ we can express (at least) one of the vectors as a linear combination of
+ the others.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Examples
+\end_layout
+
+\begin_layout Itemize
+Any single, non-zero vector 
+\begin_inset Formula $v$
+\end_inset
+
+ is linearly independent: Clearly, 
+\begin_inset Formula $\alpha v=0$
+\end_inset
+
+ is only 
+\begin_inset Formula $0$
+\end_inset
+
+ if 
+\begin_inset Formula $\alpha=0.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The canonical basis vectors are independent: If we write, e.g.
+ 
+\begin_inset Formula \[
+\alpha_{1}\left(\begin{array}{c}
+0\\
+0\\
+1\end{array}\right)+\alpha_{2}\left(\begin{array}{c}
+0\\
+0\\
+1\end{array}\right)+\alpha_{3}\left(\begin{array}{c}
+0\\
+0\\
+1\end{array}\right)=\left(\begin{array}{c}
+\alpha_{1}\\
+\alpha_{2}\\
+\alpha_{3}\end{array}\right),\]
+
+\end_inset
+
+ then the only way this could be equal to 
+\begin_inset Formula $\left(\begin{array}{c}
+0\\
+0\\
+0\end{array}\right)$
+\end_inset
+
+ if 
+\begin_inset Formula $\alpha_{1}=\alpha_{2}=\alpha_{3}=0.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+The two vectors 
+\begin_inset Formula ${2 \choose 4}$
+\end_inset
+
+ and 
+\begin_inset Formula ${1 \choose 2}$
+\end_inset
+
+ are linearly dependent, as 
+\begin_inset Formula ${2 \choose 4}=2{1 \choose 2}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The vectors 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\left(\begin{array}{c}
+-1\\
+1\\
+0\end{array}\right),\left(\begin{array}{c}
+2\\
+0\\
+3\end{array}\right),\left(\begin{array}{c}
+0\\
+-2\\
+3\end{array}\right)$
+\end_inset
+
+ are linearly dependent, as 
+\begin_inset Formula \[
+2\left(\begin{array}{c}
+-1\\
+1\\
+0\end{array}\right)+\left(\begin{array}{c}
+2\\
+0\\
+3\end{array}\right)+\left(\begin{array}{c}
+0\\
+-2\\
+3\end{array}\right)=0\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Any set of vectors which includes a zero vector is linearly dependent, e.g.
+ 
+\begin_inset Formula $1\cdot\left(\begin{array}{c}
+0\\
+0\\
+0\end{array}\right)+0v_{2}+0v_{,m}=0.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Rank of a matrix
+\end_layout
+
+\begin_layout Standard
+Consider an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ with columns 
+\begin_inset Formula $A_{1}\ldots A_{n}.$
+\end_inset
+
+ We showed early that the image of any vector 
+\begin_inset Formula $x$
+\end_inset
+
+ can be written as 
+\begin_inset Formula \[
+Ax=x_{1}A_{1}+\ldots x_{n}A_{n}.\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A matrix is not invertible if and only if there exists a vector 
+\begin_inset Formula $x$
+\end_inset
+
+ which is non-zero, but which maps to 
+\begin_inset Formula $0,$
+\end_inset
+
+i.e.
+ for which 
+\begin_inset Formula \[
+0=x_{1}A_{1}+\ldots x_{n}A_{n}.\]
+
+\end_inset
+
+ In other words, a matrix is invertible if and only if its columns are linearly
+ independent.
+ The maximal number of linearly independent columns of a matrix is called
+ the 
+\emph on
+rank.
+ 
+\emph default
+A matrix is said to have 
+\emph on
+full rank 
+\emph default
+if its rank is 
+\begin_inset Formula $n,$
+\end_inset
+
+ i.e.
+ if all of its columns are linearly independent, otherwise it is said to
+ be 
+\begin_inset Formula $ $
+\end_inset
+
+
+\emph on
+rank-deficient.
+
+\emph default
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Examples
+\end_layout
+
+\begin_layout Itemize
+Any 
+\begin_inset Formula $ $
+\end_inset
+
+non-zero vector 
+\begin_inset Formula $v$
+\end_inset
+
+ can be considered as a rank 1 matrix.
+ 
+\end_layout
+
+\begin_layout Itemize
+The matrix 
+\begin_inset Formula $ $
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\left(\begin{array}{cc}
+1 & 2\\
+2 & 4\end{array}\right)$
+\end_inset
+
+ has rank 
+\begin_inset Formula $1$
+\end_inset
+
+, as its columns are not independent (so rank<2), but 
+\begin_inset Formula $ $
+\end_inset
+
+the vector 
+\begin_inset Formula ${1 \choose 2}$
+\end_inset
+
+ is non-zero, so rank
+\begin_inset Formula $\geq1.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The matrix 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\left(\begin{array}{ccc}
+-1 & 2 & 0\\
+1 & 0 & -2\\
+0 & 3 & 3\end{array}\right)$
+\end_inset
+
+ has rank 2, as its columns are not independent (as shown above), so rank<3,
+ but e.g.
+ the two vectors 
+\begin_inset Formula $\left(\begin{array}{c}
+-1\\
+1\\
+0\end{array}\right)\mbox{and}\left(\begin{array}{c}
+2\\
+0\\
+3\end{array}\right)$
+\end_inset
+
+ are linearly independent, so rank
+\begin_inset Formula $\geq2$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+For any diagonal matrix, the rank is equal to the number of non-zero diagonal
+ entries.
+ 
+\end_layout
+
+\begin_layout Itemize
+The matrix
+\begin_inset Formula \[
+\left(\begin{array}{ccccc}
+1 & 3 & 5 & 7 & 10\\
+2 & 4 & 6 & 8 & 9\end{array}\right)\]
+
+\end_inset
+
+has rank 2, as both rows are linearly independent (so rank 
+\begin_inset Formula $\geq2$
+\end_inset
+
+), but there are only two rows (so rank 
+\begin_inset Formula $\leq2).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The outer product of two (non zero) vectors, 
+\begin_inset Formula $xx^{\top},$
+\end_inset
+
+ has rank 1: For example,
+\begin_inset Formula \[
+\left(\begin{array}{c}
+1\\
+2\\
+3\end{array}\right)\left(1,2,3\right)=\left(\begin{array}{ccc}
+1 & 2 & 3\\
+2 & 4 & 6\\
+3 & 6 & 9\end{array}\right)\]
+
+\end_inset
+
+has rank one, as (by construction), each row is a multiple of the others.
+\end_layout
+
+\begin_layout Itemize
+Similarly, a sum of outerproducts of 
+\begin_inset Formula $m$
+\end_inset
+
+ 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional, linearly independent vectors 
+\begin_inset Formula $x_{1}\ldots x_{m}$
+\end_inset
+
+has rank 
+\begin_inset Formula $m$
+\end_inset
+
+ if 
+\begin_inset Formula $m\leq n,$
+\end_inset
+
+and rank 
+\begin_inset Formula $n$
+\end_inset
+
+ otherwise: 
+\begin_inset Formula $C=\sum_{i}x_{i}x_{i}^{\top}.$
+\end_inset
+
+ As covariance matrices are of this form, this means that covariance matrices
+ are rank-deficient if one has not collected enough data.
+  
+\begin_inset Formula \[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Note
+\end_layout
+
+\begin_layout Itemize
+The definition of 'invertible' in terms of linearly independent columns
+ often makes it easy to determine whether a matrix is invertible by inspecting
+ its columns: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If any column is zero, the matrix is not invertible
+\end_layout
+
+\begin_layout Itemize
+If two columns are the same, or one column is a multiple of the other, it
+ is not invertible.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In fact, the rank of any matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is the same as the rank of its transpose, 
+\begin_inset Formula $A^{\top}.$
+\end_inset
+
+ As a consequence, we can replace the 'columns' in the definition of rank
+ by 'rows'.
+ For determining the rank of a matrix, it is sometimes easier to look at
+ the columns, and sometimes easier to look at the rows.
+ 
+\end_layout
+
 \begin_layout Standard
 \align right
 \begin_inset Formula $\Diamond$
@@ -490,10 +1257,6 @@ PCA
 \emph default
 , which is one of the most common algorithms for analysis data.
  We will also look at this algorithm in more detail.
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \end_body
