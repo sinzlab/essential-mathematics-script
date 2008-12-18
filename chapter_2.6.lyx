@@ -51,8 +51,12 @@
 Principal Component Analysis (PCA)
 \end_layout
 
+\begin_layout Paragraph
+Example: PCA on chromatic pixels
+\end_layout
+
 \begin_layout Standard
-The first three plots of Figure 
+The first plot of Figure 
 \begin_inset LatexCommand ref
 reference "fig:natimg"
 
@@ -65,13 +69,13 @@ reference "fig:natimg"
 \end_inset
 
 .
- The fourth plot in Figure 
+ The other plot in Figure 
 \begin_inset LatexCommand ref
 reference "fig:natimg"
 
 \end_inset
 
- shows the RBG values as point in 3D.
+ shows the RBG values as points in 3D.
  While the histograms suggested that the whole dynamic range of the cube
  
 \begin_inset Formula $[0,1]³$
@@ -86,6 +90,14 @@ reference "fig:natimg"
 
 , which corresponds to the luminance of the three pixels.
  
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -153,6 +165,86 @@ reference "eq:pcaObj"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/orgImg.eps
+	width 5.5cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figs/ColorHistograms.eps
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/Scatterplot.eps
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:natimg"
+
+\end_inset
+
+
+\series bold
+Left Top:
+\series default
+ Original natural image.
+ 
+\series bold
+Right Top:
+\series default
+ Histograms over the red, green and blue channel of a natural image.
+
+\series bold
+ Center Bottom:
+\series default
+Scatterplot of color pixel values in RGB space.
+ The gray points on the side of the cube are the marginal scatterplots,
+ i.e.
+ the projections on the respective coordinate plane.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Since we are only interested in a direction, we can assume choose our vector
  
 \begin_inset Formula $\mathbf{v}$
@@ -521,21 +613,119 @@ Principle Component Analysis (PCA)
 \end_layout
 
 \begin_layout Standard
+In its complete version, the PCA algorithm usually computes all eigenvectors
+ instead of simply the largest one.
+ As we saw in the last chapter about eigenvalues, symmetric matrices like
+ 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ have eigenvectors that are mutually orthogonal to each other.
+ In terms of PCA this means that after computing the direction of the largest
+ variance, we compute the direction of largest variance which is orthogonal
+ to the first one and so on.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Example: PCA on chromatic pixels (con'd)
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset LatexCommand ref
+reference "fig:PCAimg"
+
+\end_inset
+
+ shows the centered pixels and the pixels that have been transformed into
+ the PCA basis.
+ For visualization we also transformed the RGB color planes along with the
+ data.
+ Looking at the right plot of Figure 
+\begin_inset LatexCommand ref
+reference "fig:PCAimg"
+
+\end_inset
+
+ shows that the first principle component (now the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis) indeed corresponds to the luminance axis.
+ Furthermore, we can observe that the second and third principle component
+ (now the 
+\begin_inset Formula $y$
+\end_inset
+
+- and the 
+\begin_inset Formula $z$
+\end_inset
+
+-axis, respectively) roughly corresponds to the blue-yellow and the red-green
+ channel, respectively.
+ This is not an coincidence.
+ In fact, this finding is very stable of many natural images.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename figs/Mean0Scatter.eps
+	width 6cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figs/PCAbase.eps
+	width 6cm
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Standard
 \begin_inset Caption
 
 \begin_layout Standard
 \begin_inset LatexCommand label
-name "fig:natimg"
+name "fig:PCAimg"
 
 \end_inset
 
 
+\series bold
+Left:
+\series default
+ Scatterplot of centered chromatic natural image pixels.
+ 
+\series bold
+Right:
+\series default
+ Scatterplot of color pixel values in PCA space.
+ We can see that the 
+\begin_inset Formula $y$
+\end_inset
+
+-axis in the PCA basis roughly corresponds to the blue-yellow channel whereas
+ the 
+\begin_inset Formula $z$
+\end_inset
+
+-axis roughly corresponds to the red-green channel.
+ Both channels are also found in the early visual system.
+ 
+\newline
+In both plots the color planes have been shifted with the pixels.
 \end_layout
 
 \end_inset
@@ -543,6 +733,184 @@ name "fig:natimg"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interestingly, the same color opponencies are also found in the early visual
+ system.
+ What could be the advantage of those channels? PCA can give as an answer
+ to that.
+ Assume that 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ is the covariance matrix (i.e.
+ the 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ have mean zero).
+ Remember from the last chapter, that we can write a symmetric matrix in
+ terms of its eigenbasis as follows 
+\begin_inset Formula $\mathbf{C}=\mathbf{V}\Lambda\mathbf{V}^{\top}$
+\end_inset
+
+, where the columns of 
+\begin_inset Formula $\mathbf{V}$
+\end_inset
+
+ correspond to the eigenvectors and 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+ is a diagonal matrix that contains the eigenvalues.
+ Now, we can ask the question how 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ looks like in the basis 
+\begin_inset Formula $\mathbf{V}$
+\end_inset
+
+.
+ A quick computation shows that the transformation that has to be applied
+ is 
+\begin_inset Formula $\mathbf{C}\mapsto\mathbf{V}^{\top}\mathbf{C}\mathbf{V}$
+\end_inset
+
+.
+ However, since 
+\begin_inset Formula $\mathbf{C}=\mathbf{V}\Lambda\mathbf{V}^{\top}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{V}^{\top}\mathbf{V}=\mathbf{V}\mathbf{V}^{\top}=\mathbf{I}$
+\end_inset
+
+ we know the answer: In the PCA basis 
+\begin_inset Formula $\mathbf{V}^{\top}\mathbf{C}\mathbf{V}=\Lambda$
+\end_inset
+
+, i.e.
+ the covariance matrix is diagonal.
+ This means that all off-diagonal terms are zero and, therefore, the signals
+ are uncorrelated.
+ How could the visual system profit from uncorrelated signals? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/pc1.eps
+	width 4cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figs/pc2.eps
+	width 4cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figs/pc3.eps
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:PCs"
+
+\end_inset
+
+Image only represented by the first (left), second (middle) and third (right)
+ principal component in color space.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are basically two reasons.
+ Imagine, we use three neurons to signal the value of each color pixel,
+ either on neuron for each RGB channel or one neuron for each principle
+ component.
+ Now we make two reasonable assumption about our neurons: Firstly, our neurons
+ have limited expressive power.
+ This means that they can only signal a finite number of pixel values.
+ Secondly, our neuron has limited capacity.
+ This means it can only transmit a limited amount of information in a given
+ time window.
+ For both cases, signalling in the PCA basis is favorable for the neuron.
+ Why is that the case? We already saw, that the histograms in the RBG space
+ covered the full dynamic range 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+ A neuron, which has limited expressive power, must distribute the pixel
+ values, that it wants to transmit over the whole dynamic range for all
+ three color channels in RGB space.
+ This means that the resolution is very coarse.
+ In the PCA basis however, we can see from 
+\begin_inset LatexCommand ref
+reference "fig:PCAimg"
+
+\end_inset
+
+ that the histograms for the blue-yellow and the red-green channel will
+ be much more compressed.
+ This means that the neurons responsible for those channels, can spend their
+ finite amount of states on that range, thereby obtaining a finer resolution.
+ 
+\end_layout
+
+\begin_layout Standard
+The PCA basis is also more favorable in terms of capacity.
+ If a neuron can only transmit a finite amount of information in a given
+ time window, it is not favorable if the three different signals are correlated
+ or, in other words, redundant (ignoring noise issues for the moment).
+ The reason is simply that by transmitting two correlated signals, each
+ signal also transmits some information about the other signal.
+ Since our neurons can only signal a limited amount of information in a
+ given time window, the total amount of information that can be transmitted
+ becomes less when the signals are correlated.
+ However, as we have already seen above, signals are uncorrelated in the
+ PCA basis.
+ This means that signalling in that representation is also favorable in
+ terms of capacity.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\Diamond$
 \end_inset
 
 
