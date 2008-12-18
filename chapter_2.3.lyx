@@ -1022,11 +1022,7 @@ Examples
 \end_layout
 
 \begin_layout Itemize
-Any 
-\begin_inset Formula $ $
-\end_inset
-
-non-zero vector 
+Any non-zero vector 
 \begin_inset Formula $v$
 \end_inset
 

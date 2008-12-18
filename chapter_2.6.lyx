@@ -1,0 +1,315 @@
+#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\setcounter{chapter}{2}
+\usepackage{graphicx}
+\usepackage{pict2e}
+\usepackage{graphpap}
+\usepackage{color}
+\usepackage{bm}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Principal Component Analysis (PCA)
+\end_layout
+
+\begin_layout Standard
+The first three plots of Figure 
+\begin_inset LatexCommand ref
+reference "fig:natimg"
+
+\end_inset
+
+ shows the histograms of the red (R), green (G) and blue (B) channel of
+ a natural image.
+ We can see that the value are spread out over the whole dynamic range 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+ The fourth plot in Figure 
+\begin_inset LatexCommand ref
+reference "fig:natimg"
+
+\end_inset
+
+ shows the RBG values as point in 3D.
+ While the histograms suggested that the whole dynamic range of the cube
+ 
+\begin_inset Formula $[0,1]³$
+\end_inset
+
+ should be covered, we can see that this is definetely not the case.
+ In fact, the RBG values are correlated and cover only a part of the color
+ cube.
+ The main axis of correlation is vaguely 
+\begin_inset Formula $(1,1,1)^{\top}$
+\end_inset
+
+, which corresponds to the luminance of the three pixels.
+ 
+\end_layout
+
+\begin_layout Standard
+Image we wanted to encode each pixel value with a single neuron, i.e.
+ we wanted to find an axis along which we would get most of the information
+ about the three RGB values.
+ This means we want to find a direction 
+\begin_inset Formula $\mathbf{v}\in\mathbb{R}³$
+\end_inset
+
+ such that the projection 
+\begin_inset Formula $v_{i}=\langle\mathbf{v},\mathbf{x}_{i}\rangle$
+\end_inset
+
+ of pixel values 
+\begin_inset Formula $\mathbf{x}_{i}=(x_{i}^{red},x_{i}^{green},x_{i}^{blue})^{\top}$
+\end_inset
+
+ catches most of the information about all our pixels 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ in a Euclidean norm sense 
+\begin_inset Formula \begin{eqnarray}
+\mathbf{v} & = & \mbox{argmin}_{\mathbf{v}}\frac{1}{m}\sum_{i=1}^{m}||\mathbf{x}_{i}-\langle\mathbf{v},\mathbf{x}_{i}\rangle\mathbf{v}||².\label{eq:pcaObj}\end{eqnarray}
+
+\end_inset
+
+Which direction should we take? Before we compute the direction from equation
+ (
+\begin_inset LatexCommand ref
+reference "eq:pcaObj"
+
+\end_inset
+
+), let us quickly spent some thought on what we would expect.
+ Intuitively, most information about a color pixel is preserved when we
+ convert it into a single gray value.
+ However, this would mean that the axis, we are searching for, is exactly
+ the axis 
+\begin_inset Formula $(1,1,1)^{\top}$
+\end_inset
+
+ along which the color values have the largest variance.
+ We will see in the following that this is indeed the case.
+ 
+\end_layout
+
+\begin_layout Standard
+Before we compute our direction 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+, we need to transform equation (
+\begin_inset LatexCommand ref
+reference "eq:pcaObj"
+
+\end_inset
+
+) a little bit
+\begin_inset Formula \begin{eqnarray*}
+ &  & \frac{1}{m}\sum_{i=1}^{m}||\mathbf{x}_{i}-\langle\mathbf{v},\mathbf{x}_{i}\rangle\mathbf{v}||²\\
+ & = & \frac{1}{m}\sum_{i=1}^{m}\langle\mathbf{x}_{i}-\langle\mathbf{v},\mathbf{x}_{i}\rangle\mathbf{v},\mathbf{x}_{i}-\langle\mathbf{v},\mathbf{x}_{i}\rangle\mathbf{v}\rangle\\
+ & = & \frac{1}{m}\sum_{i=1}^{m}\left(\mathbf{x}_{i}^{\top}\mathbf{x}_{i}-2\langle\mathbf{v},\mathbf{x}_{i}\rangle^{2}+\langle\mathbf{v},\mathbf{x}_{i}\rangle^{2}\mathbf{v}^{\top}\mathbf{v}\right).\end{eqnarray*}
+
+\end_inset
+
+Since we are only interested in a direction, we can assume choose our vector
+ 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ to have length one 
+\begin_inset Formula $||\mathbf{v}||=1$
+\end_inset
+
+.
+ In fact we already implicitly assumed this when we wrote the reconstruction
+ of 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ through 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ as 
+\begin_inset Formula $\langle\mathbf{v},\mathbf{x}_{i}\rangle\mathbf{v}$
+\end_inset
+
+.
+ With 
+\begin_inset Formula $||\mathbf{v}||=1$
+\end_inset
+
+, the equation becomes 
+\begin_inset Formula \begin{eqnarray*}
+ &  & \frac{1}{m}\sum_{i=1}^{m}\left(\mathbf{x}_{i}^{\top}\mathbf{x}_{i}-2\langle\mathbf{v},\mathbf{x}_{i}\rangle^{2}+\langle\mathbf{v},\mathbf{x}_{i}\rangle^{2}\mathbf{v}^{\top}\mathbf{v}\right)\\
+ & = & \frac{1}{m}\sum_{i=1}^{m}\left(\mathbf{x}_{i}^{\top}\mathbf{x}_{i}-2\langle\mathbf{v},\mathbf{x}_{i}\rangle^{2}+\langle\mathbf{v},\mathbf{x}_{i}\rangle^{2}\right)\\
+ & = & \frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}^{\top}\mathbf{x}_{i}-\frac{1}{m}\sum_{i=1}^{m}\langle\mathbf{v},\mathbf{x}_{i}\rangle^{2}.\end{eqnarray*}
+
+\end_inset
+
+Note that if the 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ had mean zero, i.e.
+ 
+\begin_inset Formula $\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $\frac{1}{m}\sum_{i=1}^{m}\langle\mathbf{v},\mathbf{x}_{i}\rangle^{2}$
+\end_inset
+
+ would be the variance of the projections of the 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ onto our direction 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+.
+ We can further rewrite this term into 
+\begin_inset Formula \begin{eqnarray*}
+\frac{1}{m}\sum_{i=1}^{m}\langle\mathbf{v},\mathbf{x}_{i}\rangle^{2} & = & \frac{1}{m}\sum_{i=1}^{m}\langle\mathbf{v},\mathbf{x}_{i}\rangle\langle\mathbf{x}_{i},\mathbf{v}\rangle\\
+ & = & \frac{1}{m}\sum_{i=1}^{m}\mathbf{v}^{\top}\mathbf{x}_{i}\cdot\mathbf{x}_{i}^{\top}\mathbf{v}\\
+ & = & \mathbf{v}^{\top}\left(\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}\cdot\mathbf{x}_{i}^{\top}\right)\mathbf{v}.\end{eqnarray*}
+
+\end_inset
+
+Again, for mean zero 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}\cdot\mathbf{x}_{i}^{\top}$
+\end_inset
+
+ would be the covariance matrix of the 
+\series bold
+
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Now, let us turn to the question how we compute 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+.
+ After all our transformations we are left with the problem 
+\begin_inset Formula \begin{eqnarray*}
+\mbox{minimize}_{\mathbf{v}} &  & \frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}^{\top}\mathbf{x}_{i}-\mathbf{v}^{\top}\left(\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}\cdot\mathbf{x}_{i}^{\top}\right)\mathbf{v}\\
+ &  & \mbox{s.t. }||\mathbf{v}||=1.\end{eqnarray*}
+
+\end_inset
+
+Note that the first term 
+\begin_inset Formula $\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}^{\top}\mathbf{x}_{i}$
+\end_inset
+
+ does not depend on 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ at all, so we can drop it from the optimization.
+ Furthermore, note that minimizing 
+\begin_inset Formula $-\mathbf{v}^{\top}\left(\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}\cdot\mathbf{x}_{i}^{\top}\right)\mathbf{v}$
+\end_inset
+
+ is the same as maximizing 
+\begin_inset Formula $\mathbf{v}^{\top}\left(\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}\cdot\mathbf{x}_{i}^{\top}\right)\mathbf{v}$
+\end_inset
+
+.
+ Denoting 
+\begin_inset Formula $\mathbf{C}=\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}\cdot\mathbf{x}_{i}^{\top}$
+\end_inset
+
+ we are therefore left with the finals version of the problem 
+\begin_inset Formula \begin{eqnarray*}
+\mbox{maximize}_{\mathbf{v}} &  & \mathbf{v}^{\top}\mathbf{C}\mathbf{v}\\
+ &  & \mbox{s.t. }||\mathbf{v}||=1.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\begin_inset Caption
+
+\begin_layout Standard
+\begin_inset LatexCommand label
+name "fig:natimg"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
