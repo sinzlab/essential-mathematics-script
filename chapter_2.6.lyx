@@ -247,7 +247,7 @@ Now, let us turn to the question how we compute
  After all our transformations we are left with the problem 
 \begin_inset Formula \begin{eqnarray*}
 \mbox{minimize}_{\mathbf{v}} &  & \frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}^{\top}\mathbf{x}_{i}-\mathbf{v}^{\top}\left(\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}\cdot\mathbf{x}_{i}^{\top}\right)\mathbf{v}\\
- &  & \mbox{s.t. }||\mathbf{v}||=1.\end{eqnarray*}
+ &  & \mbox{s.t. }||\mathbf{v}||²=1.\end{eqnarray*}
 
 \end_inset
 
@@ -273,14 +273,251 @@ Note that the first term
 \begin_inset Formula $\mathbf{C}=\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}\cdot\mathbf{x}_{i}^{\top}$
 \end_inset
 
- we are therefore left with the finals version of the problem 
+ we are therefore left with the final version of the problem 
 \begin_inset Formula \begin{eqnarray*}
 \mbox{maximize}_{\mathbf{v}} &  & \mathbf{v}^{\top}\mathbf{C}\mathbf{v}\\
- &  & \mbox{s.t. }||\mathbf{v}||=1.\end{eqnarray*}
+ &  & \mbox{s.t. }||\mathbf{v}||²=1.\end{eqnarray*}
+
+\end_inset
+
+The straightforward way for computing 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ would be to compute the derivative, set it to zero and solve for 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+.
+ However that does not tell us how we can deal with the constraint 
+\begin_inset Formula $||\mathbf{v}||=1$
+\end_inset
+
+.
+ In order to take it into account we need a method called 
+\emph on
+Lagrange multipliers
+\begin_inset LatexCommand index
+name "Lagrange multipliers"
+
+\end_inset
+
+.
+ 
+\emph default
+The Lagrange multiplier method is a way of solving exactly those problems
+ above.
+ We will not formaly introduce the method here, but only give a rough intution
+ for the idea behind it.
+ 
+\end_layout
+
+\begin_layout Standard
+Remember that the gradient of a function always points into the direction
+ of maximal ascent.
+ Looking at the constraint 
+\begin_inset Formula $||\mathbf{v}||²=1$
+\end_inset
+
+ or, equivalently, 
+\begin_inset Formula $||\mathbf{v}||²-1=0$
+\end_inset
+
+ we can see that it describes a contour line of the function 
+\begin_inset Formula $||\mathbf{v}||²-1$
+\end_inset
+
+.
+ Intuitively, since function is constant along the contour line, the gradient
+ of 
+\begin_inset Formula $||\mathbf{v}||²-1$
+\end_inset
+
+ will be orthogonal to that contour line.
+ Optimizing the function under the constraint now means searching for the
+ optimum along the contour line.
+ 
+\end_layout
+
+\begin_layout Standard
+We now state the condition for optimality and then spent some though on
+ why that makes sense.
+ The condition for optimality under the constraint can be written as 
+\begin_inset Formula \begin{eqnarray*}
+\nabla\left(\mathbf{v}^{\top}\mathbf{C}\mathbf{v}\right) & = & \lambda\nabla(||\mathbf{v}||²-1).\end{eqnarray*}
+
+\end_inset
+
+The condition means that at the optimum, the gradient of the contraint must
+ have the same orientation as the gradient of the function.
+ Why does that make sense? First, imagine that the optimum of 
+\begin_inset Formula $\mathbf{v}^{\top}\mathbf{C}\mathbf{v}$
+\end_inset
+
+ without lies on the contour line.
+ Then, the gradient 
+\begin_inset Formula $\nabla\left(\mathbf{v}^{\top}\mathbf{C}\mathbf{v}\right)$
+\end_inset
+
+ is zero and we simply set 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+ and the condition is fulfilled.
+ Now, assume that the optimum of 
+\begin_inset Formula $\mathbf{v}^{\top}\mathbf{C}\mathbf{v}$
+\end_inset
+
+ is not on the contour line.
+ Then, at some point, the only way to improve the function 
+\begin_inset Formula $\mathbf{v}^{\top}\mathbf{C}\mathbf{v}$
+\end_inset
+
+ is to leave the constraint line, which is equivalent of saying that 
+\begin_inset Formula $\nabla\left(\mathbf{v}^{\top}\mathbf{C}\mathbf{v}\right)$
+\end_inset
+
+ is orthogonal to the constraint line.
+ However, we noted before that 
+\begin_inset Formula $\nabla(||\mathbf{v}||²-1)$
+\end_inset
+
+ is always orthogonal to the constraint line.
+ This means that the two gradients have the same orientation and the condition
+ is fulfilled as well.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally, note that we can write the condition for optimality as
+\begin_inset Formula \begin{eqnarray*}
+\mbox{maximize}_{\mathbf{v}} &  & \mathbf{v}^{\top}\mathbf{C}\mathbf{v}-\lambda\left(||\mathbf{v}||²-1\right)\end{eqnarray*}
 
 \end_inset
 
 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+ because taking the derivative of 
+\begin_inset Formula $\mathbf{v}^{\top}\mathbf{C}\mathbf{v}-\lambda\left(||\mathbf{v}||²-1\right)$
+\end_inset
+
+ and setting it to zero exactly yields 
+\begin_inset Formula $\nabla\left(\mathbf{v}^{\top}\mathbf{C}\mathbf{v}\right)=\lambda\nabla(||\mathbf{v}||²-1).$
+\end_inset
+
+ The nice feature of the optimization problem above is now, that it does
+ not have constraints and we can simply solve it by setting the derivative
+ to zero and solve for 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+.
+ In theory we also needed to compute the derivative with respect to lambda
+ and solve for it.
+ However, in this case there is a simple way.
+ 
+\end_layout
+
+\begin_layout Standard
+The derivative with respect to 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ is given by
+\begin_inset Formula \begin{eqnarray*}
+\frac{\partial}{\partial\mathbf{v}}\left(\mathbf{v}^{\top}\mathbf{C}\mathbf{v}-\lambda\left(||\mathbf{v}||²-1\right)\right) & = & \frac{\partial}{\partial\mathbf{v}}\left(\mathbf{v}^{\top}\mathbf{C}\mathbf{v}-\lambda\mathbf{v}^{\top}\mathbf{v}-\lambda\right)\\
+ & = & \frac{\partial}{\partial\mathbf{v}}\mathbf{v}^{\top}\mathbf{C}\mathbf{v}-\lambda\frac{\partial}{\partial\mathbf{v}}\mathbf{v}^{\top}\mathbf{v}\\
+ & = & 2\mathbf{Cv}-2\lambda\mathbf{v}.\end{eqnarray*}
+
+\end_inset
+
+Setting it to zero yields 
+\begin_inset Formula \begin{eqnarray*}
+2\mathbf{Cv}-2\lambda\mathbf{v} & = & 0\\
+\Leftrightarrow\mathbf{Cv} & = & \lambda\mathbf{v}.\end{eqnarray*}
+
+\end_inset
+
+This is exactly the condition for 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ being an eigenvector corresponding to the largest eigenvalue 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+.
+ Luckily there are many algorithms that carry out this computation for us.
+ For example, we can use the command 
+\family typewriter
+eig 
+\family default
+in matlab.
+ If we assume again that the mean of the 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ is zero, we can even compute the variance of 
+\begin_inset Formula $\langle\mathbf{x}_{i},\mathbf{v}\rangle$
+\end_inset
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\frac{1}{m}\sum_{i=1}^{m}\langle\mathbf{x}_{i},\mathbf{v}\rangle^{2} & = & \mathbf{v}^{\top}\left(\frac{1}{m}\sum_{i=1}^{m}\mathbf{x}_{i}\cdot\mathbf{x}_{i}^{\top}\right)\mathbf{v}\\
+ & = & \mathbf{v}^{\top}\mathbf{C}\mathbf{v}\\
+ & = & \lambda\mathbf{v}^{\top}\mathbf{v}\\
+ & = & \lambda.\end{eqnarray*}
+
+\end_inset
+
+Since 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is the maximal eigenvalue of 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+, for mean zero signals finding the most informative 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ is the same as finding the direction of maximal variance.
+ This is exactly what 
+\emph on
+
+\begin_inset LatexCommand index
+name "Principle Component Analysis (PCA)"
+
+\end_inset
+
+Principle Component Analysis (PCA)
+\emph default
+ does.
+ If the mean of the 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ is not zero, then, in general, 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ will not be the direction of maximal variance but also point in the direction
+ of the mean.
+ That is the reason why the data is usually centered, i.e.
+ the mean is subtracted, before computing PCA.
+ 
 \end_layout
 
 \begin_layout Standard
