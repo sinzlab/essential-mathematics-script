@@ -1,11 +1,12 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
 \begin_preamble
 \setcounter{chapter}{1}
 \end_preamble
+\use_default_options false
 \language english
 \inputencoding auto
 \font_roman default
@@ -16,9 +17,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -112,7 +115,7 @@ outputs
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 ---
 \end_layout
@@ -123,7 +126,7 @@ by definition
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 ---
 \end_layout
@@ -214,8 +217,12 @@ Here,
  is usually called 
 \emph on
 
-\begin_inset LatexCommand index
-name "domain"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+domain
+\end_layout
 
 \end_inset
 
@@ -236,8 +243,12 @@ of
  is called 
 \emph on
 the co-domain 
-\begin_inset LatexCommand index
-name "range"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+range
+\end_layout
 
 \end_inset
 
@@ -248,7 +259,57 @@ name "range"
 \end_inset
 
 .
- 
+ The arrow 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ is used to denote the mapping between the two sets, while 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\mapsto$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ denotes the mapping from an element of the domain to an specific element
+ of the co-domain.
+ This means that 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ tells us what kind of objects are mapped into another and 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\mapsto$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ specifies the assignment rule.
 \end_layout
 
 \begin_layout Standard
@@ -272,16 +333,7 @@ f: & \mathbb{R}\rightarrow\mathbb{R}\\
 
 \end_inset
 
-Note, that the simple arrow ''
-\begin_inset Formula $\rightarrow$
-\end_inset
 
-'' is used for the sets and the arrow ''
-\begin_inset Formula $\mapsto$
-\end_inset
-
-'' for the assigment rule.
- 
 \end_layout
 
 \begin_layout Standard
@@ -350,8 +402,12 @@ f(x) & = & a_{n}x^{n}+...+a_{1}x+a_{0}.\end{eqnarray*}
 The single terms in the sum are called 
 \emph on
 
-\begin_inset LatexCommand index
-name "monomial"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+monomial
+\end_layout
 
 \end_inset
 
@@ -361,8 +417,12 @@ monomials.
  The 
 \emph on
 
-\begin_inset LatexCommand index
-name "degree"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+degree
+\end_layout
 
 \end_inset
 
@@ -495,7 +555,7 @@ We conclude this section by stating a few calculation rules for powers for
 
 \begin_layout Standard
 \align center
-\begin_inset Box Boxed
+\begin_inset Box Shadowbox
 position "t"
 hor_pos "c"
 has_inner_box 1
@@ -507,13 +567,13 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Calculation Rules for Powers
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The following rules apply to any 
 \begin_inset Formula $x,a\in\mathbb{R}$
 \end_inset
@@ -521,42 +581,59 @@ The following rules apply to any
 :
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+Anything to the power of zero is one: 
 \begin_inset Formula $x^{0}=1$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+Multiplying two terms with the same basis is equivalent to adding their
+ exponents: 
 \begin_inset Formula $x^{a}\cdot x^{b}=x^{a+b}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+Adding two terms with the same basis is equivalent to subtracting their
+ exponents: 
 \begin_inset Formula $\frac{x^{a}}{x^{b}}=x^{a}\cdot x^{-b}=x^{a-b}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+Exponentiating a term is equivalent to multiplying its exponents: 
 \begin_inset Formula $(x^{a})^{b}=x^{a\cdot b}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+A special case of rule 3.
+ is given by 
 \begin_inset Formula $\frac{1}{x^{a}}=x^{-a}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+The 
+\begin_inset Formula $a^{th}$
+\end_inset
+
+ root of 
+\begin_inset Formula $x$
+\end_inset
+
+ is given by 
 \begin_inset Formula $^{a}\!\!\!\sqrt{x}=x^{\frac{1}{a}}$
 \end_inset
 
@@ -577,7 +654,8 @@ Linear Functions
 \end_layout
 
 \begin_layout Standard
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "sub:LinearFunctions"
 
 \end_inset
@@ -630,8 +708,12 @@ A function
  is said to be 
 \emph on
 
-\begin_inset LatexCommand index
-name "function, linear"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+function, linear
+\end_layout
 
 \end_inset
 
@@ -831,11 +913,11 @@ Question:
 \begin_inset Marginal
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1003,7 +1085,8 @@ and the
 \end_inset
 
 coordinate (see Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:GeoView-SinCos"
 
 \end_inset
@@ -1018,18 +1101,18 @@ wide false
 sideways false
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1038,25 +1121,25 @@ setlength{
 unitlength}{0.04cm}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{picture}(200,200)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 thicklines  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1065,7 +1148,7 @@ put(100,100){
 circle{100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1074,7 +1157,7 @@ put(100,100){
 vector(1,0){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1083,7 +1166,7 @@ put(100,100){
 vector(0,1){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1092,7 +1175,7 @@ put(100,100){
 line(2,3){60}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1103,15 +1186,15 @@ makebox(0,0){$
 vartheta$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1120,7 +1203,7 @@ put(200,105){
 makebox(0,0){$x$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1129,15 +1212,15 @@ put(105,200){
 makebox(0,0){$y$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1146,7 +1229,7 @@ put(128.5,100){
 line(0,1){41}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1159,7 +1242,7 @@ underbrace{
 hspace{1.1cm}}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1172,7 +1255,7 @@ cos(
 vartheta)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1185,7 +1268,7 @@ underbrace{
 hspace{1.6cm}}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1198,11 +1281,11 @@ sin(
 vartheta)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1211,7 +1294,7 @@ put(150,100){
 line(0,1){75}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1224,7 +1307,7 @@ underbrace{
 hspace{2.95cm}}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1237,11 +1320,11 @@ tan(
 vartheta)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1250,7 +1333,7 @@ put(100,150){
 line(1,0){34}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1263,7 +1346,7 @@ overbrace{
 hspace{1.3cm}}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1274,11 +1357,11 @@ makebox(0,0){cotan$(
 vartheta)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1291,25 +1374,25 @@ underbrace{
 hspace{2.0cm}}_{r=1}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{picture}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1321,11 +1404,12 @@ vspace{-2cm}
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:GeoView-SinCos"
 
 \end_inset
@@ -1407,8 +1491,12 @@ The term
 path integration
 \emph default
 
-\begin_inset LatexCommand index
-name "path integration"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+path integration
+\end_layout
 
 \end_inset
 
@@ -1460,14 +1548,14 @@ Imagine you are an ant living in a completely flat world.
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1476,21 +1564,21 @@ setlength{
 unitlength}{0.04cm}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{picture}(150,150)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 thicklines  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1499,7 +1587,7 @@ put(50,50){
 vector(1,0){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1508,7 +1596,7 @@ put(50,50){
 vector(0,1){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1517,11 +1605,11 @@ put(50,50){
 vector(1,0){50}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1530,7 +1618,7 @@ put(80,42){
 makebox(0,0){$(x_t,y_t)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1539,11 +1627,11 @@ put(150,120){
 makebox(0,0){$(x_{t+1},y_{t+1})$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1552,11 +1640,11 @@ put(100,50){
 vector(2,3){40}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -1565,11 +1653,11 @@ put(50,50){
 vector(3,2){90}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1580,11 +1668,11 @@ makebox(0,0){$
 vartheta_t$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1597,7 +1685,7 @@ underbrace{
 hspace{1.5cm}}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1610,11 +1698,11 @@ cos(
 vartheta_t)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1627,7 +1715,7 @@ underbrace{
 hspace{2.38cm}}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1640,15 +1728,15 @@ sin(
 vartheta_t)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1661,7 +1749,7 @@ overbrace{
 hspace{2.8cm}}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1670,15 +1758,15 @@ put(105,80){
 rotatebox{56.5}{$r_t$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1687,7 +1775,7 @@ put(150,45){
 makebox(0,0){$x$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1696,32 +1784,32 @@ put(55,150){
 makebox(0,0){$y$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{picture}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 vspace{-1cm}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1732,7 +1820,8 @@ vspace{-1cm}
 
 \begin_layout Standard
 Looking again at figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:GeoView-SinCos"
 
 \end_inset
@@ -1878,7 +1967,8 @@ In the case of
 
 \begin_layout Standard
 There is another useful equality that we can read of figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:GeoView-SinCos"
 
 \end_inset
@@ -1903,7 +1993,8 @@ reference "fig:GeoView-SinCos"
 
 .
  From looking at figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:GeoView-SinCos"
 
 \end_inset
@@ -2046,7 +2137,8 @@ The Periodic Signal View
 \end_layout
 
 \begin_layout Standard
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "sub:periodic_signal_view"
 
 \end_inset
@@ -2110,7 +2202,8 @@ The periodic signal view of thinking about
 
 .
  Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:SineCosine"
 
 \end_inset
@@ -2155,7 +2248,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/cos.eps
@@ -2175,11 +2268,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:SineCosine"
 
 \end_inset
@@ -2226,8 +2320,12 @@ Assume that you want measure the orientation selectivity a V1-cell you are
  The most common way of producing such patterns is to use 
 \emph on
 
-\begin_inset LatexCommand index
-name "sine grating"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+sine grating
+\end_layout
 
 \end_inset
 
@@ -2238,8 +2336,12 @@ sine
 cosine
 \emph default
 
-\begin_inset LatexCommand index
-name "cosine grating"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+cosine grating
+\end_layout
 
 \end_inset
 
@@ -2249,7 +2351,8 @@ gratings
 \emph default
 .
  Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:SineGrating"
 
 \end_inset
@@ -2265,7 +2368,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/VertSinGrating.eps
@@ -2277,11 +2380,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:SineGrating"
 
 \end_inset
@@ -2380,39 +2484,39 @@ For a vertical grating, we know that the graylevel value along the vertical
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> [X,Y] = meshgrid([-2*pi:0.01:2*pi]); % get the sample points 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> omega = 2; % set the frequency 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> imagesc(sin(omega*X)) % display grating
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> colormap(gray)  % set colormap to gray values
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> axis off % switch off the axes
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2452,49 +2556,49 @@ imagesc
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> [X,Y] = meshgrid([-2*pi:0.01:2*pi]); % get the sample points 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> omega = 2; % set the frequency 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> A = 3; % set the contrast
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> maxA = 10; % set maximal contrast
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> imagesc(A*sin(omega*X),[-maxA,maxA]) % display grating
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> colormap(gray)  % set colormap to gray values
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> axis off % switch off the axes
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2580,8 +2684,12 @@ Up to now we saw how to control the frequency and the amplitude of sine
  is called 
 \emph on
 
-\begin_inset LatexCommand index
-name "phase"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+phase
+\end_layout
 
 \end_inset
 
@@ -2611,8 +2719,12 @@ Before finishing this section about trigonometric functions we just want
 Addition Theorems
 \emph default
 
-\begin_inset LatexCommand index
-name "addition theorems"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+addition theorems
+\end_layout
 
 \end_inset
 
@@ -2674,11 +2786,11 @@ Exercise
 \begin_inset Marginal
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2719,7 +2831,7 @@ Write down the the corresponding expressions for
 
 \begin_layout Standard
 \align center
-\begin_inset Box Boxed
+\begin_inset Box Shadowbox
 position "t"
 hor_pos "c"
 has_inner_box 1
@@ -2731,13 +2843,13 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Important Rules for Trigonometric Functions
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The following rules apply to any 
 \begin_inset Formula $x,y,\vartheta\in\mathbb{R}$
 \end_inset
@@ -2821,8 +2933,12 @@ The exponential or
 '' is an irrational number called 
 \emph on
 
-\begin_inset LatexCommand index
-name "Euler's number"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Euler's number
+\end_layout
 
 \end_inset
 
@@ -2868,8 +2984,12 @@ Examples
 One central probability density in statistics is the 
 \emph on
 
-\begin_inset LatexCommand index
-name "normal distribution"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+normal distribution
+\end_layout
 
 \end_inset
 
@@ -2878,8 +2998,12 @@ Normal
  or 
 \emph on
 
-\begin_inset LatexCommand index
-name "Gaussian Distribution"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Gaussian Distribution
+\end_layout
 
 \end_inset
 
@@ -2903,10 +3027,12 @@ s with other probability distributions tend to be Gaussian if the total
  other processes that we are not interested in, the assumption that there
  are a large number of them which are linearly superimposed motivates the
  Gaussian noise assumption.
-\newline
-Apart from that, the Gaussian distribution is
- frequently used because it has a lot of properties that make it possible
- to calculate analytical solutions of the respective statistical problems.
+\begin_inset Newline newline
+\end_inset
+
+Apart from that, the Gaussian distribution is frequently used because it
+ has a lot of properties that make it possible to calculate analytical solutions
+ of the respective statistical problems.
  
 \end_layout
 
@@ -2929,7 +3055,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/passMemPot.eps
@@ -2941,11 +3067,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:MembPotentialChange"
 
 \end_inset
@@ -2956,7 +3083,8 @@ Potential change
 
  (solid line) over time at a passive neuron membran after applying a rectangluar
  current pulse (dashed line) [Figure from 
-\begin_inset LatexCommand cite
+\begin_inset CommandInset citation
+LatexCommand cite
 key "KandelSchwartz1985"
 
 \end_inset
@@ -2973,9 +3101,12 @@ key "KandelSchwartz1985"
 \end_inset
 
 
-\newline
+\begin_inset Newline newline
+\end_inset
+
 Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:MembPotentialChange"
 
 \end_inset
@@ -3051,8 +3182,12 @@ time constant
 A simple stochastical model for spike generation by a neuron is the 
 \emph on
 
-\begin_inset LatexCommand index
-name "Poisson Process"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Poisson Process
+\end_layout
 
 \end_inset
 
@@ -3098,8 +3233,12 @@ The symbol expression ''
 '' denotes the 
 \emph on
 
-\begin_inset LatexCommand index
-name "faculty"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+faculty
+\end_layout
 
 \end_inset
 
@@ -3126,7 +3265,8 @@ p
 roduct) denotes a product of all elements following it.
  The indices are written in the same way as for sums (see also Appendix
  
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "sec:Notation-and-Symbols"
 
 \end_inset
@@ -3277,8 +3417,12 @@ Now we somehow have to extract
  This is exactly the definition of the 
 \emph on
 
-\begin_inset LatexCommand index
-name "natural logarithm"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+natural logarithm
+\end_layout
 
 \end_inset
 
@@ -3341,8 +3485,12 @@ We just saw that the natural logarithm is the function that cancels the
 inverse function
 \emph default
 
-\begin_inset LatexCommand index
-name "inverse function"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+inverse function
+\end_layout
 
 \end_inset
 
@@ -3421,8 +3569,12 @@ So far we have seen how to solve
  is called 
 \emph on
 
-\begin_inset LatexCommand index
-name "base"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+base
+\end_layout
 
 \end_inset
 
@@ -3464,11 +3616,11 @@ It happens quite often that the base of of the logarithm is not specified,
 \begin_inset Marginal
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -3589,7 +3741,7 @@ We conclude this section with a few calculation rules.
 
 \begin_layout Standard
 \align center
-\begin_inset Box Boxed
+\begin_inset Box Shadowbox
 position "t"
 hor_pos "c"
 has_inner_box 1
@@ -3601,13 +3753,13 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Calculation Rules for Logarithms
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The following rules apply to any logarithm:
 \end_layout
 
@@ -3700,8 +3852,12 @@ where
  is called the 
 \emph on
 
-\begin_inset LatexCommand index
-name "slope"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+slope
+\end_layout
 
 \end_inset
 
@@ -3827,8 +3983,12 @@ Functions of the form
  are also called 
 \emph on
 
-\begin_inset LatexCommand index
-name "affine functions"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+affine functions
+\end_layout
 
 \end_inset
 
@@ -3854,8 +4014,12 @@ Sometimes, it is convenient to define a function by using two or more other
 piecewise defined functions
 \emph default
 
-\begin_inset LatexCommand index
-name "piecewise defined functions"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+piecewise defined functions
+\end_layout
 
 \end_inset
 
