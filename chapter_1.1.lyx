@@ -2251,7 +2251,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/cos.eps
+	filename figs/cos.eps
 	lyxscale 10
 	width 5cm
 
@@ -2259,7 +2259,7 @@ status open
 
 
 \begin_inset Graphics
-	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/sin.eps
+	filename figs/sin.eps
 	lyxscale 10
 	width 5cm
 
@@ -2371,7 +2371,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/VertSinGrating.eps
+	filename figs/VertSinGrating.eps
 	lyxscale 10
 	width 11cm
 
@@ -3058,9 +3058,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /.amd_mnt/steinlach/export/home/kyb/agbs/fabee/work/teaching/mathcourse_script/figs/passMemPot.eps
+	filename figs/passMemPot.eps
 	width 12cm
-	keepAspectRatio
 
 \end_inset
 

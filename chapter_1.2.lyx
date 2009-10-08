@@ -1,5 +1,5 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
@@ -11,6 +11,7 @@
 \usepackage{color}
 \usepackage{bm}
 \end_preamble
+\use_default_options false
 \language english
 \inputencoding auto
 \font_roman default
@@ -21,9 +22,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -124,8 +127,12 @@ It is the slope of the line touching the function
  This line is called 
 \emph on
 
-\begin_inset LatexCommand index
-name "tangent line"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+tangent line
+\end_layout
 
 \end_inset
 
@@ -193,7 +200,7 @@ Using the first intuition,
 \begin_inset Note Comment
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Note that the tangent at the graph of 
 \begin_inset Formula $f(x)$
 \end_inset
@@ -276,20 +283,20 @@ f'(x) & = & \frac{f(x_{1})-f(x_{0})}{x_{1}-x_{0}}\\
 placement h
 wide false
 sideways false
-status open
-
-\begin_layout Standard
-\begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
 
 
 \backslash
 begin{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -298,14 +305,14 @@ setlength{
 unitlength}{0.04cm}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{picture}(200,200)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -318,7 +325,7 @@ underbrace{
 hspace{1cm}}_{x_1-x_0}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -331,7 +338,7 @@ underbrace{
 hspace{3cm}}_{f(x_1)-f(x_0)}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -340,7 +347,7 @@ put(57,69){
 line(1,0){25}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -349,18 +356,18 @@ put(82,69){
 line(0,1){78}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 thicklines  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -369,7 +376,7 @@ put(50,50){
 vector(1,0){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -378,7 +385,7 @@ put(50,50){
 vector(0,1){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -387,7 +394,7 @@ put(34,0){
 line(1,3){50}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -396,7 +403,7 @@ put(150,55){
 makebox(0,0){$x$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -405,11 +412,11 @@ put(55,150){
 makebox(0,0){$y$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -418,29 +425,29 @@ put(57,35){
 makebox(0,0){$f(x)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{picture}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -449,11 +456,12 @@ end{center}
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:DerivativeLinearFunc"
 
 \end_inset
@@ -514,7 +522,7 @@ Since any linear function can be written as
 \begin_inset Note Comment
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 There is lot of technical stuff coming in the next section, like limits,
  definitions of differentiability and continuity etc.
  While it is very good to have it in the script, we should be very careful
@@ -606,7 +614,8 @@ e at a point
 \end_inset
 
  (see Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:DerivativeArbrFunc"
 
 \end_inset
@@ -726,8 +735,12 @@ The ''
  is called 
 \emph on
 
-\begin_inset LatexCommand index
-name "differential quotient"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+differential quotient
+\end_layout
 
 \end_inset
 
@@ -782,18 +795,18 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -802,18 +815,18 @@ setlength{
 unitlength}{0.04cm}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{picture}(200,200)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -826,7 +839,7 @@ underbrace{
 hspace{1cm}}_{x_1-x_0}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -839,7 +852,7 @@ underbrace{
 hspace{3cm}}_{f(x_1)-f(x_0)}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -848,7 +861,7 @@ put(57,69){
 line(1,0){25}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -857,11 +870,11 @@ put(82,69){
 line(0,1){78}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -870,7 +883,7 @@ put(65,62){
 line(4,6){90}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -883,7 +896,7 @@ overbrace{
 hspace{2.6cm}}^{h_1}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -896,7 +909,7 @@ overbrace{
 hspace{4cm}}^{f(x_0+h_1)-f(x_0)}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -905,7 +918,7 @@ put(75,76){
 line(0,1){102}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -914,15 +927,15 @@ put(142,178){
 line(-1,0){67}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -931,7 +944,7 @@ put(65,63){
 line(3,4){90}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -944,7 +957,7 @@ underbrace{
 hspace{2.15cm}}_{h_2}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -957,7 +970,7 @@ underbrace{
 hspace{2.85cm}}_{f(x_0+h_2)-f(x_0)}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -966,7 +979,7 @@ put(129,148){
 line(0,-1){72}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -975,22 +988,22 @@ put(75,76){
 line(1,0){54}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 thicklines  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -999,7 +1012,7 @@ put(77,40){
 makebox(0,0){$x_0$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1008,11 +1021,11 @@ put(77,48){
 line(0,1){4}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1021,7 +1034,7 @@ put(50,50){
 vector(1,0){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1030,14 +1043,14 @@ put(50,50){
 vector(0,1){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
-bezier(0,50)(100,50)(150,200) % function
+qbezier(0,50)(100,50)(150,200) % function
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1046,7 +1059,7 @@ put(150,55){
 makebox(0,0){$x$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1055,19 +1068,19 @@ put(55,150){
 makebox(0,0){$y$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -1076,29 +1089,29 @@ put(57,35){
 makebox(0,0){$f(x)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{picture}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1107,11 +1120,12 @@ end{center}
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:DerivativeArbrFunc"
 
 \end_inset
@@ -1152,7 +1166,8 @@ Geometrical picture of the differential quotient for arbitrary functions.
 
 \begin_layout Standard
 Looking at Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:DerivativeArbrFunc"
 
 \end_inset
@@ -1196,8 +1211,12 @@ reference "fig:DerivativeArbrFunc"
  This property is expressed in the concept of 
 \emph on
 
-\begin_inset LatexCommand index
-name "continuity"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+continuity
+\end_layout
 
 \end_inset
 
@@ -1218,8 +1237,12 @@ A function
  is said to be 
 \emph on
 
-\begin_inset LatexCommand index
-name "continous"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+continous
+\end_layout
 
 \end_inset
 
@@ -1336,8 +1359,12 @@ However, if we can find a linear function that with its slope equal to the
 , the function is called 
 \emph on
 
-\begin_inset LatexCommand index
-name "differentiable function"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+differentiable function
+\end_layout
 
 \end_inset
 
@@ -1357,8 +1384,12 @@ A function
  is said to be 
 \emph on
 
-\begin_inset LatexCommand index
-name "differentiable"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+differentiable
+\end_layout
 
 \end_inset
 
@@ -1680,8 +1711,12 @@ As those examples show, we can already calculate the derivative of a fair
  Therefore, we introduce a new rule, called 
 \emph on
 
-\begin_inset LatexCommand index
-name "chain rule"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+chain rule
+\end_layout
 
 \end_inset
 
@@ -1850,8 +1885,12 @@ f'(x) & = & g_{1}'(x)\cdot g_{2}(x)+g_{1}(x)\cdot g_{2}'(x).\end{eqnarray*}
 This rule is called 
 \emph on
 
-\begin_inset LatexCommand index
-name "product rule"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+product rule
+\end_layout
 
 \end_inset
 
@@ -1947,8 +1986,12 @@ In most cases, a fourth rule for differentiating quotients of functions
  However, we can derive the 
 \emph on
 quotient rule
-\begin_inset LatexCommand index
-name "quotient rule"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+quotient rule
+\end_layout
 
 \end_inset
 
@@ -2053,7 +2096,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Differentiation Rules
@@ -2222,7 +2265,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Derivatives of important functions
@@ -2272,7 +2315,8 @@ Let us calculate the derivative of a little bit more advanced case:
 
 .
  Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:abs"
 
 \end_inset
@@ -2287,7 +2331,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figs/abs.eps
@@ -2299,11 +2343,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:abs"
 
 \end_inset
@@ -2443,7 +2488,7 @@ f(x)=\left\{ \begin{array}{cc}
 \begin_inset Note Note
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 If you do use this example in lectures, I would just hands and pointing
  to show that the derivative is not defined at zero.
 \end_layout
@@ -2512,44 +2557,44 @@ The idea is that
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> h = .001; x = 0:h:2*pi; % define h and the base points
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> f = sin(x); % sample the function at x
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> df = diff(f)/h; % compute the differences
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> plot(x,f,'k'), hold on; % plot the function
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> plot(x(1:end-1),df,'r'); % plot the approximation
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> plot(x(1:end-1),cos(x(1:end-1)),'g'); % plot the true derivative
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2593,44 +2638,44 @@ You surely noticed that we were only able to compute
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> h = .001; x = 0:h:2*pi; % define h and the base points
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> f = sin(x); % sample the function at x
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> dfdh = gradient(f,h); % compute the first derivative
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> plot(x,f,'k'), hold on; % plot the function
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> plot(x,dfdh,'r'); % plot the approximation
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> plot(x,cos(x),'g'); % plot the true derivative
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2665,8 +2710,12 @@ The term
 higher-order derivatives
 \emph default
 
-\begin_inset LatexCommand index
-name "higher-order derivatives"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+higher-order derivatives
+\end_layout
 
 \end_inset
 
@@ -2715,8 +2764,12 @@ The second derivative, however, has a special meaning.
 curvature
 \emph default
 
-\begin_inset LatexCommand index
-name "curvature"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+curvature
+\end_layout
 
 \end_inset
 
@@ -2748,7 +2801,7 @@ name "curvature"
 \begin_inset Note Note
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Draw picture to explain the curvature
 \end_layout
 
@@ -2866,8 +2919,12 @@ Derivates can be used to find global minima or maxima of functions.
  is a 
 \emph on
 necessary condition
-\begin_inset LatexCommand index
-name "necessary condition"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+necessary condition
+\end_layout
 
 \end_inset
 
@@ -2923,8 +2980,12 @@ name "necessary condition"
  we need to find a 
 \emph on
 
-\begin_inset LatexCommand index
-name "sufficient condition"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+sufficient condition
+\end_layout
 
 \end_inset
 
@@ -2959,7 +3020,7 @@ Since we already know that we only need to look at points
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 ---
 \end_layout
@@ -2970,7 +3031,7 @@ say
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 ---
 \end_layout
@@ -3097,13 +3158,13 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Finding Maxima, Minima, and Saddle-Points
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Let 
 \begin_inset Formula $f$
 \end_inset
@@ -3123,8 +3184,12 @@ Let
 \begin_layout Itemize
 
 \emph on
-\begin_inset LatexCommand index
-name "mimimum"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+mimimum
+\end_layout
 
 \end_inset
 
@@ -3156,8 +3221,12 @@ mimimum
 \begin_layout Itemize
 
 \emph on
-\begin_inset LatexCommand index
-name "maximum"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+maximum
+\end_layout
 
 \end_inset
 
@@ -3190,8 +3259,12 @@ maximum
 
 \emph on
 saddle-point
-\begin_inset LatexCommand index
-name "saddle-point"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+saddle-point
+\end_layout
 
 \end_inset
 
@@ -3320,7 +3393,7 @@ Poisson process
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 ---
 \end_layout
@@ -3331,7 +3404,7 @@ more advanced
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 ---
 \end_layout
@@ -3353,44 +3426,44 @@ models for spike trains can compare to.
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> t = [0:0.001:10]; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> p = 0.05; % spiking probability in each bin
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> ind = find( rand(size(t)) <= p); % sample spike times 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> s = zeros(size(t)); % generate spike train 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> s(ind) = 1; % insert spikes 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> plot(t,s,'k')
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -3445,89 +3518,89 @@ p(k) & = & \frac{\lambda^{k}e^{-\lambda}}{k!}.\end{eqnarray*}
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> t = [0:0.001:1];
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> p = 0.05; % probability of spike in each bin
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> m = 5000; % number of spike trains
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> U = rand(m,length(t)); 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> S = zeros(size(U)); % generate spike train matrix (trains X time) 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> S(U <= p) = 1;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> figure 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> imagesc(1-S); colormap gray; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> xlabel('time bins'); ylabel('spike trains')
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> figure C = sum(S,2); % get spike counts 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> K = [1:max(C)]; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> hist(C,K); % plot histogram 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> hold on
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> lambda = p*length(t); 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> plot(K, m*poisspdf(K,lambda),'r','LineWidth',2); hold off
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -3546,7 +3619,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figs/spiketrain.eps
@@ -3564,11 +3637,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:PoissonSpikes"
 
 \end_inset
@@ -3592,7 +3666,8 @@ Poisson spikes with rate
 
 \begin_layout Standard
 A typical output of the matlab code fragment is shown in Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:PoissonSpikes"
 
 \end_inset
@@ -3682,8 +3757,12 @@ Given a distribution and a number of observations, one principled way of
 ) is the 
 \emph on
 
-\begin_inset LatexCommand index
-name "maximum likelihood"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+maximum likelihood
+\end_layout
 
 \end_inset
 
@@ -3826,19 +3905,19 @@ You should include the maximum likelihood estimate in the matlab example
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> lambda_est = mean(C);
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -4012,7 +4091,8 @@ Now, we must ensure, that
 
 .
  Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:linearApprox"
 
 \end_inset
@@ -4035,7 +4115,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figs/linearApprox.eps
@@ -4047,11 +4127,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:linearApprox"
 
 \end_inset
@@ -4259,7 +4340,8 @@ g_{1}(x) & = & f(x)+f'(x_{o})(x-x_{o})\\
 
 \begin_layout Standard
 Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:expLinApprox"
 
 \end_inset
@@ -4282,7 +4364,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figs/expLinApprox.eps
@@ -4294,11 +4376,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:expLinApprox"
 
 \end_inset
@@ -4338,7 +4421,8 @@ Graph of the functions
 
 \begin_layout Standard
 As we can see in figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:expLinApprox"
 
 \end_inset
@@ -4596,8 +4680,12 @@ where
 is referred to as the 
 \emph on
 Taylor series
-\begin_inset LatexCommand index
-name "Taylor series"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Taylor series
+\end_layout
 
 \end_inset
 
@@ -4614,8 +4702,12 @@ name "Taylor series"
 , or simply the 
 \emph on
 Taylor approximation
-\begin_inset LatexCommand index
-name "Taylor approximation"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Taylor approximation
+\end_layout
 
 \end_inset
 
@@ -4644,7 +4736,7 @@ name "Taylor approximation"
 \begin_inset Note Comment
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Computer demo: Pick f(x), draw approximations of higher and higher degree.
 \end_layout
 
@@ -4767,87 +4859,89 @@ Here is a small piece of matlab code that plots the Taylor approximation
  
 \family typewriter
 
-\newline
+\begin_inset Newline newline
+\end_inset
+
 
 \family default
 
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> t = [-1:0.01:2]; % define the range where we want to plot exp
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> x0 = 1; % set x0 = 1; you can change that 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> plot(t,exp(t),'k-','LineWidth',3), hold on % plot exp
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> fk = exp(x0); % compute constant part
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> n = 1; % set the polynomial order to 1
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> for k = 1:10 % loop over 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
      plot(t,fk,'-r','LineWidth',3); % plot the best approx.
  in red
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
      pause % wait until someone presses a key
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
      plot(t,fk,'-b','LineWidth',3); % plot the same curve in blue
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
      n = n*k; % update the factorial function 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
      fk = fk + 1/n*(t-x0).^k.*exp(x0); % get the next polynomial
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
    end
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> hold off
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -4857,7 +4951,9 @@ end{verbatim}
 \end_inset
 
 
-\newline
+\begin_inset Newline newline
+\end_inset
+
 Note that this code only works for the function 
 \begin_inset Formula $f(x)=\exp(x)$
 \end_inset
@@ -4867,12 +4963,14 @@ Note that this code only works for the function
 \end_inset
 
  is its own derivative.
-\newline
+\begin_inset Newline newline
+\end_inset
+
 
 \begin_inset Note Comment
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Note that the quadratic approximation is actualy a linear function!
 \end_layout
 
@@ -4897,11 +4995,11 @@ Exercise
 \begin_inset Marginal
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -4988,14 +5086,14 @@ A calculation that has to be done for many psychophysical experiments it
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -5004,22 +5102,22 @@ setlength{
 unitlength}{0.04cm}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{picture}(200,230)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -5032,7 +5130,7 @@ overbrace{
 hspace{1.3cm}}^{y}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -5045,7 +5143,7 @@ overbrace{
 hspace{4cm}}^{x}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -5054,7 +5152,7 @@ put(108,76){
 line(0,1){102}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -5063,7 +5161,7 @@ put(142,178){
 line(-1,0){34}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -5072,7 +5170,7 @@ put(108,76){
 line(2,6){40}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -5081,14 +5179,14 @@ put(108,76){
 line(0,1){120}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
-bezier(108,116)(115,126)(121,116)
+qbezier(108,116)(115,126)(121,116)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -5099,21 +5197,21 @@ makebox(0,0){$
 vartheta$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{picture}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
