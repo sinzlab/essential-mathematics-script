@@ -1,4 +1,4 @@
-#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -599,7 +599,7 @@ Multiplying two terms with the same basis is equivalent to adding their
 \end_layout
 
 \begin_layout Enumerate
-Adding two terms with the same basis is equivalent to subtracting their
+Dividing two terms with the same basis is equivalent to subtracting their
  exponents: 
 \begin_inset Formula $\frac{x^{a}}{x^{b}}=x^{a}\cdot x^{-b}=x^{a-b}$
 \end_inset
@@ -2103,6 +2103,57 @@ Since
 
 \end_inset
 
+Further, sine and cosine can also be defined in terms of quotients for circles
+ with an arbitrary radius.
+ According to the intercept theorem the ratio of 
+\begin_inset Formula $\cos(\vartheta)$
+\end_inset
+
+ to 
+\begin_inset Formula $1$
+\end_inset
+
+ is equal to the ratio of 
+\begin_inset Formula $x$
+\end_inset
+
+ to 
+\begin_inset Formula $r$
+\end_inset
+
+ for every point 
+\begin_inset Formula $p=(x,y)$
+\end_inset
+
+ on a circle wirh radius 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ Equally, the ratio of 
+\begin_inset Formula $\sin(\vartheta)$
+\end_inset
+
+ to 
+\begin_inset Formula $1$
+\end_inset
+
+ is equal to the ratio of 
+\begin_inset Formula $y$
+\end_inset
+
+ to 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ Therefore, we get
+\begin_inset Formula \begin{eqnarray*}
+\sin(\vartheta) & = & \frac{y}{r}\\
+\cos(\vartheta) & = & \frac{x}{r}\end{eqnarray*}
+
+\end_inset
+
 Other useful properties that can also be read off from the geometric view.
  Among them are the symmetry properties of 
 \begin_inset Formula $\sin(\vartheta)$
@@ -3225,7 +3276,57 @@ P(k,\Delta t) & = & \frac{e^{-\lambda\Delta t}(\lambda\Delta t)^{k}}{k!}.\end{eq
 
 \end_inset
 
-The symbol expression ''
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename D:/Daten/Phil/Documents/MPI/teaching/mathcourse_script/figs/Poissondistributions.eps
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Poisson Process with 4 different sets of parameters.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PoissonProcess"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PoissonProcess"
+
+\end_inset
+
+ gives an example how a Poisson Process looks like for different sets of
+ parameters.
+ The symbol expression ''
 \begin_inset Formula $k!$
 \end_inset
 
@@ -3750,7 +3851,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3788,7 +3889,7 @@ The following rules apply to any logarithm:
 \begin_inset Formula $x,y\in\mathbb{R}^{+}$
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Itemize
@@ -3817,7 +3918,22 @@ The following rules apply to any logarithm:
 \begin_inset Formula $x,b\in\mathbb{R}^{+}$
 \end_inset
 
-.
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\log_{b}(x^{y})=y\cdot\log_{b}(x)$
+\end_inset
+
+ for 
+\begin_inset Formula $x\in\mathbb{R}^{+}$
+\end_inset
+
+, 
+\begin_inset Formula $y\in\mathbb{R}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4171,17 +4287,51 @@ Everyone knows how to sketch the parabola
 
 .
  
-\begin_inset Note Note
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-insert plot of a parabola
+\align center
+\begin_inset Graphics
+	filename figs/parabola.eps
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Simple parabola 
+\begin_inset Formula $f(x)=x^{2}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
-.
- But what about the function 
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:parabola"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+But what about the function 
 \begin_inset Formula $g(x)=-\frac{1}{2}(x-2)^{2}+5$
 \end_inset
 

@@ -1,5 +1,5 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
@@ -10,6 +10,7 @@
 \usepackage{color}
 \usepackage{bm}
 \end_preamble
+\use_default_options false
 \language english
 \inputencoding auto
 \font_roman default
@@ -20,9 +21,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -50,14 +53,14 @@
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 titlepage{ 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -68,7 +71,7 @@ Huge
 bf Essential Mathematics for Neuroscience}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -89,19 +92,19 @@ author{Fabian Sinz
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 includegraphics[width=10cm]{./figs/Caspar_David_Friedrich_009}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -114,7 +117,8 @@ maketitle
 \end_layout
 
 \begin_layout Standard
-\begin_inset LatexCommand tableofcontents
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
@@ -137,8 +141,12 @@ linear
 functions
 \emph default
 
-\begin_inset LatexCommand index
-name "linear functions"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+linear functions
+\end_layout
 
 \end_inset
 
@@ -147,8 +155,12 @@ name "linear functions"
 polynomials
 \emph default
 
-\begin_inset LatexCommand index
-name "polynomials"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+polynomials
+\end_layout
 
 \end_inset
 
@@ -157,8 +169,12 @@ name "polynomials"
 trigonometric functions
 \emph default
 
-\begin_inset LatexCommand index
-name "trigonometric functions"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+trigonometric functions
+\end_layout
 
 \end_inset
 
@@ -167,8 +183,9 @@ name "trigonometric functions"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_1.1.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_1.1.lyx"
 
 \end_inset
 
@@ -176,8 +193,9 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_1.2.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_1.2.lyx"
 
 \end_inset
 
@@ -185,8 +203,9 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_1.3.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_1.3.lyx"
 
 \end_inset
 
@@ -194,8 +213,9 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_1.4.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_1.4.lyx"
 
 \end_inset
 
@@ -226,8 +246,12 @@ d geometrically which is a helpful source of intuition.
 We will start this section by introducing 
 \emph on
 
-\begin_inset LatexCommand index
-name "vectors"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+vectors
+\end_layout
 
 \end_inset
 
@@ -254,7 +278,8 @@ x_{n}\end{array}\right),\end{eqnarray*}
  Along with them we will introduce a number of useful operations that can
  be done with vectors.
  In 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "sub:LinearFunctions"
 
 \end_inset
@@ -312,8 +337,9 @@ We will finish this chapter with advanced operations and properties of matrices,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_2.1.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_2.1.lyx"
 
 \end_inset
 
@@ -321,8 +347,9 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_2.2.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_2.2.lyx"
 
 \end_inset
 
@@ -330,8 +357,9 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_2.3.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_2.3.lyx"
 
 \end_inset
 
@@ -339,8 +367,9 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_2.4.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_2.4.lyx"
 
 \end_inset
 
@@ -348,14 +377,16 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_2.5.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_2.5.lyx"
 
 \end_inset
 
 
-\begin_inset Include \include{chapter_2.6.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_2.6.lyx"
 
 \end_inset
 
@@ -370,7 +401,8 @@ A Tiny Glimpse of Fourier Analysis
 Practially all functions can be decomposed into components of different
  frequencies.
  For example, the first function in figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:fourier"
 
 \end_inset
@@ -388,7 +420,7 @@ wide false
 sideways false
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename figs/Fourier1.eps
 	width 4cm
@@ -412,11 +444,12 @@ status collapsed
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:fourier"
 
 \end_inset
@@ -460,7 +493,8 @@ Fourier Analysis is a very broad and deep subject with lots of lengthy books
  completely avoid complex numbers.
  For a more extensive, but still very readible introduction, we recommend
  
-\begin_inset LatexCommand cite
+\begin_inset CommandInset citation
+LatexCommand cite
 key "Rieke1997"
 
 \end_inset
@@ -492,8 +526,9 @@ stochastic
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_3.1.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_3.1.lyx"
 
 \end_inset
 
@@ -501,8 +536,9 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_3.2.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_3.2.lyx"
 
 \end_inset
 
@@ -510,8 +546,9 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_3.3.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_3.3.lyx"
 
 \end_inset
 
@@ -519,8 +556,9 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{chapter_3.4.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_3.4.lyx"
 
 \end_inset
 
@@ -532,8 +570,9 @@ Appendix
 \end_layout
 
 \begin_layout Standard
-\begin_inset Include \include{appendix.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "appendix.lyx"
 
 \end_inset
 
@@ -541,9 +580,10 @@ preview false
 \end_layout
 
 \begin_layout Standard
-\begin_inset LatexCommand bibtex
-options "plain"
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
 bibfiles "fabee"
+options "plain"
 
 \end_inset
 
