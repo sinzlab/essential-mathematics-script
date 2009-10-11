@@ -3750,7 +3750,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4133,7 +4133,96 @@ Piecewise functions are just like any other function.
  are not continuous of differentiable at these points.
 \end_layout
 
+\begin_layout Subsection
+Sketching Functions
+\end_layout
+
 \begin_layout Standard
+Nowadays, computers are around almost everywhere allowing us to plot functions
+ whenever needed.
+ Nevertheless, being able to imagine how functions look like and sketch
+ them is a useful ability because it gives us a better intuition for what
+ those functions do.
+ There are some simple tricks for imagining and drawing functions which
+ we briefly present in this section.
+ They can basically be classified into two categories.
+ The first is for functions that are transformations of certain basic functions
+ which one usually knows by, like the exponential function, sine and cosine
+ function or easy polynomials like the parabola.
+ The second is for functions that are compositions of known basis functions.
+\end_layout
+
+\begin_layout Subsubsection
+Adapting Functions
+\end_layout
+
+\begin_layout Standard
+Everyone knows how to sketch the parabola 
+\begin_inset Formula $f(x)=x^{2}$
+\end_inset
+
+: It is opened upwards, symmetric, equals one for 
+\begin_inset Formula $x=\pm1$
+\end_inset
+
+ and diverges to infinity for 
+\begin_inset Formula $x\to\pm\infty$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+insert plot of a parabola
+\end_layout
+
+\end_inset
+
+.
+ But what about the function 
+\begin_inset Formula $g(x)=-\frac{1}{2}(x-2)^{2}+5$
+\end_inset
+
+? We will see that it is easy to adapt 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ to make it look like 
+\begin_inset Formula $g(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Rules for adapting functions
+\end_layout
+
+\begin_layout Itemize
+asd
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
