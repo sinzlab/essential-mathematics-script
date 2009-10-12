@@ -1,4 +1,4 @@
-#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -3280,12 +3280,12 @@ P(k,\Delta t) & = & \frac{e^{-\lambda\Delta t}(\lambda\Delta t)^{k}}{k!}.\end{eq
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename D:/Daten/Phil/Documents/MPI/teaching/mathcourse_script/figs/Poissondistributions.eps
+	filename figs/Poissondistributions.eps
 	width 10cm
 
 \end_inset
@@ -4295,8 +4295,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figs/parabola.eps
-	width 10cm
+	filename figs/drawingFunctions.eps
+	width 8cm
 
 \end_inset
 
@@ -4307,22 +4307,22 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Simple parabola 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sketching"
+
+\end_inset
+
+Different steps of transforming 
 \begin_inset Formula $f(x)=x^{2}$
 \end_inset
 
-
-\end_layout
-
+ into 
+\begin_inset Formula $f(x)=-\frac{1}{2}(x-2)^{2}+5$
 \end_inset
 
-
+.
 \end_layout
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:parabola"
 
 \end_inset
 
@@ -4332,18 +4332,219 @@ name "fig:parabola"
 \end_inset
 
 But what about the function 
-\begin_inset Formula $g(x)=-\frac{1}{2}(x-2)^{2}+5$
+\begin_inset Formula $f(x)=-\frac{1}{2}(x-2)^{2}+5$
 \end_inset
 
 ? We will see that it is easy to adapt 
-\begin_inset Formula $f(x)$
+\begin_inset Formula $f(x)=x^{2}$
 \end_inset
 
  to make it look like 
-\begin_inset Formula $g(x)$
+\begin_inset Formula $f(x)=-\frac{1}{2}(x-2)^{2}+5$
 \end_inset
 
 .
+ The first question, we have to answer, is in which order we want to introduce
+ the changes to 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+ to transform it into 
+\begin_inset Formula $-\frac{1}{2}(x-2)^{2}+5$
+\end_inset
+
+.
+ The answer is: We do that in exactly that order in which we would compute
+ the result of 
+\begin_inset Formula $-\frac{1}{2}(x-2)^{2}+5$
+\end_inset
+
+.
+ This means, we first subtract 
+\begin_inset Formula $2$
+\end_inset
+
+, then square the result, then premultiply 
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+ and finally add 
+\begin_inset Formula $5$
+\end_inset
+
+.
+ If we would not do that we would end up with a different function since
+ we would violate calculation rules at some point in the process.
+\end_layout
+
+\begin_layout Standard
+So let us start to transform 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+.
+ You can follow the different steps graphically in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sketching"
+
+\end_inset
+
+.As we just mentioned, the first step is to transform 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+ into 
+\begin_inset Formula $(x-2)^{2}$
+\end_inset
+
+.
+ Here, we get our first rule: The graph of 
+\begin_inset Formula $f(x-a)$
+\end_inset
+
+ is simply the graph of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ shifted by 
+\begin_inset Formula $a$
+\end_inset
+
+ to the right.
+ Of course, if 
+\begin_inset Formula $a$
+\end_inset
+
+ is negative, shifting by 
+\begin_inset Formula $a$
+\end_inset
+
+ becomes a shift to the left.
+ Why is that the case? If you think about it, 
+\begin_inset Formula $x-a$
+\end_inset
+
+ can also be seen as shifting the whole 
+\begin_inset Formula $x$
+\end_inset
+
+-axis by 
+\begin_inset Formula $-a$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $a$
+\end_inset
+
+ to the left.
+ This, however, is equivalent to shifting 
+\begin_inset Formula $f$
+\end_inset
+
+ to the right by 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Applied to your example, this means that we have to shift 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+ to the right by 
+\begin_inset Formula $2$
+\end_inset
+
+ in order to obtain the graph of 
+\begin_inset Formula $(x-2)^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The next step is to include the factor 
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+.
+ We already know the graph of 
+\begin_inset Formula $(x-2)^{2}$
+\end_inset
+
+, how does the graph of 
+\begin_inset Formula $-\frac{1}{2}(x-2)^{2}$
+\end_inset
+
+ look like? Well, premultiplying 
+\begin_inset Formula $-1$
+\end_inset
+
+ surely reflects the graph along the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+ The factor 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ squeezes the result.
+ For example, 
+\begin_inset Formula $y$
+\end_inset
+
+-values that used to be 
+\begin_inset Formula $-1$
+\end_inset
+
+ are now 
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+, 
+\begin_inset Formula $y$
+\end_inset
+
+-values that used to be 
+\begin_inset Formula $-2$
+\end_inset
+
+ are now 
+\begin_inset Formula $-1$
+\end_inset
+
+, and so on.
+ 
+\end_layout
+
+\begin_layout Standard
+Now, we are almost there.
+ The last step is to include the additive constant 
+\begin_inset Formula $+5$
+\end_inset
+
+.
+ This is easy: It simply shifts the graph of 
+\begin_inset Formula $-\frac{1}{2}(x-2)^{2}$
+\end_inset
+
+ upwards by 
+\begin_inset Formula $5$
+\end_inset
+
+.
+ This is it! We arrived at the graph of 
+\begin_inset Formula $-\frac{1}{2}(x-2)^{2}+5$
+\end_inset
+
+ by a few simple adaptation rules for the graph of 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+.
+ With this few simple rules, you can already sketch a decent amount of functions.
  
 \end_layout
 
@@ -4359,7 +4560,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4368,12 +4569,308 @@ Rules for adapting functions
 \end_layout
 
 \begin_layout Itemize
-asd
+The graph of 
+\begin_inset Formula $f(x-a)$
+\end_inset
+
+ is simply the graph of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ shifted by 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The graph of 
+\begin_inset Formula $-f(x)$
+\end_inset
+
+ is the graph of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ flipped along the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis.
+\end_layout
+
+\begin_layout Itemize
+The graph of 
+\begin_inset Formula $a\cdot f(x)$
+\end_inset
+
+ is the graph of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ streched (
+\begin_inset Formula $a>1$
+\end_inset
+
+) or squeezed (
+\begin_inset Formula $0\le a<1$
+\end_inset
+
+) by 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The graph of 
+\begin_inset Formula $f(x)+b$
+\end_inset
+
+ is the graph of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ shifted by 
+\begin_inset Formula $b$
+\end_inset
+
+ along the 
+\begin_inset Formula $y$
+\end_inset
+
+-axis.
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Compositions of Functions
+\end_layout
+
+\begin_layout Standard
+Sketching compositions of functions is a little bit more art, but for a
+ lot of examples it is not so difficult.
+ As an example, we use the function 
+\begin_inset Formula $f(x)=\exp\left(-(x-2)^{2}\right)$
+\end_inset
+
+ which is just a nicer way of writing 
+\begin_inset Formula $f(x)=e^{-(x-2)^{2}}$
+\end_inset
+
+.
+ The rules from above are not sufficient to sketch this function.
+ There is, however, one rule that we can use: If we know the graph of 
+\begin_inset Formula $f(x)=\exp\left(-x^{2}\right)$
+\end_inset
+
+, we know that we arrive at 
+\begin_inset Formula $f(x)=\exp\left(-(x-2)^{2}\right)$
+\end_inset
+
+ by shifting the graph to the right by 
+\begin_inset Formula $2$
+\end_inset
+
+.
+ Therefore, we look at how to sketch the graph of 
+\begin_inset Formula $f(x)=\exp\left(-x^{2}\right)$
+\end_inset
+
+ in the following.
+\end_layout
+
+\begin_layout Standard
+The first step, you can always to is to check whether there are function
+ values which are easy to compute and help drawing the graph.
+ Usually, it is a good idea to look at the behavior of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ at 
+\begin_inset Formula $x=0$
+\end_inset
+
+, 
+\begin_inset Formula $x=\pm1$
+\end_inset
+
+ and what 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ does if 
+\begin_inset Formula $x$
+\end_inset
+
+ goes to 
+\begin_inset Formula $\pm\infty$
+\end_inset
+
+.
+ In our case, the interesting cases are 
+\begin_inset Formula $x=0$
+\end_inset
+
+ and 
+\begin_inset Formula $x\to\pm\infty$
+\end_inset
+
+.
+ The position 
+\begin_inset Formula $x=0$
+\end_inset
+
+ is interesting since anything to the power of 
+\begin_inset Formula $0$
+\end_inset
+
+ equals 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ Therefore 
+\begin_inset Formula $f(0)=1$
+\end_inset
+
+.
+ When we ask how 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ behaves for 
+\begin_inset Formula $x\to\pm\infty$
+\end_inset
+
+ we can first observe that the behavior will be the same at both sides since
+ the squaring operation cancels out the sign.
+ So let us look at what happens when 
+\begin_inset Formula $x\to\infty$
+\end_inset
+
+.
+ Let us advance step by step, just as before.
+ First, when 
+\begin_inset Formula $x\to\infty$
+\end_inset
+
+, surely we will get 
+\begin_inset Formula $x^{2}\to\infty$
+\end_inset
+
+ as well.
+ By that, we can immidiately see that 
+\begin_inset Formula $-x^{2}\to-\infty$
+\end_inset
+
+.
+ Therefore, we only need to know what happens to 
+\begin_inset Formula $\exp(z)$
+\end_inset
+
+ if its argument 
+\begin_inset Formula $z$
+\end_inset
+
+ assumes a very large negative value.
+ We can rewrite the problem a bit by using one of the calculation rules
+ for exponentials: 
+\begin_inset Formula $e^{-x}=\frac{1}{e^{x}}$
+\end_inset
+
+.
+ Now, the answer should be easy.
+ If 
+\begin_inset Formula $-x^{2}\to-\infty$
+\end_inset
+
+, there will be a large value in the denominator and, therefore, 
+\begin_inset Formula $f(x)=\exp\left(-x^{2}\right)$
+\end_inset
+
+ will approach zero.
+ We can even say a bit more, namly that it will approach zero from above
+ since 
+\begin_inset Formula $\exp(z)$
+\end_inset
+
+ can never become negative if 
+\begin_inset Formula $z\in\mathbb{R}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In a similar manner, you can sketch functions of the form 
+\begin_inset Formula $f(x)=g(x)+h(x)$
+\end_inset
+
+ or 
+\begin_inset Formula $f(x)=\frac{g(x)}{h(x)}$
+\end_inset
+
+.
+ First, find a few points where the function value is easy to compute.
+ Then check what happens if 
+\begin_inset Formula $x$
+\end_inset
+
+ approaches points, where one of the functions goes to zero or infinity.
+ Then the question is usually, which of the functions 
+\begin_inset Quotes eld
+\end_inset
+
+wins
+\begin_inset Quotes erd
+\end_inset
+
+, i.e.
+ which approaches zero or infinity faster.
+ For example, 
+\begin_inset Formula $f(x)=x^{2}-x$
+\end_inset
+
+ will definetly diverge to infinity for 
+\begin_inset Formula $x\to\infty$
+\end_inset
+
+ since 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+ grows much faster than 
+\begin_inset Formula $-x$
+\end_inset
+
+ is able to drag it into the negative side.
+ Similarly 
+\begin_inset Formula $f(x)=\frac{x}{\exp(x)}$
+\end_inset
+
+ will approach zero for 
+\begin_inset Formula $x\to\infty$
+\end_inset
+
+ since 
+\begin_inset Formula $\exp(x)$
+\end_inset
+
+ grows faster than 
+\begin_inset Formula $x$
+\end_inset
+
+ does.
+ Drawing compositions of functions takes a bit of practice, but is a useful
+ tool for understanding how functions look like and what they do.
 \end_layout
 
 \end_body
