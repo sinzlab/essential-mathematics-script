@@ -1,4 +1,4 @@
-#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -2178,6 +2178,134 @@ Other useful properties that can also be read off from the geometric view.
 \tan(-\vartheta) & = & -\tan(\vartheta)\\
 \mbox{cotan}(-\vartheta) & = & -\mbox{cotan}(\vartheta)\end{eqnarray*}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sometimes we do not want to compute the sine or cosine of an angle but the
+ angle itself.
+ For example, we take point 
+\begin_inset Formula $p=(x,y)$
+\end_inset
+
+ and want to know what the angle between the x-axis and the line from the
+ origin to 
+\begin_inset Formula $p$
+\end_inset
+
+ is.
+ We know that 
+\begin_inset Formula $\tan(\vartheta)=\tfrac{y}{x}$
+\end_inset
+
+, but what is 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+? To solve for 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+, we need the inverse trigonometric functions.
+ For every trigonometric function there is an inverse trigonometric function:
+ 
+\begin_inset Formula $\arccos(x)$
+\end_inset
+
+, 
+\begin_inset Formula $\arcsin(x)$
+\end_inset
+
+, 
+\begin_inset Formula $\arctan(x)$
+\end_inset
+
+, 
+\begin_inset Formula $\mbox{arccotan}(x)$
+\end_inset
+
+.
+ In some texts they are confusingly written as 
+\begin_inset Formula $\cos^{-1}(\vartheta)$
+\end_inset
+
+ whereas 
+\begin_inset Formula $\cos(\vartheta)^{-1}$
+\end_inset
+
+ means 
+\begin_inset Formula $\nicefrac{1}{\cos(\vartheta)}$
+\end_inset
+
+, so you should always use the arc-notation.
+ Now, by using the arctan function we can compute the angle between 
+\begin_inset Formula $p$
+\end_inset
+
+ and the x-axis as 
+\begin_inset Formula $\vartheta=\arctan(\tfrac{y}{x})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Remark
+\end_layout
+
+\begin_layout Standard
+There are two units for measuring angles which are commonly used and get
+ quite often mixed up: 
+\emph on
+radians
+\emph default
+ and 
+\emph on
+degrees
+\emph default
+.
+ A full circle of 
+\begin_inset Formula $360^{\circ}$
+\end_inset
+
+ corresponds to 
+\begin_inset Formula $2\pi$
+\end_inset
+
+ radians.
+ In computer programs, the default unit is radians.
+ Therefore to compute the sine of 
+\begin_inset Formula $45^{\circ}$
+\end_inset
+
+ one has to compute 
+\begin_inset Formula $\sin(\nicefrac{\pi}{4})$
+\end_inset
+
+.
+ Likewise if you computed an angle by using 
+\begin_inset Formula $\arccos(x)$
+\end_inset
+
+ your output is in radians.
+ To convert from radians to degrees, you have to multipy your result by
+ 
+\begin_inset Formula $\frac{180}{\pi}$
+\end_inset
+
+ and similarly converting from degrees to radians by multiplying with 
+\begin_inset Formula $\frac{\pi}{180}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula $\lhd$
 \end_inset
 
 
@@ -4560,7 +4688,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
