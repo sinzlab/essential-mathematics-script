@@ -566,7 +566,7 @@ The situation changes when we consider arbitrary functions
 \end_inset
 
 .
- This raises the question how we could define the rate of change in a meaningul
+ This raises the question how we could define the rate of change in a meaningful
  way? The second intuition can help us here: In order to get the first derivativ
 e at a point 
 \begin_inset Formula $x_{0}$
@@ -1226,7 +1226,7 @@ continuity
 \end_layout
 
 \begin_layout Paragraph
-Definition (Continous Function)
+Definition (Continuous Function)
 \end_layout
 
 \begin_layout Standard
@@ -1241,12 +1241,12 @@ A function
 status collapsed
 
 \begin_layout Plain Layout
-continous
+continuous
 \end_layout
 
 \end_inset
 
-continous
+continuous
 \emph default
  
 \emph on
@@ -1281,9 +1281,9 @@ A function
 
  is said to be 
 \emph on
-continous
+continuous
 \emph default
-, if it is continous in every point of its domain.
+, if it is continuous in every point of its domain.
 \end_layout
 
 \begin_layout Standard
@@ -1295,13 +1295,13 @@ continous
 \end_layout
 
 \begin_layout Standard
-If a function is continous, we can calculate the value of the differential
+If a function is continuous, we can calculate the value of the differential
  quotient 
 \begin_inset Formula $\lim_{h\rightarrow0}\frac{f(x_{0}+h)-f(x_{0})}{h}$
 \end_inset
 
 .
- If the function is not continous, the derivative at that point is classified
+ If the function is not continuous, the derivative at that point is classified
  as 
 \emph on
 not defined
@@ -2064,7 +2064,7 @@ In general, it might be easier to calculate all the derivatives first.
 \begin_inset Formula $f(x)=\frac{g_{1}(x)}{g_{2}(x)}.$
 \end_inset
 
- By rewritting 
+ By rewriting 
 \begin_inset Formula $f(x)=g_{1}(x)\cdot g_{2}(x)^{-1}$
 \end_inset
 
@@ -2224,7 +2224,7 @@ Quotient Rule:
 \begin_inset Formula $f(x)=\frac{g_{1}(x)}{g_{2}(x)}$
 \end_inset
 
- be a quotient of two arbitrary diffferentiable functions.
+ be a quotient of two arbitrary differentiable functions.
  Then 
 \begin_inset Formula $f'(x)$
 \end_inset
@@ -2544,7 +2544,7 @@ The idea is that
 \end_inset
 
 .
- Fortunantely, there is a built-in matlab function that takes the differences
+ Fortunately, there is a built-in matlab function that takes the differences
  for you.
  Here is an example for how to compute the numerical derivative of 
 \begin_inset Formula $f(x)=\sin(x)$
@@ -2743,7 +2743,7 @@ higher-order derivatives
 \begin_inset Formula $f^{(3)}(x)$
 \end_inset
 
- is just the derivative of the second order derivate.
+ is just the derivative of the second order derivative.
  
 \end_layout
 
@@ -2811,7 +2811,7 @@ Draw picture to explain the curvature
 \end_layout
 
 \begin_layout Standard
-The geometric intution behind higher-order derivates is somewhat harder.
+The geometric intuition behind higher-order derivatives is somewhat harder.
  In particular, our visual system is not very good at judging higher-order
  derivatives.
  By visual inspection, it is pretty hard to say if e.g.
@@ -2966,7 +2966,7 @@ necessary condition
 \begin_inset Formula $x_{0}$
 \end_inset
 
-, is comepletely flat at 
+, is completely flat at 
 \begin_inset Formula $x_{0}$
 \end_inset
 
@@ -3188,12 +3188,12 @@ Let
 status collapsed
 
 \begin_layout Plain Layout
-mimimum
+minimum
 \end_layout
 
 \end_inset
 
-mimimum
+minimum
 \emph default
  at 
 \begin_inset Formula $x_{0}$
@@ -3497,7 +3497,7 @@ p(k) & = & \frac{\lambda^{k}e^{-\lambda}}{k!}.\end{eqnarray*}
 \begin_inset Formula $\lambda$
 \end_inset
 
- is called the rate of the poisson distribution.
+ is called the rate of the Poisson distribution.
  It tells us how many spike we expect in one second on average.
  The question that we want to solve in this example is how to estimate 
 \begin_inset Formula $\lambda$
@@ -3677,7 +3677,7 @@ reference "fig:PoissonSpikes"
 \begin_inset Formula $\lambda$
 \end_inset
 
- from the data, let us first spend a tought about what values we expect.
+ from the data, let us first spend a thought about what values we expect.
  The answer is not too difficult.
  Since we see a spike with probability 
 \begin_inset Formula $p=0.05$
@@ -3744,7 +3744,7 @@ Let us know turn to the question of how to estimate
 \end_inset
 
  must be Poisson distributed.
- We furthe assume that each spike train has been generated independently
+ We further assume that each spike train has been generated independently
  of the others.
 \end_layout
 
@@ -3821,7 +3821,7 @@ Now, we only need to find that maximum of
 \begin_inset Formula $\log$
 \end_inset
 
- is a strictly increasing continous function).
+ is a strictly increasing continuous function).
  However, taking the 
 \begin_inset Formula $\log$
 \end_inset
@@ -3839,7 +3839,7 @@ Let us know compute the maximum of
 \begin_inset Formula $\sum_{i=1}^{m}k_{i}\log\lambda-\lambda-\log k_{i}!.$
 \end_inset
 
- For that reason, we first compute the frist derivative
+ For that reason, we first compute the first derivative
 \begin_inset Formula \begin{eqnarray*}
 \frac{d}{d\lambda}\left(\sum_{i=1}^{m}k_{i}\log\lambda-\lambda-\log k_{i}!.\right) & = & \sum_{i=1}^{m}\left(k_{i}\frac{d}{d\lambda}\log\lambda-\frac{d}{d\lambda}\lambda-\frac{d}{d\lambda}\log k_{i}!\right)\\
  & = & \sum_{i=1}^{m}\left(k_{i}\frac{1}{\lambda}-1\right)\\
@@ -3886,8 +3886,8 @@ Since rates are always positive (i.e.
  It also has a very intuitive interpretation.
  The maximum likelihood estimate for the rate of a Poisson distribution
  is the mean of the observed spike counts.
- In that sense it is also not suprising, that the mean of a Poisson distribution
- is 
+ In that sense it is also not surprising, that the mean of a Poisson distributio
+n is 
 \begin_inset Formula $\lambda$
 \end_inset
 
@@ -3901,7 +3901,7 @@ You should include the maximum likelihood estimate in the matlab example
 \end_inset
 
 .
- The code fragement, you have to add, is:
+ The code fragment, you have to add, is:
 \begin_inset ERT
 status open
 
@@ -4046,7 +4046,7 @@ Now, we must ensure, that
 \begin_inset Formula $b$
 \end_inset
 
- shifts the function horizontically.
+ shifts the function horizontally.
  If we want 
 \begin_inset Formula $g$
 \end_inset
@@ -4472,8 +4472,8 @@ The answer is yes.
 \end_inset
 
 .
- The additional work we have to do in comparision to a simple linear approximati
-on is to determine the value of 
+ The additional work we have to do in comparison to a simple linear approximatio
+n is to determine the value of 
 \begin_inset Formula $v$
 \end_inset
 
@@ -4971,7 +4971,7 @@ Note that this code only works for the function
 status open
 
 \begin_layout Plain Layout
-Note that the quadratic approximation is actualy a linear function!
+Note that the quadratic approximation is actually a linear function!
 \end_layout
 
 \end_inset
@@ -5045,7 +5045,7 @@ Find the quadratic approximation to
 \begin_layout Standard
 Being able to approximate functions by polynomials is extremely useful,
  and done very often.
- Because many functions are hard to analyse, people work with their linear
+ Because many functions are hard to analyze, people work with their linear
  or quadratic approximations in many cases .
  By using these approximations, one can often get away by just using polynomials.
  Furthermore, finding Taylor approximations is often not hard, you just
@@ -5318,7 +5318,7 @@ Fortunately, this function is really easy to invert: It is simply the function
 \end_layout
 
 \begin_layout Subsubsection*
-Example: An error anaylsis of depth perception
+Example: An error analysis of depth perception
 \end_layout
 
 \begin_layout Standard

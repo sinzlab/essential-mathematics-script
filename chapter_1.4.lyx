@@ -1,5 +1,5 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
@@ -11,6 +11,7 @@
 \usepackage{color}
 \usepackage{bm}
 \end_preamble
+\use_default_options false
 \language english
 \inputencoding auto
 \font_roman default
@@ -21,9 +22,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -56,7 +59,8 @@ Derivatives in
 \end_layout
 
 \begin_layout Standard
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "sec:multivariate_derivatives"
 
 \end_inset
@@ -126,8 +130,12 @@ Consider the following problem: We are given a number of noisy measurements
 This 
 \emph on
 squared loss
-\begin_inset LatexCommand index
-name "squared loss"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+squared loss
+\end_layout
 
 \end_inset
 
@@ -143,7 +151,8 @@ name "squared loss"
 
 .
  The approach of finding a line by minimizing (
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:squared_loss"
 
 \end_inset
@@ -180,8 +189,12 @@ Our loss is a function of two parameters, i.e.
  or finding optima when dealing with 
 \emph on
 
-\begin_inset LatexCommand index
-name "multivariate functions"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+multivariate functions
+\end_layout
 
 \end_inset
 
@@ -201,8 +214,12 @@ The first change is obvious.
  This kind of derivative is know as 
 \emph on
 
-\begin_inset LatexCommand index
-name "partial derivative"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+partial derivative
+\end_layout
 
 \end_inset
 
@@ -287,8 +304,12 @@ When dealing with a function of
  us the so called 
 \emph on
 
-\begin_inset LatexCommand index
-name "gradient"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+gradient
+\end_layout
 
 \end_inset
 
@@ -360,8 +381,12 @@ The
 Similarly to finding optima of 
 \emph on
 
-\begin_inset LatexCommand index
-name "univariate functions"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+univariate functions
+\end_layout
 
 \end_inset
 
@@ -420,8 +445,12 @@ The gradient of a function
  This property is used in the so called 
 \emph on
 
-\begin_inset LatexCommand index
-name "gradient descent"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+gradient descent
+\end_layout
 
 \end_inset
 
@@ -500,8 +529,12 @@ The art, somehow, is to choose the scaling constant
 \noun default
 \color inherit
 
-\begin_inset LatexCommand index
-name "line search"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+line search
+\end_layout
 
 \end_inset
 
@@ -770,7 +803,7 @@ If you think about it, this equation makes perfect sense.
 \begin_inset Formula $x$
 \end_inset
 
- as estimated by our sample, normlize its variance to one by dividing by
+ as estimated by our sample, normalize its variance to one by dividing by
  the standard deviation, multiply the result with the correlation coefficient
  
 \begin_inset Formula $\rho$
@@ -812,7 +845,7 @@ Unfortunately, we cannot check if the values for
  really correspond to a minimum, yet.
  In order to do so we would need the concept of matrices and eigenvalues.
  Just for the sake of completeness, we quickly mention how to generalize
- the sufficient conditions for a minumum and a maximum to more than one
+ the sufficient conditions for a minimum and a maximum to more than one
  dimension.
  
 \end_layout
@@ -827,8 +860,8 @@ The second derivative of a function
 \end_inset
 
  matrix.
- This is not suprising, since the first derivative with respect to all variables
- was a vector (the gradient), or a function from 
+ This is not surprising, since the first derivative with respect to all
+ variables was a vector (the gradient), or a function from 
 \begin_inset Formula $\mathbb{R}^{n}$
 \end_inset
 
@@ -841,8 +874,12 @@ The second derivative of a function
  This matrix is called the 
 \emph on
 
-\begin_inset LatexCommand index
-name "Hessian matrix"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Hessian matrix
+\end_layout
 
 \end_inset
 
@@ -851,8 +888,12 @@ Hessian matrix
  or simply the 
 \emph on
 
-\begin_inset LatexCommand index
-name "Hessian"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Hessian
+\end_layout
 
 \end_inset
 
@@ -895,8 +936,12 @@ H(\mathbf{z}) & = & \left(\begin{array}{ccccc}
 is called 
 \emph on
 
-\begin_inset LatexCommand index
-name "Hessian"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Hessian
+\end_layout
 
 \end_inset
 
@@ -927,8 +972,12 @@ The sufficient condition for a function
  is 
 \emph on
 positive definite
-\begin_inset LatexCommand index
-name "positive definite"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+positive definite
+\end_layout
 
 \end_inset
 
@@ -937,8 +986,12 @@ name "positive definite"
  or 
 \emph on
 
-\begin_inset LatexCommand index
-name "negative definite"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+negative definite
+\end_layout
 
 \end_inset
 

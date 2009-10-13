@@ -1,5 +1,5 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
@@ -11,6 +11,7 @@
 \usepackage{color}
 \usepackage{bm}
 \end_preamble
+\use_default_options false
 \language english
 \inputencoding auto
 \font_roman default
@@ -21,9 +22,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -53,8 +56,12 @@ Vectors
 
 \begin_layout Standard
 A vector is a 
-\begin_inset LatexCommand index
-name "shorthand"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+shorthand
+\end_layout
 
 \end_inset
 
@@ -63,7 +70,7 @@ shorthand notation for a ordered set of numbers
 \end_inset
 
 .
- As a convention, we denote vectors with a lower case latin letter in bold
+ As a convention, we denote vectors with a lower case Latin letter in bold
  font 
 \family roman
 \series medium
@@ -113,19 +120,21 @@ z\end{array}\right)$
  can be written as a vector.
  So, every point in space can be written as a vector.
  
-\newline
+\begin_inset Newline newline
+\end_inset
+
 
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -134,26 +143,26 @@ setlength{
 unitlength}{0.04cm}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{picture}(200,200)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -162,22 +171,22 @@ put(50,50){
 vector(27,50){27}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 thicklines  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -186,7 +195,7 @@ put(77,40){
 makebox(0,0){$x_0$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -195,11 +204,11 @@ put(77,48){
 line(0,1){4}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -208,7 +217,7 @@ put(40,100){
 makebox(0,0){$y_0$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -217,11 +226,11 @@ put(48,100){
 line(1,0){4}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -230,7 +239,7 @@ put(77,100){
 circle{2}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -241,11 +250,11 @@ makebox(0,0){$
 mathbf{x}_0$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -254,7 +263,7 @@ put(50,50){
 vector(1,0){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -263,7 +272,7 @@ put(50,50){
 vector(0,1){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -272,7 +281,7 @@ put(150,55){
 makebox(0,0){$x$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -281,19 +290,19 @@ put(55,150){
 makebox(0,0){$y$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -302,29 +311,29 @@ put(57,35){
 makebox(0,0){$f(x)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{picture}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -570,8 +579,12 @@ x_{n}\end{array}\right)$
  is also called 
 \emph on
 
-\begin_inset LatexCommand index
-name "vector space"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+vector space
+\end_layout
 
 \end_inset
 
@@ -718,15 +731,19 @@ A very basic property of a vector that we can compute is its length.
  In general, the length of a vector is called the 
 \emph on
 
-\begin_inset LatexCommand index
-name "norm"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+norm
+\end_layout
 
 \end_inset
 
 norm of a vector.
  
 \emph default
-Since the norm is a very frequently occuring function of a vector 
+Since the norm is a very frequently occurring function of a vector 
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
@@ -757,7 +774,9 @@ Assume we are given a 2D vector
 
 .
  
-\newline
+\begin_inset Newline newline
+\end_inset
+
 
 \end_layout
 
@@ -765,14 +784,14 @@ Assume we are given a 2D vector
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -781,32 +800,32 @@ setlength{
 unitlength}{0.8cm}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{picture}(7,7)(-2,-2)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 graphpaper[1](-2,-2)(7,7)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 thicklines  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -815,7 +834,7 @@ put(0,0){
 vector(3,4){3}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -824,14 +843,14 @@ put(77,40){
 makebox(0,0){$x_0$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 {
 \backslash
 color{red}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -844,7 +863,7 @@ underbrace{
 hspace{2.4cm}}_{=a}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -857,7 +876,7 @@ underbrace{
 hspace{3.2cm}}_{=b}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -866,7 +885,7 @@ put(0,0){
 line(1,0){3}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -875,12 +894,12 @@ put(3,0){
 line(0,1){4}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -889,7 +908,7 @@ put(40,100){
 makebox(0,0){$y_0$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -898,11 +917,11 @@ put(48,100){
 line(1,0){4}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -911,7 +930,7 @@ put(77,100){
 circle{2}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -922,11 +941,11 @@ makebox(0,0){$
 mathbf{x}_0$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -935,7 +954,7 @@ put(50,50){
 vector(1,0){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -944,7 +963,7 @@ put(50,50){
 vector(0,1){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -953,7 +972,7 @@ put(150,55){
 makebox(0,0){$x$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -962,19 +981,19 @@ put(55,150){
 makebox(0,0){$y$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -983,29 +1002,29 @@ put(57,35){
 makebox(0,0){$f(x)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{picture}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1035,8 +1054,12 @@ This way of computing a vector generalizes to
  dimensions, the 
 \emph on
 
-\begin_inset LatexCommand index
-name "Euclidean norm"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Euclidean norm
+\end_layout
 
 \end_inset
 
@@ -1117,8 +1140,12 @@ In order to scale a vector
 The operation of scaling a vector to length one is called 
 \emph on
 
-\begin_inset LatexCommand index
-name "normalization"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+normalization
+\end_layout
 
 \end_inset
 
@@ -1186,7 +1213,9 @@ Variance: The variance of a set of numbers
 \end_inset
 
  
-\newline
+\begin_inset Newline newline
+\end_inset
+
 (Subtracting the number 
 \begin_inset Formula $E(x)$
 \end_inset
@@ -1209,31 +1238,35 @@ Variance: The variance of a set of numbers
 \begin_layout Standard
 As you might guess, the Euclidean norm is not the only function that fulfills
  the properties (
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:norm1"
 
 \end_inset
 
 ), (
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:norm11"
 
 \end_inset
 
 ), (
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:norm2"
 
 \end_inset
 
 ) and (
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:norm3"
 
 \end_inset
 
 ).
- Infact, those properties are usually used to define a norm on a vector
+ In fact, those properties are usually used to define a norm on a vector
  space.
  Since there are several possible norms on 
 \begin_inset Formula $\mathbb{R}^{n}$
@@ -1259,8 +1292,12 @@ Projection and Scalar Product
 A very important operation between two vectors is the 
 \emph on
 scalar product
-\begin_inset LatexCommand index
-name "scalar product"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+scalar product
+\end_layout
 
 \end_inset
 
@@ -1270,7 +1307,7 @@ name "scalar product"
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 not to be confused with a product by a scalar...
 \end_layout
 
@@ -1291,8 +1328,12 @@ Definition (Scalar Product)
 The 
 \emph on
 
-\begin_inset LatexCommand index
-name "scalar product"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+scalar product
+\end_layout
 
 \end_inset
 
@@ -1301,8 +1342,12 @@ scalar
  or 
 \emph on
 
-\begin_inset LatexCommand index
-name "dot product"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+dot product
+\end_layout
 
 \end_inset
 
@@ -1374,7 +1419,8 @@ The mean of the entries
 
 \begin_layout Itemize
 In 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "sec:Integrals"
 
 \end_inset
@@ -1390,7 +1436,7 @@ where
 \begin_inset Formula $n$
 \end_inset
 
- is the number of intervalls of width 
+ is the number of intervals of width 
 \begin_inset Formula $h$
 \end_inset
 
@@ -1403,8 +1449,8 @@ where
 \end_inset
 
 .
- Assume that we need to compute the value of the integral in a programe
- we write.
+ Assume that we need to compute the value of the integral in a program we
+ write.
  If the function 
 \begin_inset Formula $f$
 \end_inset
@@ -1460,16 +1506,23 @@ f(a+(2^{m}-1)h)\end{array}\right)$
 \end_inset
 
  would look like this:
-\newline
+\begin_inset Newline newline
+\end_inset
 
-\newline
+
+\begin_inset Newline newline
+\end_inset
+
 
 \family typewriter
 >> h = (2*pi)/2^10; % define increment
-\newline
->> phi = [0:h:2*pi]; % get angles
- between 0 and 2*pi
-\newline
+\begin_inset Newline newline
+\end_inset
+
+>> phi = [0:h:2*pi]; % get angles between 0 and 2*pi
+\begin_inset Newline newline
+\end_inset
+
 >> f = sin(phi); % get the function values 
 \end_layout
 
@@ -1477,9 +1530,10 @@ f(a+(2^{m}-1)h)\end{array}\right)$
 
 \family typewriter
 >> h = h*ones(length(f),1); % make h into a vector 
-\newline
->> f*h % compute the
- approximate integral
+\begin_inset Newline newline
+\end_inset
+
+>> f*h % compute the approximate integral
 \end_layout
 
 \begin_layout Quote
@@ -1494,9 +1548,13 @@ ans =
 -4.5996e-18
 \family default
 
-\newline
+\begin_inset Newline newline
+\end_inset
 
-\newline
+
+\begin_inset Newline newline
+\end_inset
+
 
 \end_layout
 
@@ -1507,7 +1565,7 @@ In general, it is often useful to imagine an integral like
 
  as a dot product between two very long vectors, because a lot of the geometrica
 l intuition carries over.
- Infact, for a certain type of functions, a dot product between two functions
+ In fact, for a certain type of functions, a dot product between two functions
  can be defined as 
 \begin_inset Formula $\langle f,g\rangle_{\mathcal{F}}=\int_{-\infty}^{+\infty}f(x)g(x)dx$
 \end_inset
@@ -1519,8 +1577,8 @@ l intuition carries over.
 
  indicates that this dot product is not the normal dot product as we know
  it.
- Another situatation where the dot product intuition is useful is the convolutio
-n of two functions, which we will introduce later.
+ Another situation where the dot product intuition is useful is the convolution
+ of two functions, which we will introduce later.
 \end_layout
 
 \begin_layout Itemize
@@ -1797,8 +1855,8 @@ are both zero.
 
 \end_inset
 
- Now, by the Cauchy-Schwarz inequaility, we can see that correlation-coefficient
-s always have to be between -1 and 1.
+ Now, by the Cauchy-Schwarz inequality, we can see that correlation-coefficients
+ always have to be between -1 and 1.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1834,8 +1892,12 @@ Finally, if
  are called 
 \emph on
 
-\begin_inset LatexCommand index
-name "orthogonal"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+orthogonal
+\end_layout
 
 \end_inset
 
@@ -1847,8 +1909,12 @@ The second important intuition about scalar products can be explained in
  terms of 
 \emph on
 
-\begin_inset LatexCommand index
-name "projection"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+projection
+\end_layout
 
 \end_inset
 
@@ -1908,8 +1974,12 @@ which you want to use to approximate another image
  is called 
 \emph on
 projection
-\begin_inset LatexCommand index
-name "projection"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+projection
+\end_layout
 
 \end_inset
 
@@ -2062,18 +2132,18 @@ wide false
 sideways false
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2082,18 +2152,18 @@ setlength{
 unitlength}{0.04cm}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{picture}(200,200)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2102,7 +2172,7 @@ put(50,50){
 vector(40,25){60}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2123,7 +2193,7 @@ cdot
 mathbf{v}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2146,18 +2216,18 @@ mathbf{x}
 rangle}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 thicklines  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2166,7 +2236,7 @@ put(50,50){
 vector(27,50){40}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2177,11 +2247,11 @@ makebox(0,0){$
 mathbf{x}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2190,7 +2260,7 @@ put(50,50){
 vector(40,25){27}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2201,23 +2271,23 @@ makebox(0,0){$
 mathbf{v}$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2226,7 +2296,7 @@ put(50,50){
 vector(1,0){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2235,7 +2305,7 @@ put(50,50){
 vector(0,1){100}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2244,7 +2314,7 @@ put(150,55){
 makebox(0,0){$x$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -2253,19 +2323,19 @@ put(55,150){
 makebox(0,0){$y$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
@@ -2274,29 +2344,29 @@ put(57,35){
 makebox(0,0){$f(x)$}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{picture}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 end{center}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -2305,10 +2375,10 @@ end{center}
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Sketch of a projection: If 
 \begin_inset Formula $\mathbf{v}$
 \end_inset
@@ -2636,8 +2706,12 @@ We just saw, that the best approximation of a vector
  are called 
 \emph on
 
-\begin_inset LatexCommand index
-name "linearly dependent"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+linearly dependent
+\end_layout
 
 \end_inset
 
@@ -2660,8 +2734,12 @@ linearly dependent.
  are called 
 \emph on
 
-\begin_inset LatexCommand index
-name "linearly independent"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+linearly independent
+\end_layout
 
 \end_inset
 
@@ -2671,8 +2749,12 @@ linearly independent.
  The extreme case of linear independence is 
 \emph on
 
-\begin_inset LatexCommand index
-name "orthogonality"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+orthogonality
+\end_layout
 
 \end_inset
 
@@ -2746,8 +2828,12 @@ An important questions that arises in this context is how many vectors
  linearly independent vectors is called 
 \emph on
 a 
-\begin_inset LatexCommand index
-name "basis"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+basis
+\end_layout
 
 \end_inset
 
@@ -2773,8 +2859,12 @@ of
  
 \emph on
 orthonormal bases
-\begin_inset LatexCommand index
-name "orthonormal basis"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+orthonormal basis
+\end_layout
 
 \end_inset
 
@@ -2797,8 +2887,12 @@ The simplest basis for
  is the so called 
 \emph on
 canonical basis
-\begin_inset LatexCommand index
-name "canonical basis"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+canonical basis
+\end_layout
 
 \end_inset
 
@@ -2904,8 +2998,12 @@ There is a notational shortcut to for
 , which is called the 
 \emph on
 
-\begin_inset LatexCommand index
-name "Kronecker Delta"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Kronecker Delta
+\end_layout
 
 \end_inset
 
@@ -2921,7 +3019,7 @@ It is just defined as
 \end_inset
 
 It is used a lot, since it causes less effort to write.
- You can think of delta functions as the continous equivalent of the Kronecker
+ You can think of delta functions as the continuous equivalent of the Kronecker
  Delta.
  Using it, we would write orthogonality as 
 \begin_inset Formula \begin{eqnarray*}
@@ -2952,8 +3050,12 @@ A set of vectors
  is called an 
 \emph on
 orthonormal basis
-\begin_inset LatexCommand index
-name "orthonormal basis"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+orthonormal basis
+\end_layout
 
 \end_inset
 
@@ -3001,8 +3103,12 @@ Writing an arbitrary vector
  is called 
 \emph on
 basis expansion
-\begin_inset LatexCommand index
-name "basis expansion"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+basis expansion
+\end_layout
 
 \end_inset
 
@@ -3032,8 +3138,12 @@ according to the basis
  are called 
 \emph on
 coordinates
-\begin_inset LatexCommand index
-name "coordinates"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+coordinates
+\end_layout
 
 \end_inset
 
@@ -3097,8 +3207,12 @@ The term
  is called 
 \emph on
 
-\begin_inset LatexCommand index
-name "orthonormal expansion"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+orthonormal expansion
+\end_layout
 
 \end_inset
 
@@ -3230,7 +3344,7 @@ The coordinates of a vector
 \end_layout
 
 \begin_layout Standard
-From the exampe above, we can learn two important facts.
+From the example above, we can learn two important facts.
  First of all, 
 \begin_inset Formula $x_{1},...,x_{n}$
 \end_inset
@@ -3317,8 +3431,8 @@ As mentioned above, basically every set of linearly independent vectors
 
 \begin_layout Standard
 Having only non-normalized basis vectors does not cause problems, since
- we can always normalize them by dividing by their norm and get a new othonormal
- basis 
+ we can always normalize them by dividing by their norm and get a new orthonorma
+l basis 
 \begin_inset Formula $\frac{1}{||\mathbf{w}_{1}||}\mathbf{w}_{1},...,\frac{1}{||\mathbf{w}_{n}||}\mathbf{w}_{n}$
 \end_inset
 

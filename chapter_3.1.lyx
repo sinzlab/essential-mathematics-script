@@ -1,5 +1,5 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
@@ -11,6 +11,7 @@
 \usepackage{color}
 \usepackage{bm}
 \end_preamble
+\use_default_options false
 \language english
 \inputencoding auto
 \font_roman default
@@ -21,9 +22,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -121,8 +124,8 @@ f_{\infty}(x) & = & b_{0}+a_{1}\sin(x)+b_{1}\cos(x)\\
 
 \begin_layout Standard
 i.e.
- by a weighted sum of (possibly infininitely many) sines and cosines at
- different frequencies 
+ by a weighted sum of (possibly infinitely many) sines and cosines at different
+ frequencies 
 \begin_inset Formula $n.$
 \end_inset
 
@@ -140,7 +143,7 @@ i.e.
 \end_layout
 
 \begin_layout Standard
-This way of approximating function is reminscient of the approximation of
+This way of approximating function is reminiscent of the approximation of
  functions by their Taylor Series, i.e a weight sum of the functions 
 \begin_inset Formula $1,$
 \end_inset
@@ -268,13 +271,13 @@ We will need the following identities, which we will just state here, but
 \end_layout
 
 \begin_layout Standard
-While these identies might look complicated in writing, at least some of
- them are intuitive.
+While these identities might look complicated in writing, at least some
+ of them are intuitive.
  One period of a sine consists of a positive first half, and a second half
  which is an identical copy of the first, just flipped into the negative
  numbers.
  Therefore, the integral across one oscillation is 0.
- Hence, if we integrat 
+ Hence, if we integrate 
 \begin_inset Formula $\sin(kx)$
 \end_inset
 
@@ -287,7 +290,7 @@ While these identies might look complicated in writing, at least some of
 \end_inset
 
  this integral is 0.
- A similary reasoning can show that 
+ A similarly reasoning can show that 
 \begin_inset Formula $\sin(kx)\sin(mx)$
 \end_inset
 
@@ -307,7 +310,7 @@ provided that
 \begin_inset Formula $\sin(kx)\sin(kx)=\sin(kx)^{2},$
 \end_inset
 
- which is nonnegative for all 
+ which is non negative for all 
 \begin_inset Formula $x,$
 \end_inset
 
@@ -398,7 +401,7 @@ a_{m}=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(mx)dx.\]
 \end_layout
 
 \begin_layout Standard
-In theory, we have to calculate infinetely many integrals in order to obtain
+In theory, we have to calculate infinitely many integrals in order to obtain
  the complete Fourier Series.
  However, in practice, it is usually sufficient to just compute a couple
  of them, just like we usually only computed the first couple of terms in
@@ -528,7 +531,7 @@ Now, lets think of functions on
 \begin_inset Formula $f(x).$
 \end_inset
 
- Of course, there are infinetely many choices of 
+ Of course, there are infinitely many choices of 
 \begin_inset Formula $x,$
 \end_inset
 
@@ -608,13 +611,15 @@ Well, we can show that the integral identities that we had above imply that
 
 \begin_layout Itemize
 Firstly, identities 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:fourNorm1"
 
 \end_inset
 
  and 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:fourNorm2"
 
 \end_inset
@@ -642,25 +647,29 @@ reference "eq:fourNorm2"
 
 \begin_layout Itemize
 Secondly, identities 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:fourOrth1"
 
 \end_inset
 
 , 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:fourOrth2"
 
 \end_inset
 
 , 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:fourOrth3"
 
 \end_inset
 
  and 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:fourOrth4"
 
 \end_inset
@@ -819,7 +828,7 @@ Getting rid of the cosines: Amplitudes and phases
 \end_layout
 
 \begin_layout Standard
-We can get rid of alll the cosines in the Fourier Series of a function if
+We can get rid of all the cosines in the Fourier Series of a function if
  we do not represent it by a linear combination of sines and cosines, but
  rather by a weighted sum of 
 \emph on
@@ -937,7 +946,7 @@ Dividing the second equation by the first yields
 \end_layout
 
 \begin_layout Standard
-Squaring each of the two eqations, and adding them leads to
+Squaring each of the two equations, and adding them leads to
 \end_layout
 
 \begin_layout Standard

@@ -1,5 +1,5 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
@@ -11,6 +11,7 @@
 \usepackage{color}
 \usepackage{bm}
 \end_preamble
+\use_default_options false
 \language english
 \inputencoding auto
 \font_roman default
@@ -21,9 +22,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -55,8 +58,12 @@ Eigenvalues and Eigenvectors
 In this section we will look at a very important concept of matrices: 
 \emph on
 
-\begin_inset LatexCommand index
-name "eigenvalues"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+eigenvalues
+\end_layout
 
 \end_inset
 
@@ -65,8 +72,12 @@ eigenvalues
  and 
 \emph on
 
-\begin_inset LatexCommand index
-name "eigenvectors"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+eigenvectors
+\end_layout
 
 \end_inset
 
@@ -80,8 +91,12 @@ eigenvectors
  ingredient of the 
 \emph on
 
-\begin_inset LatexCommand index
-name "Principal Component Analysis (PCA)"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Principal Component Analysis (PCA)
+\end_layout
 
 \end_inset
 
@@ -292,8 +307,12 @@ Let
  is called 
 \emph on
 eigenvector
-\begin_inset LatexCommand index
-name "eigenvector"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+eigenvector
+\end_layout
 
 \end_inset
 
@@ -311,8 +330,12 @@ name "eigenvector"
  is called 
 \emph on
 eigenvalue
-\begin_inset LatexCommand index
-name "eigenvalue"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+eigenvalue
+\end_layout
 
 \end_inset
 
@@ -414,8 +437,12 @@ This shows, that we are interested in a vector
  lives in the 
 \emph on
 
-\begin_inset LatexCommand index
-name "nullspace"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+nullspace
+\end_layout
 
 \end_inset
 
@@ -671,7 +698,7 @@ Consider the triangular matrix
 
 \end_inset
 
-Since we know that the determinant of a triangluar matrix is again just
+Since we know that the determinant of a triangular matrix is again just
  the product of the diagonal terms
 \begin_inset Formula \begin{eqnarray*}
 \det(\mathbf{A}-\lambda\mathbf{I}) & = & (1-\lambda)(2-\lambda)(3-\lambda).\end{eqnarray*}
@@ -892,7 +919,7 @@ Eigenvalues and eigenvectors are important tools to understand the function
 \begin_inset Formula $\mathbf{v}_{i}$
 \end_inset
 
- only scales the input, we get insight in what ommit
+ only scales the input, we get insight in what omit
 \begin_inset Formula $\mathbf{A}$
 \end_inset
 
@@ -961,7 +988,7 @@ Even if the eigenvalues are not distinct, i.e.
 \begin_inset Formula $k_{i}\not=k_{j}$
 \end_inset
 
-, then there still exists such a decomposition if the eivenvectors corresponding
+, then there still exists such a decomposition if the eigenvectors corresponding
  to those eigenvalues are linearly independent.
 \end_layout
 
@@ -1495,7 +1522,7 @@ i.e.
 \end_inset
 
  is equivalent to changing into the eigenbasis, rescaling the coordinates
- with the eigenvalues and chaning the basis back.
+ with the eigenvalues and changing the basis back.
  
 \end_layout
 

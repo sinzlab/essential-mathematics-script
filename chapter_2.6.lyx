@@ -1,5 +1,5 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
@@ -11,6 +11,7 @@
 \usepackage{color}
 \usepackage{bm}
 \end_preamble
+\use_default_options false
 \language english
 \inputencoding auto
 \font_roman default
@@ -21,9 +22,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -57,7 +60,8 @@ Example: PCA on chromatic pixels
 
 \begin_layout Standard
 The first plot of Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:natimg"
 
 \end_inset
@@ -70,19 +74,20 @@ reference "fig:natimg"
 
 .
  The other plot in Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:natimg"
 
 \end_inset
 
- shows the RBG values as points in 3D.
+ shows the RGB values as points in 3D.
  While the histograms suggested that the whole dynamic range of the cube
  
 \begin_inset Formula $[0,1]³$
 \end_inset
 
- should be covered, we can see that this is definetely not the case.
- In fact, the RBG values are correlated and cover only a part of the color
+ should be covered, we can see that this is definitely not the case.
+ In fact, the RGB values are correlated and cover only a part of the color
  cube.
  The main axis of correlation is vaguely 
 \begin_inset Formula $(1,1,1)^{\top}$
@@ -128,7 +133,8 @@ Image we wanted to encode each pixel value with a single neuron, i.e.
 
 Which direction should we take? Before we compute the direction from equation
  (
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:pcaObj"
 
 \end_inset
@@ -152,7 +158,8 @@ Before we compute our direction
 \end_inset
 
 , we need to transform equation (
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "eq:pcaObj"
 
 \end_inset
@@ -175,7 +182,7 @@ wide false
 sideways false
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figs/orgImg.eps
@@ -193,7 +200,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figs/Scatterplot.eps
@@ -204,11 +211,12 @@ status collapsed
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:natimg"
 
 \end_inset
@@ -227,8 +235,8 @@ Right Top:
 \series bold
  Center Bottom:
 \series default
-Scatterplot of color pixel values in RGB space.
- The gray points on the side of the cube are the marginal scatterplots,
+Scatter plot of color pixel values in RGB space.
+ The gray points on the side of the cube are the marginal scatter plots,
  i.e.
  the projections on the respective coordinate plane.
  
@@ -389,8 +397,12 @@ The straightforward way for computing
  In order to take it into account we need a method called 
 \emph on
 Lagrange multipliers
-\begin_inset LatexCommand index
-name "Lagrange multipliers"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Lagrange multipliers
+\end_layout
 
 \end_inset
 
@@ -399,7 +411,7 @@ name "Lagrange multipliers"
 \emph default
 The Lagrange multiplier method is a way of solving exactly those problems
  above.
- We will not formaly introduce the method here, but only give a rough intution
+ We will not formally introduce the method here, but only give a rough intuition
  for the idea behind it.
  
 \end_layout
@@ -440,8 +452,8 @@ We now state the condition for optimality and then spent some though on
 
 \end_inset
 
-The condition means that at the optimum, the gradient of the contraint must
- have the same orientation as the gradient of the function.
+The condition means that at the optimum, the gradient of the constraint
+ must have the same orientation as the gradient of the function.
  Why does that make sense? First, imagine that the optimum of 
 \begin_inset Formula $\mathbf{v}^{\top}\mathbf{C}\mathbf{v}$
 \end_inset
@@ -589,8 +601,12 @@ Since
  This is exactly what 
 \emph on
 
-\begin_inset LatexCommand index
-name "Principle Component Analysis (PCA)"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Principle Component Analysis (PCA)
+\end_layout
 
 \end_inset
 
@@ -633,7 +649,8 @@ Example: PCA on chromatic pixels (con'd)
 
 \begin_layout Standard
 Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:PCAimg"
 
 \end_inset
@@ -643,7 +660,8 @@ reference "fig:PCAimg"
  For visualization we also transformed the RGB color planes along with the
  data.
  Looking at the right plot of Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:PCAimg"
 
 \end_inset
@@ -676,7 +694,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename figs/Mean0Scatter.eps
 	width 6cm
@@ -693,11 +711,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:PCAimg"
 
 \end_inset
@@ -706,12 +725,12 @@ name "fig:PCAimg"
 \series bold
 Left:
 \series default
- Scatterplot of centered chromatic natural image pixels.
+ Scatter plot of centered chromatic natural image pixels.
  
 \series bold
 Right:
 \series default
- Scatterplot of color pixel values in PCA space.
+ Scatter plot of color pixel values in PCA space.
  We can see that the 
 \begin_inset Formula $y$
 \end_inset
@@ -724,7 +743,9 @@ Right:
 -axis roughly corresponds to the red-green channel.
  Both channels are also found in the early visual system.
  
-\newline
+\begin_inset Newline newline
+\end_inset
+
 In both plots the color planes have been shifted with the pixels.
 \end_layout
 
@@ -808,7 +829,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figs/pc1.eps
@@ -833,11 +854,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:PCs"
 
 \end_inset
@@ -868,7 +890,7 @@ There are basically two reasons.
  This means it can only transmit a limited amount of information in a given
  time window.
  For both cases, signalling in the PCA basis is favorable for the neuron.
- Why is that the case? We already saw, that the histograms in the RBG space
+ Why is that the case? We already saw, that the histograms in the RGB space
  covered the full dynamic range 
 \begin_inset Formula $[0,1]$
 \end_inset
@@ -879,7 +901,8 @@ There are basically two reasons.
  three color channels in RGB space.
  This means that the resolution is very coarse.
  In the PCA basis however, we can see from 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:PCAimg"
 
 \end_inset

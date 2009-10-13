@@ -1,5 +1,5 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
@@ -11,6 +11,7 @@
 \usepackage{color}
 \usepackage{bm}
 \end_preamble
+\use_default_options false
 \language english
 \inputencoding auto
 \font_roman default
@@ -21,9 +22,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -52,7 +55,8 @@ Integrals
 \end_layout
 
 \begin_layout Standard
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "sec:Integrals"
 
 \end_inset
@@ -151,7 +155,8 @@ In the previous section, we saw that taking the derivative of a function
  However, it has a nice geometrical interpretation that we already read
  of the introductory example above.
  Figure 
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:approxIntegral"
 
 \end_inset
@@ -178,8 +183,8 @@ reference "fig:approxIntegral"
 \end_inset
 
 -axis.
- This infinitesimal small step was incoporated via taking the limit of the
- differential quotient, when letting the stepsize go to zero.
+ This infinitesimal small step was incorporated via taking the limit of
+ the differential quotient, when letting the step size go to zero.
  Integration involves a similar operation that we just mention here.
  When integrating, you really apply the approximate summation from above,
  but with infinitesimal small 
@@ -197,7 +202,7 @@ reference "fig:approxIntegral"
 \begin_inset Formula $\int$
 \end_inset
 
-'', a stilised ''S'' for ''
+'', a stylized ''S'' for ''
 \bar under
 s
 \bar default
@@ -225,7 +230,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figs/approxgaussintegral.eps
@@ -247,11 +252,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:approxIntegral"
 
 \end_inset
@@ -267,7 +273,7 @@ Left: Geometrical interpretation of the approximate integration: Areas of
 
  are summed up.
  Right: Geometrical interpretation of integration: The integral of the displayed
- funtion in the interval 
+ function in the interval 
 \begin_inset Formula $[-1,1]$
 \end_inset
 
@@ -425,7 +431,7 @@ the distance it travels in time
 \begin_inset Formula $t_{0}$
 \end_inset
 
-, we can see that the distance travelled between times 
+, we can see that the distance traveled between times 
 \begin_inset Formula $0$
 \end_inset
 
@@ -446,7 +452,7 @@ the distance it travels in time
 \end_layout
 
 \begin_layout Standard
-Therefore, the distance travelled between times 
+Therefore, the distance traveled between times 
 \begin_inset Formula $0$
 \end_inset
 
@@ -468,7 +474,7 @@ Therefore, the distance travelled between times
 \end_inset
 
 .
- In this case we can alreay compute the integral geometrically.
+ In this case we can already compute the integral geometrically.
  As already said, it is the area under the constant curve between 
 \begin_inset Formula $0$
 \end_inset
@@ -503,7 +509,7 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figs/speedconst.eps
@@ -525,11 +531,12 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Caption
 
-\begin_layout Standard
-\begin_inset LatexCommand label
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:approxIntegral"
 
 \end_inset
@@ -601,7 +608,7 @@ Suppose that the function
 \begin_inset Formula $f(x)$
 \end_inset
 
- is continous at 
+ is continuous at 
 \begin_inset Formula $x.$
 \end_inset
 
@@ -735,19 +742,27 @@ The proposition shows, that integrating is really inverse differentiation.
  That is why the integral is also sometimes called 
 \emph on
 
-\begin_inset LatexCommand index
-name "anti-derivative"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+anti-derivative
+\end_layout
 
 \end_inset
 
 anti-derivative.
 
 \emph default
- So far we have only dicussed so called 
+ So far we have only discussed so called 
 \emph on
 
-\begin_inset LatexCommand index
-name "definite integral"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+definite integral
+\end_layout
 
 \end_inset
 
@@ -920,11 +935,11 @@ Exercise
 \begin_inset Marginal
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1007,7 +1022,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Anti-Derivatives of important functions
@@ -1100,7 +1115,7 @@ function handle.
 A function handle is a variable, which is really a function.
  That means you can simply call the variable as if it would be a function.
  The important point is, that you can write code that uses a function for
- which you do not know what it will be exatly.
+ which you do not know what it will be exactly.
  For now, we simply a assign a function to a function handle 
 \family typewriter
 f
@@ -1118,29 +1133,29 @@ f
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
  >> f = @exp % assign f to be the exponential function
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 f =
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
     @exp 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1154,7 +1169,7 @@ end{verbatim}
 
 \begin_layout Standard
 Now we go on with approximating our integral.
- First, we choose a certain small stepwidth 
+ First, we choose a certain small step width 
 \begin_inset Formula $\Delta x$
 \end_inset
 
@@ -1168,29 +1183,29 @@ Now we go on with approximating our integral.
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> dx = .01; % set stepwidth
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> a = 1; b = 2; % set integral borders
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> x = [a:dx:b]; % get base points
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1218,19 +1233,19 @@ f
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> fval = f(x); % evaluate function handle at x
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1270,19 +1285,19 @@ fval
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> I = sum(fval)*dx; % compute approximate integral
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1305,19 +1320,19 @@ f
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> edit integrate.m
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1337,34 +1352,34 @@ In that file we specify the function.
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 function I = integrate(f,a,b,dx)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
     x = [a:dx:b]; % get base points
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
     fval = f(x); % evaluate function handle at x     
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
     I = sum(fval)*dx; % compute approximate integral
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1393,7 +1408,7 @@ a
 \family typewriter
 b
 \family default
- and the stepwidth 
+ and the step width 
 \family typewriter
 dx
 \family default
@@ -1414,34 +1429,36 @@ b
 \family default
  all the time.
  Our example from above can be reproduced via:
-\newline
+\begin_inset Newline newline
+\end_inset
+
 
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> I = integrate(@exp,1,2,.01)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 I =
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
     4.7213 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1461,44 +1478,44 @@ Other uses of the function could look like
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{verbatim}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> I = integrate(@cos,0,2,.01)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 I =
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
     0.9122 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 >> I = integrate(@log,1,3,.001)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 I =
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
     1.2964 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1578,8 +1595,8 @@ Integrals of Polynomials
 \end_layout
 
 \begin_layout Standard
-Now we are equiped with enough rules to be able to calculate the anti-derivative
- of polynomials.
+Now we are equipped with enough rules to be able to calculate the anti-derivativ
+e of polynomials.
  We show how to do this with a small example.
 \end_layout
 
@@ -1721,7 +1738,7 @@ Sometimes, it is easy to integrate
 \begin_inset Note Comment
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Draw picture on the board, especially point out how the shift works, i.e.
  that a shift by t is equivalent to using x MINUS t instead of t.
 \end_layout
@@ -1779,7 +1796,7 @@ Similarly, we might want to integrate a function
 \begin_inset Note Comment
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Draw picture, point out where the extra factor comes from.
 \end_layout
 
@@ -1846,7 +1863,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Transformations rules for integrals
@@ -1933,7 +1950,7 @@ Rescaling Rule
 :
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula \[
 \int_{a}^{b}f(sx)dx={\frac{1}{s}\int}_{as}^{bs}f(x)dx\]
 
@@ -1969,7 +1986,7 @@ Integrals are extremely important in probability theory and statistics.
 \begin_inset Formula $x.$
 \end_inset
 
- The subscribt 
+ The subscript 
 \begin_inset Formula $\Omega$
 \end_inset
 
@@ -1979,8 +1996,12 @@ Integrals are extremely important in probability theory and statistics.
  Unfortunately, for our favourite distribution, the 
 \emph on
 
-\begin_inset LatexCommand index
-name "Normal distribution"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Normal distribution
+\end_layout
 
 \end_inset
 
@@ -1989,8 +2010,12 @@ Normal distribution
  or 
 \emph on
 
-\begin_inset LatexCommand index
-name "Gaussian"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Gaussian
+\end_layout
 
 \end_inset
 
@@ -2001,7 +2026,7 @@ Gaussian
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 namely either transforming to polar coordinates or using contour integration
 \end_layout
 
@@ -2020,7 +2045,9 @@ Examples
 The Expectation of a Uniform Distribution:
 \series default
 
-\newline
+\begin_inset Newline newline
+\end_inset
+
 The pdf of a Uniform Distribution on 
 \begin_inset Formula $[0,1]$
 \end_inset
@@ -2042,7 +2069,9 @@ The pdf of a Uniform Distribution on
 The Variance of a Uniform Distribution
 \series default
 
-\newline
+\begin_inset Newline newline
+\end_inset
+
 The Variance is 
 \begin_inset Formula $\mathbb{V}[X]=\mathbb{E}[X^{2}]-[\mathbb{E}[X]]^{2}.$
 \end_inset
@@ -2062,7 +2091,9 @@ The expectation function
 \end_inset
 
  is a linear function for any distribution:
-\newline
+\begin_inset Newline newline
+\end_inset
+
 
 \series default
 Consider the random variables 
@@ -2108,8 +2139,12 @@ Consider the random variables
 , called 
 \emph on
 
-\begin_inset LatexCommand index
-name "marginal distribution"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+marginal distribution
+\end_layout
 
 \end_inset
 
@@ -2118,8 +2153,12 @@ marginal distributions
  or simply 
 \emph on
 
-\begin_inset LatexCommand index
-name "marginals"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+marginals
+\end_layout
 
 \end_inset
 
@@ -2159,8 +2198,10 @@ s that occur together with that
 .
  This is exactly what we do by integrating.
  
-\newline
-Eventhough, we do not know anything about the distribution 
+\begin_inset Newline newline
+\end_inset
+
+Even though, we do not know anything about the distribution 
 \begin_inset Formula $p(x,y)$
 \end_inset
 

@@ -2290,7 +2290,7 @@ degrees
 \end_inset
 
  your output is in radians.
- To convert from radians to degrees, you have to multipy your result by
+ To convert from radians to degrees, you have to multiply your result by
  
 \begin_inset Formula $\frac{180}{\pi}$
 \end_inset
@@ -2617,7 +2617,7 @@ is the gray value of pixel
 .
  In order to get to the graylevel values at the different pixels, the function
  is discretized, i.e.
- is only evaluated at certains locations that correspond to the pixels.
+ is only evaluated at certain locations that correspond to the pixels.
  At the moment we shall only look at how to produce vertical or horizontal
  gratings.
  We will see how to produce gratings of arbitrary orientation later.
@@ -2708,7 +2708,7 @@ end{verbatim}
 \end_layout
 
 \begin_layout Standard
-At the moment all our gratings have a fixed constrast, since 
+At the moment all our gratings have a fixed contrast, since 
 \begin_inset Formula $-1\le\sin(x),\cos(x)\le1$
 \end_inset
 
@@ -2717,7 +2717,7 @@ At the moment all our gratings have a fixed constrast, since
 \end_inset
 
 .
- However, we can vary the constrast by varying the amplitude of the sine.
+ However, we can vary the contrast by varying the amplitude of the sine.
  This is done by premultiplying an appropriate scaling factor 
 \begin_inset Formula $I(x,y)=A\cdot\sin\left(\omega x\right)$
 \end_inset
@@ -3046,7 +3046,7 @@ The following rules apply to any
 \bar no
 \noun off
 \color none
-Pythagoras' Theorem: 
+Pythagoras's Theorem: 
 \begin_inset Formula $\cos(\vartheta)^{2}+\sin(\vartheta)^{2}=1$
 \end_inset
 
@@ -3103,7 +3103,7 @@ The exponential or
 \begin_inset Formula $f(x)=e^{x}=\exp(x)$
 \end_inset
 
- is one of the most frequently occuring and important function in the everyday
+ is one of the most frequently occurring and important function in the everyday
  life of a natural scientist.
  The number denoted by ``
 \begin_inset Formula $e$
@@ -3220,7 +3220,7 @@ The potential change
 \begin_inset Formula $\Delta V_{m}(t)$
 \end_inset
 
- over time at a passive neuron membran after applying a rectangular current
+ over time at a passive neuron membrane after applying a rectangular current
  pulse can be described by the following equation 
 \begin_inset Formula \begin{eqnarray*}
 \Delta V_{m}(t) & = & I_{m}R\left(1-e^{-\frac{t}{\tau}}\right).\end{eqnarray*}
@@ -3259,8 +3259,8 @@ Potential change
 \begin_inset Formula $\Delta V_{m}(t)$
 \end_inset
 
- (solid line) over time at a passive neuron membran after applying a rectangluar
- current pulse (dashed line) [Figure from 
+ (solid line) over time at a passive neuron membrane after applying a rectangula
+r current pulse (dashed line) [Figure from 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "KandelSchwartz1985"
@@ -3343,7 +3343,7 @@ time constant
 \begin_inset Formula $63\%$
 \end_inset
 
- of the potential change induced by the rectangluar pulse.
+ of the potential change induced by the rectangular pulse.
  One can show that 
 \begin_inset Formula $\tau=RC$
 \end_inset
@@ -3377,7 +3377,7 @@ Poisson Process.
 \begin_inset Formula $p$
 \end_inset
 
- independent of whether a spike occured in the bin before or not.
+ independent of whether a spike occurred in the bin before or not.
  If 
 \begin_inset Formula $p$
 \end_inset
@@ -3481,7 +3481,7 @@ factorial function
 \begin_inset Formula $\Sigma$
 \end_inset
 
- for sums to denote a product of several componens: The uppercase greek
+ for sums to denote a product of several components: The uppercase Greek
  letter 
 \begin_inset Formula $\Pi$
 \end_inset
@@ -3560,7 +3560,7 @@ Logarithms
 Logarithms and their derivatives often occur in statistics.
  Estimating the parameters of a statistical model is often done via maximum
  likelihood estimation.
- This involves taking the derivate of the log of the likelihood function.
+ This involves taking the derivative of the log of the likelihood function.
  
 \end_layout
 
@@ -3581,8 +3581,8 @@ In this example, we look again at the time course of the membrane potential
 \end_inset
 
 .
- Assume that we want to measure the time constant of a certain membran.
- For this purpose we excited the membran with a rectangular current pulse
+ Assume that we want to measure the time constant of a certain membrane.
+ For this purpose we excited the membrane with a rectangular current pulse
  and measured 
 \begin_inset Formula $\Delta V_{m}(t)$
 \end_inset
@@ -4214,7 +4214,7 @@ Therefore, lines with
 \begin_inset Formula $(0,0)$
 \end_inset
 
-, which make it a truely linear function.
+, which make it a truly linear function.
  
 \end_layout
 
@@ -4320,7 +4320,7 @@ x & x>y\end{array}\right.\]
 \end_layout
 
 \begin_layout Standard
-Piecewise defined functions can for example be used to define a more realisic
+Piecewise defined functions can for example be used to define a more realistic
  model of neurons.
 \end_layout
 
@@ -4737,7 +4737,7 @@ The graph of
 \begin_inset Formula $f(x)$
 \end_inset
 
- streched (
+ stretched (
 \begin_inset Formula $a>1$
 \end_inset
 
@@ -4894,7 +4894,7 @@ The first step, you can always to is to check whether there are function
 \end_inset
 
  as well.
- By that, we can immidiately see that 
+ By that, we can immediately see that 
 \begin_inset Formula $-x^{2}\to-\infty$
 \end_inset
 
@@ -4924,7 +4924,7 @@ The first step, you can always to is to check whether there are function
 \end_inset
 
  will approach zero.
- We can even say a bit more, namly that it will approach zero from above
+ We can even say a bit more, namely that it will approach zero from above
  since 
 \begin_inset Formula $\exp(z)$
 \end_inset
@@ -4967,7 +4967,7 @@ wins
 \begin_inset Formula $f(x)=x^{2}-x$
 \end_inset
 
- will definetly diverge to infinity for 
+ will definitely diverge to infinity for 
 \begin_inset Formula $x\to\infty$
 \end_inset
 

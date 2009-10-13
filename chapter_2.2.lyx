@@ -1,5 +1,5 @@
-#LyX 1.5.6 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass book
@@ -11,6 +11,7 @@
 \usepackage{color}
 \usepackage{bm}
 \end_preamble
+\use_default_options false
 \language english
 \inputencoding auto
 \font_roman default
@@ -21,9 +22,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -124,7 +127,7 @@ S\end{array}\right).\]
 
 \begin_layout Standard
 So, multiplying the vector of cone-activities by this matrix returns the
- vector of channel-activies.
+ vector of channel-activities.
  This mapping from one 
 \begin_inset Formula $3$
 \end_inset
@@ -457,8 +460,10 @@ Despite its boringness, this matrix occurs so frequently that we give it
 \end_inset
 
 .
-\newline
-The result of multplying a vector 
+\begin_inset Newline newline
+\end_inset
+
+The result of multiplying a vector 
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
@@ -490,8 +495,12 @@ x_{n}\end{array}\right)=\mathbf{x}.\end{eqnarray*}
 Matrices that look very similar to the identity matrix, are 
 \emph on
 
-\begin_inset LatexCommand index
-name "permutation matrices"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+permutation matrices
+\end_layout
 
 \end_inset
 
@@ -536,7 +545,9 @@ permutation matrices
 \end_inset
 
 
-\newline
+\begin_inset Newline newline
+\end_inset
+
 Multiplying a three dimensional vector 
 \begin_inset Formula $\mathbf{x}=(x_{1},x_{2},x_{3})^{\top}$
 \end_inset
@@ -568,8 +579,12 @@ x_{3}\end{array}\right).\end{eqnarray*}
 In geometry, 
 \emph on
 
-\begin_inset LatexCommand index
-name "rotation matrices"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+rotation matrices
+\end_layout
 
 \end_inset
 
@@ -643,7 +658,9 @@ the matrix for a rotation in the
 \end_inset
 
 
-\newline
+\begin_inset Newline newline
+\end_inset
+
 Multiplying a vector with a rotation matrix, means rotating this vector.
  Let us look at one simple example in detail: Rotating the vector 
 \begin_inset Formula ${1 \choose 0}\in\mathbb{R}^{2}$
@@ -723,7 +740,9 @@ which is indeed a rotation about
 
 .
  
-\newline
+\begin_inset Newline newline
+\end_inset
+
 In 3D the example works just the same.
  You might want to try it with a few examples in order to get used to multiplyin
 g vectors with matrices.
@@ -759,7 +778,9 @@ Note, that the third column is zero since projecting the vector
 \end_inset
 
 .
-\newline
+\begin_inset Newline newline
+\end_inset
+
 Applying the matrix, that projects every vector 
 \begin_inset Formula $\mathbf{x}\in\mathbb{R}^{3}$
 \end_inset
@@ -1795,8 +1816,12 @@ Definition (Matrix Transpose)
 The 
 \emph on
 
-\begin_inset LatexCommand index
-name "transpose"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+transpose
+\end_layout
 
 \end_inset
 
@@ -1886,8 +1911,12 @@ In this section we look at a special way of using the matrix notation that
  Therefore, will develop the idea of the 
 \emph on
 outer product
-\begin_inset LatexCommand index
-name "outer product"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+outer product
+\end_layout
 
 \end_inset
 
@@ -1942,8 +1971,12 @@ The covariance tells us how
 \end_inset
 
  
-\begin_inset LatexCommand index
-name "covariance matrix"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+covariance matrix
+\end_layout
 
 \end_inset
 
@@ -2025,8 +2058,12 @@ Here, we use the hat on a variable to indicate that it has been estimated
  Covariance matrices have a certain property: They are 
 \emph on
 symmetric
-\begin_inset LatexCommand index
-name "symmetric matrix"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+symmetric matrix
+\end_layout
 
 \end_inset
 
@@ -2096,8 +2133,12 @@ Now let us return to the question of how to express the computation of the
  The result of this 
 \emph on
 
-\begin_inset LatexCommand index
-name "outer product"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+outer product
+\end_layout
 
 \end_inset
 
