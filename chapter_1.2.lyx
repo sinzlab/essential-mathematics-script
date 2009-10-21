@@ -1,4 +1,4 @@
-#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -2892,7 +2892,7 @@ Finding Maxima/Minima of a Function
 \end_layout
 
 \begin_layout Standard
-Derivates can be used to find global minima or maxima of functions.
+Derivatives can be used to find global minima or maxima of functions.
  If 
 \begin_inset Formula $f(x)$
 \end_inset
@@ -4583,8 +4583,8 @@ For our example
 This example can be generalized to polynomials of arbitrary order.
  We can find better local approximations by matching the (higher order)
  derivatives.
- If we want to match the first three derivates, then we have to use approximatio
-ns by a polynomial of degree 
+ If we want to match the first three derivatives, then we have to use approximat
+ions by a polynomial of degree 
 \begin_inset Formula $3$
 \end_inset
 
@@ -5322,7 +5322,7 @@ Example: An error analysis of depth perception
 \end_layout
 
 \begin_layout Standard
-Very often a physical system shows a very specific error behaviour, i.e.
+Very often a physical system shows a very specific error behavior, i.e.
  how the error in the inputs shows up in the outputs of a system.
  This error transformation is important to know, since it tells us how an
  error in the input will affect the quality of the system's output.
