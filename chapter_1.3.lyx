@@ -414,7 +414,7 @@ If a car is moving at constant speed
 \begin_inset Formula $v,$
 \end_inset
 
-the distance it travels in time 
+ the distance it travels in time 
 \begin_inset Formula $t_{0}$
 \end_inset
 
@@ -1952,7 +1952,7 @@ Rescaling Rule
 
 \begin_layout Plain Layout
 \begin_inset Formula \[
-\int_{a}^{b}f(sx)dx={\frac{1}{s}\int}_{as}^{bs}f(x)dx\]
+\int_{a}^{b}f(sx)dx=\frac{1}{s}\int_{as}^{bs}f(x)dx\]
 
 \end_inset
 

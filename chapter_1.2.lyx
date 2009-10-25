@@ -1,4 +1,4 @@
-#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -2375,7 +2375,7 @@ We can either use the definition of
 \begin_inset Formula $|x|$
 \end_inset
 
-as a piecewise defined function, or use the fact that 
+ as a piecewise defined function, or use the fact that 
 \begin_inset Formula $f(x)=\sqrt{x^{2}}.$
 \end_inset
 
@@ -3572,7 +3572,7 @@ begin{verbatim}
 
 \begin_layout Plain Layout
 
->> figure C = sum(S,2); % get spike counts 
+>> figure, C = sum(S,2); % get spike counts 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3835,7 +3835,7 @@ Now, we only need to find that maximum of
 
 \end_inset
 
-Let us know compute the maximum of 
+Let us now compute the maximum of 
 \begin_inset Formula $\sum_{i=1}^{m}k_{i}\log\lambda-\lambda-\log k_{i}!.$
 \end_inset
 
@@ -4188,7 +4188,7 @@ In the example, we implicitly used that the function is approximated at
 \begin_inset Formula \begin{eqnarray*}
 g(x_{0}) & = & wx_{0}+b\\
  & = & f'(x_{0})x_{0}+f(x_{0})\\
- & \not= & f(x_{o})\mbox{\mbox{for }}w,x_{0}\not=0.\end{eqnarray*}
+ & \not= & f(x_{o})\mbox{ \mbox{for }}w,x_{0}\not=0.\end{eqnarray*}
 
 \end_inset
 
