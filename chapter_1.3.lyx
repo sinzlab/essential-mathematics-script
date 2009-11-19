@@ -1,4 +1,4 @@
-#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -541,7 +541,7 @@ name "fig:approxIntegral"
 
 \end_inset
 
-Distance travelled at time in the time interval 
+Distance traveled at time in the time interval 
 \begin_inset Formula $[0,3]$
 \end_inset
 
@@ -567,7 +567,7 @@ Distance travelled at time in the time interval
 \end_layout
 
 \begin_layout Standard
-Most rules for solving simple integrals are actually the inversed rules
+Most rules for solving simple integrals are actually the inverted rules
  for differentiation.
  Before reversing this rules we must make sure that integrating is indeed
  the inverse of differentiation.
@@ -1993,7 +1993,7 @@ Integrals are extremely important in probability theory and statistics.
  indicates that we choose the boundaries of the integral such that all possible
  values of the random variable are covered.
  The integral is often not too hard to do.
- Unfortunately, for our favourite distribution, the 
+ Unfortunately, for our favorite distribution, the 
 \emph on
 
 \begin_inset Index
