@@ -265,8 +265,8 @@ If we generalize the example, we see that the directions from the example
  that has the same orientation, the linear mapping can be described by one
  number, i.e.
  the scaling vector along that direction.
- This means, we are searching for could say that directions, that are tightly
- linked to the transformation carried out by a matrix 
+ This means that the directions we are searching for, that are tightly linked
+ to the transformation carried out by a matrix 
 \begin_inset Formula $\mathbf{A}$
 \end_inset
 

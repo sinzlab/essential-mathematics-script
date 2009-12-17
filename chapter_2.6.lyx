@@ -5,6 +5,7 @@
 \textclass book
 \begin_preamble
 \setcounter{chapter}{2}
+\setcounter{section}{5}
 \usepackage{graphicx}
 \usepackage{pict2e}
 \usepackage{graphpap}
@@ -27,7 +28,7 @@
 \paperfontsize default
 \spacing single
 \use_hyperref false
-\papersize default
+\papersize a4paper
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
