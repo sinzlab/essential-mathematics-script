@@ -1,4 +1,4 @@
-#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -63,7 +63,7 @@ Essential Mathematics for Neuroscience
 \end_inset
 
  by Macke, Sinz, and Lies.
- Version 1.0, 26 October 2009
+ Version 1.0, 26 October 2010
 \end_layout
 
 \begin_layout Subsubsection*
@@ -844,6 +844,12 @@ identity matrix
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $\mbox{{eye}}(3)=\left(\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1\end{array}\right)$
+\end_inset
+
 
 \end_layout
 
@@ -882,6 +888,12 @@ zero matrix
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $\mbox{{zeros}}(3,3)=\left(\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0\end{array}\right)$
+\end_inset
+
 
 \end_layout
 
@@ -920,6 +932,12 @@ one matrix
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $\mbox{{ones}}(3,3)=\left(\begin{array}{ccc}
+1 & 1 & 1\\
+1 & 1 & 1\\
+1 & 1 & 1\end{array}\right)$
+\end_inset
+
 
 \end_layout
 
@@ -1516,6 +1534,14 @@ plotting function
 
 \begin_layout Plain Layout
 
+\family typewriter
+x = [-pi:0.1*pi:pi];
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+plot(x, sin(x))
 \end_layout
 
 \end_inset
@@ -1573,6 +1599,10 @@ seting label of x-axis
 
 \begin_layout Plain Layout
 
+\family typewriter
+xlabel('
+\backslash
+theta')
 \end_layout
 
 \end_inset
@@ -1581,7 +1611,9 @@ seting label of x-axis
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Sets the label of the x-axis.
+ You can use latex commands for greek letters or short equations.
+ 
 \end_layout
 
 \end_inset
@@ -1619,7 +1651,8 @@ setting label of y-axis
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Identical to xlabel() but for the y-axis.
+ 
 \end_layout
 
 \end_inset
@@ -1639,7 +1672,7 @@ legend()
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+adding legend
 \end_layout
 
 \end_inset
@@ -1649,6 +1682,8 @@ legend()
 
 \begin_layout Plain Layout
 
+\family typewriter
+legend('stimulus','response')
 \end_layout
 
 \end_inset
@@ -1657,7 +1692,9 @@ legend()
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Adds the legend of the plots to the figute.
+ If you have more than one function plotted in one (sub)figure you should
+ add a legend.
 \end_layout
 
 \end_inset
