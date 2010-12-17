@@ -1,4 +1,4 @@
-#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -122,6 +122,19 @@ complex number
 \end_inset
 
 .
+ The real part of a complex number 
+\begin_inset Formula $z=a+ib$
+\end_inset
+
+ is denoted 
+\begin_inset Formula $\mbox{Re}(z)=a$
+\end_inset
+
+, the imaginary part is denoted 
+\begin_inset Formula $\mbox{Im}(z)=b$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -169,7 +182,7 @@ be a complex number with
 \end_layout
 
 \begin_layout Itemize
-Norm: Let 
+Magnitude: Let 
 \begin_inset Formula $z\in\mathbb{C}$
 \end_inset
 
@@ -177,7 +190,7 @@ be a complex number with
 \begin_inset Formula $z=a+ib$
 \end_inset
 
- then the norm of 
+ then the magnitude (or absolute value) of 
 \begin_inset Formula $z$
 \end_inset
 
@@ -242,13 +255,21 @@ Division: Let
 
 \begin_layout Standard
 Let's take a look at how to visualize complex numbers.
- A real number could be represented as a point on a Zahlenstrahl.
+ A real number could be represented as a point on the number ray.
  Now, a complex number 
-\begin_inset Formula $z$
+\begin_inset Formula $z=a+ib$
 \end_inset
 
- is a point on a 2D plane with the real part being one axis and the imaginary
- part being the second axis.
+ is a point on a 2D plane with the real part 
+\begin_inset Formula $a$
+\end_inset
+
+ being the first axis and the imaginary part 
+\begin_inset Formula $b$
+\end_inset
+
+ being the second axis.
+ There axis are also called Re and Im for real and imaginary part, respectively.
  The conjugation of 
 \begin_inset Formula $z$
 \end_inset
@@ -270,14 +291,44 @@ reference "fig:ComplexNumbers"
 \end_inset
 
 .
+ But we can also respresent the point 
+\begin_inset Formula $z$
+\end_inset
+
+ with the trigonometric functions 
+\begin_inset Formula $\sin$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos$
+\end_inset
+
+:
+\begin_inset Formula \[
+z=a+ib=r(\cos(\varphi)+i\sin(\varphi))\]
+
+\end_inset
+
+where 
+\begin_inset Formula $r$
+\end_inset
+
+ is the distance from the origin and 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is the angle between first axis and the vector pointing to 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -305,6 +356,141 @@ name "fig:ComplexNumbers"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+This form is also called 
+\emph on
+polar coordinates
+\begin_inset Index
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+polar coordinate system
+\end_layout
+
+\end_inset
+
+
+\emph default
+ with 
+\begin_inset Formula $r\in\mathbb{R}$
+\end_inset
+
+ being the radius or radial component and 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ being the polar angle or azimuth.
+ By using complex numbers we can build a relation between the trigonometric
+ functions and the exponential function, the 
+\emph on
+Euler formula
+\emph default
+
+\begin_inset Index
+status open
+
+\begin_layout Plain Layout
+Euler formula
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+e^{i\varphi}=\cos(\varphi)+i\sin(\varphi)\]
+
+\end_inset
+
+ for any 
+\begin_inset Formula $\varphi\in\mathbb{R}$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Actually, this is also true for all 
+\begin_inset Formula $\varphi\in\mathbb{C}$
+\end_inset
+
+ but for simplicity we limit 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ to be real.
+ Complex angular components can be transformed into real angular components
+ by 
+\begin_inset Formula $e^{i\varphi}=e^{i\mbox{Re}(\varphi)}\cdot e^{-\mbox{Im(\varphi)}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+.
+ This means we can represent every point in the complex plane by 
+\begin_inset Formula $r\cdot e^{i\varphi}$
+\end_inset
+
+ with radial component 
+\begin_inset Formula $r$
+\end_inset
+
+ and angular component 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Given any 
+\begin_inset Formula $z=a+ib$
+\end_inset
+
+ in cartesian coordinates, the radial component is defined as the magnitude
+ of the complex number
+\begin_inset Formula \[
+r=|z|=\sqrt{a^{2}+b^{2}}\]
+
+\end_inset
+
+ as follows from the geometrical representation using the Pythagoras theorem.
+ The angular component follows from the geometric representation by the
+ trigonometric laws:
+\begin_inset Formula \[
+\varphi=\tan\frac{b}{a}\]
+
+\end_inset
+
+ Note that the angular component is not unique.
+ If we do not restrict 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ to lie in the half-open interval 
+\begin_inset Formula $[0:2\pi)$
+\end_inset
+
+ then the set of possible solutions is 
+\begin_inset Formula $\varphi=\tan\frac{a}{b}+2\pi k$
+\end_inset
+
+ for any 
+\begin_inset Formula $k\in\mathbb{Z}/\{0\}$
+\end_inset
+
+.
 \end_layout
 
 \end_body
