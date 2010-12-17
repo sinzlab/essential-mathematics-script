@@ -1,4 +1,4 @@
-#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -216,6 +216,16 @@ filename "chapter_1.3.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "chapter_1.4.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter_1.5.lyx"
 
 \end_inset
 
