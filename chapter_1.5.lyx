@@ -1,4 +1,4 @@
-#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -168,7 +168,7 @@ Conjugation: Let
 \begin_inset Formula $z\in\mathbb{C}$
 \end_inset
 
-be a complex number with 
+ be a complex number with 
 \begin_inset Formula $z=a+ib$
 \end_inset
 
@@ -186,7 +186,7 @@ Magnitude: Let
 \begin_inset Formula $z\in\mathbb{C}$
 \end_inset
 
-be a complex number with 
+ be a complex number with 
 \begin_inset Formula $z=a+ib$
 \end_inset
 
@@ -491,6 +491,28 @@ r=|z|=\sqrt{a^{2}+b^{2}}\]
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Differentiation and Integration
+\end_layout
+
+\begin_layout Standard
+The rules for differentiation and integration in complex space 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+ does not differ from the real space 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+ Real and imaginary part of the complex number are treated separately and
+ the complex 
+\begin_inset Formula $i$
+\end_inset
+
+ is just treated as a constant number.
 \end_layout
 
 \end_body
