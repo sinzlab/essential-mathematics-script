@@ -510,6 +510,14 @@ key "Rieke1997"
 \end_inset
 
 .
+ The short introduction to complex numbers from chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:complex_numbers"
+
+\end_inset
+
+ will be required to understand the later parts of this chapter.
 \end_layout
 
 \begin_layout Standard

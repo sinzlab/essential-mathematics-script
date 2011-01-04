@@ -246,7 +246,7 @@ Division: Let
 
  be two complex numbers then the division is defined as:
 \begin_inset Formula \[
-\frac{z}{w}=\frac{z\bar{w}}{w\bar{w}}=\frac{(a+ib)(c-id)}{(c+id)(c-id)}=\frac{ac-bd+i(ad+bc)}{c^{2}+d^{2}}\]
+\frac{z}{w}=\frac{z\bar{w}}{w\bar{w}}=\frac{(a+ib)(c-id)}{(c+id)(c-id)}=\frac{ac+bd+i(bc-ad)}{c^{2}+d^{2}}\]
 
 \end_inset
 
@@ -274,7 +274,7 @@ Let's take a look at how to visualize complex numbers.
 \begin_inset Formula $z$
 \end_inset
 
- is the reflection on the first axis and the norm of 
+ is the reflection on the first axis and the magnitude of 
 \begin_inset Formula $z$
 \end_inset
 
@@ -331,10 +331,47 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figs/complex_plane.eps
+	width 33text%
+
+\end_inset
+
+
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Complex Numbers
+The complex number plain.
+ 
+\begin_inset Formula $\mbox{Re}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mbox{Im}$
+\end_inset
+
+ are the real and imaginary parts of 
+\begin_inset Formula $z$
+\end_inset
+
+, respectively.
+ The figure shows the cartesian representation and the polar representation
+ of 
+\begin_inset Formula $z$
+\end_inset
+
+ and its complex conjugate 
+\begin_inset Formula $\bar{z}$
+\end_inset
+
+.
+ The complex conjugate of 
+\begin_inset Formula $z$
+\end_inset
+
+ is just its reflection across the real axis.
+ Figure taken from Wikipedia.
 \end_layout
 
 \end_inset
@@ -346,10 +383,6 @@ name "fig:ComplexNumbers"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -469,7 +502,7 @@ r=|z|=\sqrt{a^{2}+b^{2}}\]
  The angular component follows from the geometric representation by the
  trigonometric laws:
 \begin_inset Formula \[
-\varphi=\tan\frac{b}{a}\]
+\tan\varphi=\frac{b}{a}\]
 
 \end_inset
 
@@ -483,11 +516,11 @@ r=|z|=\sqrt{a^{2}+b^{2}}\]
 \end_inset
 
  then the set of possible solutions is 
-\begin_inset Formula $\varphi=\tan\frac{a}{b}+2\pi k$
+\begin_inset Formula $\tan(\varphi+2\pi k)=\frac{a}{b}$
 \end_inset
 
  for any 
-\begin_inset Formula $k\in\mathbb{Z}/\{0\}$
+\begin_inset Formula $k\in\mathbb{Z}$
 \end_inset
 
 .
@@ -502,7 +535,7 @@ The rules for differentiation and integration in complex space
 \begin_inset Formula $\mathbb{C}$
 \end_inset
 
- does not differ from the real space 
+ do not differ from the real space 
 \begin_inset Formula $\mathbb{R}$
 \end_inset
 
@@ -513,6 +546,21 @@ The rules for differentiation and integration in complex space
 \end_inset
 
  is just treated as a constant number.
+\begin_inset Formula \[
+\frac{\partial z}{\partial x}=\frac{\partial(\mbox{Re}(z)+i\mbox{Im}(z))}{\partial x}=\frac{\partial\mbox{Re}(z)}{\partial x}+\frac{\partial i\mbox{Im}(z)}{\partial x}\]
+
+\end_inset
+
+Example: 
+\begin_inset Formula $z=(x+3i)x=x^{2}+3ix$
+\end_inset
+
+ then the derivative is 
+\begin_inset Formula $\frac{\partial z}{\partial x}=\frac{\partial(x^{2}+3ix)}{\partial x}=2x+3i$
+\end_inset
+
+.
+ Integration is analog.
 \end_layout
 
 \end_body
