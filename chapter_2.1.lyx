@@ -1,8 +1,8 @@
-#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass book
+\textclass scrbook
 \begin_preamble
 \setcounter{chapter}{2}
 \usepackage{graphicx}
@@ -12,18 +12,26 @@
 \usepackage{bm}
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding auto
+\fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -31,21 +39,31 @@
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -56,7 +74,7 @@ Vectors
 
 \begin_layout Standard
 A vector is a 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -81,11 +99,14 @@ shorthand notation for a ordered set of numbers
 \noun off
 \color none
 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{x} & = & \left(\begin{array}{c}
 x_{1}\\
 \vdots\\
-x_{n}\end{array}\right).\end{eqnarray*}
+x_{n}
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -114,7 +135,8 @@ The
 \begin_inset Formula $\mathbf{x}_{0}=\left(\begin{array}{c}
 x\\
 y\\
-z\end{array}\right)$
+z
+\end{array}\right)$
 \end_inset
 
  can be written as a vector.
@@ -353,7 +375,8 @@ direction,
 \begin_inset Formula $\mathbf{x}_{0}=\left(\begin{array}{c}
 x_{1}\\
 \vdots\\
-x_{n}\end{array}\right)$
+x_{n}
+\end{array}\right)$
 \end_inset
 
 .
@@ -372,7 +395,8 @@ The activity, i.e the firing rates, of
 \begin_inset Formula $\mathbf{r}=\left(\begin{array}{c}
 r_{1}\\
 \vdots\\
-r_{n}\end{array}\right).$
+r_{n}
+\end{array}\right).$
 \end_inset
 
 
@@ -384,7 +408,8 @@ The color of a pixel, e.g.
 \begin_inset Formula $\mathbf{c}=\left(\begin{array}{c}
 r\\
 g\\
-b\end{array}\right).$
+b
+\end{array}\right).$
 \end_inset
 
 
@@ -396,13 +421,16 @@ The pixel intensities of an
 \end_inset
 
  image 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{I} & = & \left(\begin{array}{ccccc}
 I_{11} & I_{12} & \dots &  & I_{1m}\\
 I_{21} &  &  &  & \vdots\\
 \vdots &  & \ddots\\
  &  &  &  & I_{(n-1)m}\\
-I_{n1} &  & \dots & I_{n(n-1)} & I_{nm}\end{array}\right)\end{eqnarray*}
+I_{n1} &  & \dots & I_{n(n-1)} & I_{nm}
+\end{array}\right)
+\end{eqnarray*}
 
 \end_inset
 
@@ -415,7 +443,8 @@ can be described as a vector
 \end_inset
 
  upon each other: 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{v} & = & \left(\begin{array}{c}
 I_{11}\\
 I_{21}\\
@@ -423,7 +452,9 @@ I_{21}\\
 I_{ij}\\
 I_{(i+1)j}\\
 \vdots\\
-I_{nm}\end{array}\right).\end{eqnarray*}
+I_{nm}
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -505,11 +536,14 @@ Functions
 \end_inset
 
 
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \mathbf{f}=\left(\begin{array}{c}
 f(x_{1})\\
 \vdots\\
-f(x_{n})\end{array}\right).\]
+f(x_{n})
+\end{array}\right).
+\]
 
 \end_inset
 
@@ -549,7 +583,8 @@ A
 \begin_inset Formula $\mathbf{x}=\left(\begin{array}{c}
 x_{1}\\
 \vdots\\
-x_{n}\end{array}\right)$
+x_{n}
+\end{array}\right)$
 \end_inset
 
  is a ordered set of 
@@ -579,7 +614,7 @@ x_{n}\end{array}\right)$
  is also called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -611,18 +646,23 @@ Addition:
 
 -dimensional vectors.
  The sum of two vectors is simply the sum of the single entries
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{x}+\mathbf{y} & = & \left(\begin{array}{c}
 x_{1}\\
 \vdots\\
-x_{n}\end{array}\right)+\left(\begin{array}{c}
+x_{n}
+\end{array}\right)+\left(\begin{array}{c}
 y_{1}\\
 \vdots\\
-y_{n}\end{array}\right)\\
+y_{n}
+\end{array}\right)\\
  & = & \left(\begin{array}{c}
 x_{1}+y_{1}\\
 \vdots\\
-x_{n}+y_{n}\end{array}\right).\end{eqnarray*}
+x_{n}+y_{n}
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -654,15 +694,19 @@ Multiplication with a scalar:
 \end_inset
 
  is defined as 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 a\cdot\mathbf{x} & = & a\cdot\left(\begin{array}{c}
 x_{1}\\
 \vdots\\
-x_{n}\end{array}\right)\\
+x_{n}
+\end{array}\right)\\
  & = & \left(\begin{array}{c}
 ax_{1}\\
 \vdots\\
-{ax}_{n}\end{array}\right).\end{eqnarray*}
+{ax}_{n}
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -680,7 +724,8 @@ Transposition:
 \begin_inset Formula $\mathbf{x}=\left(\begin{array}{c}
 x_{1}\\
 \vdots\\
-x_{n}\end{array}\right)$
+x_{n}
+\end{array}\right)$
 \end_inset
 
 .
@@ -697,13 +742,16 @@ x_{n}\end{array}\right)$
 
 '' in the superscript, i.e.
  
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{x} & = & \left(\begin{array}{c}
 x_{1}\\
 \vdots\\
-x_{n}\end{array}\right)\\
+x_{n}
+\end{array}\right)\\
 \Leftrightarrow\mathbf{x}^{\top} & = & (x_{1},...,x_{n})\\
-\Leftrightarrow(\mathbf{x}^{\top})^{\top} & = & \mathbf{x}.\end{eqnarray*}
+\Leftrightarrow(\mathbf{x}^{\top})^{\top} & = & \mathbf{x}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -731,7 +779,7 @@ A very basic property of a vector that we can compute is its length.
  In general, the length of a vector is called the 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1054,7 +1102,7 @@ This way of computing a vector generalizes to
  dimensions, the 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1066,8 +1114,10 @@ Euclidean norm
 Euclidean norm
 \emph default
  of a vector is the square root of the sum of its squared entries: 
-\begin_inset Formula \begin{eqnarray*}
-||\mathbf{v}|| & = & \sqrt{\sum_{i=1}^{n}v_{i}^{2}}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+||\mathbf{v}|| & = & \sqrt{\sum_{i=1}^{n}v_{i}^{2}}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -1085,18 +1135,22 @@ Lemma (Properties of the Euclidean norm)
 
 \begin_layout Standard
 The Euclidean norm 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
  & ||\cdot||:\mathbb{R}^{n}\rightarrow\mathbb{R}\\
- & \mathbf{x}\mapsto||\mathbf{x}||=\sqrt{\sum_{i=1}^{n}x_{i}^{2}}\end{eqnarray*}
+ & \mathbf{x}\mapsto||\mathbf{x}||=\sqrt{\sum_{i=1}^{n}x_{i}^{2}}
+\end{eqnarray*}
 
 \end_inset
 
 has the following properties:
-\begin_inset Formula \begin{eqnarray}
+\begin_inset Formula 
+\begin{eqnarray}
 ||\mathbf{x}||>0 & \mbox{ whenever} & \mathbf{x}\not=\mathbf{0}\label{eq:norm1}\\
 ||\mathbf{x}||=0 & \mbox{ whenever } & \mathbf{x}=\mathbf{0}\label{eq:norm11}\\
 ||a\mathbf{x}||=|a|\cdot||\mathbf{x}|| & \mbox{ for all } & a\in\mathbb{R}\label{eq:norm2}\\
-||\mathbf{x}+\mathbf{y}||\le||\mathbf{x}||+\mathbf{||y}|| & \mbox{ for all } & \mathbf{x},\mathbf{y}\in\mathbb{R}^{n}.\label{eq:norm3}\end{eqnarray}
+||\mathbf{x}+\mathbf{y}||\le||\mathbf{x}||+\mathbf{||y}|| & \mbox{ for all } & \mathbf{x},\mathbf{y}\in\mathbb{R}^{n}.\label{eq:norm3}
+\end{eqnarray}
 
 \end_inset
 
@@ -1131,16 +1185,18 @@ In order to scale a vector
 
  is just a scalar.
  The resulting vector will have length one, since
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \left|\left|\frac{1}{||\mathbf{v}||}\mathbf{v}\right|\right| & \stackrel{\mbox{ \ref{eq:norm1} and \ref{eq:norm2}}}{=} & \frac{1}{||\mathbf{v}||}||\mathbf{v}||\\
- & = & 1.\end{eqnarray*}
+ & = & 1.
+\end{eqnarray*}
 
 \end_inset
 
 The operation of scaling a vector to length one is called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1292,7 +1348,7 @@ Projection and Scalar Product
 A very important operation between two vectors is the 
 \emph on
 scalar product
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1328,7 +1384,7 @@ Definition (Scalar Product)
 The 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1342,7 +1398,7 @@ scalar
  or 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1358,8 +1414,10 @@ dot product
 \end_inset
 
  is defined as 
-\begin_inset Formula \begin{eqnarray*}
-\langle\mathbf{x},\mathbf{y}\rangle & = & \langle\mathbf{y},\mathbf{x}\rangle=\sum_{i=1}^{n}x_{i}y_{i}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\langle\mathbf{x},\mathbf{y}\rangle & = & \langle\mathbf{y},\mathbf{x}\rangle=\sum_{i=1}^{n}x_{i}y_{i}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -1385,8 +1443,10 @@ At this point we can already introduce a small bit of matrix notation: By
 \end_inset
 
  equals the scalar product between them:
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{x}^{\top}\mathbf{y} & = & \langle\mathbf{x},\mathbf{y}\rangle.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\mathbf{x}^{\top}\mathbf{y} & = & \langle\mathbf{x},\mathbf{y}\rangle.
+\end{eqnarray*}
 
 \end_inset
 
@@ -1408,9 +1468,11 @@ The mean of the entries
 \end_inset
 
  can be written in terms of the scalar product as 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \frac{1}{n}\sum_{i=1}^{n}x_{i} & = & \frac{1}{n}\langle\mathbf{1}_{n},\mathbf{x}\rangle\\
- & = & \frac{1}{n}\mathbf{1}_{n}^{\top}\mathbf{x}.\end{eqnarray*}
+ & = & \frac{1}{n}\mathbf{1}_{n}^{\top}\mathbf{x}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -1427,8 +1489,10 @@ reference "sec:Integrals"
 
  we saw, that an integral is the sum of the areas of infinitely narrow rectangle
  with their height given by the function values at the respective position:
-\begin_inset Formula \begin{eqnarray*}
-\int_{a}^{b}f(x)dx & = & \lim_{h\rightarrow0}\sum_{k=0}^{n-1}f(a+k\cdot h)\cdot h,\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\int_{a}^{b}f(x)dx & = & \lim_{h\rightarrow0}\sum_{k=0}^{n-1}f(a+k\cdot h)\cdot h,
+\end{eqnarray*}
 
 \end_inset
 
@@ -1471,8 +1535,10 @@ where
 
 , and just use a sum to approximate the integral, i.e.
  
-\begin_inset Formula \begin{eqnarray*}
-\int_{a}^{b}f(x)dx & \approx & \sum_{k=0}^{2^{m}-1}f(a+k\cdot h)\cdot h.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\int_{a}^{b}f(x)dx & \approx & \sum_{k=0}^{2^{m}-1}f(a+k\cdot h)\cdot h.
+\end{eqnarray*}
 
 \end_inset
 
@@ -1488,13 +1554,16 @@ But this sum is simply the scalar product between two
 \begin_inset Formula $\mathbf{f}=\left(\begin{array}{c}
 f(a)\\
 \vdots\\
-f(a+(2^{m}-1)h)\end{array}\right)$
+f(a+(2^{m}-1)h)
+\end{array}\right)$
 \end_inset
 
 , i.e.
  
-\begin_inset Formula \begin{eqnarray*}
-\int_{a}^{b}f(x)dx & \approx & \langle\mathbf{h},\mathbf{f}\rangle.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\int_{a}^{b}f(x)dx & \approx & \langle\mathbf{h},\mathbf{f}\rangle.
+\end{eqnarray*}
 
 \end_inset
 
@@ -1634,8 +1703,10 @@ denotes the power of the light source for some wavelength which we index
 \end_inset
 
 
-\begin_inset Formula \[
-R=\langle\mathbf{l,}\mathbf{s}\rangle=\sum_{i=1}^{n}l_{i}s_{i}.\]
+\begin_inset Formula 
+\[
+R=\langle\mathbf{l,}\mathbf{s}\rangle=\sum_{i=1}^{n}l_{i}s_{i}.
+\]
 
 \end_inset
 
@@ -1689,8 +1760,10 @@ complex cells.
 
 -function.
  We thereby obtain this simple response model:
-\begin_inset Formula \begin{eqnarray*}
-r & = & \max\left\{ 0,\sum_{i=1}^{m}\sum_{j=1}^{n}\Psi_{ij}\cdot I_{ij}\right\} .\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+r & = & \max\left\{ 0,\sum_{i=1}^{m}\sum_{j=1}^{n}\Psi_{ij}\cdot I_{ij}\right\} .
+\end{eqnarray*}
 
 \end_inset
 
@@ -1751,8 +1824,10 @@ Lemma (Angle between two vectors)
 \begin_layout Standard
 The cosine of the angle between the two vectors is given by their dot-product
  divided by the product of their norms:
-\begin_inset Formula \begin{eqnarray*}
-\frac{\langle\mathbf{x,}\mathbf{y}\rangle}{\|\mathbf{x\|\|}\mathbf{y}\|} & = & \cos\measuredangle\{\mathbf{x},\mathbf{v}\}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\langle\mathbf{x,}\mathbf{y}\rangle}{\|\mathbf{x\|\|}\mathbf{y}\|} & = & \cos\measuredangle\{\mathbf{x},\mathbf{v}\}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -1789,10 +1864,12 @@ and
 \end_inset
 
  Thus, we obtain the inequality
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 -1 & \leq\frac{\langle\mathbf{x,}\mathbf{y}\rangle}{\|\mathbf{x\|\|}\mathbf{y}\|} & \leq1\\
 -\|\mathbf{x\|\|}\mathbf{y}\|\leq & \langle\mathbf{x,}\mathbf{y\rangle} & \leq\|\mathbf{x\|\|}\mathbf{y}\|\\
-\\\end{eqnarray*}
+\\
+\end{eqnarray*}
 
 \end_inset
 
@@ -1829,11 +1906,13 @@ ts between any two vectors of data
 \end_inset
 
  The correlation coefficients is defined to be 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mbox{Corr}(\mathbf{x},\mathbf{y)} & = & \frac{\mbox{Cov}(\mathbf{x,}\mathbf{y})}{\sqrt{\mbox{Var}\mathbf{x}\mbox{Var}\mathbf{y}}}\\
 \mbox{where \mbox{Cov}}(\mathbf{x,}\mathbf{y}) & = & \frac{1}{n}\sum_{i}x_{i}y_{i}-\bar{\mathbf{x}}\bar{\mathbf{y}}\\
 \mbox{and }\mbox{Var}\mathbf{x} & = & \sqrt{\frac{1}{n}\sum_{i}x_{i}^{2}-\bar{\mathbf{x}}}\\
-\bar{\mathbf{x}} & = & \frac{1}{n}\sum_{i}x_{i}.\end{eqnarray*}
+\bar{\mathbf{x}} & = & \frac{1}{n}\sum_{i}x_{i}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -1848,10 +1927,12 @@ y
 are both zero.
  (If they are not, one can simply subtract off the mean.) Then, the formula
  for the correlation coefficient becomes
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mbox{Corr}(\mathbf{x},\mathbf{y)} & = & \frac{\frac{1}{n}\sum_{i}x_{i}y_{i}}{\sqrt{\frac{1}{n}\sum_{i}x_{i}^{2}}\sqrt{\frac{1}{n}\sum_{i}y_{i}^{2}}}\\
  & = & \frac{\sum_{i}x_{i}y_{i}}{\sqrt{\sum_{i}x_{i}^{2}}\sqrt{\sum_{i}y_{i}^{2}}}\\
- & = & \frac{\langle\mathbf{x},\mathbf{y}\rangle}{\|\mathbf{x\|\|y\|}.}\end{eqnarray*}
+ & = & \frac{\langle\mathbf{x},\mathbf{y}\rangle}{\|\mathbf{x\|\|y\|}.}
+\end{eqnarray*}
 
 \end_inset
 
@@ -1892,7 +1973,7 @@ Finally, if
  are called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1909,7 +1990,7 @@ The second important intuition about scalar products can be explained in
  terms of 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1931,13 +2012,16 @@ Example
 
 \begin_layout Standard
 Assume that you have an image 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{I} & = & \left(\begin{array}{ccccc}
 I_{11} & I_{12} & \dots &  & I_{1m}\\
 I_{21} &  &  &  & \vdots\\
 \vdots &  & \ddots\\
  &  &  &  & I_{(n-1)m}\\
-I_{n1} &  & \dots & I_{n(n-1)} & I_{nm}\end{array}\right)\end{eqnarray*}
+I_{n1} &  & \dots & I_{n(n-1)} & I_{nm}
+\end{array}\right)
+\end{eqnarray*}
 
 \end_inset
 
@@ -1974,7 +2058,7 @@ which you want to use to approximate another image
  is called 
 \emph on
 projection
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2521,8 +2605,10 @@ The scalar or dot product of two
 
 \series default
  
-\begin_inset Formula \begin{eqnarray*}
-\langle\mathbf{x},\mathbf{v}\rangle & = & \sum_{i=1}^{n}x_{i}v_{i}\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\langle\mathbf{x},\mathbf{v}\rangle & = & \sum_{i=1}^{n}x_{i}v_{i}
+\end{eqnarray*}
 
 \end_inset
 
@@ -2538,8 +2624,10 @@ Symmetry:
 \bar default
  The scalar product is symmetric, i.e.
  
-\begin_inset Formula \begin{eqnarray*}
-\langle\mathbf{x},\mathbf{v}\rangle & = & \langle\mathbf{v},\mathbf{x}\rangle,\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\langle\mathbf{x},\mathbf{v}\rangle & = & \langle\mathbf{v},\mathbf{x}\rangle,
+\end{eqnarray*}
 
 \end_inset
 
@@ -2563,10 +2651,12 @@ Bi-linearity:
 \bar default
 is linear in both arguments, i.e.
  
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \langle a\mathbf{x}+b\mathbf{y},c\mathbf{v}+d\mathbf{w}\rangle & = & \langle a\mathbf{x}+b\mathbf{y},c\mathbf{v}\rangle+\langle a\mathbf{x}+b\mathbf{y},d\mathbf{w}\rangle\\
  & = & \langle a\mathbf{x},c\mathbf{v}\rangle+\langle b\mathbf{y},c\mathbf{v}\rangle+\langle a\mathbf{x},d\mathbf{w}\rangle+\langle b\mathbf{y},\mathbf{w}\rangle\\
- & = & ac\langle\mathbf{x},\mathbf{v}\rangle+bc\langle\mathbf{y},\mathbf{v}\rangle+ad\langle\mathbf{x},\mathbf{w}\rangle+bd\langle\mathbf{y},\mathbf{w}\rangle,\end{eqnarray*}
+ & = & ac\langle\mathbf{x},\mathbf{v}\rangle+bc\langle\mathbf{y},\mathbf{v}\rangle+ad\langle\mathbf{x},\mathbf{w}\rangle+bd\langle\mathbf{y},\mathbf{w}\rangle,
+\end{eqnarray*}
 
 \end_inset
 
@@ -2604,8 +2694,10 @@ If
 \end_inset
 
 , the scalar product is the cosine of the angle between the two vectors:
-\begin_inset Formula \begin{eqnarray*}
-\langle\mathbf{x},\mathbf{v}\rangle & = & \cos\measuredangle\{\mathbf{x},\mathbf{v}\}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\langle\mathbf{x},\mathbf{v}\rangle & = & \cos\measuredangle\{\mathbf{x},\mathbf{v}\}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -2706,7 +2798,7 @@ We just saw, that the best approximation of a vector
  are called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2734,7 +2826,7 @@ linearly dependent.
  are called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2749,7 +2841,7 @@ linearly independent.
  The extreme case of linear independence is 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2828,7 +2920,7 @@ An important questions that arises in this context is how many vectors
  linearly independent vectors is called 
 \emph on
 a 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2859,7 +2951,7 @@ of
  
 \emph on
 orthonormal bases
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2887,7 +2979,7 @@ The simplest basis for
  is the so called 
 \emph on
 canonical basis
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2916,9 +3008,11 @@ Given an arbitrary vector
 \end_inset
 
  we can express it as a sum of the basis elements
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{x} & = & \left({x_{1}\atop x_{2}}\right)\\
- & = & x_{1}\left({1\atop 0}\right)+x_{2}\left({0\atop 1}\right).\end{eqnarray*}
+ & = & x_{1}\left({1\atop 0}\right)+x_{2}\left({0\atop 1}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -2944,8 +3038,10 @@ th coordinate of
 \end_inset
 
  can then be written as 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{x} & = & \sum_{i=1}^{n}x_{i}\mathbf{e}_{i}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\mathbf{x} & = & \sum_{i=1}^{n}x_{i}\mathbf{e}_{i}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -2974,10 +3070,13 @@ You might have noted that the canonical basis has two important properties.
 .
  Secondly, the basis elements are mutually orthogonal, i.e.
  
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \langle\mathbf{e}_{i},\mathbf{e}_{j}\rangle & = & \left\{ \begin{array}{cc}
 1 & \mbox{ if }i=j\\
-0 & \mbox{ else}\end{array}\right..\end{eqnarray*}
+0 & \mbox{ else}
+\end{array}\right..
+\end{eqnarray*}
 
 \end_inset
 
@@ -2988,7 +3087,8 @@ There is a notational shortcut to for
 
 \begin_inset Formula $\left\{ \begin{array}{cc}
 1 & \mbox{ if }i=j\\
-0 & \mbox{ else}\end{array}\right.$
+0 & \mbox{ else}
+\end{array}\right.$
 \end_inset
 
 
@@ -2998,7 +3098,7 @@ There is a notational shortcut to for
 , which is called the 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3011,10 +3111,13 @@ Kronecker Delta.
  
 \emph default
 It is just defined as 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \delta_{ij} & = & \left\{ \begin{array}{cc}
 1 & \mbox{ if }i=j\\
-0 & \mbox{ else}\end{array}\right..\end{eqnarray*}
+0 & \mbox{ else}
+\end{array}\right..
+\end{eqnarray*}
 
 \end_inset
 
@@ -3022,8 +3125,10 @@ It is used a lot, since it causes less effort to write.
  You can think of delta functions as the continuous equivalent of the Kronecker
  Delta.
  Using it, we would write orthogonality as 
-\begin_inset Formula \begin{eqnarray*}
-\langle\mathbf{e}_{i},\mathbf{e}_{j}\rangle & = & \delta_{ij}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\langle\mathbf{e}_{i},\mathbf{e}_{j}\rangle & = & \delta_{ij}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -3050,7 +3155,7 @@ A set of vectors
  is called an 
 \emph on
 orthonormal basis
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3071,8 +3176,10 @@ orthonormal basis
 \end_inset
 
 , and they are all mutually orthogonal: 
-\begin_inset Formula \begin{eqnarray*}
-\langle\mathbf{v}_{i},\mathbf{v}_{j}\rangle & = & \delta_{ij}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\langle\mathbf{v}_{i},\mathbf{v}_{j}\rangle & = & \delta_{ij}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -3103,7 +3210,7 @@ Writing an arbitrary vector
  is called 
 \emph on
 basis expansion
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3138,7 +3245,7 @@ according to the basis
  are called 
 \emph on
 coordinates
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3194,9 +3301,11 @@ The reason, why orthonormal bases are so useful is that the coordinates
 \end_inset
 
  is given by: 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{x} & = & \sum_{i=1}^{n}\lambda_{i}\mathbf{v}_{i}\\
- & = & \sum_{i=1}^{n}\langle\mathbf{x},\mathbf{v}_{i}\rangle\mathbf{v}_{i}.\end{eqnarray*}
+ & = & \sum_{i=1}^{n}\langle\mathbf{x},\mathbf{v}_{i}\rangle\mathbf{v}_{i}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -3207,7 +3316,7 @@ The term
  is called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3238,60 +3347,78 @@ The orthonormal expansion of a vector
 \end_inset
 
  is given by
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{x} & = & \left\langle \left(\begin{array}{c}
 1\\
 0\\
-0\end{array}\right),\left(\begin{array}{c}
+0
+\end{array}\right),\left(\begin{array}{c}
 x_{1}\\
 x_{2}\\
-x_{3}\end{array}\right)\right\rangle \cdot\left(\begin{array}{c}
+x_{3}
+\end{array}\right)\right\rangle \cdot\left(\begin{array}{c}
 1\\
 0\\
-0\end{array}\right)+\left\langle \left(\begin{array}{c}
+0
+\end{array}\right)+\left\langle \left(\begin{array}{c}
 0\\
 1\\
-0\end{array}\right),\left(\begin{array}{c}
+0
+\end{array}\right),\left(\begin{array}{c}
 x_{1}\\
 x_{2}\\
-x_{3}\end{array}\right)\right\rangle \cdot\left(\begin{array}{c}
+x_{3}
+\end{array}\right)\right\rangle \cdot\left(\begin{array}{c}
 0\\
 1\\
-0\end{array}\right)\\
+0
+\end{array}\right)\\
  &  & +\left\langle \left(\begin{array}{c}
 0\\
 0\\
-1\end{array}\right),\left(\begin{array}{c}
+1
+\end{array}\right),\left(\begin{array}{c}
 x_{1}\\
 x_{2}\\
-x_{3}\end{array}\right)\right\rangle \cdot\left(\begin{array}{c}
+x_{3}
+\end{array}\right)\right\rangle \cdot\left(\begin{array}{c}
 0\\
 0\\
-1\end{array}\right)\\
+1
+\end{array}\right)\\
  & = & x_{1}\cdot\left(\begin{array}{c}
 1\\
 0\\
-0\end{array}\right)+x_{2}\cdot\left(\begin{array}{c}
+0
+\end{array}\right)+x_{2}\cdot\left(\begin{array}{c}
 0\\
 1\\
-0\end{array}\right)+x_{3}\cdot\left(\begin{array}{c}
+0
+\end{array}\right)+x_{3}\cdot\left(\begin{array}{c}
 0\\
 0\\
-1\end{array}\right)\\
+1
+\end{array}\right)\\
  & = & \left(\begin{array}{c}
 x_{1}\\
 0\\
-0\end{array}\right)+\left(\begin{array}{c}
+0
+\end{array}\right)+\left(\begin{array}{c}
 0\\
 x_{2}\\
-0\end{array}\right)+\left(\begin{array}{c}
+0
+\end{array}\right)+\left(\begin{array}{c}
 0\\
 0\\
-x_{3}\end{array}\right)\\
+x_{3}
+\end{array}\right)\\
  & = & \left(\begin{array}{c}
 x_{1}\\
 x_{2}\\
-x_{3}\end{array}\right).\end{eqnarray*}
+x_{3}
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -3308,15 +3435,19 @@ For any fixed
 \end_inset
 
  is an orthonormal basis, since 
-\begin_inset Formula \begin{eqnarray*}
-\langle\mathbf{r}_{1},\mathbf{r}_{2}\rangle & = & -\sin(\phi)\cos(\phi)+\sin(\phi)\cos(\phi)=0\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\langle\mathbf{r}_{1},\mathbf{r}_{2}\rangle & = & -\sin(\phi)\cos(\phi)+\sin(\phi)\cos(\phi)=0
+\end{eqnarray*}
 
 \end_inset
 
  and 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 ||\mathbf{r}_{i}|| & = & \sqrt{\sin(\phi)^{2}+\cos(\phi)^{2}}\\
- & = & 1\mbox{ for }i=1,2.\end{eqnarray*}
+ & = & 1\mbox{ for }i=1,2.
+\end{eqnarray*}
 
 \end_inset
 
@@ -3518,11 +3649,13 @@ Consider the basis
 \end_inset
 
  we get 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \left\langle \mathbf{w}_{1},\left({0\atop 1}\right)\right\rangle \mathbf{w}_{1}+\left\langle \mathbf{w}_{2},\left({0\atop 1}\right)\right\rangle \mathbf{w}_{2} & = & 0\cdot\mathbf{w}_{1}+\frac{1}{\sqrt{2}}\mathbf{w}_{2}\\
  & = & \frac{1}{\sqrt{2}}\left({\frac{1}{\sqrt{2}}\atop \frac{1}{\sqrt{2}}}\right)\\
  & = & \frac{1}{2}\left({1\atop 1}\right)\\
- & \not= & \left({0\atop 1}\right).\end{eqnarray*}
+ & \not= & \left({0\atop 1}\right).
+\end{eqnarray*}
 
 \end_inset
 

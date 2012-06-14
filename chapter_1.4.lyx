@@ -1,8 +1,8 @@
-#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass book
+\textclass scrbook
 \begin_preamble
 \setcounter{chapter}{1}
 \usepackage{graphicx}
@@ -12,18 +12,26 @@
 \usepackage{bm}
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding auto
+\fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -31,21 +39,31 @@
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -122,15 +140,17 @@ Consider the following problem: We are given a number of noisy measurements
  The meaning of ''matching best'' is usually expressed by means of a loss
  function.
  The most common choice is the sum of the squared deviations from that line
-\begin_inset Formula \begin{eqnarray}
-\ell(w,b) & = & \sum_{i=1}^{m}\left(y_{i}-(wx_{i}+b)\right)².\label{eq:squared_loss}\end{eqnarray}
+\begin_inset Formula 
+\begin{eqnarray}
+\ell(w,b) & = & \sum_{i=1}^{m}\left(y_{i}-(wx_{i}+b)\right)².\label{eq:squared_loss}
+\end{eqnarray}
 
 \end_inset
 
 This 
 \emph on
 squared loss
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -189,7 +209,7 @@ Our loss is a function of two parameters, i.e.
  or finding optima when dealing with 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -214,7 +234,7 @@ The first change is obvious.
  This kind of derivative is know as 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -304,7 +324,7 @@ When dealing with a function of
  us the so called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -342,8 +362,10 @@ The
 \end_inset
 
  
-\begin_inset Formula \begin{eqnarray*}
-\nabla f(\mathbf{z}) & = & \left(\frac{\partial f}{\partial x_{1}}(\mathbf{z}),...,\frac{\partial f}{\partial x_{n}}(\mathbf{z})\right)\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\nabla f(\mathbf{z}) & = & \left(\frac{\partial f}{\partial x_{1}}(\mathbf{z}),...,\frac{\partial f}{\partial x_{n}}(\mathbf{z})\right)
+\end{eqnarray*}
 
 \end_inset
 
@@ -381,7 +403,7 @@ The
 Similarly to finding optima of 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -445,7 +467,7 @@ The gradient of a function
  This property is used in the so called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -509,8 +531,10 @@ gradient descent
 
 , we repeat this procedure.
  By that we obtain the general update rule 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{x}^{(t+1)} & = & \mathbf{x}^{(t)}-\alpha\nabla f(\mathbf{x}^{(t)}).\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\mathbf{x}^{(t+1)} & = & \mathbf{x}^{(t)}-\alpha\nabla f(\mathbf{x}^{(t)}).
+\end{eqnarray*}
 
 \end_inset
 
@@ -529,7 +553,7 @@ The art, somehow, is to choose the scaling constant
 \noun default
 \color inherit
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -592,8 +616,10 @@ Example (Least Squares cont'd)
 \begin_layout Standard
 Let us look again at our least squares problem.
  Since we want to find the minimum of 
-\begin_inset Formula \begin{eqnarray*}
-\ell(w,b) & = & \sum_{i=1}^{m}\left(y_{i}-(wx_{i}+b)\right)²,\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\ell(w,b) & = & \sum_{i=1}^{m}\left(y_{i}-(wx_{i}+b)\right)²,
+\end{eqnarray*}
 
 \end_inset
 
@@ -610,7 +636,8 @@ we need to compute the gradient
 \end_inset
 
 .
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \frac{\partial\ell}{\partial w} & = & \frac{\partial}{\partial w}\sum_{i=1}^{m}\left(y_{i}-(wx_{i}+b)\right)²\\
  & \stackrel{\mbox{Summation Rule}}{=} & \sum_{i=1}^{m}\frac{\partial}{\partial w}\left(y_{i}-(wx_{i}+b)\right)²\\
  & \stackrel{\mbox{Chain Rule}}{=} & \sum_{i=1}^{m}2\left(y_{i}-(wx_{i}+b)\right)\cdot\frac{\partial}{\partial w}\left(y_{i}-(wx_{i}+b)\right)\\
@@ -619,7 +646,8 @@ we need to compute the gradient
 \frac{\partial\ell}{\partial b} & = & \frac{\partial}{\partial b}\sum_{i=1}^{m}\left(y_{i}-(wx_{i}+b)\right)²\\
  & = & \sum_{i=1}^{m}2\left(y_{i}-(wx_{i}+b)\right)\cdot\frac{\partial}{\partial b}\left(y_{i}-(wx_{i}+b)\right)\\
  & = & \sum_{i=1}^{m}2\left(y_{i}-(wx_{i}+b)\right)\cdot-1\\
- & = & \sum_{i=1}^{m}2\left(wx_{i}+b-y_{i}\right).\end{eqnarray*}
+ & = & \sum_{i=1}^{m}2\left(wx_{i}+b-y_{i}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -644,9 +672,11 @@ If we denote the mean of
 \end_inset
 
 , and splitting the sums, we can simplify the equations to 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \frac{\partial\ell}{\partial w} & = & 2\left(w\sum_{i=1}^{m}x_{i}²+bm\mu_{x}-\sum_{i=1}^{m}x_{i}y_{i}\right)\\
-\frac{\partial\ell}{\partial b} & = & 2\left(wm\mu_{x}+mb-m\mu_{y}\right)\end{eqnarray*}
+\frac{\partial\ell}{\partial b} & = & 2\left(wm\mu_{x}+mb-m\mu_{y}\right)
+\end{eqnarray*}
 
 \end_inset
 
@@ -659,9 +689,11 @@ Setting
 \end_inset
 
  then yields
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 2\left(wm\mu_{x}+mb-m\mu_{y}\right) & = & 0\\
-\Leftrightarrow b & = & \mu_{y}-w\mu_{x}.\end{eqnarray*}
+\Leftrightarrow b & = & \mu_{y}-w\mu_{x}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -691,9 +723,11 @@ Plugging that into
 \end_inset
 
  yields
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 2\left(w\sum_{i=1}^{m}x_{i}²+bm\mu_{x}-\sum_{i=1}^{m}x_{i}y_{i}\right) & = & 2\left(w\sum_{i=1}^{m}x_{i}²+m\mu_{x}(\mu_{y}-w\mu_{x})-\sum_{i=1}^{m}x_{i}y_{i}\right)\\
- & = & 2\left(w\sum_{i=1}^{m}x_{i}²+m\mu_{x}\mu_{y}-wm\mu_{x}^{2}-\sum_{i=1}^{m}x_{i}y_{i}\right).\end{eqnarray*}
+ & = & 2\left(w\sum_{i=1}^{m}x_{i}²+m\mu_{x}\mu_{y}-wm\mu_{x}^{2}-\sum_{i=1}^{m}x_{i}y_{i}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -729,8 +763,10 @@ covariance
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{eqnarray*}
-2\left(w\sum_{i=1}^{m}x_{i}²+m\mu_{x}\mu_{y}-wm\mu_{x}^{2}-\sum_{i=1}^{m}x_{i}y_{i}\right) & = & 2\left(wm\sigma²_{x}-m\sigma{}_{xy}\right).\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+2\left(w\sum_{i=1}^{m}x_{i}²+m\mu_{x}\mu_{y}-wm\mu_{x}^{2}-\sum_{i=1}^{m}x_{i}y_{i}\right) & = & 2\left(wm\sigma²_{x}-m\sigma{}_{xy}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -739,9 +775,11 @@ Setting that equation to zero and solving for
 \end_inset
 
  yields
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 2\left(wm\sigma²_{x}-m\sigma{}_{xy}\right) & = & 0\\
-\Leftrightarrow w & = & \frac{\sigma{}_{xy}}{\sigma²_{x}}.\end{eqnarray*}
+\Leftrightarrow w & = & \frac{\sigma{}_{xy}}{\sigma²_{x}}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -776,17 +814,21 @@ The term
 \end_inset
 
  yields
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 b & = & \mu_{y}-w\mu_{x}\\
- & = & \mu_{y}-\rho\frac{\sigma_{y}}{\sigma_{x}}\mu_{x}\end{eqnarray*}
+ & = & \mu_{y}-\rho\frac{\sigma_{y}}{\sigma_{x}}\mu_{x}
+\end{eqnarray*}
 
 \end_inset
 
 and we are left with the line equation 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 g(x) & = & wx+b\\
  & = & \rho\frac{\sigma_{y}}{\sigma_{x}}x+\mu_{y}-\rho\frac{\sigma_{y}}{\sigma_{x}}\mu_{x}\\
- & = & \rho\frac{\sigma_{y}}{\sigma_{x}}(x-\mu_{x})+\mu_{y}.\end{eqnarray*}
+ & = & \rho\frac{\sigma_{y}}{\sigma_{x}}(x-\mu_{x})+\mu_{y}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -874,7 +916,7 @@ The second derivative of a function
  This matrix is called the 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -888,7 +930,7 @@ Hessian matrix
  or simply the 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -924,19 +966,23 @@ The
 \end_inset
 
  
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 H(\mathbf{z}) & = & \left(\begin{array}{ccccc}
 \frac{\partial²f}{\partial x_{1}²}(\mathbf{z}) & \frac{\partial²f}{\partial x_{1}\partial x_{2}}(\mathbf{z})\\
 \frac{\partial²f}{\partial x_{1}\partial x_{2}}(\mathbf{z})\\
-\\ &  &  &  & \frac{\partial²f}{\partial x_{n-1}\partial x_{n}}(\mathbf{z})\\
- &  &  & \frac{\partial²f}{\partial x_{n-1}\partial x_{n}}(\mathbf{z}) & \frac{\partial²f}{\partial x_{n}²}(\mathbf{z})\end{array}\right)\end{eqnarray*}
+\\
+ &  &  &  & \frac{\partial²f}{\partial x_{n-1}\partial x_{n}}(\mathbf{z})\\
+ &  &  & \frac{\partial²f}{\partial x_{n-1}\partial x_{n}}(\mathbf{z}) & \frac{\partial²f}{\partial x_{n}²}(\mathbf{z})
+\end{array}\right)
+\end{eqnarray*}
 
 \end_inset
 
 is called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -972,7 +1018,7 @@ The sufficient condition for a function
  is 
 \emph on
 positive definite
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -986,7 +1032,7 @@ positive definite
  or 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout

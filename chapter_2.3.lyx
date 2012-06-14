@@ -1,8 +1,8 @@
-#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass book
+\textclass scrbook
 \begin_preamble
 \setcounter{chapter}{2}
 \usepackage{graphicx}
@@ -12,18 +12,26 @@
 \usepackage{bm}
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding auto
+\fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -31,21 +39,31 @@
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -81,10 +99,13 @@ Suppose we have given a linear system of equations,
 \end_inset
 
  such that 
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 {1 \choose 0}=\left(\begin{array}{cc}
 2 & 3\\
--1 & 4\end{array}\right){x_{1} \choose x_{2}}.\]
+-1 & 4
+\end{array}\right){x_{1} \choose x_{2}}.
+\]
 
 \end_inset
 
@@ -134,8 +155,10 @@ A square matrix M is said to be invertible if there exists a second matrix,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
-MM^{-1}=M^{-1}M=I_{n}.\]
+\begin_inset Formula 
+\[
+MM^{-1}=M^{-1}M=I_{n}.
+\]
 
 \end_inset
 
@@ -170,13 +193,15 @@ In the example above,
 
 \begin_inset Formula $M^{-1}=\frac{1}{11}\left(\begin{array}{cc}
 4 & -3\\
-1 & 2\end{array}\right)$
+1 & 2
+\end{array}\right)$
 \end_inset
 
 , so 
 \begin_inset Formula $x=M^{-1}y=\frac{1}{11}\left(\begin{array}{cc}
 4 & -3\\
-1 & 2\end{array}\right){1 \choose 0}=\frac{1}{11}{4 \choose 1}.$
+1 & 2
+\end{array}\right){1 \choose 0}=\frac{1}{11}{4 \choose 1}.$
 \end_inset
 
 
@@ -198,13 +223,15 @@ matrices of size
  we can directly derive the inverse by hand: Given a matrix 
 \begin_inset Formula $M=\left(\begin{array}{cc}
 m_{11} & m_{12}\\
-m_{21} & m_{22}\end{array}\right)$
+m_{21} & m_{22}
+\end{array}\right)$
 \end_inset
 
 , we want to find 
 \begin_inset Formula $M^{-1}=\left(\begin{array}{cc}
 k_{11} & k_{12}\\
-k_{21} & k_{22}\end{array}\right)$
+k_{21} & k_{22}
+\end{array}\right)$
 \end_inset
 
 such that 
@@ -216,14 +243,19 @@ such that
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \left(\begin{array}{cc}
 m_{11} & m_{12}\\
-m_{21} & m_{22}\end{array}\right)\left(\begin{array}{cc}
+m_{21} & m_{22}
+\end{array}\right)\left(\begin{array}{cc}
 k_{11} & k_{12}\\
-k_{21} & k_{22}\end{array}\right)=\left(\begin{array}{cc}
+k_{21} & k_{22}
+\end{array}\right)=\left(\begin{array}{cc}
 1 & 0\\
-0 & 1\end{array}\right).\]
+0 & 1
+\end{array}\right).
+\]
 
 \end_inset
 
@@ -233,10 +265,13 @@ k_{21} & k_{22}\end{array}\right)=\left(\begin{array}{cc}
 \begin_layout Standard
 Writing this matrix product out line by line yields for equations in four
  unknowns, which can be solved yielding 
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 M^{-1}=\frac{1}{m_{11}m_{22}-m_{12}m_{21}}\left(\begin{array}{cc}
 m_{22} & -m_{12}\\
--m_{21} & m_{11}\end{array}\right).\]
+-m_{21} & m_{11}
+\end{array}\right).
+\]
 
 \end_inset
 
@@ -299,8 +334,10 @@ For a
 \end_inset
 
 , we have that 
-\begin_inset Formula \begin{eqnarray*}
-\det\mathbf{A} & = & A_{11}A_{22}A_{33}+A_{12}A_{23}A_{31}+A_{13}A_{21}A_{32}-A_{31}A_{22}A_{13}-A_{32}A_{23}A_{11}-A_{33}A_{21}A_{12}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\det\mathbf{A} & = & A_{11}A_{22}A_{33}+A_{12}A_{23}A_{31}+A_{13}A_{21}A_{32}-A_{31}A_{22}A_{13}-A_{32}A_{23}A_{11}-A_{33}A_{21}A_{12}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -319,8 +356,10 @@ If
  diagonal matrix, i.e.
  a matrix that is only non-zero on the diagonal, then the determinant is
  given by the product of the diagonal entries: 
-\begin_inset Formula \begin{eqnarray*}
-\det\mathbf{D} & = & \prod_{i=1}^{n}D_{ii}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\det\mathbf{D} & = & \prod_{i=1}^{n}D_{ii}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -328,14 +367,16 @@ This statements makes sense: The inverse of a diagonal matrix
 \begin_inset Formula $D=\left(\begin{array}{ccc}
 d_{11} & 0 & 0\\
 0 & d_{22} & 0\\
-0 & 0 & d_{33}\end{array}\right)$
+0 & 0 & d_{33}
+\end{array}\right)$
 \end_inset
 
  can be written directly as 
 \begin_inset Formula $D^{-1}=\left(\begin{array}{ccc}
 1/d_{11} & 0 & 0\\
 0 & 1/d_{22} & 0\\
-0 & 0 & 1/d_{33}\end{array}\right)$
+0 & 0 & 1/d_{33}
+\end{array}\right)$
 \end_inset
 
 , but this construction only works if all diagonal entries are different
@@ -356,8 +397,10 @@ If
 
  matrix, for which all entries below or above the diagonal are zero, then
  the determinant is also given by the product of the diagonal entries:
-\begin_inset Formula \begin{eqnarray*}
-\det\mathbf{A} & = & \prod_{i=1}^{n}A_{ii}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\det\mathbf{A} & = & \prod_{i=1}^{n}A_{ii}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -370,18 +413,24 @@ Examples
 
 \begin_layout Enumerate
 The determinant of the matrices 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{A}_{1} & = & \left(\begin{array}{cc}
 2 & 3\\
-4 & 2\end{array}\right)\end{eqnarray*}
+4 & 2
+\end{array}\right)
+\end{eqnarray*}
 
 \end_inset
 
 and 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{A}_{2} & = & \left(\begin{array}{cc}
 2 & 4\\
-1 & 2\end{array}\right),\end{eqnarray*}
+1 & 2
+\end{array}\right),
+\end{eqnarray*}
 
 \end_inset
 
@@ -423,8 +472,10 @@ This last example shows a case where determinants are used in statistics:
 \end_inset
 
  is given by 
-\begin_inset Formula \begin{eqnarray*}
-p(\mathsf{X}|\bm{\mu},\mathbf{C}) & = & \frac{1}{(2\pi)^{\frac{n}{2}}\sqrt{\det\mathbf{C}}}\exp\left(\frac{1}{2}(\mathbf{x}-\bm{\mu})^{\top}\mathbf{C}^{-1}(\mathbf{x}-\bm{\mu})\right).\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+p(\mathsf{X}|\bm{\mu},\mathbf{C}) & = & \frac{1}{(2\pi)^{\frac{n}{2}}\sqrt{\det\mathbf{C}}}\exp\left(\frac{1}{2}(\mathbf{x}-\bm{\mu})^{\top}\mathbf{C}^{-1}(\mathbf{x}-\bm{\mu})\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -644,7 +695,8 @@ An example
 Lets consider the matrix 
 \begin_inset Formula $A=\left(\begin{array}{cc}
 1 & 2\\
-2 & 4\end{array}\right).$
+2 & 4
+\end{array}\right).$
 \end_inset
 
 
@@ -776,8 +828,10 @@ A set of vectors
 \end_inset
 
 
-\begin_inset Formula \[
-\alpha_{1}v_{1}+\alpha_{2}v_{2}+\ldots\alpha_{m}v_{m}=0.\]
+\begin_inset Formula 
+\[
+\alpha_{1}v_{1}+\alpha_{2}v_{2}+\ldots\alpha_{m}v_{m}=0.
+\]
 
 \end_inset
 
@@ -806,8 +860,10 @@ In other words, a set of vectors is linearly independent if we can not find
 
 .
  So, in this case, we can write 
-\begin_inset Formula \[
-v_{1}=\frac{-1}{\alpha_{1}}(\alpha_{2}v_{2}+\ldots+\alpha_{m}v_{m}),\]
+\begin_inset Formula 
+\[
+v_{1}=\frac{-1}{\alpha_{1}}(\alpha_{2}v_{2}+\ldots+\alpha_{m}v_{m}),
+\]
 
 \end_inset
 
@@ -844,20 +900,26 @@ Any single, non-zero vector
 \begin_layout Itemize
 The canonical basis vectors are independent: If we write, e.g.
  
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \alpha_{1}\left(\begin{array}{c}
 0\\
 0\\
-1\end{array}\right)+\alpha_{2}\left(\begin{array}{c}
+1
+\end{array}\right)+\alpha_{2}\left(\begin{array}{c}
 0\\
 0\\
-1\end{array}\right)+\alpha_{3}\left(\begin{array}{c}
+1
+\end{array}\right)+\alpha_{3}\left(\begin{array}{c}
 0\\
 0\\
-1\end{array}\right)=\left(\begin{array}{c}
+1
+\end{array}\right)=\left(\begin{array}{c}
 \alpha_{1}\\
 \alpha_{2}\\
-\alpha_{3}\end{array}\right),\]
+\alpha_{3}
+\end{array}\right),
+\]
 
 \end_inset
 
@@ -865,7 +927,8 @@ The canonical basis vectors are independent: If we write, e.g.
 \begin_inset Formula $\left(\begin{array}{c}
 0\\
 0\\
-0\end{array}\right)$
+0
+\end{array}\right)$
 \end_inset
 
  if 
@@ -905,27 +968,35 @@ The vectors
 \begin_inset Formula $\left(\begin{array}{c}
 -1\\
 1\\
-0\end{array}\right),\left(\begin{array}{c}
+0
+\end{array}\right),\left(\begin{array}{c}
 2\\
 0\\
-3\end{array}\right),\left(\begin{array}{c}
+3
+\end{array}\right),\left(\begin{array}{c}
 0\\
 -2\\
-3\end{array}\right)$
+3
+\end{array}\right)$
 \end_inset
 
  are linearly dependent, as 
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 2\left(\begin{array}{c}
 -1\\
 1\\
-0\end{array}\right)+\left(\begin{array}{c}
+0
+\end{array}\right)+\left(\begin{array}{c}
 2\\
 0\\
-3\end{array}\right)+\left(\begin{array}{c}
+3
+\end{array}\right)+\left(\begin{array}{c}
 0\\
 -2\\
-3\end{array}\right)=0\]
+3
+\end{array}\right)=0
+\]
 
 \end_inset
 
@@ -938,7 +1009,8 @@ Any set of vectors which includes a zero vector is linearly dependent, e.g.
 \begin_inset Formula $1\cdot\left(\begin{array}{c}
 0\\
 0\\
-0\end{array}\right)+0v_{2}+0v_{,m}=0.$
+0
+\end{array}\right)+0v_{2}+0v_{,m}=0.$
 \end_inset
 
  
@@ -966,8 +1038,10 @@ Consider an
 \end_inset
 
  can be written as 
-\begin_inset Formula \[
-Ax=x_{1}A_{1}+\ldots x_{n}A_{n}.\]
+\begin_inset Formula 
+\[
+Ax=x_{1}A_{1}+\ldots x_{n}A_{n}.
+\]
 
 \end_inset
 
@@ -985,8 +1059,10 @@ A matrix is not invertible if and only if there exists a vector
 
 i.e.
  for which 
-\begin_inset Formula \[
-0=x_{1}A_{1}+\ldots x_{n}A_{n}.\]
+\begin_inset Formula 
+\[
+0=x_{1}A_{1}+\ldots x_{n}A_{n}.
+\]
 
 \end_inset
 
@@ -1050,7 +1126,8 @@ The matrix
 
 \begin_inset Formula $\left(\begin{array}{cc}
 1 & 2\\
-2 & 4\end{array}\right)$
+2 & 4
+\end{array}\right)$
 \end_inset
 
  has rank 
@@ -1086,7 +1163,8 @@ The matrix
 \begin_inset Formula $\left(\begin{array}{ccc}
 -1 & 2 & 0\\
 1 & 0 & -2\\
-0 & 3 & 3\end{array}\right)$
+0 & 3 & 3
+\end{array}\right)$
 \end_inset
 
  has rank 2, as its columns are not independent (as shown above), so rank<3,
@@ -1095,10 +1173,12 @@ The matrix
 \begin_inset Formula $\left(\begin{array}{c}
 -1\\
 1\\
-0\end{array}\right)\mbox{and}\left(\begin{array}{c}
+0
+\end{array}\right)\mbox{and}\left(\begin{array}{c}
 2\\
 0\\
-3\end{array}\right)$
+3
+\end{array}\right)$
 \end_inset
 
  are linearly independent, so rank
@@ -1117,10 +1197,13 @@ For any diagonal matrix, the rank is equal to the number of non-zero diagonal
 
 \begin_layout Itemize
 The matrix
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \left(\begin{array}{ccccc}
 1 & 3 & 5 & 7 & 10\\
-2 & 4 & 6 & 8 & 9\end{array}\right)\]
+2 & 4 & 6 & 8 & 9
+\end{array}\right)
+\]
 
 \end_inset
 
@@ -1141,14 +1224,18 @@ The outer product of two (non zero) vectors,
 \end_inset
 
  has rank 1: For example,
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \left(\begin{array}{c}
 1\\
 2\\
-3\end{array}\right)\left(1,2,3\right)=\left(\begin{array}{ccc}
+3
+\end{array}\right)\left(1,2,3\right)=\left(\begin{array}{ccc}
 1 & 2 & 3\\
 2 & 4 & 6\\
-3 & 6 & 9\end{array}\right)\]
+3 & 6 & 9
+\end{array}\right)
+\]
 
 \end_inset
 
@@ -1187,7 +1274,8 @@ and rank
  As covariance matrices are of this form, this means that covariance matrices
  are rank-deficient if one has not collected enough data.
   
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \]
 
 \end_inset

@@ -1,28 +1,48 @@
-#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass book
+\textclass scrbook
 \begin_preamble
 \usepackage{graphicx}
 \usepackage{pict2e}
 \usepackage{graphpap}
 \usepackage{color}
 \usepackage{bm}
+\fancypagestyle{plain}{
+        \fancyhf{} % Empty header & footer to begin with
+        \fancyfoot[LE,RO]{\thepage} % Page on the outer side
+}
+\pagestyle{fancy} % First call sets defaut values
+        \fancyhf{} % Empty header & footer to begin with
+ \fancyhead[LE]{\scshape \leftmark} % Parent section name on the left(even) page  
+\fancyhead[RO]{\scshape \rightmark} % Current section name on the right(odd) page 
+\fancyfoot[LE,RO]{\thepage} % Page on the outer side
+\fancyhead[RE,LO]{\scshape Sinz, Macke, Lies - Essential Mathematics} % Page on the outer side
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding auto
+\fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -30,21 +50,31 @@
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
-\papersides 1
-\paperpagestyle default
+\papersides 2
+\paperpagestyle fancy
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -94,7 +124,71 @@ author{Fabian Sinz, Jakob Macke
 
 \begin_layout Plain Layout
 
+Version 0.1
+\backslash
 
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Graduate School for Neural and Behavioural Sciences
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+T{
+\backslash
+"u}bingen, Germany
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+This work is licensed under a 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Creative Commons Attribution-ShareAlike 3.0 Unported License
+\end_layout
+
+\begin_layout Plain Layout
+
+%
 \backslash
 includegraphics[width=10cm]{./figs/Caspar_David_Friedrich_009}}
 \end_layout
@@ -114,6 +208,69 @@ maketitle
 \end_inset
 
 
+\end_layout
+
+\begin_layout Paragraph
+Preface
+\end_layout
+
+\begin_layout Standard
+These course notes arose from a mathematics lecture for neuroscientists
+ that Jakob, Philipp and me held over the course of several years at the
+ Graduate School for Neural and Behavioural Sciences in T
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+"u
+\end_layout
+
+\end_inset
+
+bingen.
+ We used the lecture notes to collect everything the students needed to
+ know for solving the homework tasks in one single file.
+ The lecture notes are still work in progress.
+ Therefore, they are incomplete, contain spelling mistakes, and could be
+ improved in many aspects.
+ However, if you want to use them anyway, you are free to do so (under the
+ license above) as long as you acknowledge us.
+ If you find mistakes, we would be grateful if you would let us know so
+ we can correct them.
+ 
+\end_layout
+
+\begin_layout Standard
+One section contains a picture that I randomly selected from the image search
+ of google to illustrate a point about natural image statistics.
+ If you hold the copyright for that image and want to have it removed, please
+ let me know (you can find my email address on 
+\emph on
+www.bethgelab.org
+\emph default
+).
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+T{
+\backslash
+"u}bingen, 
+\backslash
+today, 
+\end_layout
+
+\end_inset
+
+Fabian Sinz
 \end_layout
 
 \begin_layout Standard
@@ -141,7 +298,7 @@ linear
 functions
 \emph default
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -155,7 +312,7 @@ linear functions
 polynomials
 \emph default
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -169,7 +326,7 @@ polynomials
 trigonometric functions
 \emph default
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -256,7 +413,7 @@ d geometrically which is a helpful source of intuition.
 We will start this section by introducing 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -268,11 +425,14 @@ vectors
 vectors
 \emph default
  
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{x} & = & \left(\begin{array}{c}
 x_{1}\\
 \vdots\\
-x_{n}\end{array}\right),\end{eqnarray*}
+x_{n}
+\end{array}\right),
+\end{eqnarray*}
 
 \end_inset
 

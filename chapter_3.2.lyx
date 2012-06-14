@@ -1,8 +1,8 @@
-#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass book
+\textclass scrbook
 \begin_preamble
 \setcounter{chapter}{3}
 \usepackage{graphicx}
@@ -12,18 +12,26 @@
 \usepackage{bm}
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding auto
+\fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -31,21 +39,31 @@
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -74,8 +92,10 @@ A complex number
 \end_inset
 
  consists of a real part and an imaginary part:
-\begin_inset Formula \[
-z=a+bi,\mbox{ where }i=\sqrt{-1}.\]
+\begin_inset Formula 
+\[
+z=a+bi,\mbox{ where }i=\sqrt{-1}.
+\]
 
 \end_inset
 
@@ -164,8 +184,10 @@ The Fourier Series approximation of
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
-f_{N}(x)=\sum_{k=-N}^{N}c_{k}e^{ikx}.\]
+\begin_inset Formula 
+\[
+f_{N}(x)=\sum_{k=-N}^{N}c_{k}e^{ikx}.
+\]
 
 \end_inset
 
@@ -174,10 +196,13 @@ f_{N}(x)=\sum_{k=-N}^{N}c_{k}e^{ikx}.\]
 \end_inset
 
  we need to make use of the integration identity
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \int_{-\pi}^{\pi}e^{ix(k-m)}dx=\begin{cases}
 2\pi & \mbox{for }k=m\\
-0 & \mbox{for }k\neq m.\end{cases}\]
+0 & \mbox{for }k\neq m.
+\end{cases}
+\]
 
 \end_inset
 
@@ -203,11 +228,13 @@ n rule
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \int_{-\pi}^{\pi}f(x)e^{-ixm}dx & = & \int_{-\pi}^{\pi}\left(\sum_{k=-\infty}^{\infty}c_{k}e^{ikx}\right)e^{-ixm}\\
  & = & \sum_{k=-\infty,k\neq m}^{\infty}\int_{-\pi}^{\pi}c_{k}e^{ix(k-m)}dx+\int_{-\pi}^{\pi}c_{m}e^{ix(m-m)}dx\\
  & = & 0+2\pi c_{m}\\
-\implies c_{m} & = & \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)e^{-ixm}dx.\end{eqnarray*}
+\implies c_{m} & = & \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)e^{-ixm}dx.
+\end{eqnarray*}
 
 \end_inset
 

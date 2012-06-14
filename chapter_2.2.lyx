@@ -1,8 +1,8 @@
-#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass book
+\textclass scrbook
 \begin_preamble
 \setcounter{chapter}{2}
 \usepackage{graphicx}
@@ -12,18 +12,26 @@
 \usepackage{bm}
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding auto
+\fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -31,21 +39,31 @@
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -90,16 +108,19 @@ In the photoreceptors of the retina, color is represented by the activation
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \]
 
 \end_inset
 
 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 RG & = & L-M+0\cdot S\\
 BY & = & -L-M+S\\
-Lum & = & L+M+S.\end{eqnarray*}
+Lum & = & L+M+S.
+\end{eqnarray*}
 
 \end_inset
 
@@ -108,17 +129,22 @@ Lum & = & L+M+S.\end{eqnarray*}
 
 \begin_layout Standard
 This can be written in matrix notation as
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \left(\begin{array}{c}
 RG\\
 BY\\
-Lum\end{array}\right)=\left(\begin{array}{ccc}
+Lum
+\end{array}\right)=\left(\begin{array}{ccc}
 1 & -1 & 0\\
 -1 & -1 & 1\\
-1 & 1 & 1\end{array}\right)\left(\begin{array}{c}
+1 & 1 & 1
+\end{array}\right)\left(\begin{array}{c}
 L\\
 M\\
-S\end{array}\right).\]
+S
+\end{array}\right).
+\]
 
 \end_inset
 
@@ -165,12 +191,15 @@ A matrix
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \mathbf{A}=\left(\begin{array}{cccc}
 A_{11} & A_{12} & \cdots & A_{1n}\\
 A_{21} & A_{22} &  & A_{2n}\\
 \vdots & \vdots & \dots & \vdots\\
-A_{m1} & A_{m2} & \dots & A_{mn}\end{array}\right).\]
+A_{m1} & A_{m2} & \dots & A_{mn}
+\end{array}\right).
+\]
 
 \end_inset
 
@@ -194,12 +223,15 @@ The matrix product
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 y=Ax=\left(\begin{array}{c}
 \sum_{i=1}^{n}A_{1i}x_{i}\\
 \sum_{i=1}^{n}A_{2i}x_{i}\\
 \vdots\\
-\sum_{i=1}^{n}A_{mi}x_{i}\end{array}\right).\]
+\sum_{i=1}^{n}A_{mi}x_{i}
+\end{array}\right).
+\]
 
 \end_inset
 
@@ -361,13 +393,17 @@ axis, respectively.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \left(\begin{array}{cc}
 2 & 3\\
-1 & 1\end{array}\right){1 \choose 0} & = & {2 \choose 1}\\
+1 & 1
+\end{array}\right){1 \choose 0} & = & {2 \choose 1}\\
 \left(\begin{array}{cc}
 2 & 3\\
-1 & 1\end{array}\right){0 \choose 1} & = & {3 \choose 1}.\end{eqnarray*}
+1 & 1
+\end{array}\right){0 \choose 1} & = & {3 \choose 1}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -386,8 +422,10 @@ Therefore, the columns of a matrix are exactly the 'images' of the canonical
 \end_inset
 
 
-\begin_inset Formula \[
-x={x_{1} \choose x_{2}}=x_{1}{1 \choose 0}+x_{2}{0 \choose 1}.\]
+\begin_inset Formula 
+\[
+x={x_{1} \choose x_{2}}=x_{1}{1 \choose 0}+x_{2}{0 \choose 1}.
+\]
 
 \end_inset
 
@@ -396,9 +434,11 @@ x={x_{1} \choose x_{2}}=x_{1}{1 \choose 0}+x_{2}{0 \choose 1}.\]
 
 \begin_layout Standard
 Therefore, 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 Mx & = & M\left(x_{1}{1 \choose 0}+x_{2}{0 \choose 1}\right)\\
- & = & x_{1}{2 \choose 1}+x_{2}{3 \choose 1}.\end{eqnarray*}
+ & = & x_{1}{2 \choose 1}+x_{2}{3 \choose 1}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -419,7 +459,8 @@ Hence, the image of any vector
 \end_inset
 
 
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \]
 
 \end_inset
@@ -434,13 +475,17 @@ Examples of matrices
 \begin_layout Itemize
 The identify matrix is a boring matrix which does not do anything.
  Multiplying any vector by it leaves it unchanged:
-\begin_inset Formula \begin{eqnarray*}
-\\\mathbf{I} & = & (\mathbf{e}_{1},\mathbf{e}_{2},...,\mathbf{e}_{n})\\
+\begin_inset Formula 
+\begin{eqnarray*}
+\\
+\mathbf{I} & = & (\mathbf{e}_{1},\mathbf{e}_{2},...,\mathbf{e}_{n})\\
  & = & \left(\begin{array}{cccc}
 1 & 0 & \dots & 0\\
 \vdots & 1 & \ddots & 0\\
 0 & \vdots & \dots & \vdots\\
-0 & 0 & \dots & 1\end{array}\right).\end{eqnarray*}
+0 & 0 & \dots & 1
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -468,23 +513,29 @@ The result of multiplying a vector
 \end_inset
 
  with the identity matrix is just the vector itself:
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{Ix} & = & \left(\begin{array}{cccc}
 1 & 0 & \dots & 0\\
 \vdots & 1 & \ddots & 0\\
 0 & \vdots & \dots & \vdots\\
-0 & 0 & \dots & 1\end{array}\right)\left(\begin{array}{c}
+0 & 0 & \dots & 1
+\end{array}\right)\left(\begin{array}{c}
 x_{1}\\
 \vdots\\
-x_{n}\end{array}\right)\\
+x_{n}
+\end{array}\right)\\
  & = & \left(\begin{array}{c}
 \mathbf{e}_{1}^{\top}\mathbf{x}\\
 \vdots\\
-\mathbf{e}_{n}^{\top}\mathbf{x}\end{array}\right)\\
+\mathbf{e}_{n}^{\top}\mathbf{x}
+\end{array}\right)\\
  & = & \left(\begin{array}{c}
 x_{1}\\
 \vdots\\
-x_{n}\end{array}\right)=\mathbf{x}.\end{eqnarray*}
+x_{n}
+\end{array}\right)=\mathbf{x}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -495,7 +546,7 @@ x_{n}\end{array}\right)=\mathbf{x}.\end{eqnarray*}
 Matrices that look very similar to the identity matrix, are 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -536,11 +587,14 @@ permutation matrices
 
 .
  The corresponding permutation matrix is given by
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{P} & = & \left(\begin{array}{ccc}
 0 & 1 & 0\\
 1 & 0 & 0\\
-0 & 0 & 1\end{array}\right).\end{eqnarray*}
+0 & 0 & 1
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -553,22 +607,28 @@ Multiplying a three dimensional vector
 \end_inset
 
  with our example of a permutation matrix yields 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{Px} & = & \left(\begin{array}{ccc}
 0 & 1 & 0\\
 1 & 0 & 0\\
-0 & 0 & 1\end{array}\right)\left(\begin{array}{c}
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{c}
 x_{1}\\
 x_{2}\\
-x_{3}\end{array}\right)\\
+x_{3}
+\end{array}\right)\\
  & = & \left(\begin{array}{c}
 \mathbf{e}_{2}^{\top}\mathbf{x}\\
 \mathbf{e}_{1}^{\top}\mathbf{x}\\
-\mathbf{e}_{3}^{\top}\mathbf{x}\end{array}\right)\\
+\mathbf{e}_{3}^{\top}\mathbf{x}
+\end{array}\right)\\
  & = & \left(\begin{array}{c}
 x_{2}\\
 x_{1}\\
-x_{3}\end{array}\right).\end{eqnarray*}
+x_{3}
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -579,7 +639,7 @@ x_{3}\end{array}\right).\end{eqnarray*}
 In geometry, 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -605,10 +665,13 @@ rotation matrices
 \end_inset
 
 :
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{R} & = & \left(\begin{array}{cc}
 \cos\varphi & -\sin\varphi\\
-\sin\varphi & \cos\varphi\end{array}\right).\end{eqnarray*}
+\sin\varphi & \cos\varphi
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -636,11 +699,14 @@ In 3D we have three coordinate planes where we can rotate a vector in, i.e.
 \end_inset
 
 -plane in 3D is given by 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{R} & = & \left(\begin{array}{ccc}
 \cos\varphi & -\sin\varphi & 0\\
 \sin\varphi & \cos\varphi & 0\\
-0 & 0 & 1\end{array}\right),\end{eqnarray*}
+0 & 0 & 1
+\end{array}\right),
+\end{eqnarray*}
 
 \end_inset
 
@@ -649,11 +715,14 @@ the matrix for a rotation in the
 \end_inset
 
 -plane is given by 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{R} & = & \left(\begin{array}{ccc}
 \cos\varphi & 0 & -\sin\varphi\\
 0 & 1 & 0\\
-\sin\varphi & 0 & \cos\varphi\end{array}\right).\end{eqnarray*}
+\sin\varphi & 0 & \cos\varphi
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -672,13 +741,17 @@ Multiplying a vector with a rotation matrix, means rotating this vector.
 
 .
  From their definition, we can get the appropriate rotation matrix: 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{R} & = & \left(\begin{array}{cc}
 \cos90^{\circ} & -\sin90^{\circ}\\
-\sin90^{\circ} & \cos90^{\circ}\end{array}\right)\\
+\sin90^{\circ} & \cos90^{\circ}
+\end{array}\right)\\
  & = & \left(\begin{array}{cc}
 0 & -1\\
-1 & 0\end{array}\right).\end{eqnarray*}
+1 & 0
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -687,8 +760,10 @@ Now we can apply it to our vector
 \end_inset
 
 :
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{R}{1 \choose 0} & = & {0 \choose 1}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\mathbf{R}{1 \choose 0} & = & {0 \choose 1}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -702,9 +777,11 @@ We see that the resulting vector has been rotated by
 \end_inset
 
 , yields 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{R}\mathbf{R}{1 \choose 0} & = & \mathbf{R}{0 \choose 1}\\
- & = & {0 \choose -1},\end{eqnarray*}
+ & = & {0 \choose -1},
+\end{eqnarray*}
 
 \end_inset
 
@@ -758,10 +835,13 @@ The matrix that corresponds to the projection of a vector
 \end_inset
 
 -plane, is given by
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{P}_{12} & = & \left(\begin{array}{ccc}
 1 & 0 & 0\\
-0 & 1 & 0\end{array}\right).\end{eqnarray*}
+0 & 1 & 0
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -794,14 +874,18 @@ Applying the matrix, that projects every vector
 \end_inset
 
  yields
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{P}_{12}\mathbf{x} & = & \left(\begin{array}{ccc}
 1 & 0 & 0\\
-0 & 1 & 0\end{array}\right)\left(\begin{array}{c}
+0 & 1 & 0
+\end{array}\right)\left(\begin{array}{c}
 x_{1}\\
 x_{2}\\
-x_{3}\end{array}\right)\\
- & = & {x_{1} \choose x_{2}},\end{eqnarray*}
+x_{3}
+\end{array}\right)\\
+ & = & {x_{1} \choose x_{2}},
+\end{eqnarray*}
 
 \end_inset
 
@@ -827,8 +911,10 @@ Any scalar product can be thought of as a matrix product: The scalar product
 \end_inset
 
  is defined to be
-\begin_inset Formula \[
-\langle v,w\rangle=\sum_{i}v_{i}w_{i}.\]
+\begin_inset Formula 
+\[
+\langle v,w\rangle=\sum_{i}v_{i}w_{i}.
+\]
 
 \end_inset
 
@@ -888,19 +974,25 @@ Remember our very simple linear response model for a V1 simple cell.
 \begin_layout Standard
 Assume now that we measured the response of our three neurons for the four
  images 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{I}_{1} & = & \left(\begin{array}{cc}
 1 & 0\\
-0 & 0\end{array}\right)\\
+0 & 0
+\end{array}\right)\\
 \mathbf{I}_{2} & = & \left(\begin{array}{cc}
 0 & 0\\
-1 & 0\end{array}\right)\\
+1 & 0
+\end{array}\right)\\
 \mathbf{I}_{3} & = & \left(\begin{array}{cc}
 0 & 1\\
-0 & 0\end{array}\right)\\
+0 & 0
+\end{array}\right)\\
 \mathbf{I}_{4} & = & \left(\begin{array}{cc}
 0 & 0\\
-0 & 1\end{array}\right),\end{eqnarray*}
+0 & 1
+\end{array}\right),
+\end{eqnarray*}
 
 \end_inset
 
@@ -908,28 +1000,32 @@ which yielded us four spike rate measurements
 \begin_inset Formula $\mathbf{r}_{1}=\left(\begin{array}{c}
 r_{11}\\
 \vdots\\
-r_{31}\end{array}\right)$
+r_{31}
+\end{array}\right)$
 \end_inset
 
 , 
 \begin_inset Formula $\mathbf{r}_{2}=\left(\begin{array}{c}
 r_{12}\\
 \vdots\\
-r_{32}\end{array}\right)$
+r_{32}
+\end{array}\right)$
 \end_inset
 
 , 
 \begin_inset Formula $\mathbf{r}_{3}=\left(\begin{array}{c}
 r_{13}\\
 \vdots\\
-r_{33}\end{array}\right)$
+r_{33}
+\end{array}\right)$
 \end_inset
 
  and 
 \begin_inset Formula $\mathbf{r}_{4}=\left(\begin{array}{c}
 r_{14}\\
 \vdots\\
-r_{34}\end{array}\right)$
+r_{34}
+\end{array}\right)$
 \end_inset
 
 .
@@ -978,36 +1074,45 @@ Note that the vectors
 \end_inset
 
 :
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \tilde{\mathbf{v}} & = & \sum_{i=1}^{4}\tilde{v}_{i}\mathbf{v}_{i}\\
  & = & \tilde{I}_{11}\left(\begin{array}{c}
 1\\
 0\\
 0\\
-0\end{array}\right)+\tilde{I}_{21}\left(\begin{array}{c}
+0
+\end{array}\right)+\tilde{I}_{21}\left(\begin{array}{c}
 0\\
 1\\
 0\\
-0\end{array}\right)+\tilde{I}_{12}\left(\begin{array}{c}
+0
+\end{array}\right)+\tilde{I}_{12}\left(\begin{array}{c}
 0\\
 0\\
 1\\
-0\end{array}\right)+\tilde{I}_{22}\left(\begin{array}{c}
+0
+\end{array}\right)+\tilde{I}_{22}\left(\begin{array}{c}
 0\\
 0\\
 0\\
-1\end{array}\right).\end{eqnarray*}
+1
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
 Then we compute the response of our three neurons via:
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 f\left(\sum_{i=1}^{4}\tilde{v}_{i}\mathbf{v}_{i}\right) & \stackrel{f\mbox{ linear}}{=} & \sum_{i=1}^{4}\tilde{v}_{i}f\left(\mathbf{v}_{i}\right)\\
  & = & \sum_{i=1}^{4}\tilde{v}_{i}\mathbf{r}_{i}\\
  & = & \left(\begin{array}{c}
 \sum_{i=1}^{4}\tilde{v}_{i}r_{1i}\\
 \sum_{i=1}^{4}\tilde{v}_{i}r_{2i}\\
-\sum_{i=1}^{4}\tilde{v}_{i}r_{3i}\end{array}\right).\end{eqnarray*}
+\sum_{i=1}^{4}\tilde{v}_{i}r_{3i}
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -1076,9 +1181,11 @@ We can always define the matrix of a mapping with respect to any basis:
 .
  Since we can exchange the summation and function symbol for linear functions
  we can do the same operation as for the one-dimensional case:
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 f_{k}(\mathbf{x}) & = & f_{k}\left(\sum_{i=1}^{n}\lambda_{i}\mathbf{b}_{i}\right)\\
- & = & \sum_{i=1}^{n}\lambda_{i}f_{k}(\mathbf{b}_{i}),\,\mbox{for}\, k=1,...,n.\end{eqnarray*}
+ & = & \sum_{i=1}^{n}\lambda_{i}f_{k}(\mathbf{b}_{i}),\,\mbox{for}\, k=1,...,n.
+\end{eqnarray*}
 
 \end_inset
 
@@ -1149,12 +1256,15 @@ Given an
 \end_inset
 
  
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{A} & = & \left(\begin{array}{cccc}
 f_{1}(\mathbf{b}_{1}) & f_{1}(\mathbf{b}_{2}) & f_{1}(\mathbf{b}_{n-1}) & f_{1}(\mathbf{b}_{n})\\
 \vdots & f_{2}(\mathbf{b}_{2}) &  & f_{2}(\mathbf{b}_{n})\\
 f_{m-1}(\mathbf{b}_{1}) & \vdots & \dots & \vdots\\
-f_{m}(\mathbf{b}_{1}) & f_{m}(\mathbf{b}_{2}) & \dots & f_{m}(\mathbf{b}_{n})\end{array}\right)\end{eqnarray*}
+f_{m}(\mathbf{b}_{1}) & f_{m}(\mathbf{b}_{2}) & \dots & f_{m}(\mathbf{b}_{n})
+\end{array}\right)
+\end{eqnarray*}
 
 \end_inset
 
@@ -1245,12 +1355,15 @@ From now on, unless explicitly noted, we use the canonical basis of
 \end_inset
 
  when dealing with matrices, i.e.
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{A} & = & \left(\begin{array}{cccc}
 f_{1}(\mathbf{e}_{1}) & f_{1}(\mathbf{e}_{2}) & f_{1}(\mathbf{e}_{n-1}) & f_{1}(\mathbf{e}_{n})\\
 \vdots & f_{2}(\mathbf{e}_{2}) & \ddots & f_{2}(\mathbf{e}_{n})\\
 f_{m-1}(\mathbf{e}_{1}) & \vdots & \dots & \vdots\\
-f_{m}(\mathbf{e}_{1}) & f_{m}(\mathbf{e}_{2}) & \dots & f_{m}(\mathbf{e}_{n})\end{array}\right).\end{eqnarray*}
+f_{m}(\mathbf{e}_{1}) & f_{m}(\mathbf{e}_{2}) & \dots & f_{m}(\mathbf{e}_{n})
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -1284,13 +1397,17 @@ In the above example about the rotation matrices, we rotated a vector by
 \end_inset
 
  degrees with our rotation matrix 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{R} & = & \left(\begin{array}{cc}
 \cos90^{\circ} & -\sin90^{\circ}\\
-\sin90^{\circ} & \cos90^{\circ}\end{array}\right)\\
+\sin90^{\circ} & \cos90^{\circ}
+\end{array}\right)\\
  & = & \left(\begin{array}{cc}
 0 & -1\\
-1 & 0\end{array}\right).\end{eqnarray*}
+1 & 0
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -1360,17 +1477,21 @@ The product of a matrix
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{A}\cdot\mathbf{B} & = & \left(\begin{array}{cccc}
 \sum_{i=1}^{n}\mathbf{A}_{1i}\mathbf{B}_{i1} & \sum_{i=1}^{n}\mathbf{A}_{1i}\mathbf{B}_{i2} & \dots & \sum_{i=1}^{n}\mathbf{A}_{1i}\mathbf{B}_{in}\\
 \sum_{i=1}^{n}\mathbf{A}_{2i}\mathbf{B}_{i1} & \ddots &  & \vdots\\
 \vdots &  & \ddots & \sum_{i=1}^{n}\mathbf{A}_{(m-1)i}\mathbf{B}_{in}\\
-\sum_{i=1}^{n}\mathbf{A}_{mi}\mathbf{B}_{i1} & \dots & \sum_{i=1}^{n}\mathbf{A}_{mi}\mathbf{B}_{i(n-1)} & \sum_{i=1}^{n}\mathbf{A}_{mi}\mathbf{B}_{in}\end{array}\right)\\
+\sum_{i=1}^{n}\mathbf{A}_{mi}\mathbf{B}_{i1} & \dots & \sum_{i=1}^{n}\mathbf{A}_{mi}\mathbf{B}_{i(n-1)} & \sum_{i=1}^{n}\mathbf{A}_{mi}\mathbf{B}_{in}
+\end{array}\right)\\
  & = & \left(\begin{array}{cccc}
 \langle\mathbf{a}^{1},\mathbf{b}_{1}\rangle & \langle\mathbf{a}^{1},\mathbf{b}_{2}\rangle & \dots & \langle\mathbf{a}^{1},\mathbf{b}_{n}\rangle\\
 \langle\mathbf{a}^{2},\mathbf{b}_{1}\rangle & \ddots &  & \vdots\\
 \vdots &  & \ddots & \langle\mathbf{a}^{m-1},\mathbf{b}_{n}\rangle\\
-\langle\mathbf{a}^{m},\mathbf{b}_{1}\rangle & \dots & \langle\mathbf{a}^{m},\mathbf{b}_{n-1}\rangle & \langle\mathbf{a}^{m},\mathbf{b}_{n}\rangle\end{array}\right),\end{eqnarray*}
+\langle\mathbf{a}^{m},\mathbf{b}_{1}\rangle & \dots & \langle\mathbf{a}^{m},\mathbf{b}_{n-1}\rangle & \langle\mathbf{a}^{m},\mathbf{b}_{n}\rangle
+\end{array}\right),
+\end{eqnarray*}
 
 \end_inset
 
@@ -1488,10 +1609,13 @@ Examples
 
 \begin_layout Itemize
 Let 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{R} & = & \left(\begin{array}{cc}
 0 & -1\\
-1 & 0\end{array}\right)\end{eqnarray*}
+1 & 0
+\end{array}\right)
+\end{eqnarray*}
 
 \end_inset
 
@@ -1501,18 +1625,24 @@ as above.
 \end_inset
 
  with itself is given by 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{R\cdot R} & = & \left(\begin{array}{cc}
 0 & -1\\
-1 & 0\end{array}\right)\left(\begin{array}{cc}
+1 & 0
+\end{array}\right)\left(\begin{array}{cc}
 0 & -1\\
-1 & 0\end{array}\right)\\
+1 & 0
+\end{array}\right)\\
  & = & \left(\begin{array}{cc}
 \left\langle {0 \choose -1},{0 \choose 1}\right\rangle  & \left\langle {0 \choose -1},{-1 \choose 0}\right\rangle \\
-\left\langle {1 \choose 0},{0 \choose 1}\right\rangle  & \left\langle {1 \choose 0},{-1 \choose 0}\right\rangle \end{array}\right)\\
+\left\langle {1 \choose 0},{0 \choose 1}\right\rangle  & \left\langle {1 \choose 0},{-1 \choose 0}\right\rangle 
+\end{array}\right)\\
  & = & \left(\begin{array}{cc}
 1 & 0\\
-0 & -1\end{array}\right).\end{eqnarray*}
+0 & -1
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -1523,9 +1653,11 @@ as above.
 Let 
 \begin_inset Formula $A=\left(\begin{array}{cc}
 2 & 0\\
-0 & 1\end{array}\right),B=\left(\begin{array}{cc}
+0 & 1
+\end{array}\right),B=\left(\begin{array}{cc}
 0 & 1\\
-1 & 0\end{array}\right)$
+1 & 0
+\end{array}\right)$
 \end_inset
 
 , then
@@ -1538,13 +1670,17 @@ Let
 \noun off
 \color none
 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 AB & = & \left(\begin{array}{cc}
 0 & 2\\
-1 & 0\end{array}\right),\\
+1 & 0
+\end{array}\right),\\
 BA & = & \left(\begin{array}{cc}
 0 & 1\\
-2 & 0\end{array}\right).\end{eqnarray*}
+2 & 0
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -1553,26 +1689,33 @@ BA & = & \left(\begin{array}{cc}
 
 \begin_layout Itemize
 Matrices do not have to be 'square' to be multiplied:
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \left(\begin{array}{ccc}
 1 & 0 & 1\\
-3 & 2 & 1\end{array}\right)\left(\begin{array}{cc}
+3 & 2 & 1
+\end{array}\right)\left(\begin{array}{cc}
 1 & 0\\
 1 & 1\\
-1 & 2\end{array}\right)=\left(\begin{array}{cc}
+1 & 2
+\end{array}\right)=\left(\begin{array}{cc}
 2 & 2\\
-6 & 4\end{array}\right).\]
-
-\end_inset
-
-
-\begin_inset Formula \[
+6 & 4
+\end{array}\right).
 \]
 
 \end_inset
 
 
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
 \]
 
 \end_inset
@@ -1643,25 +1786,33 @@ We can derived the addition theorems for sine and cosine from the rule of
 \end_inset
 
 , we get
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 R(\alpha+\beta) & = & R(\alpha)R(\beta)\\
 \left(\begin{array}{cc}
 \cos(\alpha+\beta) & -\sin(\alpha+\beta)\\
-\sin(\alpha+\beta) & \cos(\alpha+\beta)\end{array}\right) & = & \left(\begin{array}{cc}
+\sin(\alpha+\beta) & \cos(\alpha+\beta)
+\end{array}\right) & = & \left(\begin{array}{cc}
 \cos(\alpha) & -\sin(\alpha)\\
-\sin(\alpha) & \cos(\alpha)\end{array}\right)\left(\begin{array}{cc}
+\sin(\alpha) & \cos(\alpha)
+\end{array}\right)\left(\begin{array}{cc}
 \cos(\beta) & -\sin(\beta)\\
-\sin(\beta) & \cos(\beta)\end{array}\right)\\
+\sin(\beta) & \cos(\beta)
+\end{array}\right)\\
  & = & \left(\begin{array}{cc}
 \cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta) & -\cos(\alpha)\sin(\beta)-\cos(\beta)\sin(\alpha)\\
-\cos(\alpha)\sin(\beta)+\cos(\beta)\sin(\alpha) & \cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)\end{array}\right).\end{eqnarray*}
+\cos(\alpha)\sin(\beta)+\cos(\beta)\sin(\alpha) & \cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
 Equation coefficients, we recover the addition theorems 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \cos(\alpha+\beta) & = & \cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)\\
-\sin(\alpha+\beta) & = & \sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta).\end{eqnarray*}
+\sin(\alpha+\beta) & = & \sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta).
+\end{eqnarray*}
 
 \end_inset
 
@@ -1687,26 +1838,35 @@ around the origin.
 \end_inset
 
  by multiplying the rotation matrix 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{R} & = & \left(\begin{array}{cc}
 \cos(30^{\circ}) & -\sin(30^{\circ})\\
-\sin(30^{\circ}) & \cos(30^{\circ})\end{array}\right)\end{eqnarray*}
+\sin(30^{\circ}) & \cos(30^{\circ})
+\end{array}\right)
+\end{eqnarray*}
 
 \end_inset
 
  with the projection matrix 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{P} & = & \left(\begin{array}{ccc}
 1 & 0 & 0\\
-0 & 1 & 0\end{array}\right).\end{eqnarray*}
+0 & 1 & 0
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
 The result is given by 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{R}\cdot\mathbf{P} & = & \left(\begin{array}{ccc}
 \cos(30^{\circ}) & -\sin(30^{\circ}) & 0\\
-\sin(30^{\circ}) & \cos(30^{\circ}) & 0\end{array}\right).\end{eqnarray*}
+\sin(30^{\circ}) & \cos(30^{\circ}) & 0
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -1759,9 +1919,11 @@ With the rule for matrix-matrix multiplication we can also multiply a vector
 
 -matrix, we can apply the rule for matrix-matrix multiplication and obtain
  
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{x}\mathbf{A} & = & (x_{1},...,x_{n})\cdot\mathbf{A}\\
- & = & (\langle\mathbf{x},\mathbf{a}_{1}\rangle,...,\langle\mathbf{x},\mathbf{a}_{k}\rangle),\end{eqnarray*}
+ & = & (\langle\mathbf{x},\mathbf{a}_{1}\rangle,...,\langle\mathbf{x},\mathbf{a}_{k}\rangle),
+\end{eqnarray*}
 
 \end_inset
 
@@ -1800,7 +1962,8 @@ It is often convenient (or necessary) to 'flip' a matrix or a vector by
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 \]
 
 \end_inset
@@ -1816,7 +1979,7 @@ Definition (Matrix Transpose)
 The 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1828,22 +1991,28 @@ transpose
 transpose
 \emph default
  of a matrix 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{A} & = & \left(\begin{array}{cccc}
 \mathbf{A}_{11} & \mathbf{A}_{12} &  & \mathbf{A}_{1n}\\
 \mathbf{A}_{21}\\
 \vdots &  &  & \mathbf{A}_{(m-1)n}\\
-\mathbf{A}_{m1} &  & \mathbf{A}_{m(n-1)} & \mathbf{A}_{mn}\end{array}\right)\end{eqnarray*}
+\mathbf{A}_{m1} &  & \mathbf{A}_{m(n-1)} & \mathbf{A}_{mn}
+\end{array}\right)
+\end{eqnarray*}
 
 \end_inset
 
 is given by 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{A}^{\top} & = & \left(\begin{array}{cccc}
 \mathbf{A}_{11} & \mathbf{A}_{21} &  & \mathbf{A}_{m1}\\
 \mathbf{A}_{12}\\
 \vdots &  &  & \mathbf{A}_{m(n-1)}\\
-\mathbf{A}_{1n} &  & \mathbf{A}_{(m-1)n} & \mathbf{A}_{mn}\end{array}\right).\end{eqnarray*}
+\mathbf{A}_{1n} &  & \mathbf{A}_{(m-1)n} & \mathbf{A}_{mn}
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -1911,7 +2080,7 @@ In this section we look at a special way of using the matrix notation that
  Therefore, will develop the idea of the 
 \emph on
 outer product
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1949,9 +2118,11 @@ Let
 \end_inset
 
  is given by 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 Cov(\mathsf{X}_{i},\mathsf{X}_{j}) & = & E\left((\mathsf{X}_{i}-E(\mathsf{X}_{i}))\cdot(\mathsf{X}_{j}-E(\mathsf{X}_{j}))\right)\\
- & = & E(\mathsf{X}_{i}\cdot\mathsf{X}_{j})-E(\mathsf{X}_{i})\cdot E(\mathsf{X}_{j}).\end{eqnarray*}
+ & = & E(\mathsf{X}_{i}\cdot\mathsf{X}_{j})-E(\mathsf{X}_{i})\cdot E(\mathsf{X}_{j}).
+\end{eqnarray*}
 
 \end_inset
 
@@ -1971,7 +2142,7 @@ The covariance tells us how
 \end_inset
 
  
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1981,15 +2152,19 @@ covariance matrix
 \end_inset
 
 covariance matrix
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \mathbf{C} & = & \left(\begin{array}{ccc}
 Cov(\mathsf{X}_{1},\mathsf{X}_{1}) & \dots & Cov(\mathsf{X}_{1},\mathsf{X}_{n})\\
 \vdots & \ddots & \vdots\\
-Cov(\mathsf{X}_{n},\mathsf{X}_{1}) & \ldots & Cov(\mathsf{X}_{n},\mathsf{X}_{n})\end{array}\right)\\
+Cov(\mathsf{X}_{n},\mathsf{X}_{1}) & \ldots & Cov(\mathsf{X}_{n},\mathsf{X}_{n})
+\end{array}\right)\\
  & = & \left(\begin{array}{ccc}
 Var(\mathsf{X}_{1}) & \dots & Cov(\mathsf{X}_{1},\mathsf{X}_{n})\\
 \vdots & \ddots & \vdots\\
-Cov(\mathsf{X}_{n},\mathsf{X}_{1}) & \ldots & Var(\mathsf{X}_{n})\end{array}\right).\end{eqnarray*}
+Cov(\mathsf{X}_{n},\mathsf{X}_{1}) & \ldots & Var(\mathsf{X}_{n})
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
@@ -2005,9 +2180,11 @@ Empirically, i.e.
 \end_inset
 
 , the single covariances can be computed via 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \hat{Cov}(\mathsf{X}_{i},\mathsf{X}_{j}) & = & \frac{1}{N}\sum_{\ell=1}^{N}(x_{\ell i}-\mu_{i})(x_{\ell j}-\mu_{j})\\
- & = & \hat{\mathbf{C}}_{ij}.\end{eqnarray*}
+ & = & \hat{\mathbf{C}}_{ij}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -2043,9 +2220,11 @@ For simplicity, let us assume that our sample has mean zero, i.e.
 \end_inset
 
 , the above equation for the empirical mean becomes
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \hat{Cov}(\mathsf{X}_{i},\mathsf{X}_{j}) & = & \frac{1}{N}\sum_{\ell=1}^{N}x_{\ell i}x_{\ell j}\\
- & = & \hat{\mathbf{C}}_{ij}.\end{eqnarray*}
+ & = & \hat{\mathbf{C}}_{ij}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -2058,7 +2237,7 @@ Here, we use the hat on a variable to indicate that it has been estimated
  Covariance matrices have a certain property: They are 
 \emph on
 symmetric
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2133,7 +2312,7 @@ Now let us return to the question of how to express the computation of the
  The result of this 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2145,19 +2324,24 @@ outer product
 outer product
 \emph default
  is the desired matrix: 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \tilde{\mathbf{C}}^{(\ell)} & = & \mathbf{x}_{\ell}\mathbf{x}_{\ell}^{\top}\\
  & = & \left(\begin{array}{ccc}
 x_{\ell1}x_{\ell1} & \dots & x_{\ell1}x_{\ell n}\\
 \vdots & \ddots & \vdots\\
-x_{\ell n}x_{\ell1} & \ldots & x_{\ell n}x_{\ell n}\end{array}\right).\end{eqnarray*}
+x_{\ell n}x_{\ell1} & \ldots & x_{\ell n}x_{\ell n}
+\end{array}\right).
+\end{eqnarray*}
 
 \end_inset
 
 Looking at the term for the empirical covariance matrix, we see that it
  can now be computed via
-\begin_inset Formula \begin{eqnarray*}
-\hat{\mathbf{C}} & =\frac{1}{N} & \sum_{\ell=1}^{N}\tilde{\mathbf{C}}^{(\ell)}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{\mathbf{C}} & =\frac{1}{N} & \sum_{\ell=1}^{N}\tilde{\mathbf{C}}^{(\ell)}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -2177,8 +2361,10 @@ ation equals the above sum.
 \end_inset
 
 , we can see that 
-\begin_inset Formula \begin{eqnarray*}
-\mathbf{X}^{\top}\mathbf{X} & = & \sum_{\ell=1}^{N}\tilde{\mathbf{C}}^{(\ell)}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\mathbf{X}^{\top}\mathbf{X} & = & \sum_{\ell=1}^{N}\tilde{\mathbf{C}}^{(\ell)}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -2201,8 +2387,10 @@ th entry of all our measurements and a vector of the same size that contains
 
 th entry of all our measurements, i.e.
  
-\begin_inset Formula \begin{eqnarray*}
-(\mathbf{X}^{\top}\mathbf{X})_{ij} & = & (x_{1i},x_{2i},...,x_{Ni})\cdot(x_{1j},x_{2j},...,x_{Nj})=\sum_{\ell=1}^{N}x_{\ell i}x_{\ell j}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+(\mathbf{X}^{\top}\mathbf{X})_{ij} & = & (x_{1i},x_{2i},...,x_{Ni})\cdot(x_{1j},x_{2j},...,x_{Nj})=\sum_{\ell=1}^{N}x_{\ell i}x_{\ell j}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -2217,8 +2405,10 @@ This is exactly what we intended.
 
 -dimensional random variable by a single matrix multiplication can be done
  via 
-\begin_inset Formula \begin{eqnarray*}
-\hat{\mathbf{C}} & = & \frac{1}{N}\mathbf{X}^{\top}\mathbf{X}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{\mathbf{C}} & = & \frac{1}{N}\mathbf{X}^{\top}\mathbf{X}.
+\end{eqnarray*}
 
 \end_inset
 

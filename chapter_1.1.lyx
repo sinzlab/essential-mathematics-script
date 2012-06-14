@@ -1,24 +1,35 @@
-#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass book
+\textclass scrbook
 \begin_preamble
 \setcounter{chapter}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding auto
+\fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -26,21 +37,31 @@
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -178,9 +199,11 @@ rule
 \end_inset
 
 , we would write this as 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 f: & A\,\rightarrow\, B\\
- & a\mapsto r(a).\end{eqnarray*}
+ & a\mapsto r(a).
+\end{eqnarray*}
 
 \end_inset
 
@@ -217,7 +240,7 @@ Here,
  is usually called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -243,7 +266,7 @@ of
  is called 
 \emph on
 the co-domain 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -327,9 +350,11 @@ The rule
 \end_inset
 
  simply doubles any real number, we would write 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 f: & \mathbb{R}\rightarrow\mathbb{R}\\
- & x\mapsto2\cdot x & \, x\in\mathbb{R}.\end{eqnarray*}
+ & x\mapsto2\cdot x & \, x\in\mathbb{R}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -394,15 +419,17 @@ Polynomials is a very common class of functions.
 \end_inset
 
 :
-\begin_inset Formula \begin{eqnarray*}
-f(x) & = & a_{n}x^{n}+...+a_{1}x+a_{0}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & = & a_{n}x^{n}+...+a_{1}x+a_{0}.
+\end{eqnarray*}
 
 \end_inset
 
 The single terms in the sum are called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -417,7 +444,7 @@ monomials.
  The 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -485,9 +512,11 @@ um) to indicate a sum over all terms directly after the sigma.
 \end_inset
 
  we write the polynomial from above as
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 f(x) & = & a_{n}x^{n}+...+a_{1}x+a_{0}\\
- & = & \sum_{k=0}^{n}a_{k}x^{k}.\end{eqnarray*}
+ & = & \sum_{k=0}^{n}a_{k}x^{k}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -561,6 +590,7 @@ hor_pos "c"
 has_inner_box 1
 inner_pos "t"
 use_parbox 0
+use_makebox 0
 width "100col%"
 special "none"
 height "1in"
@@ -708,7 +738,7 @@ A function
  is said to be 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -720,9 +750,11 @@ function, linear
 linear
 \emph default
  if it fulfills the following two properties:
-\begin_inset Formula \begin{eqnarray}
+\begin_inset Formula 
+\begin{eqnarray}
  & f(x+y)=f(x)+f(y) & \mbox{ for all }x,y\in\mathbb{R}\label{eq:def_linear_1}\\
- & f(a\cdot x)=a\cdot f(x) & \mbox{ for all }a,x\in\mathbb{R}.\label{eq:def_linear_2}\end{eqnarray}
+ & f(a\cdot x)=a\cdot f(x) & \mbox{ for all }a,x\in\mathbb{R}.\label{eq:def_linear_2}
+\end{eqnarray}
 
 \end_inset
 
@@ -801,9 +833,11 @@ These properties have remarkable consequences.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 f(y) & = & f(a\cdot x)\\
- & = & a\cdot f(x).\end{eqnarray*}
+ & = & a\cdot f(x).
+\end{eqnarray*}
 
 \end_inset
 
@@ -875,12 +909,14 @@ Assume our cell responds to a visual image
 
 .
  Then the response to the mean of the two images is 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 r\left(\frac{1}{2}I_{1}+\frac{1}{2}I_{2}\right) & = & r\left(\frac{1}{2}I_{1}\right)+r\left(\frac{1}{2}I_{2}\right)\\
  & = & \frac{1}{2}r(I_{1})+\frac{1}{2}r(I_{2})\\
  & = & \frac{1}{2}r_{1}+\frac{1}{2}r_{2}\\
  & = & 10\frac{sp}{s}+30\frac{sp}{s}\\
- & = & 40\frac{sp}{s}\end{eqnarray*}
+ & = & 40\frac{sp}{s}
+\end{eqnarray*}
 
 \end_inset
 
@@ -896,9 +932,11 @@ This property does not only hold for two input stimuli.
 
  images is just the mean response to the single images.
  
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 r\left(\frac{1}{n}\sum_{k=1}^{n}I_{k}\right) & = & \frac{1}{n}\sum_{k=1}^{n}r\left(I_{k}\right)\\
- & = & \frac{1}{n}\sum_{k=1}^{n}\nu_{k}\end{eqnarray*}
+ & = & \frac{1}{n}\sum_{k=1}^{n}\nu_{k}
+\end{eqnarray*}
 
 \end_inset
 
@@ -1491,7 +1529,7 @@ The term
 path integration
 \emph default
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1843,8 +1881,10 @@ reference "fig:GeoView-SinCos"
 .
  If we add this displacement to the old position, we get the new position
  
-\begin_inset Formula \begin{eqnarray*}
-(x_{t+1},y_{t+1}) & = & (x_{t},y_{t})+r_{t}\cdot(\cos(\vartheta_{t}),\sin(\vartheta_{t}))\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+(x_{t+1},y_{t+1}) & = & (x_{t},y_{t})+r_{t}\cdot(\cos(\vartheta_{t}),\sin(\vartheta_{t}))
+\end{eqnarray*}
 
 \end_inset
 
@@ -1905,8 +1945,10 @@ For a right angle triangle with side lengths
 \end_inset
 
  in radians), the following equality holds:
-\begin_inset Formula \begin{eqnarray*}
-a^{2}+b^{2} & = & c^{2}\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+a^{2}+b^{2} & = & c^{2}
+\end{eqnarray*}
 
 \end_inset
 
@@ -1953,8 +1995,10 @@ In the case of
 
 .
  Therefore, we know that 
-\begin_inset Formula \begin{eqnarray*}
-\cos(\vartheta)^{2}+\sin(\vartheta)^{2} & = & 1\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\cos(\vartheta)^{2}+\sin(\vartheta)^{2} & = & 1
+\end{eqnarray*}
 
 \end_inset
 
@@ -2035,14 +2079,18 @@ reference "fig:GeoView-SinCos"
 \end_inset
 
 :
-\begin_inset Formula \begin{eqnarray*}
-\tan(\vartheta) & = & \frac{\sin(\vartheta)}{\cos(\vartheta)}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\tan(\vartheta) & = & \frac{\sin(\vartheta)}{\cos(\vartheta)}.
+\end{eqnarray*}
 
 \end_inset
 
 In an analogous manner we can also derive the equality 
-\begin_inset Formula \begin{eqnarray*}
-\mbox{cotan}(\vartheta) & = & \frac{\cos(\vartheta)}{\sin(\vartheta)}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{cotan}(\vartheta) & = & \frac{\cos(\vartheta)}{\sin(\vartheta)}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -2086,8 +2134,10 @@ Since
 \end_inset
 
 , we have that 
-\begin_inset Formula \begin{eqnarray*}
-\frac{y}{x} & =\frac{r\cdot\sin(\vartheta)}{r\cdot\cos(\vartheta)}= & \tan(\vartheta).\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{y}{x} & =\frac{r\cdot\sin(\vartheta)}{r\cdot\cos(\vartheta)}= & \tan(\vartheta).
+\end{eqnarray*}
 
 \end_inset
 
@@ -2098,8 +2148,10 @@ Since
  is simply the quotient of the opposite leg and the adjacent leg of a right
  angle triangle.
  Similarily we can get 
-\begin_inset Formula \begin{eqnarray*}
-\frac{x}{y} & =\frac{r\cdot\cos(\vartheta)}{r\cdot\sin(\vartheta)}= & \mbox{cotan}(\vartheta).\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{x}{y} & =\frac{r\cdot\cos(\vartheta)}{r\cdot\sin(\vartheta)}= & \mbox{cotan}(\vartheta).
+\end{eqnarray*}
 
 \end_inset
 
@@ -2148,9 +2200,11 @@ Further, sine and cosine can also be defined in terms of quotients for circles
 
 .
  Therefore, we get
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \sin(\vartheta) & = & \frac{y}{r}\\
-\cos(\vartheta) & = & \frac{x}{r}\end{eqnarray*}
+\cos(\vartheta) & = & \frac{x}{r}
+\end{eqnarray*}
 
 \end_inset
 
@@ -2172,11 +2226,13 @@ Other useful properties that can also be read off from the geometric view.
 \end_inset
 
 :
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \cos(-\vartheta) & = & \cos(\vartheta)\\
 \sin(-\vartheta) & = & -\sin(\vartheta)\\
 \tan(-\vartheta) & = & -\tan(\vartheta)\\
-\mbox{cotan}(-\vartheta) & = & -\mbox{cotan}(\vartheta)\end{eqnarray*}
+\mbox{cotan}(-\vartheta) & = & -\mbox{cotan}(\vartheta)
+\end{eqnarray*}
 
 \end_inset
 
@@ -2499,7 +2555,7 @@ Assume that you want measure the orientation selectivity a V1-cell you are
  The most common way of producing such patterns is to use 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2515,7 +2571,7 @@ sine
 cosine
 \emph default
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2863,7 +2919,7 @@ Up to now we saw how to control the frequency and the amplitude of sine
  is called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2885,8 +2941,10 @@ phase
 \end_inset
 
 : It is
-\begin_inset Formula \begin{eqnarray*}
-A\cdot\sin(\omega t-\phi) & \mbox{ and } & A\cdot\cos(\omega t-\phi).\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+A\cdot\sin(\omega t-\phi) & \mbox{ and } & A\cdot\cos(\omega t-\phi).
+\end{eqnarray*}
 
 \end_inset
 
@@ -2898,7 +2956,7 @@ Before finishing this section about trigonometric functions we just want
 Addition Theorems
 \emph default
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2920,9 +2978,11 @@ The following equalities hold for all
 \end_inset
 
 :
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \cos(x+y) & = & \cos(x)\cos(y)-\sin(x)\sin(y)\\
-\sin(x+y) & = & \sin(x)\cos(y)+\cos(x)\sin(y)\end{eqnarray*}
+\sin(x+y) & = & \sin(x)\cos(y)+\cos(x)\sin(y)
+\end{eqnarray*}
 
 \end_inset
 
@@ -3016,6 +3076,7 @@ hor_pos "c"
 has_inner_box 1
 inner_pos "t"
 use_parbox 0
+use_makebox 0
 width "100col%"
 special "none"
 height "1in"
@@ -3055,11 +3116,13 @@ Pythagoras's Theorem:
 
 \begin_layout Itemize
 Symmetry Properties: 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \cos(-\vartheta) & = & \cos(\vartheta)\\
 \sin(-\vartheta) & = & -\sin(\vartheta)\\
 \tan(-\vartheta) & = & -\tan(\vartheta)\\
-\mbox{cotan}(-\vartheta) & = & -\mbox{cotan}(\vartheta)\end{eqnarray*}
+\mbox{cotan}(-\vartheta) & = & -\mbox{cotan}(\vartheta)
+\end{eqnarray*}
 
 \end_inset
 
@@ -3068,9 +3131,11 @@ Symmetry Properties:
 
 \begin_layout Itemize
 Addition Theorems
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \cos(x+y) & = & \cos(x)\cos(y)-\sin(x)\sin(y)\\
-\sin(x+y) & = & \sin(x)\cos(y)+\cos(x)\sin(y)\end{eqnarray*}
+\sin(x+y) & = & \sin(x)\cos(y)+\cos(x)\sin(y)
+\end{eqnarray*}
 
 \end_inset
 
@@ -3112,7 +3177,7 @@ The exponential or
 '' is an irrational number called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3163,7 +3228,7 @@ Examples
 One central probability density in statistics is the 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3177,7 +3242,7 @@ Normal
  or 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3222,74 +3287,13 @@ The potential change
 
  over time at a passive neuron membrane after applying a rectangular current
  pulse can be described by the following equation 
-\begin_inset Formula \begin{eqnarray*}
-\Delta V_{m}(t) & = & I_{m}R\left(1-e^{-\frac{t}{\tau}}\right).\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\Delta V_{m}(t) & = & I_{m}R\left(1-e^{-\frac{t}{\tau}}\right).
+\end{eqnarray*}
 
 \end_inset
 
- 
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figs/passMemPot.eps
-	width 12cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:MembPotentialChange"
-
-\end_inset
-
-Potential change 
-\begin_inset Formula $\Delta V_{m}(t)$
-\end_inset
-
- (solid line) over time at a passive neuron membrane after applying a rectangula
-r current pulse (dashed line) [Figure from 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "KandelSchwartz1985"
-
-\end_inset
-
-].
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:MembPotentialChange"
-
-\end_inset
-
- shows the time course of the potential.
  Here 
 \begin_inset Formula $I_{m}$
 \end_inset
@@ -3360,7 +3364,7 @@ time constant
 A simple stochastical model for spike generation by a neuron is the 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3399,8 +3403,10 @@ Poisson Process.
 \end_inset
 
 :
-\begin_inset Formula \begin{eqnarray*}
-P(k,\Delta t) & = & \frac{e^{-\lambda\Delta t}(\lambda\Delta t)^{k}}{k!}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+P(k,\Delta t) & = & \frac{e^{-\lambda\Delta t}(\lambda\Delta t)^{k}}{k!}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -3461,7 +3467,7 @@ reference "fig:PoissonProcess"
 '' denotes the 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3622,9 +3628,11 @@ In this example, we look again at the time course of the membrane potential
 \end_inset
 
 ? The first step is easy: You rearrange the the terms to get 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \Delta V_{m}(t)=I_{m}R\left(1-e^{-\frac{t}{\tau_{k}}}\right) & \Leftrightarrow & I_{m}R-\Delta V_{m}(t_{k})==I_{m}R\cdot e^{-\frac{t_{k}}{\tau_{k}}}\\
- & \Leftrightarrow & \frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}=e^{-\frac{t_{k}}{\tau_{k}}}.\end{eqnarray*}
+ & \Leftrightarrow & \frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}=e^{-\frac{t_{k}}{\tau_{k}}}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -3645,7 +3653,7 @@ Now we somehow have to extract
  This is exactly the definition of the 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3674,10 +3682,12 @@ natural logarithm
 \end_inset
 
 :
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}=e^{-\frac{t_{k}}{\tau_{k}}} & \Leftrightarrow & \ln\left(\frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}\right)=-\frac{t_{k}}{\tau_{k}}\\
  & \Leftrightarrow & -\frac{\ln\left(\frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}\right)}{t_{k}}=\frac{1}{\tau_{k}}\\
- & \Leftrightarrow & -\frac{t_{k}}{\ln\left(\frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}\right)}=\tau_{k}\end{eqnarray*}
+ & \Leftrightarrow & -\frac{t_{k}}{\ln\left(\frac{I_{m}R-\Delta V_{m}(t_{k})}{I_{m}R}\right)}=\tau_{k}
+\end{eqnarray*}
 
 \end_inset
 
@@ -3713,7 +3723,7 @@ We just saw that the natural logarithm is the function that cancels the
 inverse function
 \emph default
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3797,7 +3807,7 @@ So far we have seen how to solve
  is called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -3917,8 +3927,10 @@ either because it does not matter or it is clear from the context.
 \begin_layout Standard
 There is a neat trick how to calculate logarithms of arbitrary bases by
  using logarithms of another base:
-\begin_inset Formula \begin{eqnarray*}
-\log_{b}(x) & = & \frac{\ln(x)}{\ln(b)}=\frac{\log(x)}{\log(b)}.\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+\log_{b}(x) & = & \frac{\ln(x)}{\ln(b)}=\frac{\log(x)}{\log(b)}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -3975,6 +3987,7 @@ hor_pos "c"
 has_inner_box 1
 inner_pos "t"
 use_parbox 0
+use_makebox 0
 width "100col%"
 special "none"
 height "1in"
@@ -4083,8 +4096,10 @@ Most people think about lines when they think about linear functions.
 
 -axis.
  The general equation for a line is 
-\begin_inset Formula \begin{eqnarray*}
-f(x) & = & mx+t,\end{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & = & mx+t,
+\end{eqnarray*}
 
 \end_inset
 
@@ -4095,7 +4110,7 @@ where
  is called the 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -4184,11 +4199,13 @@ From the general form of lines we can also see why they are not strictly
 
 .
  However, it is easy to check that this is not the case:
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 f(x)+f(y) & = & mx+t+my+t\\
  & = & m(x+y)+2t\\
  & \not= & m(x+y)+t\\
- & = & f(x+y).\end{eqnarray*}
+ & = & f(x+y).
+\end{eqnarray*}
 
 \end_inset
 
@@ -4226,7 +4243,7 @@ Functions of the form
  are also called 
 \emph on
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -4257,7 +4274,7 @@ Sometimes, it is convenient to define a function by using two or more other
 piecewise defined functions
 \emph default
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -4277,10 +4294,13 @@ Examples
 
 \begin_layout Enumerate
 The Heaviside function is defined as:
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 f(x)=\left\{ \begin{array}{cc}
 0 & x\leq0\\
-1 & x>0\end{array}.\right.\]
+1 & x>0
+\end{array}.\right.
+\]
 
 \end_inset
 
@@ -4289,10 +4309,13 @@ f(x)=\left\{ \begin{array}{cc}
 
 \begin_layout Enumerate
 The absolute value is given by 
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 f(x)=\left\{ \begin{array}{cc}
 -x & x\leq0\\
-x & x>0\end{array}\right.\]
+x & x>0
+\end{array}\right.
+\]
 
 \end_inset
 
@@ -4301,10 +4324,13 @@ x & x>0\end{array}\right.\]
 
 \begin_layout Enumerate
 The maximum-function is defined as
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 f(x,y)=\left\{ \begin{array}{cc}
 y & x\leq y\\
-x & x>y\end{array}\right.\]
+x & x>y
+\end{array}\right.
+\]
 
 \end_inset
 
@@ -4348,11 +4374,14 @@ Earlier, we saw that neurons are linear for some stimuli
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
+\begin_inset Formula 
+\[
 f(x)=\left\{ \begin{array}{cc}
 0 & x<0\\
 x & 0\leq x\leq f_{max}\\
-f_{max} & x>f_{max}\end{array}\right.\]
+f_{max} & x>f_{max}
+\end{array}\right.
+\]
 
 \end_inset
 
@@ -4684,6 +4713,7 @@ hor_pos "c"
 has_inner_box 1
 inner_pos "t"
 use_parbox 0
+use_makebox 0
 width "100col%"
 special "none"
 height "1in"

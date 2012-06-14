@@ -1,8 +1,8 @@
-#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass book
+\textclass scrbook
 \begin_preamble
 \setcounter{chapter}{3}
 \usepackage{graphicx}
@@ -12,18 +12,26 @@
 \usepackage{bm}
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding auto
+\fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -31,21 +39,31 @@
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -108,14 +126,16 @@ oscillation
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 f_{\infty}(x) & = & b_{0}+a_{1}\sin(x)+b_{1}\cos(x)\\
  & + & a_{2}\sin(2x)+b_{2}\cos(2x)\\
  & + & a_{3}\sin(3x)+b_{3}\cos(3x)\\
  & + & ...\\
  & + & a_{n}\sin(nx)+b_{n}\cos(nx)\\
  & + & ...\\
- & = & b_{0}+\sum_{k=1}^{\infty}(b_{k}\cos(kx)+a_{k}\sin(kx)),\end{eqnarray*}
+ & = & b_{0}+\sum_{k=1}^{\infty}(b_{k}\cos(kx)+a_{k}\sin(kx)),
+\end{eqnarray*}
 
 \end_inset
 
@@ -250,20 +270,24 @@ We will need the following identities, which we will just state here, but
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{eqnarray}
+\begin_inset Formula 
+\begin{eqnarray}
 \int_{\pi}^{\pi}\sin(kx) & dx= & 0\nonumber \\
 \int_{-\pi}^{\pi}\cos(kx) & dx= & 0\mbox{}\nonumber \\
 \int_{-\pi}^{\pi}\sin(kx)\sin(mx)dx & = & 0\label{eq:fourOrth1}\\
 \int_{-\pi}^{\pi}\sin(kx)\cos(mx)dx & = & 0\label{eq:fourOrth2}\\
 \int_{-\pi}^{\pi}\cos(kx)\cos(mx)dx & = & 0\label{eq:fourOrth3}\\
-\int_{-\pi}^{\pi}\sin(mx)\cos(mx)dx & = & 0\label{eq:fourOrth4}\end{eqnarray}
+\int_{-\pi}^{\pi}\sin(mx)\cos(mx)dx & = & 0\label{eq:fourOrth4}
+\end{eqnarray}
 
 \end_inset
 
 
-\begin_inset Formula \begin{eqnarray}
+\begin_inset Formula 
+\begin{eqnarray}
 \int_{-\pi}^{\pi}\sin(mx)\sin(mx)dx & = & \pi\label{eq:fourNorm1}\\
-\int_{-\pi}^{\pi}\cos(mx)\cos(mx)dx & = & \pi.\label{eq:fourNorm2}\end{eqnarray}
+\int_{-\pi}^{\pi}\cos(mx)\cos(mx)dx & = & \pi.\label{eq:fourNorm2}
+\end{eqnarray}
 
 \end_inset
 
@@ -348,11 +372,13 @@ The coefficient
 \end_inset
 
 
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \int_{-\pi}^{\pi}f(x)dx & = & \int_{-\pi}^{\pi}\left(b_{o}+\sum_{k=1}^{\infty}(b_{k}\cos(kx)+a_{k}\sin(kx))\right)dx\\
  & = & \int_{-\pi}^{\pi}b_{o}dx+\sum_{k=1}^{\infty}\left(b_{k}\int_{-\pi}^{\pi}\cos(kx)dx+a_{k}\int_{-\pi}^{\pi}\sin(kx)dx\right)\\
  & = & 2\pi b_{o}+\sum_{k=1}^{\infty}\left(0+0\right)=2\pi b_{o}\\
-\implies b_{o} & = & \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)dx.\end{eqnarray*}
+\implies b_{o} & = & \frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)dx.
+\end{eqnarray*}
 
 \end_inset
 
@@ -369,13 +395,15 @@ Any coefficient
 \end_inset
 
 :
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \int_{-\pi}^{\pi}f(x)\cos(mx)dx & = & \int_{-\pi}^{\pi}\left(b_{o}+\sum_{k=1}^{\infty}(b_{k}\cos(kx)+a_{k}\sin(kx))\right)\cos(mx)dx\\
  & = & \int_{-\pi}^{\pi}b_{o}\cos(mx)dx+\int_{-\pi}^{\pi}b_{m}\cos(mx)\cos(mx)dx\\
  &  & +\sum_{k=1,k\neq m}^{\infty}\int_{-\pi}^{\pi}b_{k}\cos(kx)\cos(mx)dx\\
  &  & +\sum_{k=1}^{\infty}\int_{-\pi}^{\pi}a_{k}\sin(kx)\cos(mx)dx\\
  & = & 0+\pi b_{m}+0+0=\pi b_{m}\\
-\implies b_{m} & = & \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(mx)dx.\end{eqnarray*}
+\implies b_{m} & = & \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(mx)dx.
+\end{eqnarray*}
 
 \end_inset
 
@@ -392,8 +420,10 @@ Similarly,
 \end_inset
 
 
-\begin_inset Formula \[
-a_{m}=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(mx)dx.\]
+\begin_inset Formula 
+\[
+a_{m}=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(mx)dx.
+\]
 
 \end_inset
 
@@ -633,8 +663,10 @@ reference "eq:fourNorm2"
 \end_inset
 
  
-\begin_inset Formula \[
-\|v\|=\sqrt{\langle v,v\rangle}=\sqrt{\int_{-\pi}^{\pi}\frac{1}{\pi}\sin(kx)\sin(mx)dx}=\sqrt{\frac{\pi}{\pi}}=1\]
+\begin_inset Formula 
+\[
+\|v\|=\sqrt{\langle v,v\rangle}=\sqrt{\int_{-\pi}^{\pi}\frac{1}{\pi}\sin(kx)\sin(mx)dx}=\sqrt{\frac{\pi}{\pi}}=1
+\]
 
 \end_inset
 
@@ -681,8 +713,10 @@ reference "eq:fourOrth4"
 \end_inset
 
 :
-\begin_inset Formula \[
-\langle v,w\rangle=\int_{-\pi}^{\pi}\frac{1}{\pi}\sin(kx)\sin(mx)dx=0.\]
+\begin_inset Formula 
+\[
+\langle v,w\rangle=\int_{-\pi}^{\pi}\frac{1}{\pi}\sin(kx)\sin(mx)dx=0.
+\]
 
 \end_inset
 
@@ -719,8 +753,10 @@ vector
 \end_inset
 
  is given by
-\begin_inset Formula \[
-\alpha_{k}=\langle f,v\rangle=\frac{1}{\sqrt{\pi}}\int f(x)\sin(kx)dx.\]
+\begin_inset Formula 
+\[
+\alpha_{k}=\langle f,v\rangle=\frac{1}{\sqrt{\pi}}\int f(x)\sin(kx)dx.
+\]
 
 \end_inset
 
@@ -832,8 +868,10 @@ shifted
 \emph default
  sines.
  In other words, we want to write 
-\begin_inset Formula \[
-f(x)=b_{o}+\sum_{k=1}^{\infty}A_{k}\sin(kx-\phi_{k}),\]
+\begin_inset Formula 
+\[
+f(x)=b_{o}+\sum_{k=1}^{\infty}A_{k}\sin(kx-\phi_{k}),
+\]
 
 \end_inset
 
@@ -885,8 +923,10 @@ phase
 
  by performing the integrations outlined above, we can calculate the amplitudes
  and phases using the trigonometric identity
-\begin_inset Formula \[
-\sin(u-v)=\sin(u)\cos(v)-\cos(u)\sin(v).\]
+\begin_inset Formula 
+\[
+\sin(u-v)=\sin(u)\cos(v)-\cos(u)\sin(v).
+\]
 
 \end_inset
 
@@ -908,8 +948,10 @@ By applying this identity to
 \end_inset
 
 we get that 
-\begin_inset Formula \[
-A_{k}\sin(kx-\phi_{k})=A_{k}\sin(kx)\cos(\phi_{k})-A_{k}\cos(kx)\sin(\phi_{k}).\]
+\begin_inset Formula 
+\[
+A_{k}\sin(kx-\phi_{k})=A_{k}\sin(kx)\cos(\phi_{k})-A_{k}\cos(kx)\sin(\phi_{k}).
+\]
 
 \end_inset
 
@@ -918,9 +960,11 @@ By comparing this to our previous formulation
 \end_inset
 
 , we can see that the two representations are equal if and only if
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 A_{k}\cos(\phi_{k}) & = & a_{k}\\
--A_{k}\sin(\phi_{k}) & = & b_{k}.\end{eqnarray*}
+-A_{k}\sin(\phi_{k}) & = & b_{k}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -932,9 +976,11 @@ Dividing the second equation by the first yields
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 \frac{-A_{k}\sin(\phi_{k})}{A_{k}\cos(\phi_{k})} & = & \frac{b_{k}}{a_{k}}\\
-\implies\tan(\phi_{k}) & = & -\frac{b_{k}}{a_{k}}.\end{eqnarray*}
+\implies\tan(\phi_{k}) & = & -\frac{b_{k}}{a_{k}}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -946,10 +992,12 @@ Squaring each of the two equations, and adding them leads to
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 A_{k}^{2}\cos(\phi_{k})^{2}+A_{k}^{2}\sin(\phi_{k})^{2} & = & a_{k}^{2}+b_{k}^{2}\\
 A_{k}^{2}\left(\cos(\phi_{k})^{2}+\sin(\phi_{k})^{2}\right) & = & a_{k}^{2}+b_{k}^{2}\\
-A_{k} & = & \sqrt{a_{k}^{2}+b_{k}^{2}}.\end{eqnarray*}
+A_{k} & = & \sqrt{a_{k}^{2}+b_{k}^{2}}.
+\end{eqnarray*}
 
 \end_inset
 
