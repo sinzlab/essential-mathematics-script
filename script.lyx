@@ -18,7 +18,7 @@
  \fancyhead[LE]{\scshape \leftmark} % Parent section name on the left(even) page  
 \fancyhead[RO]{\scshape \rightmark} % Current section name on the right(odd) page 
 \fancyfoot[LE,RO]{\thepage} % Page on the outer side
-\fancyhead[RE,LO]{\scshape Sinz, Macke, Lies - Essential Mathematics} % Page on the outer side
+\fancyfoot[LO,RE]{\footnotesize\scshape Sinz, Macke, Lies - Essential Mathematics} % Page on the outer side
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%
 \end_preamble
